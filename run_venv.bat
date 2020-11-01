@@ -1,0 +1,1 @@
+cd venv/scripts && activate

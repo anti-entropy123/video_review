@@ -1,0 +1,1020 @@
+[2020-11-01 14:21:51,045] INFO in server: Server initialized for eventlet.
+[2020-11-01 14:21:51,050] INFO in _internal:  * Restarting with stat
+[2020-11-01 14:21:52,132] INFO in server: Server initialized for eventlet.
+[2020-11-01 14:21:52,134] WARNING in _internal:  * Debugger is active!
+[2020-11-01 14:21:52,141] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-01 14:40:18,771] INFO in server: Server initialized for threading.
+[2020-11-01 14:40:18,773] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 14:40:18,827] INFO in _internal:  * Restarting with stat
+[2020-11-01 14:40:19,525] INFO in server: Server initialized for threading.
+[2020-11-01 14:40:19,532] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 14:40:19,552] WARNING in _internal:  * Debugger is active!
+[2020-11-01 14:40:19,559] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 14:40:19,570] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 14:41:45,487] INFO in server: Server initialized for threading.
+[2020-11-01 14:41:45,489] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 14:41:45,518] INFO in _internal:  * Restarting with stat
+[2020-11-01 14:41:46,312] INFO in server: Server initialized for threading.
+[2020-11-01 14:41:46,315] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 14:41:46,360] WARNING in _internal:  * Debugger is active!
+[2020-11-01 14:41:46,369] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 14:41:46,381] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 14:51:33,475] INFO in server: Server initialized for threading.
+[2020-11-01 14:51:33,477] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 14:51:33,524] INFO in _internal:  * Restarting with stat
+[2020-11-01 14:51:34,218] INFO in server: Server initialized for threading.
+[2020-11-01 14:51:34,219] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 14:51:34,221] WARNING in _internal:  * Debugger is active!
+[2020-11-01 14:51:34,247] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 14:51:34,258] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 14:52:30,828] INFO in server: Server initialized for threading.
+[2020-11-01 14:52:30,830] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 14:52:30,853] INFO in _internal:  * Restarting with stat
+[2020-11-01 14:52:31,544] INFO in server: Server initialized for threading.
+[2020-11-01 14:52:31,545] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 14:52:31,566] WARNING in _internal:  * Debugger is active!
+[2020-11-01 14:52:31,573] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 14:52:31,585] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 14:53:12,663] INFO in server: Server initialized for threading.
+[2020-11-01 14:53:12,664] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 14:53:12,695] INFO in _internal:  * Restarting with stat
+[2020-11-01 14:53:13,385] INFO in server: Server initialized for threading.
+[2020-11-01 14:53:13,387] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 14:53:13,416] WARNING in _internal:  * Debugger is active!
+[2020-11-01 14:53:13,423] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 14:53:13,465] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 14:53:59,154] INFO in server: Server initialized for threading.
+[2020-11-01 14:53:59,156] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 14:53:59,195] INFO in _internal:  * Restarting with stat
+[2020-11-01 14:53:59,890] INFO in server: Server initialized for threading.
+[2020-11-01 14:53:59,891] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 14:53:59,892] WARNING in _internal:  * Debugger is active!
+[2020-11-01 14:53:59,931] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 14:53:59,943] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 14:54:22,227] INFO in server: Server initialized for threading.
+[2020-11-01 14:54:22,228] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 14:54:22,246] INFO in _internal:  * Restarting with stat
+[2020-11-01 14:54:22,949] INFO in server: Server initialized for threading.
+[2020-11-01 14:54:22,950] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 14:54:22,966] WARNING in _internal:  * Debugger is active!
+[2020-11-01 14:54:22,973] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 14:54:22,983] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 14:55:16,680] INFO in server: Server initialized for threading.
+[2020-11-01 14:55:16,681] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 14:55:16,701] INFO in _internal:  * Restarting with stat
+[2020-11-01 14:55:17,398] INFO in server: Server initialized for threading.
+[2020-11-01 14:55:17,399] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 14:55:17,400] WARNING in _internal:  * Debugger is active!
+[2020-11-01 14:55:17,422] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 14:55:17,434] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 14:55:41,108] INFO in utils: begin
+[2020-11-01 14:55:47,836] INFO in utils: begin
+[2020-11-01 15:36:08,243] INFO in server: Server initialized for threading.
+[2020-11-01 15:36:08,245] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 15:36:08,286] INFO in _internal:  * Restarting with stat
+[2020-11-01 15:36:08,968] INFO in server: Server initialized for threading.
+[2020-11-01 15:36:08,970] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 15:36:08,971] WARNING in _internal:  * Debugger is active!
+[2020-11-01 15:36:08,978] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 15:36:08,988] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 15:36:28,088] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 15:36:28] "[37mGET /api/test/ HTTP/1.1[0m" 200 -
+[2020-11-01 15:36:44,667] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 15:36:44] "[33mPOST /api/register/ HTTP/1.1[0m" 404 -
+[2020-11-01 15:36:53,306] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 15:36:53] "[35m[1mPOST /api/register HTTP/1.1[0m" 500 -
+[2020-11-01 15:37:14,394] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 15:37:14,438] INFO in _internal:  * Restarting with stat
+[2020-11-01 15:37:15,080] INFO in server: Server initialized for threading.
+[2020-11-01 15:37:15,082] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 15:37:15,110] WARNING in _internal:  * Debugger is active!
+[2020-11-01 15:37:15,118] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 15:37:15,128] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 15:37:18,256] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 15:37:18,301] INFO in _internal:  * Restarting with stat
+[2020-11-01 15:37:23,549] INFO in server: Server initialized for threading.
+[2020-11-01 15:37:23,551] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 15:37:23,584] INFO in _internal:  * Restarting with stat
+[2020-11-01 15:37:24,200] INFO in server: Server initialized for threading.
+[2020-11-01 15:37:24,201] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 15:37:24,251] WARNING in _internal:  * Debugger is active!
+[2020-11-01 15:37:24,261] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 15:37:24,298] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 15:37:28,625] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 15:37:28] "[35m[1mPOST /api/register HTTP/1.1[0m" 0 -
+[2020-11-01 15:38:09,892] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 15:38:09,938] INFO in _internal:  * Restarting with stat
+[2020-11-01 15:38:29,575] INFO in server: Server initialized for threading.
+[2020-11-01 15:38:29,576] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 15:38:29,625] INFO in _internal:  * Restarting with stat
+[2020-11-01 15:38:30,243] INFO in server: Server initialized for threading.
+[2020-11-01 15:38:30,244] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 15:38:30,270] WARNING in _internal:  * Debugger is active!
+[2020-11-01 15:38:30,282] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 15:38:30,293] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 15:38:32,177] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 15:38:32] "[37mPOST /api/register HTTP/1.1[0m" 200 -
+[2020-11-01 15:38:50,023] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 15:38:50,069] INFO in _internal:  * Restarting with stat
+[2020-11-01 15:38:50,741] INFO in server: Server initialized for threading.
+[2020-11-01 15:38:50,743] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 15:38:50,744] WARNING in _internal:  * Debugger is active!
+[2020-11-01 15:38:50,750] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 15:38:50,783] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 15:38:53,916] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 15:38:53,961] INFO in _internal:  * Restarting with stat
+[2020-11-01 15:38:54,618] INFO in server: Server initialized for threading.
+[2020-11-01 15:38:54,619] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 15:38:54,644] WARNING in _internal:  * Debugger is active!
+[2020-11-01 15:38:54,653] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 15:38:54,695] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 15:38:55,757] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 15:38:55,802] INFO in _internal:  * Restarting with stat
+[2020-11-01 15:38:56,460] INFO in server: Server initialized for threading.
+[2020-11-01 15:38:56,461] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 15:38:56,487] WARNING in _internal:  * Debugger is active!
+[2020-11-01 15:38:56,493] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 15:38:56,504] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 15:38:57,569] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 15:38:57,614] INFO in _internal:  * Restarting with stat
+[2020-11-01 15:38:58,258] INFO in server: Server initialized for threading.
+[2020-11-01 15:38:58,261] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 15:38:58,263] WARNING in _internal:  * Debugger is active!
+[2020-11-01 15:38:58,271] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 15:38:58,325] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 15:39:01,459] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 15:39:01,508] INFO in _internal:  * Restarting with stat
+[2020-11-01 15:39:02,173] INFO in server: Server initialized for threading.
+[2020-11-01 15:39:02,175] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 15:39:02,175] WARNING in _internal:  * Debugger is active!
+[2020-11-01 15:39:02,182] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 15:39:02,222] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 15:39:16,748] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 15:39:16,804] INFO in _internal:  * Restarting with stat
+[2020-11-01 15:39:17,475] INFO in server: Server initialized for threading.
+[2020-11-01 15:39:17,477] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 15:39:17,501] WARNING in _internal:  * Debugger is active!
+[2020-11-01 15:39:17,521] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 15:39:17,564] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 15:39:19,665] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 15:39:19,713] INFO in _internal:  * Restarting with stat
+[2020-11-01 15:39:20,343] INFO in server: Server initialized for threading.
+[2020-11-01 15:39:20,345] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 15:39:20,346] WARNING in _internal:  * Debugger is active!
+[2020-11-01 15:39:20,353] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 15:39:20,387] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 15:39:26,625] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 15:39:26,670] INFO in _internal:  * Restarting with stat
+[2020-11-01 15:39:27,326] INFO in server: Server initialized for threading.
+[2020-11-01 15:39:27,327] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 15:39:27,355] WARNING in _internal:  * Debugger is active!
+[2020-11-01 15:39:27,363] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 15:39:27,406] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 15:39:30,531] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 15:39:30,579] INFO in _internal:  * Restarting with stat
+[2020-11-01 15:39:31,227] INFO in server: Server initialized for threading.
+[2020-11-01 15:39:31,229] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 15:39:31,254] WARNING in _internal:  * Debugger is active!
+[2020-11-01 15:39:31,261] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 15:39:31,296] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 15:39:37,538] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 15:39:37,584] INFO in _internal:  * Restarting with stat
+[2020-11-01 15:39:38,224] INFO in server: Server initialized for threading.
+[2020-11-01 15:39:38,225] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 15:39:38,251] WARNING in _internal:  * Debugger is active!
+[2020-11-01 15:39:38,257] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 15:39:38,268] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 15:39:39,326] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 15:39:39,376] INFO in _internal:  * Restarting with stat
+[2020-11-01 15:39:40,007] INFO in server: Server initialized for threading.
+[2020-11-01 15:39:40,009] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 15:39:40,039] WARNING in _internal:  * Debugger is active!
+[2020-11-01 15:39:40,047] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 15:39:40,084] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 15:39:41,151] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 15:39:41,196] INFO in _internal:  * Restarting with stat
+[2020-11-01 15:39:41,949] INFO in server: Server initialized for threading.
+[2020-11-01 15:39:41,951] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 15:39:41,982] WARNING in _internal:  * Debugger is active!
+[2020-11-01 15:39:42,070] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 15:39:42,081] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 15:39:52,664] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 15:39:52] "[35m[1mPOST /api/register HTTP/1.1[0m" 500 -
+[2020-11-01 15:41:02,872] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 15:41:02,918] INFO in _internal:  * Restarting with stat
+[2020-11-01 15:57:21,940] INFO in server: Server initialized for threading.
+[2020-11-01 15:57:21,947] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 15:57:21,969] INFO in _internal:  * Restarting with stat
+[2020-11-01 15:57:22,631] INFO in server: Server initialized for threading.
+[2020-11-01 15:57:22,632] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 15:57:22,633] WARNING in _internal:  * Debugger is active!
+[2020-11-01 15:57:22,665] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 15:57:22,705] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 15:57:26,130] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 15:57:26] "[37mPOST /api/register HTTP/1.1[0m" 200 -
+[2020-11-01 15:58:09,377] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 15:58:09,420] INFO in _internal:  * Restarting with stat
+[2020-11-01 15:58:20,554] INFO in server: Server initialized for threading.
+[2020-11-01 15:58:20,555] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 15:58:20,589] INFO in _internal:  * Restarting with stat
+[2020-11-01 15:58:21,245] INFO in server: Server initialized for threading.
+[2020-11-01 15:58:21,246] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 15:58:21,247] WARNING in _internal:  * Debugger is active!
+[2020-11-01 15:58:21,253] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 15:58:21,265] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 15:58:22,992] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 15:58:22] "[37mPOST /api/register HTTP/1.1[0m" 200 -
+[2020-11-01 15:58:41,697] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 15:58:41] "[31m[1mPOST /api/register HTTP/1.1[0m" 400 -
+[2020-11-01 15:59:11,268] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 15:59:11] "[37mPOST /api/register HTTP/1.1[0m" 200 -
+[2020-11-01 15:59:23,492] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 15:59:23,541] INFO in _internal:  * Restarting with stat
+[2020-11-01 15:59:24,264] INFO in server: Server initialized for threading.
+[2020-11-01 15:59:24,266] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 15:59:24,267] WARNING in _internal:  * Debugger is active!
+[2020-11-01 15:59:24,332] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 15:59:24,344] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 15:59:26,214] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 15:59:26] "[35m[1mPOST /api/register HTTP/1.1[0m" 500 -
+[2020-11-01 16:03:09,291] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\__init__.py', reloading
+[2020-11-01 16:03:09,334] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:03:09,989] INFO in server: Server initialized for threading.
+[2020-11-01 16:03:09,991] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:03:09,991] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:03:10,063] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:03:10,141] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:03:16,349] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\__init__.py', reloading
+[2020-11-01 16:03:16,390] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:04:08,050] INFO in server: Server initialized for threading.
+[2020-11-01 16:04:08,051] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:04:08,097] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:04:08,720] INFO in server: Server initialized for threading.
+[2020-11-01 16:04:08,721] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:04:08,721] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:04:08,728] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:04:08,773] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:04:13,032] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 16:04:13] "[37mPOST /api/register HTTP/1.1[0m" 200 -
+[2020-11-01 16:04:48,135] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\__init__.py', reloading
+[2020-11-01 16:04:48,626] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:04:49,282] INFO in server: Server initialized for threading.
+[2020-11-01 16:04:49,283] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:04:49,284] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:04:49,290] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:04:49,343] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:04:51,415] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\__init__.py', reloading
+[2020-11-01 16:04:51,461] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:05:44,719] INFO in server: Server initialized for threading.
+[2020-11-01 16:05:44,721] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:05:44,761] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:05:45,440] INFO in server: Server initialized for threading.
+[2020-11-01 16:05:45,441] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:05:45,442] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:05:45,479] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:05:45,491] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:05:48,608] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 16:05:48] "[37mPOST /api/register HTTP/1.1[0m" 200 -
+[2020-11-01 16:09:04,618] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 16:09:04] "[37mPOST /api/register HTTP/1.1[0m" 200 -
+[2020-11-01 16:09:20,128] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 16:09:20,636] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:09:21,316] INFO in server: Server initialized for threading.
+[2020-11-01 16:09:21,317] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:09:21,318] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:09:21,325] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:09:21,337] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:09:35,801] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 16:09:35] "[37mPOST /api/register HTTP/1.1[0m" 200 -
+[2020-11-01 16:10:06,990] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 16:10:07,396] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:10:08,110] INFO in server: Server initialized for threading.
+[2020-11-01 16:10:08,111] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:10:08,112] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:10:08,170] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:10:08,183] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:10:09,237] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 16:10:09,279] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:10:09,954] INFO in server: Server initialized for threading.
+[2020-11-01 16:10:09,955] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:10:09,956] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:10:10,024] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:10:10,089] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:10:14,262] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 16:10:14,303] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:10:14,980] INFO in server: Server initialized for threading.
+[2020-11-01 16:10:14,981] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:10:14,982] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:10:15,037] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:10:15,108] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:10:21,354] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 16:10:21,395] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:10:22,123] INFO in server: Server initialized for threading.
+[2020-11-01 16:10:22,125] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:10:22,179] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:10:22,187] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:10:22,198] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:10:25,325] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 16:10:25,367] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:15:42,467] INFO in server: Server initialized for threading.
+[2020-11-01 16:15:42,468] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:15:42,507] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:15:43,170] INFO in server: Server initialized for threading.
+[2020-11-01 16:15:43,171] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:15:43,172] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:15:43,179] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:15:43,230] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:15:45,169] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 16:15:45] "[35m[1mPOST /api/register HTTP/1.1[0m" 500 -
+[2020-11-01 16:22:17,141] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 16:22:17] "[35m[1mPOST /api/register HTTP/1.1[0m" 500 -
+[2020-11-01 16:23:35,663] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 16:23:35,757] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:23:36,425] INFO in server: Server initialized for threading.
+[2020-11-01 16:23:36,426] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:23:36,427] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:23:36,434] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:23:36,498] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:23:38,344] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 16:23:38] "[35m[1mPOST /api/register HTTP/1.1[0m" 500 -
+[2020-11-01 16:24:44,919] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 16:24:44,966] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:24:50,603] INFO in server: Server initialized for threading.
+[2020-11-01 16:24:50,604] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:24:50,638] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:24:51,350] INFO in server: Server initialized for threading.
+[2020-11-01 16:24:51,350] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:24:51,352] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:24:51,359] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:24:51,404] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:24:53,751] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 16:24:53] "[37mPOST /api/register HTTP/1.1[0m" 200 -
+[2020-11-01 16:25:58,767] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 16:25:59,295] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:26:00,081] INFO in server: Server initialized for threading.
+[2020-11-01 16:26:00,083] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:26:00,084] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:26:00,140] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:26:00,150] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:26:03,333] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 16:26:03] "[37mPOST /api/register/ HTTP/1.1[0m" 200 -
+[2020-11-01 16:26:47,871] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 16:26:48,387] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:26:49,016] INFO in server: Server initialized for threading.
+[2020-11-01 16:26:49,017] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:26:49,018] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:26:49,025] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:26:49,039] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:26:50,094] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 16:26:50,140] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:26:50,793] INFO in server: Server initialized for threading.
+[2020-11-01 16:26:50,794] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:26:50,795] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:26:50,802] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:26:50,841] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:26:55,005] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 16:26:55,050] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:26:55,722] INFO in server: Server initialized for threading.
+[2020-11-01 16:26:55,723] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:26:55,724] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:26:55,732] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:26:55,780] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:27:08,240] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 16:27:08,281] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:27:08,954] INFO in server: Server initialized for threading.
+[2020-11-01 16:27:08,955] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:27:08,956] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:27:09,021] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:27:09,032] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:27:25,644] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 16:27:25,686] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:27:26,328] INFO in server: Server initialized for threading.
+[2020-11-01 16:27:26,330] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:27:26,331] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:27:26,337] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:27:26,347] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:27:28,442] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 16:27:28,488] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:27:29,138] INFO in server: Server initialized for threading.
+[2020-11-01 16:27:29,139] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:27:29,140] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:27:29,183] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:27:29,269] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:27:30,327] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 16:27:30,383] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:27:31,074] INFO in server: Server initialized for threading.
+[2020-11-01 16:27:31,077] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:27:31,121] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:27:31,166] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:27:31,235] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:27:33,331] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 16:27:33,378] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:27:34,012] INFO in server: Server initialized for threading.
+[2020-11-01 16:27:34,014] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:27:34,015] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:27:34,095] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:27:34,145] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:27:42,448] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 16:27:42,494] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:41:26,699] INFO in server: Server initialized for threading.
+[2020-11-01 16:41:26,700] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:41:26,723] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:41:27,328] INFO in server: Server initialized for threading.
+[2020-11-01 16:41:27,330] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:41:27,331] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:41:27,358] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:41:27,369] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:41:37,517] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 16:41:37] "[35m[1mPOST /api/login/ HTTP/1.1[0m" 500 -
+[2020-11-01 16:42:28,550] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 16:42:29,063] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:42:34,805] INFO in server: Server initialized for threading.
+[2020-11-01 16:42:34,806] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:42:34,842] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:42:35,507] INFO in server: Server initialized for threading.
+[2020-11-01 16:42:35,508] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:42:35,529] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:42:35,535] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:42:35,546] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:42:38,475] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 16:42:38] "[35m[1mPOST /api/login/ HTTP/1.1[0m" 500 -
+[2020-11-01 16:43:33,841] INFO in server: Server initialized for threading.
+[2020-11-01 16:43:33,842] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:43:33,865] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:43:34,521] INFO in server: Server initialized for threading.
+[2020-11-01 16:43:34,523] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:43:34,543] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:43:34,553] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:43:34,590] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:43:37,829] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 16:43:37] "[35m[1mPOST /api/login/ HTTP/1.1[0m" 500 -
+[2020-11-01 16:44:06,794] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\__init__.py', reloading
+[2020-11-01 16:44:06,887] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:44:07,653] INFO in server: Server initialized for threading.
+[2020-11-01 16:44:07,655] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:44:07,656] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:44:07,662] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:44:07,674] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:44:10,802] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 16:44:10] "[35m[1mPOST /api/login/ HTTP/1.1[0m" 500 -
+[2020-11-01 16:44:12,111] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 16:44:12] "[35m[1mPOST /api/login/ HTTP/1.1[0m" 500 -
+[2020-11-01 16:44:47,079] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 16:44:47,381] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:44:48,046] INFO in server: Server initialized for threading.
+[2020-11-01 16:44:48,048] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:44:48,067] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:44:48,077] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:44:48,128] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:44:50,231] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 16:44:50,275] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:44:50,924] INFO in server: Server initialized for threading.
+[2020-11-01 16:44:50,925] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:44:50,926] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:44:50,933] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:44:50,964] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:44:55,089] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 16:44:55] "[35m[1mPOST /api/login/ HTTP/1.1[0m" 500 -
+[2020-11-01 16:45:09,633] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 16:45:10,145] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:45:10,811] INFO in server: Server initialized for threading.
+[2020-11-01 16:45:10,824] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:45:10,825] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:45:10,833] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:45:10,872] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:45:13,512] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 16:45:13] "[37mPOST /api/login/ HTTP/1.1[0m" 200 -
+[2020-11-01 16:46:27,594] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 16:46:27,929] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:46:28,618] INFO in server: Server initialized for threading.
+[2020-11-01 16:46:28,619] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:46:28,651] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:46:28,660] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:46:28,673] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:46:30,177] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 16:46:30] "[35m[1mPOST /api/login/ HTTP/1.1[0m" 500 -
+[2020-11-01 16:46:39,051] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 16:46:39,529] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:46:43,022] INFO in server: Server initialized for threading.
+[2020-11-01 16:46:43,023] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:46:43,101] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:46:43,752] INFO in server: Server initialized for threading.
+[2020-11-01 16:46:43,753] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:46:43,754] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:46:43,794] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:46:43,830] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:46:46,375] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 16:46:46] "[37mPOST /api/login/ HTTP/1.1[0m" 200 -
+[2020-11-01 16:47:28,435] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 16:47:28,774] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:47:29,420] INFO in server: Server initialized for threading.
+[2020-11-01 16:47:29,421] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:47:29,453] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:47:29,459] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:47:29,470] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:47:33,637] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 16:47:33,681] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:47:34,307] INFO in server: Server initialized for threading.
+[2020-11-01 16:47:34,309] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:47:34,328] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:47:34,335] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:47:34,344] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:47:37,473] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 16:47:37,516] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:47:38,125] INFO in server: Server initialized for threading.
+[2020-11-01 16:47:38,126] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:47:38,127] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:47:38,134] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:47:38,166] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:47:41,316] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 16:47:41,363] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:47:42,121] INFO in server: Server initialized for threading.
+[2020-11-01 16:47:42,122] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:47:42,123] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:47:42,131] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:47:42,161] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:47:46,341] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 16:47:46,389] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:55:00,496] INFO in server: Server initialized for threading.
+[2020-11-01 16:55:00,498] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:55:00,517] INFO in _internal:  * Restarting with stat
+[2020-11-01 16:55:01,160] INFO in server: Server initialized for threading.
+[2020-11-01 16:55:01,161] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 16:55:01,163] WARNING in _internal:  * Debugger is active!
+[2020-11-01 16:55:01,169] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 16:55:01,180] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 16:55:02,619] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 16:55:02] "[37mGET /api/checkCode HTTP/1.1[0m" 200 -
+[2020-11-01 16:55:45,755] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\api\\views.py', reloading
+[2020-11-01 16:55:45,806] INFO in _internal:  * Restarting with stat
+[2020-11-01 17:02:03,917] INFO in server: Server initialized for threading.
+[2020-11-01 17:02:03,919] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 17:02:03,944] INFO in _internal:  * Restarting with stat
+[2020-11-01 17:02:04,722] INFO in server: Server initialized for threading.
+[2020-11-01 17:02:04,724] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 17:02:04,725] WARNING in _internal:  * Debugger is active!
+[2020-11-01 17:02:04,732] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 17:02:04,774] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 17:02:08,917] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 17:02:08] "[31m[1mGET /api/login/ HTTP/1.1[0m" 405 -
+[2020-11-01 17:02:13,899] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 17:02:13] "[37mPOST /api/login/ HTTP/1.1[0m" 200 -
+[2020-11-01 17:02:52,033] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 17:02:52] "[31m[1mGET /api/user/5f9e6d3f41e8db8899ead9a7 HTTP/1.1[0m" 422 -
+[2020-11-01 17:04:08,247] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 17:04:08] "[31m[1mGET /api/test/ HTTP/1.1[0m" 422 -
+[2020-11-01 17:08:47,543] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 17:08:47] "[31m[1mGET /api/test/ HTTP/1.1[0m" 422 -
+[2020-11-01 17:10:42,916] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\api\\views.py', reloading
+[2020-11-01 17:10:43,397] INFO in _internal:  * Restarting with stat
+[2020-11-01 17:10:44,068] INFO in server: Server initialized for threading.
+[2020-11-01 17:10:44,070] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 17:10:44,096] WARNING in _internal:  * Debugger is active!
+[2020-11-01 17:10:44,104] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 17:10:44,140] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 17:10:53,492] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\api\\views.py', reloading
+[2020-11-01 17:10:53,536] INFO in _internal:  * Restarting with stat
+[2020-11-01 17:10:54,259] INFO in server: Server initialized for threading.
+[2020-11-01 17:10:54,260] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 17:10:54,261] WARNING in _internal:  * Debugger is active!
+[2020-11-01 17:10:54,268] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 17:10:54,303] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 17:10:56,664] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 17:10:56] "[31m[1mGET /api/test/ HTTP/1.1[0m" 422 -
+[2020-11-01 17:11:00,389] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 17:11:00] "[31m[1mGET /api/test/ HTTP/1.1[0m" 422 -
+[2020-11-01 17:11:05,793] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\api\\views.py', reloading
+[2020-11-01 17:11:05,857] INFO in _internal:  * Restarting with stat
+[2020-11-01 17:11:06,909] INFO in server: Server initialized for threading.
+[2020-11-01 17:11:06,911] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 17:11:06,937] WARNING in _internal:  * Debugger is active!
+[2020-11-01 17:11:06,945] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 17:11:06,958] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 17:11:07,285] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 17:11:07] "[31m[1mGET /api/test/ HTTP/1.1[0m" 422 -
+[2020-11-01 17:11:22,824] INFO in server: Server initialized for threading.
+[2020-11-01 17:11:22,825] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 17:11:22,853] INFO in _internal:  * Restarting with stat
+[2020-11-01 17:11:23,500] INFO in server: Server initialized for threading.
+[2020-11-01 17:11:23,502] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 17:11:23,525] WARNING in _internal:  * Debugger is active!
+[2020-11-01 17:11:23,532] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 17:11:23,564] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 17:11:26,115] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 17:11:26] "[31m[1mGET /api/test/ HTTP/1.1[0m" 422 -
+[2020-11-01 17:11:32,541] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 17:11:32] "[31m[1mGET /api/test/ HTTP/1.1[0m" 401 -
+[2020-11-01 17:11:39,268] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 17:11:39] "[31m[1mGET /api/test/ HTTP/1.1[0m" 422 -
+[2020-11-01 17:11:49,178] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 17:11:49] "[37mPOST /api/login/ HTTP/1.1[0m" 200 -
+[2020-11-01 17:12:12,402] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 17:12:12] "[35m[1mGET /api/user/5f9e6d3f41e8db8899ead9a7 HTTP/1.1[0m" 500 -
+[2020-11-01 17:12:55,751] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\api\\views.py', reloading
+[2020-11-01 17:12:56,082] INFO in _internal:  * Restarting with stat
+[2020-11-01 17:12:56,840] INFO in server: Server initialized for threading.
+[2020-11-01 17:12:56,850] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 17:12:56,852] WARNING in _internal:  * Debugger is active!
+[2020-11-01 17:12:56,868] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 17:12:56,916] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 17:12:57,774] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 17:12:57] "[37mGET /api/user/5f9e6d3f41e8db8899ead9a7 HTTP/1.1[0m" 200 -
+[2020-11-01 17:13:22,835] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\api\\views.py', reloading
+[2020-11-01 17:13:23,345] INFO in _internal:  * Restarting with stat
+[2020-11-01 17:13:24,129] INFO in server: Server initialized for threading.
+[2020-11-01 17:13:24,130] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 17:13:24,158] WARNING in _internal:  * Debugger is active!
+[2020-11-01 17:13:24,165] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 17:13:24,177] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 17:13:24,749] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 17:13:24] "[37mGET /api/user/5f9e6d3f41e8db8899ead9a7 HTTP/1.1[0m" 200 -
+[2020-11-01 17:14:03,552] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\api\\views.py', reloading
+[2020-11-01 17:14:03,844] INFO in _internal:  * Restarting with stat
+[2020-11-01 17:16:11,974] INFO in server: Server initialized for threading.
+[2020-11-01 17:16:11,975] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 17:16:12,000] INFO in _internal:  * Restarting with stat
+[2020-11-01 17:16:12,718] INFO in server: Server initialized for threading.
+[2020-11-01 17:16:12,720] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 17:16:12,721] WARNING in _internal:  * Debugger is active!
+[2020-11-01 17:16:12,728] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 17:16:12,739] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 17:16:15,940] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 17:16:15] "[35m[1mGET /api/user/5f9e6d3f41e8db8899ead9a7 HTTP/1.1[0m" 500 -
+[2020-11-01 17:16:26,261] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\api\\views.py', reloading
+[2020-11-01 17:16:26,452] INFO in _internal:  * Restarting with stat
+[2020-11-01 17:16:27,135] INFO in server: Server initialized for threading.
+[2020-11-01 17:16:27,136] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 17:16:27,157] WARNING in _internal:  * Debugger is active!
+[2020-11-01 17:16:27,166] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 17:16:27,178] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 17:16:40,672] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\api\\views.py', reloading
+[2020-11-01 17:16:40,719] INFO in _internal:  * Restarting with stat
+[2020-11-01 17:16:41,418] INFO in server: Server initialized for threading.
+[2020-11-01 17:16:41,437] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 17:16:41,438] WARNING in _internal:  * Debugger is active!
+[2020-11-01 17:16:41,446] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 17:16:41,458] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 17:16:44,598] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\api\\views.py', reloading
+[2020-11-01 17:16:44,652] INFO in _internal:  * Restarting with stat
+[2020-11-01 17:20:47,163] INFO in server: Server initialized for threading.
+[2020-11-01 17:20:47,166] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 17:20:47,174] INFO in _internal:  * Restarting with stat
+[2020-11-01 17:20:47,878] INFO in server: Server initialized for threading.
+[2020-11-01 17:20:47,879] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 17:20:47,896] WARNING in _internal:  * Debugger is active!
+[2020-11-01 17:20:47,904] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 17:20:47,914] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 17:20:50,991] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 17:20:50] "[35m[1mGET /api/user/5f9e6d3f41e8db8899ead9a7 HTTP/1.1[0m" 500 -
+[2020-11-01 17:21:02,461] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\api\\views.py', reloading
+[2020-11-01 17:21:02,537] INFO in _internal:  * Restarting with stat
+[2020-11-01 17:21:03,228] INFO in server: Server initialized for threading.
+[2020-11-01 17:21:03,241] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 17:21:03,302] WARNING in _internal:  * Debugger is active!
+[2020-11-01 17:21:03,310] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 17:21:03,348] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 17:21:14,776] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\api\\views.py', reloading
+[2020-11-01 17:21:14,825] INFO in _internal:  * Restarting with stat
+[2020-11-01 17:21:15,570] INFO in server: Server initialized for threading.
+[2020-11-01 17:21:15,571] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 17:21:15,573] WARNING in _internal:  * Debugger is active!
+[2020-11-01 17:21:15,580] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 17:21:15,609] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 17:21:17,755] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 17:21:17] "[35m[1mGET /api/user/5f9e6d3f41e8db8899ead9a7 HTTP/1.1[0m" 500 -
+[2020-11-01 17:21:47,032] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 17:21:47] "[37mGET /api/user/5f9e6d3f41e8db8899ead9a7 HTTP/1.1[0m" 200 -
+[2020-11-01 17:22:29,284] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\views.py', reloading
+[2020-11-01 17:22:29,772] INFO in _internal:  * Restarting with stat
+[2020-11-01 17:22:30,442] INFO in server: Server initialized for threading.
+[2020-11-01 17:22:30,443] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 17:22:30,460] WARNING in _internal:  * Debugger is active!
+[2020-11-01 17:22:30,467] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 17:22:30,496] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 17:24:00,559] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 17:24:00] "[37mPOST /api/register/ HTTP/1.1[0m" 200 -
+[2020-11-01 17:24:18,654] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 17:24:18] "[35m[1mPOST /api/login/ HTTP/1.1[0m" 500 -
+[2020-11-01 17:30:02,942] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\error.py', reloading
+[2020-11-01 17:30:03,132] INFO in _internal:  * Restarting with stat
+[2020-11-01 17:30:03,845] INFO in server: Server initialized for threading.
+[2020-11-01 17:30:03,846] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 17:30:03,847] WARNING in _internal:  * Debugger is active!
+[2020-11-01 17:30:03,853] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 17:30:03,864] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 17:32:06,473] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 17:32:06] "[37mPOST /api/login/ HTTP/1.1[0m" 200 -
+[2020-11-01 17:32:40,111] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 17:32:40] "[37mPOST /api/login/ HTTP/1.1[0m" 200 -
+[2020-11-01 17:32:45,139] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 17:32:45] "[37mPOST /api/login/ HTTP/1.1[0m" 200 -
+[2020-11-01 18:25:27,177] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\error.py', reloading
+[2020-11-01 18:25:27,600] INFO in _internal:  * Restarting with stat
+[2020-11-01 18:25:34,491] INFO in server: Server initialized for threading.
+[2020-11-01 18:25:34,493] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 18:25:34,518] INFO in _internal:  * Restarting with stat
+[2020-11-01 18:25:35,243] INFO in server: Server initialized for threading.
+[2020-11-01 18:25:35,246] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 18:25:35,248] WARNING in _internal:  * Debugger is active!
+[2020-11-01 18:25:35,258] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 18:25:35,270] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 18:25:42,101] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 18:25:42] "[37mPOST /api/login/ HTTP/1.1[0m" 200 -
+[2020-11-01 18:25:46,083] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 18:25:46] "[37mPOST /api/login/ HTTP/1.1[0m" 200 -
+[2020-11-01 18:25:53,958] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\error.py', reloading
+[2020-11-01 18:25:54,471] INFO in _internal:  * Restarting with stat
+[2020-11-01 18:25:55,158] INFO in server: Server initialized for threading.
+[2020-11-01 18:25:55,160] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 18:25:55,162] WARNING in _internal:  * Debugger is active!
+[2020-11-01 18:25:55,169] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 18:25:55,181] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 18:25:57,291] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\error.py', reloading
+[2020-11-01 18:25:57,333] INFO in _internal:  * Restarting with stat
+[2020-11-01 18:25:58,053] INFO in server: Server initialized for threading.
+[2020-11-01 18:25:58,054] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 18:25:58,055] WARNING in _internal:  * Debugger is active!
+[2020-11-01 18:25:58,062] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 18:25:58,103] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 18:26:08,063] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 18:26:08] "[33mPOST /api/login2/ HTTP/1.1[0m" 404 -
+[2020-11-01 18:26:58,198] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\error.py', reloading
+[2020-11-01 18:26:58,243] INFO in _internal:  * Restarting with stat
+[2020-11-01 18:26:58,948] INFO in server: Server initialized for threading.
+[2020-11-01 18:26:58,949] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 18:26:58,950] WARNING in _internal:  * Debugger is active!
+[2020-11-01 18:26:58,957] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 18:26:59,016] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 18:27:04,218] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\error.py', reloading
+[2020-11-01 18:27:04,262] INFO in _internal:  * Restarting with stat
+[2020-11-01 18:27:04,964] INFO in server: Server initialized for threading.
+[2020-11-01 18:27:04,966] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 18:27:04,999] WARNING in _internal:  * Debugger is active!
+[2020-11-01 18:27:05,009] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 18:27:05,077] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 18:27:07,170] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app\\auth\\error.py', reloading
+[2020-11-01 18:27:07,222] INFO in _internal:  * Restarting with stat
+[2020-11-01 18:27:07,954] INFO in server: Server initialized for threading.
+[2020-11-01 18:27:07,955] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 18:27:07,984] WARNING in _internal:  * Debugger is active!
+[2020-11-01 18:27:07,992] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 18:27:08,059] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 18:27:09,232] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 18:27:09] "[37mPOST /api/login2/ HTTP/1.1[0m" 200 -
+[2020-11-01 18:27:40,418] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 18:27:40] "[37mPOST /api/login2/ HTTP/1.1[0m" 200 -
+[2020-11-01 18:27:44,429] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 18:27:44] "[37mPOST /api/login/ HTTP/1.1[0m" 200 -
+[2020-11-01 18:27:52,513] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 18:27:52] "[37mPOST /api/login/ HTTP/1.1[0m" 200 -
+[2020-11-01 18:29:28,989] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\flask±ê×¼Ä£°å\\app_name.py', reloading
+[2020-11-01 18:29:29,402] INFO in _internal:  * Restarting with stat
+[2020-11-01 18:29:30,159] INFO in server: Server initialized for threading.
+[2020-11-01 18:29:30,160] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 18:29:47,417] INFO in server: Server initialized for threading.
+[2020-11-01 18:29:47,420] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 18:30:34,588] INFO in server: Server initialized for threading.
+[2020-11-01 18:30:34,590] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 18:30:34,619] INFO in _internal:  * Restarting with stat
+[2020-11-01 18:30:35,288] INFO in server: Server initialized for threading.
+[2020-11-01 18:30:35,290] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 18:30:35,290] WARNING in _internal:  * Debugger is active!
+[2020-11-01 18:30:35,297] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 18:30:35,309] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 18:30:38,963] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 18:30:38] "[37mPOST /api/login/ HTTP/1.1[0m" 200 -
+[2020-11-01 18:31:33,251] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 18:31:33] "[37mPOST /api/login/ HTTP/1.1[0m" 200 -
+[2020-11-01 18:37:47,882] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 18:37:47] "[37mPOST /api/login/ HTTP/1.1[0m" 200 -
+[2020-11-01 19:36:13,071] INFO in server: Server initialized for eventlet.
+[2020-11-01 19:36:13,075] INFO in _internal:  * Restarting with stat
+[2020-11-01 19:36:21,483] INFO in server: Server initialized for threading.
+[2020-11-01 19:36:21,485] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 19:36:21,491] INFO in _internal:  * Restarting with stat
+[2020-11-01 19:36:22,277] INFO in server: Server initialized for threading.
+[2020-11-01 19:36:22,280] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 19:36:22,296] WARNING in _internal:  * Debugger is active!
+[2020-11-01 19:36:22,304] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 19:36:22,316] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 19:37:31,740] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\views.py', reloading
+[2020-11-01 19:37:31,799] INFO in _internal:  * Restarting with stat
+[2020-11-01 19:37:32,607] INFO in server: Server initialized for threading.
+[2020-11-01 19:37:32,609] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 19:37:32,646] WARNING in _internal:  * Debugger is active!
+[2020-11-01 19:37:32,653] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 19:37:32,708] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 19:37:55,549] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\views.py', reloading
+[2020-11-01 19:37:55,593] INFO in _internal:  * Restarting with stat
+[2020-11-01 19:37:56,292] INFO in server: Server initialized for threading.
+[2020-11-01 19:37:56,293] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 19:37:56,294] WARNING in _internal:  * Debugger is active!
+[2020-11-01 19:37:56,300] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 19:37:56,310] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 19:38:07,733] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\views.py', reloading
+[2020-11-01 19:38:07,777] INFO in _internal:  * Restarting with stat
+[2020-11-01 19:38:08,506] INFO in server: Server initialized for threading.
+[2020-11-01 19:38:08,507] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 19:38:08,508] WARNING in _internal:  * Debugger is active!
+[2020-11-01 19:38:08,514] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 19:38:08,527] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 19:38:27,206] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\views.py', reloading
+[2020-11-01 19:38:27,252] INFO in _internal:  * Restarting with stat
+[2020-11-01 19:38:56,375] INFO in server: Server initialized for threading.
+[2020-11-01 19:38:56,376] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 19:38:56,381] INFO in _internal:  * Restarting with stat
+[2020-11-01 19:38:57,222] INFO in server: Server initialized for threading.
+[2020-11-01 19:38:57,225] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 19:38:57,225] WARNING in _internal:  * Debugger is active!
+[2020-11-01 19:38:57,234] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 19:38:57,245] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 19:39:08,394] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 19:39:08] "[31m[1mPOST /api/user/5f9e6d3f41e8db8899ead9a7 HTTP/1.1[0m" 405 -
+[2020-11-01 19:39:11,529] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 19:39:11] "[37mGET /api/user/5f9e6d3f41e8db8899ead9a7 HTTP/1.1[0m" 200 -
+[2020-11-01 19:40:18,188] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\auth\\views.py', reloading
+[2020-11-01 19:40:18,665] INFO in _internal:  * Restarting with stat
+[2020-11-01 19:40:19,475] INFO in server: Server initialized for threading.
+[2020-11-01 19:40:19,476] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 19:40:19,477] WARNING in _internal:  * Debugger is active!
+[2020-11-01 19:40:19,509] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 19:40:19,547] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 19:40:26,835] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\auth\\views.py', reloading
+[2020-11-01 19:40:26,879] INFO in _internal:  * Restarting with stat
+[2020-11-01 19:40:27,579] INFO in server: Server initialized for threading.
+[2020-11-01 19:40:27,580] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 19:40:27,601] WARNING in _internal:  * Debugger is active!
+[2020-11-01 19:40:27,609] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 19:40:27,642] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 19:40:29,739] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\auth\\views.py', reloading
+[2020-11-01 19:40:29,790] INFO in _internal:  * Restarting with stat
+[2020-11-01 19:40:30,571] INFO in server: Server initialized for threading.
+[2020-11-01 19:40:30,573] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 19:40:30,606] WARNING in _internal:  * Debugger is active!
+[2020-11-01 19:40:30,617] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 19:40:30,630] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 19:40:49,317] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\auth\\views.py', reloading
+[2020-11-01 19:40:49,362] INFO in _internal:  * Restarting with stat
+[2020-11-01 19:40:50,041] INFO in server: Server initialized for threading.
+[2020-11-01 19:40:50,043] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 19:40:50,064] WARNING in _internal:  * Debugger is active!
+[2020-11-01 19:40:50,071] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 19:40:50,104] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 19:40:56,333] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\auth\\views.py', reloading
+[2020-11-01 19:40:56,376] INFO in _internal:  * Restarting with stat
+[2020-11-01 19:40:57,090] INFO in server: Server initialized for threading.
+[2020-11-01 19:40:57,091] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 19:40:57,092] WARNING in _internal:  * Debugger is active!
+[2020-11-01 19:40:57,118] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 19:40:57,151] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 19:41:14,795] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\auth\\views.py', reloading
+[2020-11-01 19:41:14,842] INFO in _internal:  * Restarting with stat
+[2020-11-01 19:41:15,527] INFO in server: Server initialized for threading.
+[2020-11-01 19:41:15,529] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 19:41:15,551] WARNING in _internal:  * Debugger is active!
+[2020-11-01 19:41:15,558] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 19:41:15,571] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 19:41:32,309] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 19:41:32] "[37mPOST /api/login/ HTTP/1.1[0m" 200 -
+[2020-11-01 19:44:19,062] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\views.py', reloading
+[2020-11-01 19:44:19,367] INFO in _internal:  * Restarting with stat
+[2020-11-01 19:46:15,867] INFO in server: Server initialized for threading.
+[2020-11-01 19:46:15,868] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 19:46:15,887] INFO in _internal:  * Restarting with stat
+[2020-11-01 19:46:16,580] INFO in server: Server initialized for threading.
+[2020-11-01 19:46:16,582] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 19:46:16,583] WARNING in _internal:  * Debugger is active!
+[2020-11-01 19:46:16,589] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 19:46:16,620] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 19:46:26,311] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 19:46:26] "[37mGET /api/user/5f9e6d3f41e8db8899ead9a7 HTTP/1.1[0m" 200 -
+[2020-11-01 19:46:31,082] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 19:46:31] "[31m[1mGET /api/user/5f9e6d3f41e8db8899ead9a7 HTTP/1.1[0m" 401 -
+[2020-11-01 19:46:34,140] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 19:46:34] "[37mGET /api/user/5f9e6d3f41e8db8899ead9a7 HTTP/1.1[0m" 200 -
+[2020-11-01 19:47:04,334] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\auth\\error.py', reloading
+[2020-11-01 19:47:04,849] INFO in _internal:  * Restarting with stat
+[2020-11-01 19:47:05,563] INFO in server: Server initialized for threading.
+[2020-11-01 19:47:05,564] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 19:47:05,565] WARNING in _internal:  * Debugger is active!
+[2020-11-01 19:47:05,572] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 19:47:05,611] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 19:47:06,681] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\auth\\error.py', reloading
+[2020-11-01 19:47:06,733] INFO in _internal:  * Restarting with stat
+[2020-11-01 19:47:07,489] INFO in server: Server initialized for threading.
+[2020-11-01 19:47:07,490] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 19:47:07,491] WARNING in _internal:  * Debugger is active!
+[2020-11-01 19:47:07,498] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 19:47:07,509] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 19:47:09,607] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\auth\\error.py', reloading
+[2020-11-01 19:47:09,690] INFO in _internal:  * Restarting with stat
+[2020-11-01 19:47:10,438] INFO in server: Server initialized for threading.
+[2020-11-01 19:47:10,440] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 19:47:10,441] WARNING in _internal:  * Debugger is active!
+[2020-11-01 19:47:10,447] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 19:47:10,459] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 19:52:11,236] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\views.py', reloading
+[2020-11-01 19:52:11,278] INFO in _internal:  * Restarting with stat
+[2020-11-01 20:01:28,276] INFO in server: Server initialized for threading.
+[2020-11-01 20:01:28,277] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 20:01:28,296] INFO in _internal:  * Restarting with stat
+[2020-11-01 20:01:28,947] INFO in server: Server initialized for threading.
+[2020-11-01 20:01:28,949] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 20:01:28,970] WARNING in _internal:  * Debugger is active!
+[2020-11-01 20:01:28,978] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 20:01:28,988] INFO in _internal:  * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
+[2020-11-01 20:03:39,137] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 20:03:39] "[31m[1mPOST /api/userInfo/ HTTP/1.1[0m" 400 -
+[2020-11-01 20:04:10,511] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\main.py', reloading
+[2020-11-01 20:04:10,562] INFO in _internal:  * Restarting with stat
+[2020-11-01 20:04:11,265] INFO in server: Server initialized for threading.
+[2020-11-01 20:04:11,267] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 20:04:11,269] WARNING in _internal:  * Debugger is active!
+[2020-11-01 20:04:11,275] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 20:04:11,310] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-01 20:05:12,109] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 20:05:12] "[35m[1mPOST /api/userInfo/ HTTP/1.1[0m" 500 -
+[2020-11-01 20:06:43,621] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\auth\\views.py', reloading
+[2020-11-01 20:06:43,667] INFO in _internal:  * Restarting with stat
+[2020-11-01 20:06:58,665] INFO in server: Server initialized for threading.
+[2020-11-01 20:06:58,667] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 20:06:58,688] INFO in _internal:  * Restarting with stat
+[2020-11-01 20:06:59,347] INFO in server: Server initialized for threading.
+[2020-11-01 20:06:59,348] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 20:06:59,349] WARNING in _internal:  * Debugger is active!
+[2020-11-01 20:06:59,376] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 20:06:59,403] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-01 20:07:30,497] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\views.py', reloading
+[2020-11-01 20:07:30,544] INFO in _internal:  * Restarting with stat
+[2020-11-01 20:07:31,212] INFO in server: Server initialized for threading.
+[2020-11-01 20:07:31,214] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 20:07:31,247] WARNING in _internal:  * Debugger is active!
+[2020-11-01 20:07:31,254] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 20:07:31,297] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-01 20:07:33,401] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\views.py', reloading
+[2020-11-01 20:07:33,443] INFO in _internal:  * Restarting with stat
+[2020-11-01 20:07:34,114] INFO in server: Server initialized for threading.
+[2020-11-01 20:07:34,116] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 20:07:34,117] WARNING in _internal:  * Debugger is active!
+[2020-11-01 20:07:34,159] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 20:07:34,241] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-01 20:07:35,296] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\views.py', reloading
+[2020-11-01 20:07:35,339] INFO in _internal:  * Restarting with stat
+[2020-11-01 20:07:36,000] INFO in server: Server initialized for threading.
+[2020-11-01 20:07:36,001] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 20:07:36,023] WARNING in _internal:  * Debugger is active!
+[2020-11-01 20:07:36,057] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 20:07:36,087] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-01 20:07:44,386] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\views.py', reloading
+[2020-11-01 20:07:44,429] INFO in _internal:  * Restarting with stat
+[2020-11-01 20:07:45,117] INFO in server: Server initialized for threading.
+[2020-11-01 20:07:45,119] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 20:07:45,147] WARNING in _internal:  * Debugger is active!
+[2020-11-01 20:07:45,155] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 20:07:45,193] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-01 20:07:49,365] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\views.py', reloading
+[2020-11-01 20:07:49,407] INFO in _internal:  * Restarting with stat
+[2020-11-01 20:07:50,086] INFO in server: Server initialized for threading.
+[2020-11-01 20:07:50,087] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 20:07:50,088] WARNING in _internal:  * Debugger is active!
+[2020-11-01 20:07:50,094] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 20:07:50,105] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-01 20:07:57,529] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 20:07:57] "[35m[1mPOST /api/userInfo/ HTTP/1.1[0m" 500 -
+[2020-11-01 20:08:13,277] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 20:08:13] "[37mPOST /api/login/ HTTP/1.1[0m" 200 -
+[2020-11-01 20:08:41,321] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 20:08:41] "[31m[1mPOST /api/userInfo/ HTTP/1.1[0m" 400 -
+[2020-11-01 20:09:16,716] INFO in server: Server initialized for threading.
+[2020-11-01 20:09:16,717] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 20:09:16,746] INFO in _internal:  * Restarting with stat
+[2020-11-01 20:09:17,422] INFO in server: Server initialized for threading.
+[2020-11-01 20:09:17,424] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 20:09:17,443] WARNING in _internal:  * Debugger is active!
+[2020-11-01 20:09:17,450] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 20:09:17,460] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-01 20:09:19,325] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 20:09:19] "[31m[1mPOST /api/userInfo/ HTTP/1.1[0m" 400 -
+[2020-11-01 20:09:33,058] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\__init__.py', reloading
+[2020-11-01 20:09:33,105] INFO in _internal:  * Restarting with stat
+[2020-11-01 20:09:33,883] INFO in server: Server initialized for threading.
+[2020-11-01 20:09:33,885] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 20:09:33,886] WARNING in _internal:  * Debugger is active!
+[2020-11-01 20:09:33,893] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 20:09:33,937] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-01 20:09:39,157] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\errors.py', reloading
+[2020-11-01 20:09:39,199] INFO in _internal:  * Restarting with stat
+[2020-11-01 20:09:39,885] INFO in server: Server initialized for threading.
+[2020-11-01 20:09:39,886] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 20:09:39,887] WARNING in _internal:  * Debugger is active!
+[2020-11-01 20:09:39,894] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 20:09:39,937] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-01 20:09:41,911] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 20:09:41] "[37mPOST /api/userInfo/ HTTP/1.1[0m" 200 -
+[2020-11-01 20:10:56,491] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 20:10:56] "[37mPOST /api/userInfo/ HTTP/1.1[0m" 200 -
+[2020-11-01 20:11:16,286] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 20:11:16] "[37mPOST /api/userInfo/ HTTP/1.1[0m" 200 -
+[2020-11-01 20:13:57,003] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 20:13:57] "[37mPOST /api/userInfo/ HTTP/1.1[0m" 200 -
+[2020-11-01 20:14:22,017] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\auth\\views.py', reloading
+[2020-11-01 20:14:22,567] INFO in _internal:  * Restarting with stat
+[2020-11-01 20:14:23,289] INFO in server: Server initialized for threading.
+[2020-11-01 20:14:23,291] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 20:14:23,321] WARNING in _internal:  * Debugger is active!
+[2020-11-01 20:14:23,328] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 20:14:23,341] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-01 20:14:24,401] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\auth\\views.py', reloading
+[2020-11-01 20:14:24,446] INFO in _internal:  * Restarting with stat
+[2020-11-01 20:14:25,147] INFO in server: Server initialized for threading.
+[2020-11-01 20:14:25,150] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 20:14:25,151] WARNING in _internal:  * Debugger is active!
+[2020-11-01 20:14:25,157] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 20:14:25,168] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-01 20:15:41,582] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 20:15:41] "[37mPOST /api/userInfo/ HTTP/1.1[0m" 200 -
+[2020-11-01 20:18:56,634] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\views.py', reloading
+[2020-11-01 20:18:57,146] INFO in _internal:  * Restarting with stat
+[2020-11-01 20:18:58,009] INFO in server: Server initialized for threading.
+[2020-11-01 20:18:58,010] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 20:18:58,031] WARNING in _internal:  * Debugger is active!
+[2020-11-01 20:18:58,038] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 20:18:58,067] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-01 20:18:59,127] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\views.py', reloading
+[2020-11-01 20:18:59,175] INFO in _internal:  * Restarting with stat
+[2020-11-01 20:18:59,919] INFO in server: Server initialized for threading.
+[2020-11-01 20:18:59,921] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 20:18:59,922] WARNING in _internal:  * Debugger is active!
+[2020-11-01 20:18:59,946] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 20:18:59,964] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-01 20:19:04,130] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\views.py', reloading
+[2020-11-01 20:19:04,181] INFO in _internal:  * Restarting with stat
+[2020-11-01 20:19:04,892] INFO in server: Server initialized for threading.
+[2020-11-01 20:19:04,895] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 20:19:04,896] WARNING in _internal:  * Debugger is active!
+[2020-11-01 20:19:04,902] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 20:19:04,914] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-01 20:19:10,143] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\views.py', reloading
+[2020-11-01 20:19:10,187] INFO in _internal:  * Restarting with stat
+[2020-11-01 20:30:57,164] INFO in server: Server initialized for threading.
+[2020-11-01 20:30:57,165] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 20:30:57,217] INFO in _internal:  * Restarting with stat
+[2020-11-01 20:30:57,897] INFO in server: Server initialized for threading.
+[2020-11-01 20:30:57,899] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 20:30:57,900] WARNING in _internal:  * Debugger is active!
+[2020-11-01 20:30:57,907] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 20:30:57,931] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-01 20:32:25,984] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\views.py', reloading
+[2020-11-01 20:32:26,031] INFO in _internal:  * Restarting with stat
+[2020-11-01 20:42:26,041] INFO in server: Server initialized for threading.
+[2020-11-01 20:42:26,043] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 20:42:26,063] INFO in _internal:  * Restarting with stat
+[2020-11-01 20:42:26,721] INFO in server: Server initialized for threading.
+[2020-11-01 20:42:26,722] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 20:42:26,744] WARNING in _internal:  * Debugger is active!
+[2020-11-01 20:42:26,751] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 20:42:26,763] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-01 20:42:31,271] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 20:42:31] "[37mPOST /api/userlist/ HTTP/1.1[0m" 200 -
+[2020-11-01 20:42:50,649] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\views.py', reloading
+[2020-11-01 20:42:50,698] INFO in _internal:  * Restarting with stat
+[2020-11-01 20:42:51,455] INFO in server: Server initialized for threading.
+[2020-11-01 20:42:51,457] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 20:42:51,458] WARNING in _internal:  * Debugger is active!
+[2020-11-01 20:42:51,465] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 20:42:51,475] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-01 20:42:54,684] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 20:42:54] "[35m[1mGET /api/userlist/ HTTP/1.1[0m" 500 -
+[2020-11-01 20:43:07,049] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\views.py', reloading
+[2020-11-01 20:43:07,100] INFO in _internal:  * Restarting with stat
+[2020-11-01 20:44:27,259] INFO in server: Server initialized for threading.
+[2020-11-01 20:44:27,261] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 20:44:27,342] INFO in _internal:  * Restarting with stat
+[2020-11-01 20:44:28,099] INFO in server: Server initialized for threading.
+[2020-11-01 20:44:28,100] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-01 20:44:28,101] WARNING in _internal:  * Debugger is active!
+[2020-11-01 20:44:28,127] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-01 20:44:28,158] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-01 20:44:31,389] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 20:44:31] "[37mGET /api/userlist/ HTTP/1.1[0m" 200 -
+[2020-11-01 20:44:58,845] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 20:44:58] "[37mGET /api/userlist/?data=yj HTTP/1.1[0m" 200 -
+[2020-11-01 20:45:25,430] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 20:45:25] "[37mGET /api/userlist/?data=yj HTTP/1.1[0m" 200 -
+[2020-11-01 20:45:45,827] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 20:45:45] "[37mGET /api/userlist/?data=yj HTTP/1.1[0m" 200 -
+[2020-11-01 20:45:53,461] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 20:45:53] "[37mGET /api/userlist/?data=yj HTTP/1.1[0m" 200 -
+[2020-11-01 20:46:09,816] INFO in _internal: 127.0.0.1 - - [01/Nov/2020 20:46:09] "[37mGET /api/userlist/?data=12 HTTP/1.1[0m" 200 -
