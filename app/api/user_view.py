@@ -4,7 +4,6 @@ from flask_jwt_extended import get_jwt_identity, jwt_required
 from bson.objectid import ObjectId
 
 from .. import client
-from ..auth import role_required
 from . import api
 from ..utils import build_response
 
@@ -13,8 +12,6 @@ db = client.db
 @api.route('/test/', methods=['GET'])
 # 访问此接口需携带有效的token
 @jwt_required
-# 访问此接口需要的角色权限
-@role_required(1)
 def api_test():
     # 使用jsonify的好处是, flask会自动将content-type字段设置为 text/json
     return jsonify({'result': 1, 'message': 'its ok', 'user_id': get_jwt_identity()})

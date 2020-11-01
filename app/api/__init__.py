@@ -2,5 +2,7 @@ from flask import Blueprint
 
 api = Blueprint('api', __name__)
 
-from . import views
+from . import user_view
+from . import project_view
+from . import video_view
 from . import errors

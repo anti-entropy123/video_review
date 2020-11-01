@@ -3,7 +3,7 @@ import time
 
 def build_response(result=1, message='', data=None, **kwargs) -> dict:
     result = {'result': result, 'message': message}
-    if data:
+    if not data == None:
         result['data'] = data
     result.update(kwargs)
     return result

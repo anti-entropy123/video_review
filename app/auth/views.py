@@ -26,7 +26,7 @@ def register():
         password = data['password']
         mail = data['mail']
         mobileNum = data['mobileNum']
-        checkcode = data['checkcode']
+        checkcode = data['checkCode']
     
     # 参数检查
     except KeyError as e:
@@ -48,9 +48,13 @@ def register():
             'username': username,
             'password': generate_password_hash(password),
             'mobileNum': mobileNum,
+            'mail': '',
             'avatar': '',
             'company': '',
-            'mail': ''
+            'hasProject': [],
+            'joinProject': [],
+            'uploadVideo': [],
+            'message': []
         })
     except RuntimeError as e:
         return jsonify(build_response(0, str(e)))
