@@ -43,12 +43,12 @@ def get_message_list():
 @login_required
 def get_message_detail(message_id):
     user_id = get_jwt_identity()
-    # print(user_id)
+    
     user = db.user.find_one(
         {'_id': ObjectId(user_id)},
         {'message': 1}
     )
-    # print(user)
+    
     message = user['message'][int(message_id)]
     data = {
         'fromId': message['fromId'],

@@ -38,7 +38,7 @@ def invite_user(project_id):
     # 无邀请目标
     if not User.has_user(user_id):
         return jsonify(build_response(0, "没有此用户"))
-        
+
     from_id = get_jwt_identity()
     from_name = User.find_username_by_userId(from_id)
     project_name = Project.find_name_by_projectId(project_id)
@@ -140,7 +140,7 @@ def get_project_data():
         member['userId'] = str(member.pop('_id'))
         user_list.append(member)
     # 视频列表
-    selected =  {'cover': 1, 'videoName': 1}
+    selected =  {'cover': 1, 'videoName': 1, 'hasReview': 1}
     for video_id in project['hasVideo']:
         video = db.video.find_one(
             {'_id': ObjectId(video_id)},
