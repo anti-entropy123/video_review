@@ -1,6 +1,7 @@
 from . import ws
 from flask_socketio import SocketIO, emit
-from flask_jwt_extended import jwt_required, get_jwt_identity
+from flask_jwt_extended import get_jwt_identity
+from ..auth import login_required
 
 name_space = '/dcenter'
 
@@ -15,7 +16,7 @@ def disconnect_msg():
 
 
 @ws.on('my_event', namespace=name_space)
-@jwt_required
+@login_required
 def mtest_message(message):
     print(message)
     emit('my_response',

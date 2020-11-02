@@ -1,1 +1,1 @@
-cd venv/scripts && activate
+cd venv/scripts && activate && cd ../../

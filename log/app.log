@@ -1537,3 +1537,448 @@
 [2020-11-01 23:38:45,738] INFO in server: Server initialized for eventlet.
 [2020-11-01 23:38:45,742] WARNING in _internal:  * Debugger is active!
 [2020-11-01 23:38:45,752] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-02 10:41:26,665] INFO in server: Server initialized for eventlet.
+[2020-11-02 10:41:26,677] INFO in _internal:  * Restarting with stat
+[2020-11-02 10:41:29,301] INFO in server: Server initialized for eventlet.
+[2020-11-02 10:41:29,305] WARNING in _internal:  * Debugger is active!
+[2020-11-02 10:41:29,388] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-02 10:42:19,208] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\video_view.py', reloading
+[2020-11-02 10:42:19,359] INFO in _internal:  * Restarting with stat
+[2020-11-02 10:42:22,640] INFO in server: Server initialized for eventlet.
+[2020-11-02 10:42:22,645] WARNING in _internal:  * Debugger is active!
+[2020-11-02 10:42:22,757] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-02 10:44:53,810] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\video_view.py', reloading
+[2020-11-02 10:44:53,904] INFO in _internal:  * Restarting with stat
+[2020-11-02 10:44:57,308] INFO in server: Server initialized for eventlet.
+[2020-11-02 10:44:57,313] WARNING in _internal:  * Debugger is active!
+[2020-11-02 10:44:57,398] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-02 10:45:38,428] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\video_view.py', reloading
+[2020-11-02 10:45:38,515] INFO in _internal:  * Restarting with stat
+[2020-11-02 10:45:42,098] INFO in server: Server initialized for eventlet.
+[2020-11-02 10:45:42,102] WARNING in _internal:  * Debugger is active!
+[2020-11-02 10:45:42,115] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-02 10:46:12,443] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\video_view.py', reloading
+[2020-11-02 10:46:12,604] INFO in _internal:  * Restarting with stat
+[2020-11-02 10:46:16,244] INFO in server: Server initialized for eventlet.
+[2020-11-02 10:46:16,250] WARNING in _internal:  * Debugger is active!
+[2020-11-02 10:46:16,376] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-02 10:46:24,253] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\video_view.py', reloading
+[2020-11-02 10:46:24,344] INFO in _internal:  * Restarting with stat
+[2020-11-02 10:46:27,342] INFO in server: Server initialized for eventlet.
+[2020-11-02 10:46:27,349] WARNING in _internal:  * Debugger is active!
+[2020-11-02 10:46:27,491] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-02 10:46:31,653] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\video_view.py', reloading
+[2020-11-02 10:46:31,894] INFO in _internal:  * Restarting with stat
+[2020-11-02 10:46:35,768] INFO in server: Server initialized for eventlet.
+[2020-11-02 10:46:35,774] WARNING in _internal:  * Debugger is active!
+[2020-11-02 10:46:35,853] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-02 10:46:38,449] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\video_view.py', reloading
+[2020-11-02 10:46:38,588] INFO in _internal:  * Restarting with stat
+[2020-11-02 10:46:41,814] INFO in server: Server initialized for eventlet.
+[2020-11-02 10:46:41,816] WARNING in _internal:  * Debugger is active!
+[2020-11-02 10:46:41,826] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-02 10:46:44,431] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\video_view.py', reloading
+[2020-11-02 10:46:44,527] INFO in _internal:  * Restarting with stat
+[2020-11-02 10:46:48,302] INFO in server: Server initialized for eventlet.
+[2020-11-02 10:46:48,308] WARNING in _internal:  * Debugger is active!
+[2020-11-02 10:46:48,382] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-02 10:46:52,148] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\video_view.py', reloading
+[2020-11-02 10:46:52,272] INFO in _internal:  * Restarting with stat
+[2020-11-02 10:46:55,569] INFO in server: Server initialized for eventlet.
+[2020-11-02 10:46:55,587] WARNING in _internal:  * Debugger is active!
+[2020-11-02 10:46:55,618] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-02 10:46:58,402] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\video_view.py', reloading
+[2020-11-02 10:46:58,587] INFO in _internal:  * Restarting with stat
+[2020-11-02 10:47:02,063] INFO in server: Server initialized for eventlet.
+[2020-11-02 10:47:02,069] WARNING in _internal:  * Debugger is active!
+[2020-11-02 10:47:02,191] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-02 10:47:06,216] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\video_view.py', reloading
+[2020-11-02 10:47:06,358] INFO in _internal:  * Restarting with stat
+[2020-11-02 10:47:09,436] INFO in server: Server initialized for eventlet.
+[2020-11-02 10:47:09,440] WARNING in _internal:  * Debugger is active!
+[2020-11-02 10:47:09,458] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-02 10:59:56,695] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\video_view.py', reloading
+[2020-11-02 10:59:57,048] INFO in _internal:  * Restarting with stat
+[2020-11-02 11:00:01,163] INFO in server: Server initialized for eventlet.
+[2020-11-02 11:00:01,168] WARNING in _internal:  * Debugger is active!
+[2020-11-02 11:00:01,191] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-02 11:01:01,828] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\video_view.py', reloading
+[2020-11-02 11:01:02,153] INFO in _internal:  * Restarting with stat
+[2020-11-02 11:01:24,165] INFO in server: Server initialized for eventlet.
+[2020-11-02 11:01:24,178] INFO in _internal:  * Restarting with stat
+[2020-11-02 11:01:29,974] INFO in server: Server initialized for eventlet.
+[2020-11-02 11:01:29,980] WARNING in _internal:  * Debugger is active!
+[2020-11-02 11:01:29,996] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-02 11:02:06,222] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\video_view.py', reloading
+[2020-11-02 11:02:58,508] INFO in _internal:  * Restarting with stat
+[2020-11-02 11:03:21,039] INFO in server: Server initialized for eventlet.
+[2020-11-02 11:03:21,049] INFO in _internal:  * Restarting with stat
+[2020-11-02 11:03:24,754] INFO in server: Server initialized for eventlet.
+[2020-11-02 11:03:24,763] WARNING in _internal:  * Debugger is active!
+[2020-11-02 11:03:24,790] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-02 11:05:18,117] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\project_view.py', reloading
+[2020-11-02 11:05:18,752] INFO in _internal:  * Restarting with stat
+[2020-11-02 11:35:14,765] INFO in server: Server initialized for eventlet.
+[2020-11-02 11:35:14,770] INFO in _internal:  * Restarting with stat
+[2020-11-02 11:35:18,416] INFO in server: Server initialized for eventlet.
+[2020-11-02 11:35:18,421] WARNING in _internal:  * Debugger is active!
+[2020-11-02 11:35:18,496] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-02 11:56:33,052] INFO in _internal:  * Detected change in 'e:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\project_view.py', reloading
+[2020-11-02 11:56:33,188] INFO in _internal:  * Restarting with stat
+[2020-11-02 11:56:36,568] INFO in server: Server initialized for eventlet.
+[2020-11-02 11:56:36,572] WARNING in _internal:  * Debugger is active!
+[2020-11-02 11:56:36,643] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-02 13:48:55,300] INFO in server: Server initialized for eventlet.
+[2020-11-02 13:48:55,303] INFO in _internal:  * Restarting with stat
+[2020-11-02 13:48:56,457] INFO in server: Server initialized for eventlet.
+[2020-11-02 13:48:56,458] WARNING in _internal:  * Debugger is active!
+[2020-11-02 13:48:56,466] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-02 13:54:21,764] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\project_view.py', reloading
+[2020-11-02 13:54:22,325] INFO in _internal:  * Restarting with stat
+[2020-11-02 13:54:23,518] INFO in server: Server initialized for eventlet.
+[2020-11-02 13:54:23,520] WARNING in _internal:  * Debugger is active!
+[2020-11-02 13:54:23,527] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-02 13:54:53,315] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\project_view.py', reloading
+[2020-11-02 13:54:53,407] INFO in _internal:  * Restarting with stat
+[2020-11-02 13:54:54,585] INFO in server: Server initialized for eventlet.
+[2020-11-02 13:54:54,587] WARNING in _internal:  * Debugger is active!
+[2020-11-02 13:54:54,594] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-02 13:57:02,354] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\project_view.py', reloading
+[2020-11-02 13:57:02,690] INFO in _internal:  * Restarting with stat
+[2020-11-02 13:57:03,826] INFO in server: Server initialized for eventlet.
+[2020-11-02 13:57:03,828] WARNING in _internal:  * Debugger is active!
+[2020-11-02 13:57:03,835] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-02 13:58:42,718] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\project_view.py', reloading
+[2020-11-02 13:58:42,805] INFO in _internal:  * Restarting with stat
+[2020-11-02 13:58:43,939] INFO in server: Server initialized for eventlet.
+[2020-11-02 13:58:43,941] WARNING in _internal:  * Debugger is active!
+[2020-11-02 13:58:43,949] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-02 14:01:57,966] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\project_view.py', reloading
+[2020-11-02 14:01:58,339] INFO in _internal:  * Restarting with stat
+[2020-11-02 14:01:59,412] INFO in server: Server initialized for eventlet.
+[2020-11-02 14:01:59,413] WARNING in _internal:  * Debugger is active!
+[2020-11-02 14:01:59,420] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-02 14:07:11,876] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\project_view.py', reloading
+[2020-11-02 14:07:11,963] INFO in _internal:  * Restarting with stat
+[2020-11-02 14:07:13,131] INFO in server: Server initialized for eventlet.
+[2020-11-02 14:07:13,133] WARNING in _internal:  * Debugger is active!
+[2020-11-02 14:07:13,143] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-02 14:07:17,688] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\project_view.py', reloading
+[2020-11-02 14:07:17,783] INFO in _internal:  * Restarting with stat
+[2020-11-02 14:07:19,086] INFO in server: Server initialized for eventlet.
+[2020-11-02 14:07:19,088] WARNING in _internal:  * Debugger is active!
+[2020-11-02 14:07:19,127] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-02 14:28:54,276] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\project_view.py', reloading
+[2020-11-02 14:28:54,359] INFO in _internal:  * Restarting with stat
+[2020-11-02 14:28:55,589] INFO in server: Server initialized for eventlet.
+[2020-11-02 14:28:55,592] WARNING in _internal:  * Debugger is active!
+[2020-11-02 14:28:55,602] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-02 14:34:02,312] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\project_view.py', reloading
+[2020-11-02 14:34:02,836] INFO in _internal:  * Restarting with stat
+[2020-11-02 14:34:04,004] INFO in server: Server initialized for eventlet.
+[2020-11-02 14:34:04,006] WARNING in _internal:  * Debugger is active!
+[2020-11-02 14:34:04,014] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-02 15:12:11,112] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\project_view.py', reloading
+[2020-11-02 15:12:11,202] INFO in _internal:  * Restarting with stat
+[2020-11-02 15:44:22,093] INFO in server: Server initialized for eventlet.
+[2020-11-02 15:44:22,096] INFO in _internal:  * Restarting with stat
+[2020-11-02 15:44:23,196] INFO in server: Server initialized for eventlet.
+[2020-11-02 15:44:23,197] WARNING in _internal:  * Debugger is active!
+[2020-11-02 15:44:23,204] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-02 15:45:18,470] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\project_view.py', reloading
+[2020-11-02 15:45:18,551] INFO in _internal:  * Restarting with stat
+[2020-11-02 15:46:23,053] INFO in server: Server initialized for eventlet.
+[2020-11-02 15:46:23,056] INFO in _internal:  * Restarting with stat
+[2020-11-02 15:46:24,142] INFO in server: Server initialized for eventlet.
+[2020-11-02 15:46:24,144] WARNING in _internal:  * Debugger is active!
+[2020-11-02 15:46:24,151] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-02 15:48:59,603] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\project_view.py', reloading
+[2020-11-02 15:48:59,688] INFO in _internal:  * Restarting with stat
+[2020-11-02 15:50:38,936] INFO in server: Server initialized for eventlet.
+[2020-11-02 15:50:38,939] INFO in _internal:  * Restarting with stat
+[2020-11-02 15:50:40,138] INFO in server: Server initialized for eventlet.
+[2020-11-02 15:50:40,141] WARNING in _internal:  * Debugger is active!
+[2020-11-02 15:50:40,153] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-02 16:43:06,256] INFO in server: Server initialized for threading.
+[2020-11-02 16:43:06,259] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 16:43:06,270] INFO in _internal:  * Restarting with stat
+[2020-11-02 16:43:06,966] INFO in server: Server initialized for threading.
+[2020-11-02 16:43:06,968] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 16:43:06,988] WARNING in _internal:  * Debugger is active!
+[2020-11-02 16:43:06,995] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 16:43:07,008] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-02 17:25:32,152] INFO in _internal: 127.0.0.1 - - [02/Nov/2020 17:25:32] "[35m[1mPOST /api/project/5f9f9e9736d4ea06f6a0e6a6/join/ HTTP/1.1[0m" 500 -
+[2020-11-02 17:26:06,963] INFO in _internal: 127.0.0.1 - - [02/Nov/2020 17:26:06] "[35m[1mPOST /api/project/5f9f9e9736d4ea06f6a0e6a6/join/ HTTP/1.1[0m" 500 -
+[2020-11-02 17:26:11,874] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\model.py', reloading
+[2020-11-02 17:26:12,189] INFO in _internal:  * Restarting with stat
+[2020-11-02 17:26:12,933] INFO in server: Server initialized for threading.
+[2020-11-02 17:26:12,936] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 17:26:12,937] WARNING in _internal:  * Debugger is active!
+[2020-11-02 17:26:12,944] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 17:26:12,986] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-02 17:26:14,766] INFO in _internal: 127.0.0.1 - - [02/Nov/2020 17:26:14] "[35m[1mPOST /api/project/5f9f9e9736d4ea06f6a0e6a6/join/ HTTP/1.1[0m" 500 -
+[2020-11-02 17:27:45,232] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\model.py', reloading
+[2020-11-02 17:27:45,438] INFO in _internal:  * Restarting with stat
+[2020-11-02 17:27:46,410] INFO in server: Server initialized for threading.
+[2020-11-02 17:27:46,414] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 17:27:46,416] WARNING in _internal:  * Debugger is active!
+[2020-11-02 17:27:46,429] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 17:27:46,483] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-02 17:27:47,836] INFO in _internal: 127.0.0.1 - - [02/Nov/2020 17:27:47] "[37mPOST /api/project/5f9f9e9736d4ea06f6a0e6a6/join/ HTTP/1.1[0m" 200 -
+[2020-11-02 17:46:16,971] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\model.py', reloading
+[2020-11-02 17:46:17,489] INFO in _internal:  * Restarting with stat
+[2020-11-02 17:46:18,246] INFO in server: Server initialized for threading.
+[2020-11-02 17:46:18,248] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 17:46:18,271] WARNING in _internal:  * Debugger is active!
+[2020-11-02 17:46:18,278] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 17:46:18,290] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-02 17:46:49,386] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\model.py', reloading
+[2020-11-02 17:46:49,432] INFO in _internal:  * Restarting with stat
+[2020-11-02 17:46:50,176] INFO in server: Server initialized for threading.
+[2020-11-02 17:46:50,179] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 17:46:50,181] WARNING in _internal:  * Debugger is active!
+[2020-11-02 17:46:50,187] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 17:46:50,197] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-02 17:46:59,556] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\model.py', reloading
+[2020-11-02 17:46:59,605] INFO in _internal:  * Restarting with stat
+[2020-11-02 17:47:00,328] INFO in server: Server initialized for threading.
+[2020-11-02 17:47:00,330] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 17:47:00,331] WARNING in _internal:  * Debugger is active!
+[2020-11-02 17:47:00,337] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 17:47:00,349] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-02 18:04:30,282] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\video_view.py', reloading
+[2020-11-02 18:04:30,329] INFO in _internal:  * Restarting with stat
+[2020-11-02 18:04:31,052] INFO in server: Server initialized for threading.
+[2020-11-02 18:04:31,054] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 18:04:31,055] WARNING in _internal:  * Debugger is active!
+[2020-11-02 18:04:31,061] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 18:04:31,109] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-02 18:15:24,814] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\project_view.py', reloading
+[2020-11-02 18:15:24,863] INFO in _internal:  * Restarting with stat
+[2020-11-02 18:15:25,596] INFO in server: Server initialized for threading.
+[2020-11-02 18:15:25,597] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 18:15:25,598] WARNING in _internal:  * Debugger is active!
+[2020-11-02 18:15:25,605] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 18:15:25,632] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-02 21:06:52,504] INFO in server: Server initialized for threading.
+[2020-11-02 21:06:52,507] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 21:06:52,532] INFO in _internal:  * Restarting with stat
+[2020-11-02 21:06:53,226] INFO in server: Server initialized for threading.
+[2020-11-02 21:06:53,228] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 21:06:53,253] WARNING in _internal:  * Debugger is active!
+[2020-11-02 21:06:53,264] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 21:06:53,277] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-02 21:07:38,011] INFO in _internal: 127.0.0.1 - - [02/Nov/2020 21:07:38] "[37mGET /api/messages/ HTTP/1.1[0m" 200 -
+[2020-11-02 21:08:01,748] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\__init__.py', reloading
+[2020-11-02 21:08:01,831] INFO in _internal:  * Restarting with stat
+[2020-11-02 21:08:21,107] INFO in server: Server initialized for threading.
+[2020-11-02 21:08:21,109] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 21:08:21,128] INFO in _internal:  * Restarting with stat
+[2020-11-02 21:08:21,809] INFO in server: Server initialized for threading.
+[2020-11-02 21:08:21,811] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 21:08:21,827] WARNING in _internal:  * Debugger is active!
+[2020-11-02 21:08:21,835] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 21:08:21,845] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-02 21:08:24,616] INFO in _internal: 127.0.0.1 - - [02/Nov/2020 21:08:24] "[37mGET /api/messages/u HTTP/1.1[0m" 200 -
+[2020-11-02 21:08:30,994] INFO in _internal: 127.0.0.1 - - [02/Nov/2020 21:08:30] "[35m[1mGET /api/messages/ HTTP/1.1[0m" 500 -
+[2020-11-02 21:08:48,793] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\message_view.py', reloading
+[2020-11-02 21:08:49,067] INFO in _internal:  * Restarting with stat
+[2020-11-02 21:09:04,811] INFO in server: Server initialized for threading.
+[2020-11-02 21:09:04,812] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 21:09:04,838] INFO in _internal:  * Restarting with stat
+[2020-11-02 21:09:05,523] INFO in server: Server initialized for threading.
+[2020-11-02 21:09:05,525] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 21:09:05,535] WARNING in _internal:  * Debugger is active!
+[2020-11-02 21:09:05,542] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 21:09:05,564] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-02 21:09:07,902] INFO in _internal: 127.0.0.1 - - [02/Nov/2020 21:09:07] "[37mGET /api/messages/ HTTP/1.1[0m" 200 -
+[2020-11-02 21:10:19,125] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\message_view.py', reloading
+[2020-11-02 21:10:19,535] INFO in _internal:  * Restarting with stat
+[2020-11-02 21:10:20,280] INFO in server: Server initialized for threading.
+[2020-11-02 21:10:20,281] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 21:10:20,282] WARNING in _internal:  * Debugger is active!
+[2020-11-02 21:10:20,290] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 21:10:20,308] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-02 21:10:22,236] INFO in _internal: 127.0.0.1 - - [02/Nov/2020 21:10:22] "[35m[1mGET /api/messages/ HTTP/1.1[0m" 500 -
+[2020-11-02 21:10:29,651] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\message_view.py', reloading
+[2020-11-02 21:10:29,780] INFO in _internal:  * Restarting with stat
+[2020-11-02 21:10:30,533] INFO in server: Server initialized for threading.
+[2020-11-02 21:10:30,535] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 21:10:30,550] WARNING in _internal:  * Debugger is active!
+[2020-11-02 21:10:30,557] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 21:10:30,569] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-02 21:10:32,384] INFO in _internal: 127.0.0.1 - - [02/Nov/2020 21:10:32] "[37mGET /api/messages/ HTTP/1.1[0m" 200 -
+[2020-11-02 21:11:30,696] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\project_view.py', reloading
+[2020-11-02 21:11:31,002] INFO in _internal:  * Restarting with stat
+[2020-11-02 21:11:31,677] INFO in server: Server initialized for threading.
+[2020-11-02 21:11:31,679] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 21:11:31,692] WARNING in _internal:  * Debugger is active!
+[2020-11-02 21:11:31,699] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 21:11:31,710] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-02 21:12:39,058] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\project_view.py', reloading
+[2020-11-02 21:12:39,104] INFO in _internal:  * Restarting with stat
+[2020-11-02 21:12:39,826] INFO in server: Server initialized for threading.
+[2020-11-02 21:12:39,827] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 21:12:39,828] WARNING in _internal:  * Debugger is active!
+[2020-11-02 21:12:39,835] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 21:12:39,847] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-02 21:13:00,370] INFO in _internal: 127.0.0.1 - - [02/Nov/2020 21:13:00] "[37mGET /project/userAndVideo?projectName=test HTTP/1.1[0m" 200 -
+[2020-11-02 21:13:09,240] INFO in _internal: 127.0.0.1 - - [02/Nov/2020 21:13:09] "[35m[1mGET /api/project/userAndVideo?projectName=test HTTP/1.1[0m" 500 -
+[2020-11-02 21:14:03,244] INFO in _internal: 127.0.0.1 - - [02/Nov/2020 21:14:03] "[37mGET /api/project/userAndVideo?projectName=test HTTP/1.1[0m" 200 -
+[2020-11-02 21:14:22,378] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\project_view.py', reloading
+[2020-11-02 21:14:22,875] INFO in _internal:  * Restarting with stat
+[2020-11-02 21:14:23,672] INFO in server: Server initialized for threading.
+[2020-11-02 21:14:23,674] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 21:14:23,674] WARNING in _internal:  * Debugger is active!
+[2020-11-02 21:14:23,681] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 21:14:23,703] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-02 21:17:05,371] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\message_view.py', reloading
+[2020-11-02 21:17:05,435] INFO in _internal:  * Restarting with stat
+[2020-11-02 21:17:06,220] INFO in server: Server initialized for threading.
+[2020-11-02 21:17:06,222] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 21:17:06,223] WARNING in _internal:  * Debugger is active!
+[2020-11-02 21:17:06,229] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 21:17:06,258] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-02 21:17:07,287] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\main.py', reloading
+[2020-11-02 21:17:07,332] INFO in _internal:  * Restarting with stat
+[2020-11-02 21:17:08,022] INFO in server: Server initialized for threading.
+[2020-11-02 21:17:08,042] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 21:17:08,045] WARNING in _internal:  * Debugger is active!
+[2020-11-02 21:17:08,051] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 21:17:08,099] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-02 21:18:31,982] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\project_view.py', reloading
+[2020-11-02 21:18:32,029] INFO in _internal:  * Restarting with stat
+[2020-11-02 21:18:32,738] INFO in server: Server initialized for threading.
+[2020-11-02 21:18:32,749] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 21:18:32,750] WARNING in _internal:  * Debugger is active!
+[2020-11-02 21:18:32,757] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 21:18:32,781] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-02 21:22:57,784] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\message_view.py', reloading
+[2020-11-02 21:22:57,831] INFO in _internal:  * Restarting with stat
+[2020-11-02 21:22:58,538] INFO in server: Server initialized for threading.
+[2020-11-02 21:22:58,558] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 21:22:58,558] WARNING in _internal:  * Debugger is active!
+[2020-11-02 21:22:58,565] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 21:22:58,589] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-02 21:29:42,535] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\auth\\views.py', reloading
+[2020-11-02 21:29:42,580] INFO in _internal:  * Restarting with stat
+[2020-11-02 21:29:43,273] INFO in server: Server initialized for threading.
+[2020-11-02 21:29:43,279] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 21:29:43,281] WARNING in _internal:  * Debugger is active!
+[2020-11-02 21:29:43,287] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 21:29:43,300] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-02 21:30:05,061] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\auth\\views.py', reloading
+[2020-11-02 21:30:05,109] INFO in _internal:  * Restarting with stat
+[2020-11-02 21:30:05,839] INFO in server: Server initialized for threading.
+[2020-11-02 21:30:05,846] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 21:30:05,847] WARNING in _internal:  * Debugger is active!
+[2020-11-02 21:30:05,853] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 21:30:05,865] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-02 21:31:24,654] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\auth\\__init__.py', reloading
+[2020-11-02 21:31:24,701] INFO in _internal:  * Restarting with stat
+[2020-11-02 21:31:25,384] INFO in server: Server initialized for threading.
+[2020-11-02 21:31:25,390] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 21:31:25,391] WARNING in _internal:  * Debugger is active!
+[2020-11-02 21:31:25,398] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 21:31:25,425] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-02 21:31:56,542] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\message_view.py', reloading
+[2020-11-02 21:31:56,592] INFO in _internal:  * Restarting with stat
+[2020-11-02 21:31:57,400] INFO in server: Server initialized for threading.
+[2020-11-02 21:31:57,406] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 21:31:57,406] WARNING in _internal:  * Debugger is active!
+[2020-11-02 21:31:57,413] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 21:31:57,471] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-02 21:32:17,181] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\auth\\__init__.py', reloading
+[2020-11-02 21:32:17,227] INFO in _internal:  * Restarting with stat
+[2020-11-02 21:32:17,916] INFO in server: Server initialized for threading.
+[2020-11-02 21:32:17,922] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 21:32:17,923] WARNING in _internal:  * Debugger is active!
+[2020-11-02 21:32:17,929] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 21:32:17,959] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-02 21:32:39,129] INFO in _internal: 127.0.0.1 - - [02/Nov/2020 21:32:39] "[37mGET /api/messages/ HTTP/1.1[0m" 200 -
+[2020-11-02 21:32:56,901] INFO in _internal: 127.0.0.1 - - [02/Nov/2020 21:32:56] "[31m[1mGET /api/messages/ HTTP/1.1[0m" 401 -
+[2020-11-02 21:33:54,209] INFO in _internal: 127.0.0.1 - - [02/Nov/2020 21:33:54] "[37mGET /api/messages/ HTTP/1.1[0m" 200 -
+[2020-11-02 21:34:16,007] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\auth\\views.py', reloading
+[2020-11-02 21:34:16,284] INFO in _internal:  * Restarting with stat
+[2020-11-02 21:34:16,993] INFO in server: Server initialized for threading.
+[2020-11-02 21:34:16,999] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 21:34:17,000] WARNING in _internal:  * Debugger is active!
+[2020-11-02 21:34:17,024] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 21:34:17,036] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-02 21:35:12,973] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\user_view.py', reloading
+[2020-11-02 21:35:13,021] INFO in _internal:  * Restarting with stat
+[2020-11-02 21:36:28,122] INFO in server: Server initialized for threading.
+[2020-11-02 21:36:28,128] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 21:36:28,133] INFO in _internal:  * Restarting with stat
+[2020-11-02 21:36:28,829] INFO in server: Server initialized for threading.
+[2020-11-02 21:36:28,877] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 21:36:28,877] WARNING in _internal:  * Debugger is active!
+[2020-11-02 21:36:28,883] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 21:36:28,896] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-02 21:36:52,332] INFO in _internal: 127.0.0.1 - - [02/Nov/2020 21:36:52] "[35m[1mPOST /api/userInfo/ HTTP/1.1[0m" 500 -
+[2020-11-02 21:37:20,944] INFO in _internal: 127.0.0.1 - - [02/Nov/2020 21:37:20] "[37mGET /api/userlist/ HTTP/1.1[0m" 200 -
+[2020-11-02 21:39:59,538] INFO in _internal: 127.0.0.1 - - [02/Nov/2020 21:39:59] "[37mGET /api/messages/ HTTP/1.1[0m" 200 -
+[2020-11-02 21:40:21,339] INFO in _internal: 127.0.0.1 - - [02/Nov/2020 21:40:21] "[37mPOST /api/userInfo/ HTTP/1.1[0m" 200 -
+[2020-11-02 21:40:36,700] INFO in _internal: 127.0.0.1 - - [02/Nov/2020 21:40:36] "[35m[1mPOST /api/userInfo/ HTTP/1.1[0m" 500 -
+[2020-11-02 21:42:33,393] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\auth\\__init__.py', reloading
+[2020-11-02 21:42:33,913] INFO in _internal:  * Restarting with stat
+[2020-11-02 21:46:41,633] INFO in server: Server initialized for threading.
+[2020-11-02 21:46:41,672] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 21:46:41,677] INFO in _internal:  * Restarting with stat
+[2020-11-02 21:46:42,363] INFO in server: Server initialized for threading.
+[2020-11-02 21:46:42,406] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 21:46:42,407] WARNING in _internal:  * Debugger is active!
+[2020-11-02 21:46:42,415] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 21:46:42,470] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-02 21:46:46,256] INFO in _internal: 127.0.0.1 - - [02/Nov/2020 21:46:46] "[37mPOST /api/userInfo/ HTTP/1.1[0m" 200 -
+[2020-11-02 21:47:10,479] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\message_view.py', reloading
+[2020-11-02 21:47:10,547] INFO in _internal:  * Restarting with stat
+[2020-11-02 21:58:13,983] INFO in server: Server initialized for threading.
+[2020-11-02 21:58:14,027] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 21:58:14,138] INFO in _internal:  * Restarting with stat
+[2020-11-02 21:58:14,878] INFO in server: Server initialized for threading.
+[2020-11-02 21:58:14,913] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 21:58:14,948] WARNING in _internal:  * Debugger is active!
+[2020-11-02 21:58:14,955] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 21:58:14,993] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-02 22:00:17,246] INFO in _internal: 127.0.0.1 - - [02/Nov/2020 22:00:17] "[35m[1mGET /api/message/0 HTTP/1.1[0m" 500 -
+[2020-11-02 22:01:00,725] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\message_view.py', reloading
+[2020-11-02 22:01:00,834] INFO in _internal:  * Restarting with stat
+[2020-11-02 22:01:01,537] INFO in server: Server initialized for threading.
+[2020-11-02 22:01:01,545] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 22:01:01,546] WARNING in _internal:  * Debugger is active!
+[2020-11-02 22:01:01,553] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 22:01:01,608] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-02 22:01:04,251] INFO in _internal: 127.0.0.1 - - [02/Nov/2020 22:01:04] "[35m[1mGET /api/message/0 HTTP/1.1[0m" 500 -
+[2020-11-02 22:01:21,348] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\message_view.py', reloading
+[2020-11-02 22:01:21,812] INFO in _internal:  * Restarting with stat
+[2020-11-02 22:01:22,578] INFO in server: Server initialized for threading.
+[2020-11-02 22:01:23,043] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 22:01:23,044] WARNING in _internal:  * Debugger is active!
+[2020-11-02 22:01:23,052] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 22:01:23,155] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-02 22:01:25,247] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\message_view.py', reloading
+[2020-11-02 22:01:25,290] INFO in _internal:  * Restarting with stat
+[2020-11-02 22:01:26,046] INFO in server: Server initialized for threading.
+[2020-11-02 22:01:26,058] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 22:01:26,059] WARNING in _internal:  * Debugger is active!
+[2020-11-02 22:01:26,068] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 22:01:26,124] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-02 22:01:28,438] INFO in _internal: 127.0.0.1 - - [02/Nov/2020 22:01:28] "[35m[1mGET /api/message/0 HTTP/1.1[0m" 500 -
+[2020-11-02 22:01:41,687] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\message_view.py', reloading
+[2020-11-02 22:01:41,967] INFO in _internal:  * Restarting with stat
+[2020-11-02 22:01:42,719] INFO in server: Server initialized for threading.
+[2020-11-02 22:01:42,777] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 22:01:42,778] WARNING in _internal:  * Debugger is active!
+[2020-11-02 22:01:42,785] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 22:01:42,839] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-02 22:01:45,477] INFO in _internal: 127.0.0.1 - - [02/Nov/2020 22:01:45] "[37mGET /api/message/0 HTTP/1.1[0m" 200 -
+[2020-11-02 22:02:19,311] INFO in _internal: 127.0.0.1 - - [02/Nov/2020 22:02:19] "[37mGET /api/message/1 HTTP/1.1[0m" 200 -
+[2020-11-02 22:02:24,594] INFO in _internal: 127.0.0.1 - - [02/Nov/2020 22:02:24] "[37mGET /api/message/2 HTTP/1.1[0m" 200 -
+[2020-11-02 22:04:30,559] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\message_view.py', reloading
+[2020-11-02 22:04:30,960] INFO in _internal:  * Restarting with stat
+[2020-11-02 22:04:31,785] INFO in server: Server initialized for threading.
+[2020-11-02 22:04:31,790] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-02 22:04:31,790] WARNING in _internal:  * Debugger is active!
+[2020-11-02 22:04:31,797] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-02 22:04:31,844] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
