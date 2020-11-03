@@ -25,8 +25,8 @@ class User(db.Document):
     username = db.StringField(required=True)
     password = db.StringField(required=True)
     mobileNum = db.StringField(required=True)
-    mail = db.StringField(required=True)
 
+    mail = db.StringField(default='')
     avatar = db.StringField(default='')
     company = db.StringField(default='')
     hasProject = db.ListField(db.StringField(), default=[])
