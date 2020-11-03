@@ -1,7 +1,7 @@
 from app import create_app
 from config.config import config
 from app import jwt
-from app import client
+from app import db
 
 # 调用工厂函数构建应用实例
 app, ws = create_app(config['development'])
@@ -11,7 +11,7 @@ app, ws = create_app(config['development'])
 def make_shell_context():
     return {
         'jwt': jwt,
-        'db': client
+        'db': db
     }
 
 if __name__ == "__main__":

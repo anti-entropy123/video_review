@@ -3,13 +3,12 @@ from flask_jwt_extended import get_jwt_identity, jwt_required
 
 from bson.objectid import ObjectId
 
-from .. import client
+from .. import db
 from . import api
 from ..utils import build_response
 from ..model import Video, User, Project
 from ..auth import login_required
 
-db = client.db
 
 @api.route('/messages/', methods=['GET'])
 @login_required

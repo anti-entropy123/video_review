@@ -3,13 +3,11 @@ from flask_jwt_extended import get_jwt_identity
 
 from bson.objectid import ObjectId
 
-from .. import client
+from .. import db
 from . import api
 from ..utils import build_response
-from ..model import Video, User, Project
+from ..model import Video, User, Project, Message
 from ..auth import login_required
-
-db = client.db
 
 # 新建视频
 @api.route('/video/', methods=['POST'])
@@ -30,19 +28,29 @@ def create_video():
         return jsonify(build_response(0, 'password不能为空'))
     
     # 数据库插入此视频
-    video_id = Video.create_video(
-        video_name=video_name,
+    video = Video(
+        videoName=video_name,
         duration=3600,
         permission=permission,
         url=url,
-        cover=[],
+        cover=['https://'],
         password=password
     )
+    video.save()
+    video_id = str(video.id)
     user_id = get_jwt_identity()
-    # 由此用户上传
-    User.upload_video(user_id, video_id)
-    # 上传至哪个项目
-    Project.add_video(upload_to_project, video_id)
+    uploader = User.objects(id=ObjectId(user_id)).first()
+    video_list = uploader.uploadVideo
+    if not video_id in video_list:
+        uploader.uploadVideo = video_list + [video_id]
+        uploader.save()
+
+    project = Project.objects(id=ObjectId(upload_to_project)).first()
+    video_list = project.hasVideo
+    if not video_id in video_list:
+        project.hasVideo = video_list + [video_id]
+        project.save()
+
     return jsonify(build_response())
     
 # 完成审阅
@@ -57,31 +65,56 @@ def review_finish(video_id):
         abort(400, {'msg': str(e)})
 
     # 数据库中写入视频
-    Video.finish_review(video_id, review_result, summary)
+    video = Video.objects(id=ObjectId(video_id)).first()
+    video.reviewResult = review_result
+    video.reviewSummary = summary
+    video.hasReview = True
+    video.save()
+
+    reviewer = User.objects(id=ObjectId(get_jwt_identity())).first()
+    project = Project.objects(id=ObjectId(video.belongTo)).first()
+
+    # 通知用户视频被审阅
+    user = User.objects(id=ObjectId(video.owner)).first()
+    new_message = Message(
+        fromId = str(reviewer.id),
+        fromName = reviewer.username,
+        projectId = str(project.id),
+        projectName = project.projectName,
+        type = 1,
+        content = {
+            'videoName': video.videoName,
+            'reviewResult': review_result
+        }
+    )
+    reviewer.message.append(new_message)
+    reviewer.save()
+
     return jsonify(build_response())
 
 # 我的视频
 @api.route('/video/mine/', methods=['GET'])
 @login_required
 def my_video():
-    video_list = User.get_video_list(user_id=get_jwt_identity())
+    user = User.objects(id=ObjectId(get_jwt_identity())).first()
+    print(user)
+
+    video_list = user.uploadVideo
+    print(video_list)
     data = []
-    for video in db.video.find(
-        {'_id': {'$in': video_list}},
-        {
-            'url': 1,
-            'videoName': 1,
-            'description': 1,
-            'duration': 1,
-            'hasReview': 1,
-            'cover': 1,
-            '_id': 1
+    for video_id in video_list:
+        video = Video.objects(id=ObjectId(video_id)).first()
+        one = {
+            'url': video.url,
+            'videoName': video.videoName,
+            'description': video.description,
+            'duration': video.duration,
+            'status': video.hasReview,
+            'cover': video.cover,
+            'videoId': video_id
         }
-    ):
-        video['status'] = video.pop('hasReview')
-        video['videoId'] = str(video.pop('_id'))
-        data.append(video)
-    print(data)
+        data.append(one)
+    
     return jsonify(build_response(1, '', data=data))
 
     

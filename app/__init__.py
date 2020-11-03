@@ -1,13 +1,12 @@
 from flask import Flask
 from flask_jwt_extended import JWTManager
 from flask_cors import CORS
-from flask_sqlalchemy import SQLAlchemy
-from flask_pymongo import PyMongo
+from flask_mongoengine import MongoEngine
 # from celery import Celery
 
 jwt = JWTManager()
 # db = SQLAlchemy()
-client = PyMongo()
+db = MongoEngine()
 
 # celery = Celery(__name__)
 
@@ -25,7 +24,7 @@ def create_app(config=None):
     # 解决跨域
     CORS(app)
     # 数据库
-    client.init_app(app)    
+    db.init_app(app)    
 
     # 将蓝图组装到应用上    
     # api蓝图, 封装RestFul接口相关模块

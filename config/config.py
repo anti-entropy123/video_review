@@ -71,6 +71,11 @@ class Config:
     # 关闭对象变化跟踪, 以节省开销
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
+    MONGODB_SETTINGS = {
+        'db': 'video_review',
+        'host': '127.0.0.1'
+    }
+
     @staticmethod
     # 如果需要的话, 在此函数中进行其它的配置
     def init_app(app):

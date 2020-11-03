@@ -30,7 +30,7 @@ def login_required(fn):
         user_id = get_jwt_identity()
         
         try:
-            if not User.has_user(user_id):
+            if not User.objects(id=ObjectId(user_id)):
                 raise Exception()
         except Exception as e:
             return jsonify(build_response(0, "token失效, 请重新登陆"))
