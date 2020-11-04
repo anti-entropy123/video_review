@@ -1,11 +1,9 @@
 from flask import jsonify, request, abort
 from flask_jwt_extended import get_jwt_identity, jwt_required
 
-from bson.objectid import ObjectId
-
 from .. import db
 from . import api
-from ..utils import build_response
+from ..utils import build_response, safe_objectId
 from ..model import Video, User, Project
 from ..auth import login_required
 
@@ -16,7 +14,7 @@ def get_message_list():
     user_id = get_jwt_identity()
 
     messages = db.user.find_one(
-        {'_id': ObjectId(user_id)},
+        {'_id': safe_objectId(user_id)},
         {'message': 1}
     )['message']
     
@@ -44,7 +42,7 @@ def get_message_detail(message_id):
     user_id = get_jwt_identity()
     
     user = db.user.find_one(
-        {'_id': ObjectId(user_id)},
+        {'_id': safe_objectId(user_id)},
         {'message': 1}
     )
     

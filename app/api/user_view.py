@@ -1,18 +1,16 @@
 from flask import jsonify, request, abort
 from flask_jwt_extended import get_jwt_identity
 
-from bson.objectid import ObjectId
-
 from .. import db
 from . import api
-from ..utils import build_response
+from ..utils import build_response, safe_objectId
 from ..auth import login_required
 from ..model import User
 
 @api.route('/user/<target_id>', methods=['GET'])
 @login_required
 def get_user_info(target_id:str):
-    user = User.objects(id=ObjectId(target_id)).first()
+    user = User.objects(id=safe_objectId(target_id)).first()
 
     if not user:
         return jsonify(build_response(0, "无此用户"))
@@ -37,7 +35,7 @@ def update_user_info():
     except KeyError as e:
         abort(400)
     
-    user = User.objects(id=ObjectId(user_id)).first()
+    user = User.objects(id=safe_objectId(user_id)).first()
     user.username = username
     user.avatar = avatar
     user.mobileNum = mobile

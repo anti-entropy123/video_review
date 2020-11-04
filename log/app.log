@@ -3301,3 +3301,91 @@ x-cos-storage-class=STANDARD
 [2020-11-04 20:53:15,534] INFO in _internal: 127.0.0.1 - - [04/Nov/2020 20:53:15] "[37mPOST /api/video/ HTTP/1.1[0m" 200 -
 [2020-11-04 20:55:22,279] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\video_view.py', reloading
 [2020-11-04 20:55:22,688] INFO in _internal:  * Restarting with stat
+[2020-11-04 21:28:34,077] INFO in server: Server initialized for threading.
+[2020-11-04 21:28:34,258] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-04 21:28:34,421] INFO in _internal:  * Restarting with stat
+[2020-11-04 21:28:35,379] INFO in server: Server initialized for threading.
+[2020-11-04 21:28:35,655] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-04 21:28:35,688] WARNING in _internal:  * Debugger is active!
+[2020-11-04 21:28:35,698] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-04 21:28:35,734] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-04 21:29:00,374] INFO in _internal: 127.0.0.1 - - [04/Nov/2020 21:29:00] "[37mPOST /api/video/ HTTP/1.1[0m" 200 -
+[2020-11-04 21:29:16,920] INFO in _internal: 127.0.0.1 - - [04/Nov/2020 21:29:16] "[37mPOST /api/video/ HTTP/1.1[0m" 200 -
+[2020-11-04 21:29:35,345] INFO in server: Server initialized for eventlet.
+[2020-11-04 21:29:35,364] INFO in _internal:  * Restarting with stat
+[2020-11-04 21:29:38,138] INFO in server: Server initialized for eventlet.
+[2020-11-04 21:29:38,177] WARNING in _internal:  * Debugger is active!
+[2020-11-04 21:29:38,187] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-04 21:34:31,189] INFO in cos_client: put object, url=:https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review/test.mkv ,headers=:{'x-cos-storage-class': 'STANDARD'}
+[2020-11-04 21:34:31,201] DEBUG in cos_auth: format str: put
+/video_review/test.mkv
+
+x-cos-storage-class=STANDARD
+
+[2020-11-04 21:34:31,203] DEBUG in cos_auth: str_to_sign: sha1
+1604496811;1604506871
+6d8e1ed7bf67d5b938a13b1e65aa71f26a7721e5
+
+[2020-11-04 21:34:31,205] DEBUG in cos_auth: sign_key: a1b2ce0695627e90c0dfc852a783db25763a3f88
+[2020-11-04 21:34:31,230] DEBUG in cos_auth: sign: a0b52d253bd0ccc65514237c2127a3bac05bf997
+[2020-11-04 21:34:31,233] DEBUG in cos_auth: sign_keya1b2ce0695627e90c0dfc852a783db25763a3f88
+[2020-11-04 21:34:31,236] DEBUG in cos_auth: q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1604496811;1604506871&q-key-time=1604496811;1604506871&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=a0b52d253bd0ccc65514237c2127a3bac05bf997
+[2020-11-04 21:34:31,237] DEBUG in cos_auth: request headers: {'User-Agent': b'cos-python-sdk-v5.1.8.7', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-cos-storage-class': b'STANDARD', 'Content-Length': '27851052', 'Authorization': 'q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1604496811;1604506871&q-key-time=1604496811;1604506871&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=a0b52d253bd0ccc65514237c2127a3bac05bf997'}
+[2020-11-05 00:16:19,266] INFO in server: Server initialized for eventlet.
+[2020-11-05 00:16:19,304] INFO in _internal:  * Restarting with stat
+[2020-11-05 00:16:21,435] INFO in server: Server initialized for eventlet.
+[2020-11-05 00:16:21,488] WARNING in _internal:  * Debugger is active!
+[2020-11-05 00:16:21,503] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-05 00:33:54,250] INFO in server: Server initialized for eventlet.
+[2020-11-05 00:33:54,268] INFO in _internal:  * Restarting with stat
+[2020-11-05 00:33:56,981] INFO in server: Server initialized for eventlet.
+[2020-11-05 00:33:57,016] WARNING in _internal:  * Debugger is active!
+[2020-11-05 00:33:57,026] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-05 00:37:40,690] INFO in cos_client: put object, url=:https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review/2020-10-19%2018-20-17.mp4 ,headers=:{'x-cos-storage-class': 'STANDARD'}
+[2020-11-05 00:37:40,695] DEBUG in cos_auth: format str: put
+/video_review/2020-10-19 18-20-17.mp4
+
+x-cos-storage-class=STANDARD
+
+[2020-11-05 00:37:40,696] DEBUG in cos_auth: str_to_sign: sha1
+1604507800;1604517860
+8031f1d8cd909630c6608c140a1df17fbfb7e608
+
+[2020-11-05 00:37:40,697] DEBUG in cos_auth: sign_key: abd98e321cf7a319ebbcab619c8c96d1c7222a99
+[2020-11-05 00:37:40,697] DEBUG in cos_auth: sign: 23e55d33abcc9bf7d7b616d14d7989e7dde729f4
+[2020-11-05 00:37:40,698] DEBUG in cos_auth: sign_keyabd98e321cf7a319ebbcab619c8c96d1c7222a99
+[2020-11-05 00:37:40,698] DEBUG in cos_auth: q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1604507800;1604517860&q-key-time=1604507800;1604517860&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=23e55d33abcc9bf7d7b616d14d7989e7dde729f4
+[2020-11-05 00:37:40,699] DEBUG in cos_auth: request headers: {'User-Agent': b'cos-python-sdk-v5.1.8.7', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-cos-storage-class': b'STANDARD', 'Content-Length': '14928811', 'Authorization': 'q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1604507800;1604517860&q-key-time=1604507800;1604517860&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=23e55d33abcc9bf7d7b616d14d7989e7dde729f4'}
+[2020-11-05 00:38:42,418] INFO in cos_client: put object, url=:https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review/2020-10-19%2018-20-17.mp4 ,headers=:{'x-cos-storage-class': 'STANDARD'}
+[2020-11-05 00:38:42,420] DEBUG in cos_auth: format str: put
+/video_review/2020-10-19 18-20-17.mp4
+
+x-cos-storage-class=STANDARD
+
+[2020-11-05 00:38:42,423] DEBUG in cos_auth: str_to_sign: sha1
+1604507862;1604517922
+8031f1d8cd909630c6608c140a1df17fbfb7e608
+
+[2020-11-05 00:38:42,425] DEBUG in cos_auth: sign_key: 6b7d70c1227ed48ab1cf435ff439b18284e5335a
+[2020-11-05 00:38:42,426] DEBUG in cos_auth: sign: d4e2466c21c4ad4842459b54a4ebdf055d3d2a36
+[2020-11-05 00:38:42,427] DEBUG in cos_auth: sign_key6b7d70c1227ed48ab1cf435ff439b18284e5335a
+[2020-11-05 00:38:42,428] DEBUG in cos_auth: q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1604507862;1604517922&q-key-time=1604507862;1604517922&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=d4e2466c21c4ad4842459b54a4ebdf055d3d2a36
+[2020-11-05 00:38:42,430] DEBUG in cos_auth: request headers: {'User-Agent': b'cos-python-sdk-v5.1.8.7', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-cos-storage-class': b'STANDARD', 'Content-Length': '14928811', 'Authorization': 'q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1604507862;1604517922&q-key-time=1604507862;1604517922&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=d4e2466c21c4ad4842459b54a4ebdf055d3d2a36'}
+[2020-11-05 00:50:37,348] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\video_view.py', reloading
+[2020-11-05 01:04:11,690] INFO in server: Server initialized for eventlet.
+[2020-11-05 01:04:11,698] INFO in _internal:  * Restarting with stat
+[2020-11-05 01:04:13,168] INFO in server: Server initialized for eventlet.
+[2020-11-05 01:04:13,181] WARNING in _internal:  * Debugger is active!
+[2020-11-05 01:04:13,189] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-05 01:05:11,853] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\utils.py', reloading
+[2020-11-05 01:05:12,214] INFO in _internal:  * Restarting with stat
+[2020-11-05 01:07:50,089] INFO in server: Server initialized for eventlet.
+[2020-11-05 01:07:50,123] INFO in _internal:  * Restarting with stat
+[2020-11-05 01:07:51,569] INFO in server: Server initialized for eventlet.
+[2020-11-05 01:07:51,575] WARNING in _internal:  * Debugger is active!
+[2020-11-05 01:07:51,582] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-05 01:13:39,347] INFO in server: Server initialized for eventlet.
+[2020-11-05 01:13:39,390] INFO in _internal:  * Restarting with stat
+[2020-11-05 01:13:40,697] INFO in server: Server initialized for eventlet.
+[2020-11-05 01:13:40,736] WARNING in _internal:  * Debugger is active!
+[2020-11-05 01:13:40,743] INFO in _internal:  * Debugger PIN: 611-914-660

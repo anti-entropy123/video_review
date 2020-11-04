@@ -5,10 +5,20 @@ from typing import Tuple
 
 from aliyunsdkcore.client import AcsClient
 from aliyunsdkcore.request import CommonRequest
+from bson.objectid import ObjectId
+from flask import abort, jsonify
 
 from config.secret_config import (AliAccessKeyID, AliAccessKeySecret,
                                   TxSecretId, TxSecretKey, bucket_name)
 from qcloud_cos import CosConfig, CosS3Client
+
+
+def safe_objectId(id):
+    if ObjectId.is_valid(id):
+        return ObjectId(id)
+    else:
+        # 返回一个不存在的id
+        return ObjectId("0"*24)
 
 # 构造响应
 def build_response(result=1, message='', data=None, **kwargs) -> dict:

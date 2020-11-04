@@ -1,14 +1,13 @@
 import time
 
-from bson.objectid import ObjectId
 from flask import abort, jsonify, request
 from flask_jwt_extended import get_jwt_identity
 
 from .. import db
-from ..model import Project, User, Message, Video
-from ..utils import build_response
-from . import api
 from ..auth import login_required
+from ..model import Message, Project, User, Video
+from ..utils import build_response, safe_objectId
+from . import api
 
 
 @api.route('/project/', methods=['POST'])
@@ -38,13 +37,13 @@ def invite_user(project_id):
     except KeyError as e:
         abort(400, {'msg': str(e)})
 
-    inviter = User.objects(id=ObjectId(get_jwt_identity())).first()
-    target = User.objects(id=ObjectId(user_id)).first()
+    inviter = User.objects(id=safe_objectId(get_jwt_identity())).first()
+    target = User.objects(id=safe_objectId(user_id)).first()
     # 无邀请目标
     if not target:
         return jsonify(build_response(0, "没有此用户"))
 
-    project = Project.objects(id=ObjectId(project_id)).first()
+    project = Project.objects(id=safe_objectId(project_id)).first()
 
     new_message = Message(
         fromId=str(inviter.id),
@@ -74,13 +73,13 @@ def join_project(project_id):
     except KeyError as e:
         abort(400, {'msg': str(e)})
 
-    user = User.objects(id=ObjectId(get_jwt_identity())).first()
-    project = Project.objects(id=ObjectId(project_id)).first()
+    user = User.objects(id=safe_objectId(get_jwt_identity())).first()
+    project = Project.objects(id=safe_objectId(project_id)).first()
     origin_message = Message.objects(id=message_id).first()
     
     # 邀请者 用户id
     inviter_id = origin_message.fromId
-    inviter = User.objects(id=ObjectId(inviter_id))
+    inviter = User.objects(id=safe_objectId(inviter_id))
 
     origin_message.hasProcess = True
     origin_message.save()
@@ -123,7 +122,7 @@ def get_project_data():
     project = Project.objects(projectName=project_name).first()
     print(project)
     # 项目主
-    owner = User.objects(id=ObjectId(project.owner)).first()
+    owner = User.objects(id=safe_objectId(project.owner)).first()
     user_list.append({
         'userId': str(owner.id),
         'userName': owner.username,
@@ -135,7 +134,7 @@ def get_project_data():
     for user in project.member:
         userId = user['userId']
         title = user['title']
-        member = User.objects(id=ObjectId(userId)).first()
+        member = User.objects(id=safe_objectId(userId)).first()
         member.title = title
         member.userId = userId
         user_list.append({
@@ -147,7 +146,7 @@ def get_project_data():
 
     # 视频列表
     for video_id in project.hasVideo:
-        video = Video.objects(id=ObjectId(video_id)).first()
+        video = Video.objects(id=safe_objectId(video_id)).first()
         video_list.append({
             'videoName': video.videoName,
             'cover': video.cover,
@@ -156,4 +155,3 @@ def get_project_data():
     
     data = {'videoList': video_list, 'userList': user_list}
     return jsonify(build_response(1, '', data))
-    
