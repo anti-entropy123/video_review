@@ -1,6 +1,9 @@
 from logging.config import dictConfig
 from logging import DEBUG, INFO, ERROR, WARNING
+from config.secret_config import bucket_name
 import os
+
+
 
 def config_logger(
         enable_console_handler=True, 
@@ -75,6 +78,7 @@ class Config:
         'db': 'video_review',
         'host': '127.0.0.1'
     }
+    BUCKET_NAME = bucket_name
 
     @staticmethod
     # 如果需要的话, 在此函数中进行其它的配置

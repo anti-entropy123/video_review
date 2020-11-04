@@ -37,6 +37,10 @@ class User(db.Document):
     def __str__(self):
         return f"用户: {self.username}"
 
+    @classmethod
+    def has_user(cls, userId:str):
+        return bool(cls.objects(id=ObjectId(userId)))
+
 class ProjectMember(db.EmbeddedDocument):
     userId = db.StringField(primary_key=True, required=True, db_field='_id')
     
@@ -52,6 +56,10 @@ class Project(db.Document):
 
     def __str__(self):
         return f"项目: {self.projectName}"
+
+    @classmethod
+    def has_project(cls, projectId:str):
+        return bool(cls.objects(id=ObjectId(projectId)))
 
 class Comment(db.EmbeddedDocument):
     from_ = db.StringField(db_field='from', required=True)

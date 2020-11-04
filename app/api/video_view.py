@@ -1,11 +1,12 @@
 from flask import jsonify, request, abort
 from flask_jwt_extended import get_jwt_identity
+from flask import current_app as app
 
 from bson.objectid import ObjectId
 
 from .. import db
 from . import api
-from ..utils import build_response
+from ..utils import build_response, txCosUtil
 from ..model import Video, User, Project, Message
 from ..auth import login_required
 
@@ -13,26 +14,38 @@ from ..auth import login_required
 @api.route('/video/', methods=['POST'])
 @login_required
 def create_video():
-    parm = request.json
+    parm = request.form
+    files = request.files
     try:
-        url = parm['url']
         video_name = parm['videoName']
         description = parm['description']
         permission = parm['permission']
         upload_to_project = parm['uploadToProject']
+
+        file = files['video']
     except KeyError as e:
         abort(400, {'msg': str(e)})
+
+    if not Project.objects(id=ObjectId(upload_to_project)):
+        return jsonify(build_response(0, "无此项目"))
+
+    if sum([(i in video_name) for i in r"\/"]) and (".mp4" in video_name or '.mkv' in video_name):
+        return jsonify(build_response(0, "video_name 不合法"))
 
     password = parm.get('password', '')
     if permission == 1 and password == '':
         return jsonify(build_response(0, 'password不能为空'))
     
+    txCosUtil.simple_file_upload(file, video_name)
+
     # 数据库插入此视频
     video = Video(
         videoName=video_name,
         duration=3600,
+        owner=get_jwt_identity(),
+        belongTo=upload_to_project,
         permission=permission,
-        url=url,
+        url=f"https://{app.config['BUCKET_NAME']}.cos.ap-beijing.myqcloud.com/video_review/{video_name}",
         cover=['https://'],
         password=password
     )
@@ -51,7 +64,11 @@ def create_video():
         project.hasVideo = video_list + [video_id]
         project.save()
 
-    return jsonify(build_response())
+    data = {
+        'url': video.url,
+        'videoId': video_id
+    }
+    return jsonify(build_response(data=data))
     
 # 完成审阅
 @api.route('/video/<video_id>/review/', methods=['POST'])

@@ -3129,3 +3129,175 @@
 [2020-11-03 22:06:28,344] WARNING in _internal:  * Debugger is active!
 [2020-11-03 22:06:28,352] INFO in _internal:  * Debugger PIN: 192-798-533
 [2020-11-03 22:06:28,413] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-04 20:43:47,980] INFO in server: Server initialized for threading.
+[2020-11-04 20:43:48,125] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-04 20:43:48,131] INFO in _internal:  * Restarting with stat
+[2020-11-04 20:43:49,018] INFO in server: Server initialized for threading.
+[2020-11-04 20:43:49,131] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-04 20:43:49,132] WARNING in _internal:  * Debugger is active!
+[2020-11-04 20:43:49,141] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-04 20:43:49,290] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-04 20:45:00,887] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\utils.py', reloading
+[2020-11-04 20:45:01,389] INFO in _internal:  * Restarting with stat
+[2020-11-04 20:45:02,227] INFO in server: Server initialized for threading.
+[2020-11-04 20:45:02,304] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-04 20:45:02,305] WARNING in _internal:  * Debugger is active!
+[2020-11-04 20:45:02,312] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-04 20:45:02,341] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-04 20:45:10,767] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\utils.py', reloading
+[2020-11-04 20:45:11,004] INFO in _internal:  * Restarting with stat
+[2020-11-04 20:45:11,837] INFO in server: Server initialized for threading.
+[2020-11-04 20:45:11,870] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-04 20:45:11,871] WARNING in _internal:  * Debugger is active!
+[2020-11-04 20:45:11,878] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-04 20:45:11,918] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-04 20:45:57,121] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\utils.py', reloading
+[2020-11-04 20:45:57,653] INFO in _internal:  * Restarting with stat
+[2020-11-04 20:45:58,447] INFO in server: Server initialized for threading.
+[2020-11-04 20:45:58,478] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-04 20:45:58,479] WARNING in _internal:  * Debugger is active!
+[2020-11-04 20:45:58,484] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-04 20:45:58,501] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-04 20:46:05,872] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\utils.py', reloading
+[2020-11-04 20:46:06,224] INFO in _internal:  * Restarting with stat
+[2020-11-04 20:46:07,054] INFO in server: Server initialized for threading.
+[2020-11-04 20:46:07,085] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-04 20:46:07,107] WARNING in _internal:  * Debugger is active!
+[2020-11-04 20:46:07,114] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-04 20:46:07,126] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-04 20:46:09,260] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\utils.py', reloading
+[2020-11-04 20:46:09,324] INFO in _internal:  * Restarting with stat
+[2020-11-04 20:46:10,138] INFO in server: Server initialized for threading.
+[2020-11-04 20:46:10,281] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-04 20:46:10,282] WARNING in _internal:  * Debugger is active!
+[2020-11-04 20:46:10,290] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-04 20:46:10,316] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-04 20:46:11,389] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\utils.py', reloading
+[2020-11-04 20:46:11,913] INFO in _internal:  * Restarting with stat
+[2020-11-04 20:46:12,725] INFO in server: Server initialized for threading.
+[2020-11-04 20:46:12,812] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-04 20:46:12,814] WARNING in _internal:  * Debugger is active!
+[2020-11-04 20:46:12,821] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-04 20:46:12,847] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-04 20:46:14,979] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\utils.py', reloading
+[2020-11-04 20:46:15,506] INFO in _internal:  * Restarting with stat
+[2020-11-04 20:46:16,294] INFO in server: Server initialized for threading.
+[2020-11-04 20:46:16,396] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-04 20:46:16,397] WARNING in _internal:  * Debugger is active!
+[2020-11-04 20:46:16,404] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-04 20:46:16,429] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-04 20:46:18,560] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\utils.py', reloading
+[2020-11-04 20:46:19,086] INFO in _internal:  * Restarting with stat
+[2020-11-04 20:46:19,888] INFO in server: Server initialized for threading.
+[2020-11-04 20:46:19,894] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-04 20:46:19,895] WARNING in _internal:  * Debugger is active!
+[2020-11-04 20:46:19,901] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-04 20:46:19,937] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-04 20:47:08,348] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\video_view.py', reloading
+[2020-11-04 20:47:08,719] INFO in _internal:  * Restarting with stat
+[2020-11-04 20:47:09,535] INFO in server: Server initialized for threading.
+[2020-11-04 20:47:09,544] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-04 20:47:09,545] WARNING in _internal:  * Debugger is active!
+[2020-11-04 20:47:09,551] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-04 20:47:09,590] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-04 20:48:28,353] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\video_view.py', reloading
+[2020-11-04 20:48:28,905] INFO in _internal:  * Restarting with stat
+[2020-11-04 20:49:05,514] INFO in server: Server initialized for threading.
+[2020-11-04 20:49:05,541] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-04 20:49:05,547] INFO in _internal:  * Restarting with stat
+[2020-11-04 20:49:06,444] INFO in server: Server initialized for threading.
+[2020-11-04 20:49:06,450] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-04 20:49:06,451] WARNING in _internal:  * Debugger is active!
+[2020-11-04 20:49:06,458] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-04 20:49:06,492] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-04 20:50:59,147] INFO in _internal: 127.0.0.1 - - [04/Nov/2020 20:50:59] "[35m[1mPOST /api/video/ HTTP/1.1[0m" 500 -
+[2020-11-04 20:51:13,775] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\video_view.py', reloading
+[2020-11-04 20:51:14,200] INFO in _internal:  * Restarting with stat
+[2020-11-04 20:51:15,162] INFO in server: Server initialized for threading.
+[2020-11-04 20:51:15,187] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-04 20:51:15,188] WARNING in _internal:  * Debugger is active!
+[2020-11-04 20:51:15,194] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-04 20:51:15,225] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-04 20:51:16,618] INFO in cos_client: put object, url=:https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review/test.mp4 ,headers=:{'x-cos-storage-class': 'STANDARD'}
+[2020-11-04 20:51:16,620] DEBUG in cos_auth: format str: put
+/video_review/test.mp4
+
+x-cos-storage-class=STANDARD
+
+[2020-11-04 20:51:16,643] DEBUG in cos_auth: str_to_sign: sha1
+1604494216;1604504276
+2d531636ce04ee92285b5360f40822092e7ab934
+
+[2020-11-04 20:51:16,645] DEBUG in cos_auth: sign_key: dadbddde96cfa165aeb985101d22f67581c75428
+[2020-11-04 20:51:16,646] DEBUG in cos_auth: sign: eebcfc6a8d4cbd671a3dc94488f95b4895a66474
+[2020-11-04 20:51:16,646] DEBUG in cos_auth: sign_keydadbddde96cfa165aeb985101d22f67581c75428
+[2020-11-04 20:51:16,647] DEBUG in cos_auth: q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1604494216;1604504276&q-key-time=1604494216;1604504276&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=eebcfc6a8d4cbd671a3dc94488f95b4895a66474
+[2020-11-04 20:51:16,648] DEBUG in cos_auth: request headers: {'User-Agent': b'cos-python-sdk-v5.1.8.7', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-cos-storage-class': b'STANDARD', 'Content-Length': '338052', 'Authorization': 'q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1604494216;1604504276&q-key-time=1604494216;1604504276&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=eebcfc6a8d4cbd671a3dc94488f95b4895a66474'}
+[2020-11-04 20:51:16,650] DEBUG in connectionpool: Starting new HTTPS connection (1): hexo-blog-1258787237.cos.ap-beijing.myqcloud.com:443
+[2020-11-04 20:51:17,022] DEBUG in connectionpool: https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com:443 "PUT /video_review/test.mp4 HTTP/1.1" 200 0
+[2020-11-04 20:51:17,047] INFO in _internal: 127.0.0.1 - - [04/Nov/2020 20:51:17] "[35m[1mPOST /api/video/ HTTP/1.1[0m" 500 -
+[2020-11-04 20:51:49,947] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\video_view.py', reloading
+[2020-11-04 20:51:50,447] INFO in _internal:  * Restarting with stat
+[2020-11-04 20:51:51,394] INFO in server: Server initialized for threading.
+[2020-11-04 20:51:51,401] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-04 20:51:51,402] WARNING in _internal:  * Debugger is active!
+[2020-11-04 20:51:51,409] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-04 20:51:51,441] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-04 20:52:05,181] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\video_view.py', reloading
+[2020-11-04 20:52:05,608] INFO in _internal:  * Restarting with stat
+[2020-11-04 20:52:06,482] INFO in server: Server initialized for threading.
+[2020-11-04 20:52:06,516] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-04 20:52:06,517] WARNING in _internal:  * Debugger is active!
+[2020-11-04 20:52:06,526] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-04 20:52:06,562] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-04 20:52:09,758] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\video_view.py', reloading
+[2020-11-04 20:52:10,254] INFO in _internal:  * Restarting with stat
+[2020-11-04 20:52:11,128] INFO in server: Server initialized for threading.
+[2020-11-04 20:52:11,473] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-04 20:52:11,513] WARNING in _internal:  * Debugger is active!
+[2020-11-04 20:52:11,551] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-04 20:52:11,586] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-04 20:52:28,433] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\video_view.py', reloading
+[2020-11-04 20:52:28,856] INFO in _internal:  * Restarting with stat
+[2020-11-04 20:52:29,674] INFO in server: Server initialized for threading.
+[2020-11-04 20:52:29,712] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-04 20:52:29,712] WARNING in _internal:  * Debugger is active!
+[2020-11-04 20:52:29,719] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-04 20:52:29,753] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-04 20:52:32,644] INFO in cos_client: put object, url=:https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review/test.mp4 ,headers=:{'x-cos-storage-class': 'STANDARD'}
+[2020-11-04 20:52:32,646] DEBUG in cos_auth: format str: put
+/video_review/test.mp4
+
+x-cos-storage-class=STANDARD
+
+[2020-11-04 20:52:32,676] DEBUG in cos_auth: str_to_sign: sha1
+1604494292;1604504352
+2d531636ce04ee92285b5360f40822092e7ab934
+
+[2020-11-04 20:52:32,727] DEBUG in cos_auth: sign_key: 39295032695705bb70d903a30a721c7fc5dd6181
+[2020-11-04 20:52:32,756] DEBUG in cos_auth: sign: cbf52331ae2ea00283e926c3cc5d62965684f9d3
+[2020-11-04 20:52:32,757] DEBUG in cos_auth: sign_key39295032695705bb70d903a30a721c7fc5dd6181
+[2020-11-04 20:52:32,757] DEBUG in cos_auth: q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1604494292;1604504352&q-key-time=1604494292;1604504352&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=cbf52331ae2ea00283e926c3cc5d62965684f9d3
+[2020-11-04 20:52:32,758] DEBUG in cos_auth: request headers: {'User-Agent': b'cos-python-sdk-v5.1.8.7', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-cos-storage-class': b'STANDARD', 'Content-Length': '338052', 'Authorization': 'q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1604494292;1604504352&q-key-time=1604494292;1604504352&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=cbf52331ae2ea00283e926c3cc5d62965684f9d3'}
+[2020-11-04 20:52:32,762] DEBUG in connectionpool: Starting new HTTPS connection (1): hexo-blog-1258787237.cos.ap-beijing.myqcloud.com:443
+[2020-11-04 20:52:33,370] DEBUG in connectionpool: https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com:443 "PUT /video_review/test.mp4 HTTP/1.1" 200 0
+[2020-11-04 20:52:33,380] INFO in _internal: 127.0.0.1 - - [04/Nov/2020 20:52:33] "[37mPOST /api/video/ HTTP/1.1[0m" 200 -
+[2020-11-04 20:53:15,183] INFO in cos_client: put object, url=:https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review/test.png ,headers=:{'x-cos-storage-class': 'STANDARD'}
+[2020-11-04 20:53:15,185] DEBUG in cos_auth: format str: put
+/video_review/test.png
+
+x-cos-storage-class=STANDARD
+
+[2020-11-04 20:53:15,227] DEBUG in cos_auth: str_to_sign: sha1
+1604494335;1604504395
+371df5de43c6a086a806ca9ac907e89002e95c44
+
+[2020-11-04 20:53:15,229] DEBUG in cos_auth: sign_key: 83dbb2bd078a24ca266fb8027a363008ef5909c3
+[2020-11-04 20:53:15,230] DEBUG in cos_auth: sign: e8a62e79276a83ce39debeb02e64419a37a2d64f
+[2020-11-04 20:53:15,231] DEBUG in cos_auth: sign_key83dbb2bd078a24ca266fb8027a363008ef5909c3
+[2020-11-04 20:53:15,232] DEBUG in cos_auth: q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1604494335;1604504395&q-key-time=1604494335;1604504395&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=e8a62e79276a83ce39debeb02e64419a37a2d64f
+[2020-11-04 20:53:15,233] DEBUG in cos_auth: request headers: {'User-Agent': b'cos-python-sdk-v5.1.8.7', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-cos-storage-class': b'STANDARD', 'Content-Length': '338052', 'Authorization': 'q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1604494335;1604504395&q-key-time=1604494335;1604504395&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=e8a62e79276a83ce39debeb02e64419a37a2d64f'}
+[2020-11-04 20:53:15,526] DEBUG in connectionpool: https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com:443 "PUT /video_review/test.png HTTP/1.1" 200 0
+[2020-11-04 20:53:15,534] INFO in _internal: 127.0.0.1 - - [04/Nov/2020 20:53:15] "[37mPOST /api/video/ HTTP/1.1[0m" 200 -
+[2020-11-04 20:55:22,279] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\server\\app\\api\\video_view.py', reloading
+[2020-11-04 20:55:22,688] INFO in _internal:  * Restarting with stat
