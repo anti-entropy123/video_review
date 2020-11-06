@@ -3498,3 +3498,49 @@ x-cos-storage-class=STANDARD
 [2020-11-06 19:50:39,635] INFO in _internal: 127.0.0.1 - - [06/Nov/2020 19:50:39] "[37mPOST /api/project/ HTTP/1.1[0m" 200 -
 [2020-11-06 19:50:55,872] INFO in _internal: 127.0.0.1 - - [06/Nov/2020 19:50:55] "[37mPOST /api/project/ HTTP/1.1[0m" 200 -
 [2020-11-06 19:51:31,064] INFO in _internal: 127.0.0.1 - - [06/Nov/2020 19:51:31] "[37mGET /api/user/1 HTTP/1.1[0m" 200 -
+[2020-11-06 20:23:13,287] INFO in server: Server initialized for threading.
+[2020-11-06 20:23:13,326] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-06 20:23:13,362] INFO in _internal:  * Restarting with stat
+[2020-11-06 20:23:14,179] INFO in server: Server initialized for threading.
+[2020-11-06 20:23:14,218] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-06 20:23:14,220] WARNING in _internal:  * Debugger is active!
+[2020-11-06 20:23:14,226] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-06 20:23:14,237] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-06 20:23:28,647] INFO in _internal: 127.0.0.1 - - [06/Nov/2020 20:23:28] "[37mPOST /api/meeting/ HTTP/1.1[0m" 200 -
+[2020-11-06 20:23:57,477] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\back-end\\server\\app\\api\\meeting_view.py', reloading
+[2020-11-06 20:23:58,033] INFO in _internal:  * Restarting with stat
+[2020-11-06 20:24:02,159] INFO in server: Server initialized for threading.
+[2020-11-06 20:24:02,705] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-06 20:24:02,749] INFO in _internal:  * Restarting with stat
+[2020-11-06 20:24:03,664] INFO in server: Server initialized for threading.
+[2020-11-06 20:24:03,872] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-06 20:24:03,907] WARNING in _internal:  * Debugger is active!
+[2020-11-06 20:24:03,916] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-06 20:24:03,930] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-06 20:24:05,979] INFO in _internal: 127.0.0.1 - - [06/Nov/2020 20:24:05] "[37mPOST /api/meeting/ HTTP/1.1[0m" 200 -
+[2020-11-06 20:24:19,275] INFO in _internal: 127.0.0.1 - - [06/Nov/2020 20:24:19] "[37mPOST /api/meeting/ HTTP/1.1[0m" 200 -
+[2020-11-06 20:24:35,069] INFO in _internal: 127.0.0.1 - - [06/Nov/2020 20:24:35] "[37mPOST /api/meeting/ HTTP/1.1[0m" 200 -
+[2020-11-06 20:25:29,525] INFO in _internal: 127.0.0.1 - - [06/Nov/2020 20:25:29] "[35m[1mPOST /api/meeting/ HTTP/1.1[0m" 500 -
+[2020-11-06 20:25:56,742] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\back-end\\server\\app\\model.py', reloading
+[2020-11-06 20:25:57,049] INFO in _internal:  * Restarting with stat
+[2020-11-06 20:25:58,032] INFO in server: Server initialized for threading.
+[2020-11-06 20:25:58,043] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-06 20:25:58,044] WARNING in _internal:  * Debugger is active!
+[2020-11-06 20:25:58,052] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-06 20:25:58,107] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-06 20:25:59,502] INFO in _internal: 127.0.0.1 - - [06/Nov/2020 20:25:59] "[35m[1mPOST /api/meeting/ HTTP/1.1[0m" 500 -
+[2020-11-06 20:26:42,463] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\back-end\\server\\app\\model.py', reloading
+[2020-11-06 20:26:42,775] INFO in _internal:  * Restarting with stat
+[2020-11-06 20:26:43,681] INFO in server: Server initialized for threading.
+[2020-11-06 20:26:43,689] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-06 20:26:43,690] WARNING in _internal:  * Debugger is active!
+[2020-11-06 20:26:43,699] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-06 20:26:43,740] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-06 20:26:45,497] INFO in _internal: 127.0.0.1 - - [06/Nov/2020 20:26:45] "[37mPOST /api/meeting/ HTTP/1.1[0m" 200 -
+[2020-11-06 20:28:08,023] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\back-end\\server\\app\\model.py', reloading
+[2020-11-06 20:28:08,529] INFO in _internal:  * Restarting with stat
+[2020-11-06 20:28:09,375] INFO in server: Server initialized for threading.
+[2020-11-06 20:28:09,435] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-06 20:28:09,483] WARNING in _internal:  * Debugger is active!
+[2020-11-06 20:28:09,494] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-06 20:28:09,506] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)

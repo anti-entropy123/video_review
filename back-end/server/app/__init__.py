@@ -4,10 +4,7 @@ from flask_jwt_extended import JWTManager
 from flask_mongoengine import MongoEngine
 
 jwt = JWTManager()
-# db = SQLAlchemy()
 db = MongoEngine()
-
-# celery = Celery(__name__)
 
 # 工厂函数
 def create_app(config=None):

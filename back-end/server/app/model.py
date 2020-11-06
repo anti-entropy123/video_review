@@ -4,7 +4,6 @@ from .utils import safe_objectId
 
 from . import db
 
-
 class Message(db.EmbeddedDocument):
     fromId = db.StringField(required=True)
     fromName = db.StringField(required=True)
@@ -77,7 +76,7 @@ class Project(db.Document):
 
     @classmethod
     def get_project_by_id(cls, project_id:str):
-        return cls.objects(id=safe_objectId(project_id))
+        return cls.objects(id=safe_objectId(project_id)).first()
 
 class Comment(db.EmbeddedDocument):
     from_ = db.StringField(db_field='from', required=True)
@@ -114,10 +113,10 @@ class Video(db.Document):
 class Meeting(db.Document):
     title = db.StringField(required=True)
     ownerId = db.StringField(required=True)
-    onwerName = db.StringField(required=True)
+    ownerName = db.StringField(required=True)
     belongTo = db.StringField(required=True)
-    startTime = db.StringField(required=True)
-    endTime = db.StringField(required=True)
+    startTime = db.FloatField(required=True)
+    endTime = db.FloatField(required=True)
     meetingUrl = db.StringField(required=True)
     txMeetingId = db.StringField(required=True)
     
