@@ -1,0 +1,126 @@
+// 用户表
+{
+    "name": "user",
+    "schema": {
+        "_id": "user_id_1",
+        "username": "abc",
+        "password": "vnrsonixzeoghksovhiahef",
+        "mobileNum": 123454678,
+        "mail": "1234535@qq.com",
+        "avatar": "https://....",
+        "company": "mbry",
+        // 此用户创建的
+        "hasProject": [
+            "project_id_1", "project_id_2"
+        ],
+        // 此用户加入的
+        "joinProject": [
+            "project_id_3"
+        ],
+        "uploadVideo": [
+            "video_id_2", "video_id_3"
+        ],
+        "hasMeeting": [
+            "meeting_id_1"
+        ],
+        "message": [
+            {
+                // "messageId": 1,
+                "fromId": "user_id_2",
+                "fromName": "user_2",
+                "date": 1546812684,
+                "projectId": "project_id_1",
+                "projectName": "project1", 
+                "hasRead": 1,
+                "type": 0, //某用户上传了新的视频,
+                "content": {
+                    "videoName": "video_1",
+                },
+                "type": 1, //某用户审阅了你上传的视频
+                "content": {
+                    "videoName": "video_1",
+                    "reviewResult": 1
+                },
+                "type": 2, // 你的某个项目里的成员预定了新的会议
+                "content": {
+                    "meetingId": "meeting_id_1"
+                }, 
+                "type": 3, // 3 某位用户邀请你加入项目.
+                "content": {
+                    "word": "we need you."
+                },
+                "type": 4, // 用户处理了你的邀请信息
+                "content": {
+                    "inviteResult": 1
+                }
+            }
+        ]
+    }
+}
+// 项目表
+{
+    "name": "project",
+    "schema": {
+        "_id": "project_id_1",
+        "projectName": "project_1",
+        // 创建者
+        "owner": "user_id_1",
+        // 普通成员
+        "member": [
+            "user_id_2", "user_id_3"
+        ],
+        // 邀请后未回应的用户
+        "waitJoin": [
+            "user_id_4"
+        ],
+        "hasVideo": [
+            "video_id_1", "video_id_2", "video_id_3"
+        ],
+        "hasMeeting": [
+            "meeting_id_1"
+        ]
+    }
+}
+// 视频表
+{
+    "name": "video",
+    "schema": {
+        "_id": "video_id_1",
+        "videoName": "test1.mp4",
+        "duration": 7200,
+        // permission: 
+        // 0 项目内可读
+        // 1 项目内, 输入密码可读
+        // 2 仅会议内可读 
+        "permission": 1,
+        "password": "snoeinoaise",
+        "url": "https://...",
+        "hasReview": 1,
+        "reviewResult": 1,
+        "reviewSummary": "this is a text",
+        "comment":[
+            {
+                "from": "user1",
+                "position": 156,
+                "image": "https://...",
+                "content": "this is a text"
+            }
+        ]
+    }
+}
+// 会议表
+{
+    "name": "meeting",
+    "schema": {
+        "_id": "meeting_id_1",
+        "title": "meeting_1st",
+        "ownerId": "user_id_2",
+        "ownerName": "user2",
+        "belongTo": "project_id_1",
+        "startTime": "1572172200",
+        "endTime": "1572175800",
+        "note": "this is a text",
+        "meetingUrl": "",
+        "txMeetingId": ""
+    }
+}
