@@ -1,8 +1,7 @@
 from flask import Flask
-from flask_jwt_extended import JWTManager
 from flask_cors import CORS
+from flask_jwt_extended import JWTManager
 from flask_mongoengine import MongoEngine
-# from celery import Celery
 
 jwt = JWTManager()
 # db = SQLAlchemy()
@@ -41,4 +40,3 @@ def create_app(config=None):
     ws.init_app(app)
     
     return app, ws
-    
