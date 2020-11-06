@@ -40,7 +40,7 @@ class CheckCodeManager:
 
     # 验证是否存在验证码
     @staticmethod
-    def verify_exist(number, code) -> Tuple[bool, str]:
+    def _verify_exist(number, code) -> Tuple[bool, str]:
         if number in CheckCodeManager.check_codes:
             return 1, ''
         else:
@@ -48,7 +48,7 @@ class CheckCodeManager:
 
     # 验证验证码是否过期
     @staticmethod
-    def verify_time(number, code) -> Tuple[bool, str]:
+    def _verify_time(number, code) -> Tuple[bool, str]:
         t = CheckCodeManager.check_codes.get(number)[1]
         if time.time()-t > 5*60:
             return 0, "验证码过期"
@@ -57,7 +57,7 @@ class CheckCodeManager:
 
     # 验证验证码是否正确
     @staticmethod
-    def verify_correct(number, code) -> Tuple[bool, str]:
+    def _verify_correct(number, code) -> Tuple[bool, str]:
         origin_code = CheckCodeManager.check_codes.get(number)[0]
         if origin_code == code:
             return 1, ""
@@ -66,17 +66,17 @@ class CheckCodeManager:
 
     # 删除验证码
     @staticmethod
-    def delete_code(number, code) -> Tuple[bool, str]:
+    def _delete_code(number, code) -> Tuple[bool, str]:
         CheckCodeManager.check_codes.pop(number)
         return 1, ''
 
     def __init__(self) -> None:
         # 定义检测验证码的步骤
         self.do_verify = [
-            self.verify_exist,
-            self.verify_time,
-            self.verify_correct,
-            self.delete_code
+            self._verify_exist,
+            self._verify_time,
+            self._verify_correct,
+            self._delete_code
         ]
 
     # 发送短信

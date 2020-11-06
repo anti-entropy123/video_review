@@ -3544,3 +3544,53 @@ x-cos-storage-class=STANDARD
 [2020-11-06 20:28:09,483] WARNING in _internal:  * Debugger is active!
 [2020-11-06 20:28:09,494] INFO in _internal:  * Debugger PIN: 192-798-533
 [2020-11-06 20:28:09,506] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-07 00:32:42,617] INFO in server: Server initialized for threading.
+[2020-11-07 00:32:42,678] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-07 00:32:42,747] INFO in _internal:  * Restarting with stat
+[2020-11-07 00:32:43,574] INFO in server: Server initialized for threading.
+[2020-11-07 00:32:43,612] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-07 00:32:43,613] WARNING in _internal:  * Debugger is active!
+[2020-11-07 00:32:43,652] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-07 00:32:43,697] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-07 00:33:35,381] DEBUG in client: Request received. Product:None Endpoint:dysmsapi.aliyuncs.com Params: {'RegionId': 'cn-hangzhou', 'PhoneNumbers': '18502616338', 'SignName': 'ÊÓÆµÉóÔÄÆ½Ì¨', 'TemplateCode': 'SMS_205402562', 'TemplateParam': '{"code": "539712"}', 'Version': '2017-05-25', 'Action': 'SendSms', 'Format': 'json', 'Timestamp': '2020-11-06T16:33:35Z', 'SignatureMethod': 'HMAC-SHA1', 'SignatureType': '', 'SignatureVersion': '1.0', 'SignatureNonce': 'ed4815c4-39b0-5229-8577-f53373e42073', 'Signature': 'qMjhW3T55A9BX90njXWyHuzP5mM='}
+[2020-11-07 00:33:36,058] INFO in _internal: 127.0.0.1 - - [07/Nov/2020 00:33:36] "[37mGET /api/checkCode?mobileNum=18502616338 HTTP/1.1[0m" 200 -
+[2020-11-07 00:34:34,794] INFO in _internal: 127.0.0.1 - - [07/Nov/2020 00:34:34] "[31m[1mPOST /api/login/ HTTP/1.1[0m" 400 -
+[2020-11-07 00:35:34,615] INFO in _internal: 127.0.0.1 - - [07/Nov/2020 00:35:34] "[35m[1mPOST /api/login/ HTTP/1.1[0m" 500 -
+[2020-11-07 00:35:44,645] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\back-end\\server\\app\\auth\\views.py', reloading
+[2020-11-07 00:35:45,083] INFO in _internal:  * Restarting with stat
+[2020-11-07 00:35:45,926] INFO in server: Server initialized for threading.
+[2020-11-07 00:35:45,979] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-07 00:35:46,034] WARNING in _internal:  * Debugger is active!
+[2020-11-07 00:35:46,041] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-07 00:35:46,053] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-07 00:35:56,645] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\back-end\\server\\app\\auth\\views.py', reloading
+[2020-11-07 00:35:56,706] INFO in _internal:  * Restarting with stat
+[2020-11-07 00:35:57,521] INFO in server: Server initialized for threading.
+[2020-11-07 00:35:57,557] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-07 00:35:57,558] WARNING in _internal:  * Debugger is active!
+[2020-11-07 00:35:57,565] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-07 00:35:57,603] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-07 00:35:59,493] INFO in _internal: 127.0.0.1 - - [07/Nov/2020 00:35:59] "[37mPOST /api/login/ HTTP/1.1[0m" 200 -
+[2020-11-07 00:36:30,111] DEBUG in client: Request received. Product:None Endpoint:dysmsapi.aliyuncs.com Params: {'RegionId': 'cn-hangzhou', 'PhoneNumbers': '18502616338', 'SignName': 'ÊÓÆµÉóÔÄÆ½Ì¨', 'TemplateCode': 'SMS_205402562', 'TemplateParam': '{"code": "776517"}', 'Version': '2017-05-25', 'Action': 'SendSms', 'Format': 'json', 'Timestamp': '2020-11-06T16:36:30Z', 'SignatureMethod': 'HMAC-SHA1', 'SignatureType': '', 'SignatureVersion': '1.0', 'SignatureNonce': 'd3852aac-ac32-5df4-a033-c834dc371b3b', 'Signature': 'yz+riaRAaUE2RG1JKF9tjer0HKc='}
+[2020-11-07 00:36:30,548] INFO in _internal: 127.0.0.1 - - [07/Nov/2020 00:36:30] "[37mGET /api/checkCode?mobileNum=18502616338 HTTP/1.1[0m" 200 -
+[2020-11-07 00:37:13,090] INFO in _internal: 127.0.0.1 - - [07/Nov/2020 00:37:13] "[37mPOST /api/login/ HTTP/1.1[0m" 200 -
+[2020-11-07 00:37:33,643] INFO in _internal: 127.0.0.1 - - [07/Nov/2020 00:37:33] "[31m[1mPOST /api/login/ HTTP/1.1[0m" 400 -
+[2020-11-07 00:38:37,396] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\back-end\\server\\app\\auth\\views.py', reloading
+[2020-11-07 00:38:37,798] INFO in _internal:  * Restarting with stat
+[2020-11-07 00:41:25,356] INFO in server: Server initialized for threading.
+[2020-11-07 00:41:25,362] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-07 00:41:25,403] INFO in _internal:  * Restarting with stat
+[2020-11-07 00:41:26,225] INFO in server: Server initialized for threading.
+[2020-11-07 00:41:26,268] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-07 00:41:26,269] WARNING in _internal:  * Debugger is active!
+[2020-11-07 00:41:26,276] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-07 00:41:26,288] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-07 00:41:28,699] INFO in _internal: 127.0.0.1 - - [07/Nov/2020 00:41:28] "[31m[1mPOST /api/login/ HTTP/1.1[0m" 400 -
+[2020-11-07 00:41:59,978] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\back-end\\server\\app\\api\\errors.py', reloading
+[2020-11-07 00:42:00,500] INFO in _internal:  * Restarting with stat
+[2020-11-07 00:42:01,388] INFO in server: Server initialized for threading.
+[2020-11-07 00:42:01,420] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-07 00:42:01,421] WARNING in _internal:  * Debugger is active!
+[2020-11-07 00:42:01,428] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-07 00:42:01,460] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-07 00:42:05,500] INFO in _internal: 127.0.0.1 - - [07/Nov/2020 00:42:05] "[37mPOST /api/login/ HTTP/1.1[0m" 200 -

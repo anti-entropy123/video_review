@@ -4,7 +4,7 @@ from ..utils import build_response
 from . import api
 
 
-@api.errorhandler(400)
+@api.app_errorhandler(400)
 def parm_error(e):
     if 'msg' in e.description:
         message = "缺少参数: " + e.description['msg']

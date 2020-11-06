@@ -1,4 +1,5 @@
 from flask import abort, jsonify, request
+from flask import json
 from flask_jwt_extended import (create_access_token, create_refresh_token,
                                 get_jwt_identity, jwt_refresh_token_required)
 from werkzeug.security import check_password_hash, generate_password_hash
@@ -10,6 +11,8 @@ from . import auth
 @auth.route('/checkCode', methods=['GET'])
 def get_checkcode():
     mobile = request.args.get('mobileNum', 0)
+    # operation = request.args.get('operation', 'register')
+
     if not mobile:
         return jsonify(build_response(0, "缺少参数: mobileNum"))
 
@@ -63,7 +66,10 @@ def register():
 def login():
     try:
         mobileNum = request.json['mobileNum']
-        password = request.json['password']
+        password = request.json.get('password', None)
+        checkcode = request.json.get('checkcode', None)
+        if not password and not checkcode:
+            raise KeyError('password or checkcode')
     except KeyError as e:
         abort(400, {'msg': str(e)})
 
@@ -71,14 +77,22 @@ def login():
     if not user:
         # 没有此用户
         abort(401)
-       
-    if not check_password_hash(user.password, password): 
+
+    result, message = 1, ''       
+    if password and not check_password_hash(user.password, password): 
         # 错误的密码
         abort(401)
+    elif checkcode:
+        result, message = checkCodeManager.verify_code(mobileNum=mobileNum, code=checkcode)
+    else:
+        abort(400, {'msg': "password 或 checkcode"})
 
-    access_token = create_access_token(identity=str(user.id))
-    refresh_token = create_refresh_token(identity=str(user.id))
-    return build_response(1, '', token=access_token, refreshToken=refresh_token, userId=str(user.id))
+    if result:
+        access_token = create_access_token(identity=str(user.id))
+        refresh_token = create_refresh_token(identity=str(user.id))
+        return jsonify(build_response(1, '', token=access_token, refreshToken=refresh_token, userId=str(user.id)))
+    else:
+        return jsonify(build_response(result=result, message=message))
 
 # 访问此接口需要携带有效的refresh_token
 @auth.route('/refresh/', methods=['POST'])
