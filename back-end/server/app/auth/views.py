@@ -78,14 +78,12 @@ def login():
         # 没有此用户
         abort(401)
 
-    result, message = 1, ''       
+    result, message = 1, ''
     if password and not check_password_hash(user.password, password): 
         # 错误的密码
         abort(401)
     elif checkcode:
         result, message = checkCodeManager.verify_code(mobileNum=mobileNum, code=checkcode)
-    else:
-        abort(400, {'msg': "password 或 checkcode"})
 
     if result:
         access_token = create_access_token(identity=str(user.id))

@@ -3594,3 +3594,8 @@ x-cos-storage-class=STANDARD
 [2020-11-07 00:42:01,428] INFO in _internal:  * Debugger PIN: 192-798-533
 [2020-11-07 00:42:01,460] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
 [2020-11-07 00:42:05,500] INFO in _internal: 127.0.0.1 - - [07/Nov/2020 00:42:05] "[37mPOST /api/login/ HTTP/1.1[0m" 200 -
+[2020-11-07 00:58:59,953] INFO in server: Server initialized for eventlet.
+[2020-11-07 00:58:59,974] INFO in _internal:  * Restarting with stat
+[2020-11-07 00:59:02,968] INFO in server: Server initialized for eventlet.
+[2020-11-07 00:59:03,023] WARNING in _internal:  * Debugger is active!
+[2020-11-07 00:59:03,037] INFO in _internal:  * Debugger PIN: 611-914-660
