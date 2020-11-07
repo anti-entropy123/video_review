@@ -2,3 +2,4 @@ venv
 .vscode
 run_venv.bat
 server/config/secret_config.py
+server.zip
