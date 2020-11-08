@@ -53,6 +53,9 @@ def register():
     if User.objects(username=username).first():
         return jsonify(build_response(0, "此用户名已被使用"))
     
+    if User.objects(mobileNum=mobileNum).first():
+        return jsonify(build_response(0, "此手机号已经被使用"))
+
     # 向数据库中增加用户
     user = User(
         username  = username, 
