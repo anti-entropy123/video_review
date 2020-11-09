@@ -30,7 +30,7 @@ def update_user_info():
     try:
         username = params['username']
         avatar = params['avatar']
-        mobile = params['mobile']
+        mobile = params['mobileNum']
         company = params['company']
     except KeyError as e:
         abort(400)
