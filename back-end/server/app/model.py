@@ -102,6 +102,7 @@ class Video(db.Document):
     hasReview = db.IntField(default=0)
     reviewResult = db.IntField(default=0)
     reviewSummary = db.StringField(default='')
+    createDate = db.FloatField(default=time.time())
     
     def __str__(self):
         return f"视频: {self.videoName}"

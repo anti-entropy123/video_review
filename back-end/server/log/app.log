@@ -3599,3 +3599,15 @@ x-cos-storage-class=STANDARD
 [2020-11-07 00:59:02,968] INFO in server: Server initialized for eventlet.
 [2020-11-07 00:59:03,023] WARNING in _internal:  * Debugger is active!
 [2020-11-07 00:59:03,037] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-10 08:38:55,763] INFO in server: Server initialized for threading.
+[2020-11-10 08:38:56,716] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-10 08:38:56,964] INFO in _internal:  * Restarting with stat
+[2020-11-10 08:38:59,678] INFO in server: Server initialized for threading.
+[2020-11-10 09:13:48,252] INFO in server: Server initialized for threading.
+[2020-11-10 09:13:48,988] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-10 09:13:49,481] INFO in _internal:  * Restarting with stat
+[2020-11-10 09:13:52,321] INFO in server: Server initialized for threading.
+[2020-11-10 09:13:52,857] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-10 09:13:53,017] WARNING in _internal:  * Debugger is active!
+[2020-11-10 09:13:53,048] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-10 09:13:53,233] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)

@@ -6,7 +6,6 @@ from ..model import Message, Project, User, Video
 from ..utils import build_response, safe_objectId
 from . import api
 
-
 @api.route('/project/', methods=['POST'])
 @login_required
 def create_project():
@@ -147,7 +146,10 @@ def get_project_data():
         video_list.append({
             'videoName': video.videoName,
             'cover': video.cover,
-            'videoId': video_id
+            'videoId': video_id,
+            'hasReview': video.hasReview,
+            'createDate': video.createDate,
+            'duration': video.duration
         })
     
     data = {'videoList': video_list, 'userList': user_list}
@@ -171,3 +173,46 @@ def get_project_list():
             })         
     
     return jsonify(build_response(data=data))
+
+@api.route('/project/<project_id>/removeUser', methods=['DELETE'])
+@login_required
+def remove_user_from_project(project_id:str):
+    try:
+        userId = request.data['userId']
+    except KeyError as e:
+        abort(400, {'msg': str(e)})
+    
+    user = User.get_user_by_id(get_jwt_identity())
+    project = Project.get_project_by_id(project_id=project_id)
+    target = User.get_user_by_id(userId)
+    
+
+    if not project:
+        return jsonify(build_response(0, '无此项目'))
+    
+    if not target:
+        return jsonify(build_response(0, '无此用户'))
+
+    if not str(user.id) == project.owner:
+        return jsonify(build_response(0, '你没有此权限'))
+    
+    i = -1
+    for index, member in enumerate(project.member):
+        if member.userId == userId:
+            i = index
+            break
+
+    project.member.pop(i)
+    project.save()
+
+    message = Message(
+        fromId=str(user.id),
+        fromName=user.username,
+        projectId=str(project.id),
+        projectName=project.projectName,
+        type=5,
+        content={}
+    )
+
+    target.receive_message(message)
+    return jsonify(build_response())
