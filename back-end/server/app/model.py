@@ -80,6 +80,7 @@ class Project(db.Document):
 
 class Comment(db.EmbeddedDocument):
     from_ = db.StringField(db_field='from', required=True)
+    fromName = db.StringField(required=True)
     position = db.IntField(required=True)
     image = db.StringField(required=True)
     content = db.StringField(required=True)

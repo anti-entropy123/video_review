@@ -3611,3 +3611,232 @@ x-cos-storage-class=STANDARD
 [2020-11-10 09:13:53,017] WARNING in _internal:  * Debugger is active!
 [2020-11-10 09:13:53,048] INFO in _internal:  * Debugger PIN: 192-798-533
 [2020-11-10 09:13:53,233] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-13 21:08:21,702] INFO in server: Server initialized for threading.
+[2020-11-13 21:08:21,714] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-13 21:08:21,744] INFO in _internal:  * Restarting with stat
+[2020-11-13 21:08:22,577] INFO in server: Server initialized for threading.
+[2020-11-13 21:08:22,679] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-13 21:08:22,680] WARNING in _internal:  * Debugger is active!
+[2020-11-13 21:08:22,688] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-13 21:08:22,725] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-13 21:08:47,629] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:08:47] "[37mGET / HTTP/1.1[0m" 200 -
+[2020-11-13 21:08:48,007] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:08:48] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+[2020-11-13 21:08:48,822] INFO in socket: 7e2928a496da45d4852b32b7185b6794: Sending packet OPEN data {'sid': '7e2928a496da45d4852b32b7185b6794', 'upgrades': [], 'pingTimeout': 60000, 'pingInterval': 25000}
+[2020-11-13 21:08:48,823] INFO in socket: 7e2928a496da45d4852b32b7185b6794: Sending packet MESSAGE data 0
+[2020-11-13 21:08:48,849] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:08:48] "[37mGET /socket.io/?EIO=3&transport=polling&t=NN1kFwI HTTP/1.1[0m" 200 -
+[2020-11-13 21:08:49,074] INFO in socket: 7e2928a496da45d4852b32b7185b6794: Received packet MESSAGE data 0/dcenter
+[2020-11-13 21:08:49,075] INFO in socket: 7e2928a496da45d4852b32b7185b6794: Sending packet MESSAGE data 0/dcenter
+[2020-11-13 21:08:49,076] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:08:49] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NN1kG9O&sid=7e2928a496da45d4852b32b7185b6794 HTTP/1.1[0m" 200 -
+[2020-11-13 21:08:49,164] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:08:49] "[37mGET /socket.io/?EIO=3&transport=polling&t=NN1kG9P&sid=7e2928a496da45d4852b32b7185b6794 HTTP/1.1[0m" 200 -
+[2020-11-13 21:08:52,396] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:08:52] "[37mGET / HTTP/1.1[0m" 200 -
+[2020-11-13 21:08:52,928] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:08:52] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+[2020-11-13 21:08:53,421] INFO in socket: 52385f1201804226b19bcf75ccd73ef7: Sending packet OPEN data {'sid': '52385f1201804226b19bcf75ccd73ef7', 'upgrades': [], 'pingTimeout': 60000, 'pingInterval': 25000}
+[2020-11-13 21:08:53,423] INFO in socket: 52385f1201804226b19bcf75ccd73ef7: Sending packet MESSAGE data 0
+[2020-11-13 21:08:53,455] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:08:53] "[37mGET /socket.io/?EIO=3&transport=polling&t=NN1kH2J HTTP/1.1[0m" 200 -
+[2020-11-13 21:08:53,767] INFO in socket: 52385f1201804226b19bcf75ccd73ef7: Received packet MESSAGE data 0/dcenter
+[2020-11-13 21:08:53,769] INFO in socket: 52385f1201804226b19bcf75ccd73ef7: Sending packet MESSAGE data 0/dcenter
+[2020-11-13 21:08:53,770] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:08:53] "[37mGET /socket.io/?EIO=3&transport=polling&t=NN1kHHM&sid=52385f1201804226b19bcf75ccd73ef7 HTTP/1.1[0m" 200 -
+[2020-11-13 21:08:53,798] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:08:53] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NN1kHHL&sid=52385f1201804226b19bcf75ccd73ef7 HTTP/1.1[0m" 200 -
+[2020-11-13 21:09:03,420] INFO in server: emitting event "has_message" to all [/dcenter]
+[2020-11-13 21:09:03,421] INFO in socket: 7e2928a496da45d4852b32b7185b6794: Sending packet MESSAGE data 2/dcenter,["has_message",{"data":"test message!"}]
+[2020-11-13 21:09:03,422] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:09:03] "[37mGET /socket.io/?EIO=3&transport=polling&t=NN1kGEI&sid=7e2928a496da45d4852b32b7185b6794 HTTP/1.1[0m" 200 -
+[2020-11-13 21:09:03,455] INFO in socket: 52385f1201804226b19bcf75ccd73ef7: Sending packet MESSAGE data 2/dcenter,["has_message",{"data":"test message!"}]
+[2020-11-13 21:09:03,455] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:09:03] "[37mGET /socket.io/?EIO=3&transport=polling&t=NN1kHMh&sid=52385f1201804226b19bcf75ccd73ef7 HTTP/1.1[0m" 200 -
+[2020-11-13 21:09:03,539] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:09:03] "[37mGET /push HTTP/1.1[0m" 200 -
+[2020-11-13 21:09:04,108] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:09:04] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+[2020-11-13 21:09:30,668] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:09:30] "[37mGET / HTTP/1.1[0m" 200 -
+[2020-11-13 21:09:31,213] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:09:31] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+[2020-11-13 21:09:31,571] INFO in socket: b746d3c19bf9425fbbd9a275575fbe66: Sending packet OPEN data {'sid': 'b746d3c19bf9425fbbd9a275575fbe66', 'upgrades': [], 'pingTimeout': 60000, 'pingInterval': 25000}
+[2020-11-13 21:09:31,573] INFO in socket: b746d3c19bf9425fbbd9a275575fbe66: Sending packet MESSAGE data 0
+[2020-11-13 21:09:31,601] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:09:31] "[37mGET /socket.io/?EIO=3&transport=polling&t=NN1kQOi HTTP/1.1[0m" 200 -
+[2020-11-13 21:09:31,914] INFO in socket: b746d3c19bf9425fbbd9a275575fbe66: Received packet MESSAGE data 0/dcenter
+[2020-11-13 21:09:31,915] INFO in socket: b746d3c19bf9425fbbd9a275575fbe66: Sending packet MESSAGE data 0/dcenter
+[2020-11-13 21:09:31,917] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:09:31] "[37mGET /socket.io/?EIO=3&transport=polling&t=NN1kQbO&sid=b746d3c19bf9425fbbd9a275575fbe66 HTTP/1.1[0m" 200 -
+[2020-11-13 21:09:31,941] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:09:31] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NN1kQbN&sid=b746d3c19bf9425fbbd9a275575fbe66 HTTP/1.1[0m" 200 -
+[2020-11-13 21:09:32,736] INFO in server: emitting event "has_message" to all [/dcenter]
+[2020-11-13 21:09:32,737] INFO in socket: 7e2928a496da45d4852b32b7185b6794: Client is gone, closing socket
+[2020-11-13 21:09:32,738] INFO in socket: 7e2928a496da45d4852b32b7185b6794: Client is gone, closing socket
+[2020-11-13 21:09:32,802] INFO in socket: 52385f1201804226b19bcf75ccd73ef7: Client is gone, closing socket
+[2020-11-13 21:09:32,803] INFO in socket: 52385f1201804226b19bcf75ccd73ef7: Client is gone, closing socket
+[2020-11-13 21:09:32,804] INFO in socket: b746d3c19bf9425fbbd9a275575fbe66: Sending packet MESSAGE data 2/dcenter,["has_message",{"data":"test message!"}]
+[2020-11-13 21:09:32,805] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:09:32] "[37mGET /socket.io/?EIO=3&transport=polling&t=NN1kQgg&sid=b746d3c19bf9425fbbd9a275575fbe66 HTTP/1.1[0m" 200 -
+[2020-11-13 21:09:32,806] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:09:32] "[37mGET /push HTTP/1.1[0m" 200 -
+[2020-11-13 21:09:33,297] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:09:33] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+[2020-11-13 21:09:56,616] INFO in socket: b746d3c19bf9425fbbd9a275575fbe66: Received packet PING data None
+[2020-11-13 21:09:56,618] INFO in socket: b746d3c19bf9425fbbd9a275575fbe66: Sending packet PONG data None
+[2020-11-13 21:09:56,618] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:09:56] "[37mGET /socket.io/?EIO=3&transport=polling&t=NN1kQuB&sid=b746d3c19bf9425fbbd9a275575fbe66 HTTP/1.1[0m" 200 -
+[2020-11-13 21:09:56,619] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:09:56] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NN1kWi2&sid=b746d3c19bf9425fbbd9a275575fbe66 HTTP/1.1[0m" 200 -
+[2020-11-13 21:09:59,364] INFO in server: emitting event "has_message" to all [/dcenter]
+[2020-11-13 21:09:59,365] INFO in socket: b746d3c19bf9425fbbd9a275575fbe66: Sending packet MESSAGE data 2/dcenter,["has_message",{"data":"test message!"}]
+[2020-11-13 21:09:59,365] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:09:59] "[37mGET /socket.io/?EIO=3&transport=polling&t=NN1kWiG&sid=b746d3c19bf9425fbbd9a275575fbe66 HTTP/1.1[0m" 200 -
+[2020-11-13 21:09:59,366] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:09:59] "[37mGET /push HTTP/1.1[0m" 200 -
+[2020-11-13 21:09:59,856] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:09:59] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+[2020-11-13 21:10:21,630] INFO in socket: b746d3c19bf9425fbbd9a275575fbe66: Received packet PING data None
+[2020-11-13 21:10:21,631] INFO in socket: b746d3c19bf9425fbbd9a275575fbe66: Sending packet PONG data None
+[2020-11-13 21:10:21,632] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:10:21] "[37mGET /socket.io/?EIO=3&transport=polling&t=NN1kXNF&sid=b746d3c19bf9425fbbd9a275575fbe66 HTTP/1.1[0m" 200 -
+[2020-11-13 21:10:21,632] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:10:21] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NN1kcov&sid=b746d3c19bf9425fbbd9a275575fbe66 HTTP/1.1[0m" 200 -
+[2020-11-13 21:10:45,742] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\back-end\\server\\app\\ws\\view.py', reloading
+[2020-11-13 21:10:46,131] INFO in _internal:  * Restarting with stat
+[2020-11-13 21:10:47,089] INFO in server: Server initialized for threading.
+[2020-11-13 21:10:47,098] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-13 21:10:47,098] WARNING in _internal:  * Debugger is active!
+[2020-11-13 21:10:47,105] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-13 21:10:47,142] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-13 21:10:47,189] WARNING in server: Invalid session b746d3c19bf9425fbbd9a275575fbe66
+[2020-11-13 21:10:47,198] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:10:47] "[31m[1mPOST /socket.io/?EIO=3&transport=polling&t=NN1kini&sid=b746d3c19bf9425fbbd9a275575fbe66 HTTP/1.1[0m" 400 -
+[2020-11-13 21:10:47,440] INFO in socket: c6fa550053a7461eaf10d65e55286d5e: Sending packet OPEN data {'sid': 'c6fa550053a7461eaf10d65e55286d5e', 'upgrades': [], 'pingTimeout': 60000, 'pingInterval': 25000}
+[2020-11-13 21:10:47,442] INFO in socket: c6fa550053a7461eaf10d65e55286d5e: Sending packet MESSAGE data 0
+[2020-11-13 21:10:47,443] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:10:47] "[37mGET /socket.io/?EIO=3&transport=polling&t=NN1kiy5 HTTP/1.1[0m" 200 -
+[2020-11-13 21:10:47,596] INFO in socket: c6fa550053a7461eaf10d65e55286d5e: Received packet MESSAGE data 0/dcenter
+[2020-11-13 21:10:47,597] INFO in socket: c6fa550053a7461eaf10d65e55286d5e: Sending packet MESSAGE data 0/dcenter
+[2020-11-13 21:10:47,599] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:10:47] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NN1kj6O&sid=c6fa550053a7461eaf10d65e55286d5e HTTP/1.1[0m" 200 -
+[2020-11-13 21:10:47,760] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:10:47] "[37mGET /socket.io/?EIO=3&transport=polling&t=NN1kj6Q&sid=c6fa550053a7461eaf10d65e55286d5e HTTP/1.1[0m" 200 -
+[2020-11-13 21:11:12,758] INFO in socket: c6fa550053a7461eaf10d65e55286d5e: Received packet PING data None
+[2020-11-13 21:11:12,760] INFO in socket: c6fa550053a7461eaf10d65e55286d5e: Sending packet PONG data None
+[2020-11-13 21:11:12,760] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:11:12] "[37mGET /socket.io/?EIO=3&transport=polling&t=NN1kjBL&sid=c6fa550053a7461eaf10d65e55286d5e HTTP/1.1[0m" 200 -
+[2020-11-13 21:11:12,760] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:11:12] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NN1kpD1&sid=c6fa550053a7461eaf10d65e55286d5e HTTP/1.1[0m" 200 -
+[2020-11-13 21:11:30,249] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\back-end\\server\\app\\ws\\view.py', reloading
+[2020-11-13 21:11:30,433] INFO in _internal:  * Restarting with stat
+[2020-11-13 21:11:31,280] INFO in server: Server initialized for threading.
+[2020-11-13 21:11:31,327] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-13 21:11:31,328] WARNING in _internal:  * Debugger is active!
+[2020-11-13 21:11:31,335] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-13 21:11:31,345] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-13 21:11:31,599] WARNING in server: Invalid session c6fa550053a7461eaf10d65e55286d5e
+[2020-11-13 21:11:31,600] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:11:31] "[31m[1mPOST /socket.io/?EIO=3&transport=polling&t=NN1ktpR&sid=c6fa550053a7461eaf10d65e55286d5e HTTP/1.1[0m" 400 -
+[2020-11-13 21:11:32,446] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\back-end\\server\\app\\ws\\view.py', reloading
+[2020-11-13 21:11:33,044] INFO in _internal:  * Restarting with stat
+[2020-11-13 21:11:33,898] INFO in server: Server initialized for threading.
+[2020-11-13 21:11:33,949] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-13 21:11:33,950] WARNING in _internal:  * Debugger is active!
+[2020-11-13 21:11:33,956] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-13 21:11:33,984] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-13 21:11:34,101] INFO in socket: 15499f8e3dce41d59bfc24da93c04012: Sending packet OPEN data {'sid': '15499f8e3dce41d59bfc24da93c04012', 'upgrades': [], 'pingTimeout': 60000, 'pingInterval': 25000}
+[2020-11-13 21:11:34,103] INFO in socket: 15499f8e3dce41d59bfc24da93c04012: Sending packet MESSAGE data 0
+[2020-11-13 21:11:34,126] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:11:34] "[37mGET /socket.io/?EIO=3&transport=polling&t=NN1kuIh HTTP/1.1[0m" 200 -
+[2020-11-13 21:11:34,352] INFO in socket: 15499f8e3dce41d59bfc24da93c04012: Received packet MESSAGE data 0/dcenter
+[2020-11-13 21:11:34,353] INFO in socket: 15499f8e3dce41d59bfc24da93c04012: Sending packet MESSAGE data 0/dcenter
+[2020-11-13 21:11:34,354] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:11:34] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NN1kuVp&sid=15499f8e3dce41d59bfc24da93c04012 HTTP/1.1[0m" 200 -
+[2020-11-13 21:11:34,442] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:11:34] "[37mGET /socket.io/?EIO=3&transport=polling&t=NN1kuVq&sid=15499f8e3dce41d59bfc24da93c04012 HTTP/1.1[0m" 200 -
+[2020-11-13 21:11:41,412] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\back-end\\server\\app\\ws\\view.py', reloading
+[2020-11-13 21:11:41,666] INFO in _internal:  * Restarting with stat
+[2020-11-13 21:11:42,509] INFO in server: Server initialized for threading.
+[2020-11-13 21:11:42,517] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-13 21:11:42,543] WARNING in _internal:  * Debugger is active!
+[2020-11-13 21:11:42,553] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-13 21:11:42,591] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-13 21:11:42,712] WARNING in server: Invalid session 15499f8e3dce41d59bfc24da93c04012
+[2020-11-13 21:11:42,713] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:11:42] "[31m[1mGET /socket.io/?EIO=3&transport=polling&t=NN1kub4&sid=15499f8e3dce41d59bfc24da93c04012 HTTP/1.1[0m" 400 -
+[2020-11-13 21:11:43,298] WARNING in server: Invalid session 15499f8e3dce41d59bfc24da93c04012
+[2020-11-13 21:11:43,299] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:11:43] "[31m[1mPOST /socket.io/?EIO=3&transport=polling&t=NN1kwkx&sid=15499f8e3dce41d59bfc24da93c04012 HTTP/1.1[0m" 400 -
+[2020-11-13 21:11:44,597] INFO in socket: 03891ee67df249a9b129f38613774069: Sending packet OPEN data {'sid': '03891ee67df249a9b129f38613774069', 'upgrades': [], 'pingTimeout': 60000, 'pingInterval': 25000}
+[2020-11-13 21:11:44,598] INFO in socket: 03891ee67df249a9b129f38613774069: Sending packet MESSAGE data 0
+[2020-11-13 21:11:44,599] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:11:44] "[37mGET /socket.io/?EIO=3&transport=polling&t=NN1kw-Y HTTP/1.1[0m" 200 -
+[2020-11-13 21:11:44,748] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\back-end\\server\\app\\ws\\view.py', reloading
+[2020-11-13 21:11:44,847] INFO in socket: 03891ee67df249a9b129f38613774069: Received packet MESSAGE data 0/dcenter
+[2020-11-13 21:11:44,848] INFO in socket: 03891ee67df249a9b129f38613774069: Sending packet MESSAGE data 0/dcenter
+[2020-11-13 21:11:44,849] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:11:44] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NN1kx3S&sid=03891ee67df249a9b129f38613774069 HTTP/1.1[0m" 200 -
+[2020-11-13 21:11:44,917] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:11:44] "[37mGET /socket.io/?EIO=3&transport=polling&t=NN1kx3U&sid=03891ee67df249a9b129f38613774069 HTTP/1.1[0m" 200 -
+[2020-11-13 21:11:45,264] INFO in _internal:  * Restarting with stat
+[2020-11-13 21:11:46,130] INFO in server: Server initialized for threading.
+[2020-11-13 21:11:46,192] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-13 21:11:46,193] WARNING in _internal:  * Debugger is active!
+[2020-11-13 21:11:46,199] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-13 21:11:46,211] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-13 21:11:46,310] WARNING in server: Invalid session 03891ee67df249a9b129f38613774069
+[2020-11-13 21:11:46,312] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:11:46] "[31m[1mGET /socket.io/?EIO=3&transport=polling&t=NN1kx8a&sid=03891ee67df249a9b129f38613774069 HTTP/1.1[0m" 400 -
+[2020-11-13 21:11:47,297] WARNING in server: Invalid session 03891ee67df249a9b129f38613774069
+[2020-11-13 21:11:47,299] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:11:47] "[31m[1mPOST /socket.io/?EIO=3&transport=polling&t=NN1kxjR&sid=03891ee67df249a9b129f38613774069 HTTP/1.1[0m" 400 -
+[2020-11-13 21:11:49,425] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\back-end\\server\\app\\ws\\view.py', reloading
+[2020-11-13 21:11:49,600] INFO in socket: 48906390a96d4edd8175c309ab090b1b: Sending packet OPEN data {'sid': '48906390a96d4edd8175c309ab090b1b', 'upgrades': [], 'pingTimeout': 60000, 'pingInterval': 25000}
+[2020-11-13 21:11:49,601] INFO in socket: 48906390a96d4edd8175c309ab090b1b: Sending packet MESSAGE data 0
+[2020-11-13 21:11:49,601] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:11:49] "[37mGET /socket.io/?EIO=3&transport=polling&t=NN1kyCh HTTP/1.1[0m" 200 -
+[2020-11-13 21:11:49,885] INFO in _internal:  * Restarting with stat
+[2020-11-13 21:11:50,737] INFO in server: Server initialized for threading.
+[2020-11-13 21:11:50,848] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-13 21:11:50,848] WARNING in _internal:  * Debugger is active!
+[2020-11-13 21:11:50,855] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-13 21:11:50,889] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-13 21:11:50,968] WARNING in server: Invalid session 48906390a96d4edd8175c309ab090b1b
+[2020-11-13 21:11:50,969] WARNING in server: Invalid session 48906390a96d4edd8175c309ab090b1b
+[2020-11-13 21:11:50,977] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:11:50] "[31m[1mGET /socket.io/?EIO=3&transport=polling&t=NN1kyIP&sid=48906390a96d4edd8175c309ab090b1b HTTP/1.1[0m" 400 -
+[2020-11-13 21:11:50,978] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:11:50] "[31m[1mPOST /socket.io/?EIO=3&transport=polling&t=NN1kySI&sid=48906390a96d4edd8175c309ab090b1b HTTP/1.1[0m" 400 -
+[2020-11-13 21:11:51,299] INFO in socket: 4524f34cee494c1a91133961c5a96927: Sending packet OPEN data {'sid': '4524f34cee494c1a91133961c5a96927', 'upgrades': [], 'pingTimeout': 60000, 'pingInterval': 25000}
+[2020-11-13 21:11:51,301] INFO in socket: 4524f34cee494c1a91133961c5a96927: Sending packet MESSAGE data 0
+[2020-11-13 21:11:51,358] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:11:51] "[37mGET /socket.io/?EIO=3&transport=polling&t=NN1kyhx HTTP/1.1[0m" 200 -
+[2020-11-13 21:11:51,679] INFO in socket: 4524f34cee494c1a91133961c5a96927: Received packet MESSAGE data 0/dcenter
+[2020-11-13 21:11:51,680] INFO in socket: 4524f34cee494c1a91133961c5a96927: Sending packet MESSAGE data 0/dcenter
+[2020-11-13 21:11:51,681] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:11:51] "[37mGET /socket.io/?EIO=3&transport=polling&t=NN1kyj6&sid=4524f34cee494c1a91133961c5a96927 HTTP/1.1[0m" 200 -
+[2020-11-13 21:11:51,681] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:11:51] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NN1kyj4&sid=4524f34cee494c1a91133961c5a96927 HTTP/1.1[0m" 200 -
+[2020-11-13 21:11:51,979] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\back-end\\server\\app\\ws\\view.py', reloading
+[2020-11-13 21:11:52,503] INFO in _internal:  * Restarting with stat
+[2020-11-13 21:11:53,340] INFO in server: Server initialized for threading.
+[2020-11-13 21:11:53,350] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-13 21:11:53,376] WARNING in _internal:  * Debugger is active!
+[2020-11-13 21:11:53,383] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-13 21:11:53,491] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-13 21:11:53,599] WARNING in server: Invalid session 4524f34cee494c1a91133961c5a96927
+[2020-11-13 21:11:53,602] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:11:53] "[31m[1mPOST /socket.io/?EIO=3&transport=polling&t=NN1kzBA&sid=4524f34cee494c1a91133961c5a96927 HTTP/1.1[0m" 400 -
+[2020-11-13 21:11:55,296] INFO in socket: 5328f641e8cd499d8df64dfeb9dee400: Sending packet OPEN data {'sid': '5328f641e8cd499d8df64dfeb9dee400', 'upgrades': [], 'pingTimeout': 60000, 'pingInterval': 25000}
+[2020-11-13 21:11:55,297] INFO in socket: 5328f641e8cd499d8df64dfeb9dee400: Sending packet MESSAGE data 0
+[2020-11-13 21:11:55,298] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:11:55] "[37mGET /socket.io/?EIO=3&transport=polling&t=NN1kzgQ HTTP/1.1[0m" 200 -
+[2020-11-13 21:11:55,648] INFO in socket: 5328f641e8cd499d8df64dfeb9dee400: Received packet MESSAGE data 0/dcenter
+[2020-11-13 21:11:55,649] INFO in socket: 5328f641e8cd499d8df64dfeb9dee400: Sending packet MESSAGE data 0/dcenter
+[2020-11-13 21:11:55,650] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:11:55] "[37mGET /socket.io/?EIO=3&transport=polling&t=NN1kzh7&sid=5328f641e8cd499d8df64dfeb9dee400 HTTP/1.1[0m" 200 -
+[2020-11-13 21:11:55,651] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:11:55] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NN1kzh5&sid=5328f641e8cd499d8df64dfeb9dee400 HTTP/1.1[0m" 200 -
+[2020-11-13 21:12:13,533] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\back-end\\server\\app\\ws\\view.py', reloading
+[2020-11-13 21:12:13,620] INFO in _internal:  * Restarting with stat
+[2020-11-13 21:12:14,455] INFO in server: Server initialized for threading.
+[2020-11-13 21:12:14,487] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-13 21:12:14,488] WARNING in _internal:  * Debugger is active!
+[2020-11-13 21:12:14,494] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-13 21:12:14,505] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-13 21:12:14,601] WARNING in server: Invalid session 5328f641e8cd499d8df64dfeb9dee400
+[2020-11-13 21:12:14,602] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:12:14] "[31m[1mPOST /socket.io/?EIO=3&transport=polling&t=NN1l2JJ&sid=5328f641e8cd499d8df64dfeb9dee400 HTTP/1.1[0m" 400 -
+[2020-11-13 21:12:16,296] INFO in socket: 308f9909970a4c7e96541650b7794ac8: Sending packet OPEN data {'sid': '308f9909970a4c7e96541650b7794ac8', 'upgrades': [], 'pingTimeout': 60000, 'pingInterval': 25000}
+[2020-11-13 21:12:16,297] INFO in socket: 308f9909970a4c7e96541650b7794ac8: Sending packet MESSAGE data 0
+[2020-11-13 21:12:16,298] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:12:16] "[37mGET /socket.io/?EIO=3&transport=polling&t=NN1l2oZ HTTP/1.1[0m" 200 -
+[2020-11-13 21:12:16,688] INFO in socket: 308f9909970a4c7e96541650b7794ac8: Received packet MESSAGE data 0/dcenter
+[2020-11-13 21:12:16,689] INFO in socket: 308f9909970a4c7e96541650b7794ac8: Sending packet MESSAGE data 0/dcenter
+[2020-11-13 21:12:16,689] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:12:16] "[37mGET /socket.io/?EIO=3&transport=polling&t=NN1l2px&sid=308f9909970a4c7e96541650b7794ac8 HTTP/1.1[0m" 200 -
+[2020-11-13 21:12:16,690] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:12:16] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NN1l2pv&sid=308f9909970a4c7e96541650b7794ac8 HTTP/1.1[0m" 200 -
+[2020-11-13 21:12:17,709] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\back-end\\server\\app\\ws\\view.py', reloading
+[2020-11-13 21:12:18,241] INFO in _internal:  * Restarting with stat
+[2020-11-13 21:12:19,159] INFO in server: Server initialized for threading.
+[2020-11-13 21:12:19,259] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-13 21:12:19,260] WARNING in _internal:  * Debugger is active!
+[2020-11-13 21:12:19,267] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-13 21:12:19,312] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-13 21:12:19,358] WARNING in server: Invalid session 308f9909970a4c7e96541650b7794ac8
+[2020-11-13 21:12:19,361] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:12:19] "[31m[1mPOST /socket.io/?EIO=3&transport=polling&t=NN1l3Hp&sid=308f9909970a4c7e96541650b7794ac8 HTTP/1.1[0m" 400 -
+[2020-11-13 21:12:20,299] INFO in socket: f3e621fd0ddc46a98e6cd76b671dbb58: Sending packet OPEN data {'sid': 'f3e621fd0ddc46a98e6cd76b671dbb58', 'upgrades': [], 'pingTimeout': 60000, 'pingInterval': 25000}
+[2020-11-13 21:12:20,301] INFO in socket: f3e621fd0ddc46a98e6cd76b671dbb58: Sending packet MESSAGE data 0
+[2020-11-13 21:12:20,302] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:12:20] "[37mGET /socket.io/?EIO=3&transport=polling&t=NN1l3n3 HTTP/1.1[0m" 200 -
+[2020-11-13 21:12:20,404] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\back-end\\server\\app\\ws\\view.py', reloading
+[2020-11-13 21:12:20,619] INFO in socket: f3e621fd0ddc46a98e6cd76b671dbb58: Received packet MESSAGE data 0/dcenter
+[2020-11-13 21:12:20,622] INFO in socket: f3e621fd0ddc46a98e6cd76b671dbb58: Sending packet MESSAGE data 0/dcenter
+[2020-11-13 21:12:20,623] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:12:20] "[37mGET /socket.io/?EIO=3&transport=polling&t=NN1l3nK&sid=f3e621fd0ddc46a98e6cd76b671dbb58 HTTP/1.1[0m" 200 -
+[2020-11-13 21:12:20,623] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:12:20] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NN1l3nJ&sid=f3e621fd0ddc46a98e6cd76b671dbb58 HTTP/1.1[0m" 200 -
+[2020-11-13 21:12:20,912] INFO in _internal:  * Restarting with stat
+[2020-11-13 21:12:21,728] INFO in server: Server initialized for threading.
+[2020-11-13 21:12:22,291] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-13 21:12:22,337] WARNING in _internal:  * Debugger is active!
+[2020-11-13 21:12:22,367] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-13 21:12:22,393] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-13 21:12:22,439] WARNING in server: Invalid session f3e621fd0ddc46a98e6cd76b671dbb58
+[2020-11-13 21:12:22,450] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:12:22] "[31m[1mPOST /socket.io/?EIO=3&transport=polling&t=NN1l40g&sid=f3e621fd0ddc46a98e6cd76b671dbb58 HTTP/1.1[0m" 400 -
+[2020-11-13 21:12:23,297] INFO in socket: 6620384632e64d2db1f2b1ae3eea1973: Sending packet OPEN data {'sid': '6620384632e64d2db1f2b1ae3eea1973', 'upgrades': [], 'pingTimeout': 60000, 'pingInterval': 25000}
+[2020-11-13 21:12:23,298] INFO in socket: 6620384632e64d2db1f2b1ae3eea1973: Sending packet MESSAGE data 0
+[2020-11-13 21:12:23,300] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:12:23] "[37mGET /socket.io/?EIO=3&transport=polling&t=NN1l4Vw HTTP/1.1[0m" 200 -
+[2020-11-13 21:12:23,619] INFO in socket: 6620384632e64d2db1f2b1ae3eea1973: Received packet MESSAGE data 0/dcenter
+[2020-11-13 21:12:23,619] INFO in socket: 6620384632e64d2db1f2b1ae3eea1973: Sending packet MESSAGE data 0/dcenter
+[2020-11-13 21:12:23,620] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:12:23] "[37mGET /socket.io/?EIO=3&transport=polling&t=NN1l4WC&sid=6620384632e64d2db1f2b1ae3eea1973 HTTP/1.1[0m" 200 -
+[2020-11-13 21:12:23,620] INFO in _internal: 127.0.0.1 - - [13/Nov/2020 21:12:23] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NN1l4W9&sid=6620384632e64d2db1f2b1ae3eea1973 HTTP/1.1[0m" 200 -
+[2020-11-13 23:45:26,315] INFO in server: Server initialized for threading.
+[2020-11-13 23:45:26,354] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-13 23:45:26,359] INFO in _internal:  * Restarting with stat
+[2020-11-13 23:45:27,154] INFO in server: Server initialized for threading.
+[2020-11-13 23:45:27,179] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-13 23:45:27,179] WARNING in _internal:  * Debugger is active!
+[2020-11-13 23:45:27,186] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-13 23:45:27,216] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
