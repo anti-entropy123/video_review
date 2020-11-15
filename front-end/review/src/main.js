@@ -5,7 +5,15 @@ import App from './App'
 import router from './router'
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
+import Antd from 'ant-design-vue';
+import 'ant-design-vue/dist/antd.css';// 加载 CSS
+// import {Button,Layout,Avatar} from 'ant-design-vue'
+// Vue.use(Button).use(Layout).use(Avatar)
+// Vue.component(Layout.name, Layout);
+// import { Button } from 'ant-design-vue';
 
+Vue.config.productionTip = false;
+Vue.use(Antd)
 Vue.use(ElementUI, { size: "small", zIndex: 3000 });
 Vue.config.productionTip = false;
 
