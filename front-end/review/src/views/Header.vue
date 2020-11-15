@@ -45,7 +45,7 @@
 }
 #components-layout-demo-basic .ant-layout-header,
 #components-layout-demo-basic .ant-layout-footer {
-  background: #2484dc;
+  background: #0f68bc;
   color: #fff;
 }
   .user{
@@ -54,6 +54,7 @@
   .title{
     float: left;
     color: white;
+    font-size: 17px;
   }
   .message{
     margin-right: 14px;

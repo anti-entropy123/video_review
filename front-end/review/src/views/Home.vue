@@ -2,8 +2,8 @@
   <div>
     <Header></Header>
   <div id="content">
-    <Menu></Menu>
-    <div id="main">
+<!--    <Menu></Menu>-->
+    <div >
     <Main></Main>
     </div>
   </div>
@@ -21,19 +21,14 @@ export default {
 
 <style>
 #content{
-  background: black;
+  /*background: black;*/
   width: 100%;
   height: 100%;
   float: left;
 }
   Main{
     position: absolute;
-    margin-left: 100px;
-  }
-  #main{
-    position: absolute;
-    margin-left: 256px;
-    width: 74%;
+    /*margin-left: 100px;*/
   }
 
 </style>
