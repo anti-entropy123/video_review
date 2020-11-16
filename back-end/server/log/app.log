@@ -4014,3 +4014,32 @@ e90685d83ba0c9f8d2b30a56f7711c62c40bcef0
 [2020-11-16 14:38:47,918] INFO in _internal:  * Debugger PIN: 192-798-533
 [2020-11-16 14:38:48,062] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
 [2020-11-16 14:40:02,461] INFO in _internal: 127.0.0.1 - - [16/Nov/2020 14:40:02] "[37mGET /api/project/5fa5389fe15fb514d550a8ee/userAndVideo HTTP/1.1[0m" 200 -
+[2020-11-16 15:04:31,712] INFO in server: Server initialized for threading.
+[2020-11-16 15:04:32,092] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-16 15:04:32,102] INFO in _internal:  * Restarting with stat
+[2020-11-16 15:04:33,851] INFO in server: Server initialized for threading.
+[2020-11-16 15:04:33,998] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-16 15:04:34,000] WARNING in _internal:  * Debugger is active!
+[2020-11-16 15:04:34,011] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-16 15:04:34,072] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-16 15:04:35,729] INFO in _internal: 127.0.0.1 - - [16/Nov/2020 15:04:35] "[37mPOST /api/video/ HTTP/1.1[0m" 200 -
+[2020-11-16 15:05:56,620] INFO in _internal: 127.0.0.1 - - [16/Nov/2020 15:05:56] "[37mPOST /api/login/ HTTP/1.1[0m" 200 -
+[2020-11-16 15:06:53,071] INFO in _internal: 127.0.0.1 - - [16/Nov/2020 15:06:53] "[37mPOST /api/video/ HTTP/1.1[0m" 200 -
+[2020-11-16 15:07:59,734] INFO in cos_client: put object, url=:https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review/kiana.mp4 ,headers=:{'x-cos-storage-class': 'STANDARD'}
+[2020-11-16 15:07:59,737] DEBUG in cos_auth: format str: put
+/video_review/kiana.mp4
+
+x-cos-storage-class=STANDARD
+
+[2020-11-16 15:07:59,848] DEBUG in cos_auth: str_to_sign: sha1
+1605510419;1605520479
+879114acde7b53647eb08179598a27cb06b485ee
+
+[2020-11-16 15:07:59,851] DEBUG in cos_auth: sign_key: 0fb0cd08e0cddc91bfe5fd4d65f70d93bbced43b
+[2020-11-16 15:07:59,853] DEBUG in cos_auth: sign: 65954c8b238149c306e4dbae88dc64d5b34d2375
+[2020-11-16 15:07:59,855] DEBUG in cos_auth: sign_key0fb0cd08e0cddc91bfe5fd4d65f70d93bbced43b
+[2020-11-16 15:07:59,970] DEBUG in cos_auth: q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605510419;1605520479&q-key-time=1605510419;1605520479&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=65954c8b238149c306e4dbae88dc64d5b34d2375
+[2020-11-16 15:08:00,179] DEBUG in cos_auth: request headers: {'User-Agent': b'cos-python-sdk-v5.1.8.7', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-cos-storage-class': b'STANDARD', 'Content-Length': '298829148', 'Authorization': 'q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605510419;1605520479&q-key-time=1605510419;1605520479&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=65954c8b238149c306e4dbae88dc64d5b34d2375'}
+[2020-11-16 15:08:00,519] DEBUG in connectionpool: Starting new HTTPS connection (1): hexo-blog-1258787237.cos.ap-beijing.myqcloud.com:443
+[2020-11-16 15:12:12,194] DEBUG in connectionpool: https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com:443 "PUT /video_review/kiana.mp4 HTTP/1.1" 200 0
+[2020-11-16 15:12:12,469] INFO in _internal: 127.0.0.1 - - [16/Nov/2020 15:12:12] "[37mPOST /api/video/ HTTP/1.1[0m" 200 -

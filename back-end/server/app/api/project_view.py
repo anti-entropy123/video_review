@@ -14,6 +14,9 @@ def create_project():
     except KeyError as e:
         abort(400, {'msg': str(e)})
 
+    user_id = get_jwt_identity()
+    user = User.get_user_by_id(user_id=user_id)
+
     if Project.objects(projectName=project_name):
         return jsonify(build_response(0, '此项目名已被使用'))
     
@@ -22,6 +25,9 @@ def create_project():
         owner=str(get_jwt_identity())
     )
     project.save()
+
+    user.hasProject.append(str(project.id))
+    user.save()
     return jsonify(build_response())
 
 @api.route('/project/<project_id>/inviteUser/', methods=['POST'])
@@ -154,7 +160,7 @@ def get_project_data(project_id):
 def get_project_list():
     user_id = get_jwt_identity()
     user = User.get_user_by_id(user_id)
-    projects = [user.hasProject] + user.joinProject
+    projects = user.hasProject + user.joinProject
 
     data = []
 
