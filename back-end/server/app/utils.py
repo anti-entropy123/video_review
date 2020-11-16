@@ -1,17 +1,13 @@
 from __future__ import annotations
 
-import logging
 import random
 import time
-from abc import ABC, abstractmethod
-from os import truncate
-from types import CodeType
 from typing import Tuple
 
 from aliyunsdkcore.client import AcsClient
 from aliyunsdkcore.request import CommonRequest
 from bson.objectid import ObjectId
-from flask import abort, jsonify
+from flask import current_app as app
 
 from config.secret_config import (AliAccessKeyID, AliAccessKeySecret,
                                   TxSecretId, TxSecretKey, bucket_name)
@@ -146,6 +142,7 @@ class TxCosUtil:
             EnableMD5=False
         )
         print(response['ETag'])
+        return f"https://{app.config['BUCKET_NAME']}.cos.ap-beijing.myqcloud.com/video_review/{key}"
 
 txCosUtil = TxCosUtil()
 

@@ -1,7 +1,5 @@
 from flask import jsonify, request, abort
 from flask_jwt_extended import get_jwt_identity
-from flask import current_app as app
-
 
 from .. import db
 from . import api
@@ -35,7 +33,7 @@ def create_video():
     if permission == 1 and password == '':
         return jsonify(build_response(0, 'password不能为空'))
     
-    txCosUtil.simple_file_upload(file, video_name)
+    url = txCosUtil.simple_file_upload(file, video_name)
 
     # 数据库插入此视频
     video = Video(
@@ -44,7 +42,7 @@ def create_video():
         owner=get_jwt_identity(),
         belongTo=upload_to_project,
         permission=permission,
-        url=f"https://{app.config['BUCKET_NAME']}.cos.ap-beijing.myqcloud.com/video_review/{video_name}",
+        url=url,
         cover=['https://'],
         password=password
     )

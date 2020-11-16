@@ -103,20 +103,14 @@ def join_project(project_id):
 
     return jsonify(build_response())
 
-@api.route('/project/userAndVideo', methods=['GET'])
+@api.route('/project/<project_id>/userAndVideo', methods=['GET'])
 @login_required
-def get_project_data():
-    try:
-        project_name = request.args['projectName']
-    except KeyError as e:
-        abort(400, {'msg': 'projectName'})
-    
+def get_project_data(project_id):
     video_list = []
     user_list = []
 
     # 找到此项目
-    project = Project.objects(projectName=project_name).first()
-    print(project)
+    project = Project.get_project_by_id(project_id)
     # 项目主
     owner = User.get_user_by_id(project.owner)
     user_list.append({
