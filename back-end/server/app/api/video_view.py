@@ -3,7 +3,7 @@ from flask_jwt_extended import get_jwt_identity
 
 from .. import db
 from . import api
-from ..utils import build_response, txCosUtil, safe_objectId
+from ..utils import build_response, txCosUtil, safe_objectId, captrueFrameUtil
 from ..model import Video, User, Project, Message
 from ..auth import login_required
 
@@ -34,16 +34,22 @@ def create_video():
         return jsonify(build_response(0, 'password不能为空'))
     
     url = txCosUtil.simple_file_upload(file, video_name)
+    filename = file.stream.name
+    frames, duration = captrueFrameUtil.capture_frame(filename)
+    covers = []
+    for i, frame in enumerate(frames):
+        u = txCosUtil.simple_file_upload(frame, f'/cover/{video_name}-{i}.png')
+        covers.append(u)
 
     # 数据库插入此视频
     video = Video(
         videoName=video_name,
-        duration=3600,
+        duration=duration,
         owner=get_jwt_identity(),
         belongTo=upload_to_project,
         permission=permission,
         url=url,
-        cover=['https://'],
+        cover=covers,
         password=password
     )
     video.save()

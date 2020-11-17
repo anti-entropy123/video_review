@@ -4043,3 +4043,435 @@ x-cos-storage-class=STANDARD
 [2020-11-16 15:08:00,519] DEBUG in connectionpool: Starting new HTTPS connection (1): hexo-blog-1258787237.cos.ap-beijing.myqcloud.com:443
 [2020-11-16 15:12:12,194] DEBUG in connectionpool: https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com:443 "PUT /video_review/kiana.mp4 HTTP/1.1" 200 0
 [2020-11-16 15:12:12,469] INFO in _internal: 127.0.0.1 - - [16/Nov/2020 15:12:12] "[37mPOST /api/video/ HTTP/1.1[0m" 200 -
+[2020-11-17 16:02:50,386] INFO in server: Server initialized for threading.
+[2020-11-17 16:02:50,462] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-17 16:02:50,471] INFO in _internal:  * Restarting with stat
+[2020-11-17 16:02:51,518] INFO in server: Server initialized for threading.
+[2020-11-17 16:02:52,218] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-17 16:02:52,220] WARNING in _internal:  * Debugger is active!
+[2020-11-17 16:02:52,228] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-17 16:02:52,338] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-17 16:05:50,844] INFO in _internal:  * Detected change in 'E:\\—ßœ∞◊ ¡œ\\øŒ≥Ã\\»Ìπ§∏ﬂº∂ µº˘\\¥Û◊˜“µ\\back-end\\server\\app\\utils.py', reloading
+[2020-11-17 16:05:51,231] INFO in _internal:  * Restarting with stat
+[2020-11-17 16:05:52,325] INFO in server: Server initialized for threading.
+[2020-11-17 16:05:52,368] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-17 16:05:52,369] WARNING in _internal:  * Debugger is active!
+[2020-11-17 16:05:52,377] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-17 16:05:52,457] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-17 16:05:59,928] INFO in _internal:  * Detected change in 'E:\\—ßœ∞◊ ¡œ\\øŒ≥Ã\\»Ìπ§∏ﬂº∂ µº˘\\¥Û◊˜“µ\\back-end\\server\\app\\utils.py', reloading
+[2020-11-17 16:06:00,004] INFO in _internal:  * Restarting with stat
+[2020-11-17 16:06:01,035] INFO in server: Server initialized for threading.
+[2020-11-17 16:06:01,084] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-17 16:06:01,104] WARNING in _internal:  * Debugger is active!
+[2020-11-17 16:06:01,113] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-17 16:06:01,191] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-17 16:06:02,280] INFO in _internal:  * Detected change in 'E:\\—ßœ∞◊ ¡œ\\øŒ≥Ã\\»Ìπ§∏ﬂº∂ µº˘\\¥Û◊˜“µ\\back-end\\server\\app\\utils.py', reloading
+[2020-11-17 16:06:02,670] INFO in _internal:  * Restarting with stat
+[2020-11-17 16:06:03,655] INFO in server: Server initialized for threading.
+[2020-11-17 16:06:03,754] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-17 16:06:03,755] WARNING in _internal:  * Debugger is active!
+[2020-11-17 16:06:03,763] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-17 16:06:03,817] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-17 16:06:11,275] INFO in _internal:  * Detected change in 'E:\\—ßœ∞◊ ¡œ\\øŒ≥Ã\\»Ìπ§∏ﬂº∂ µº˘\\¥Û◊˜“µ\\back-end\\server\\app\\utils.py', reloading
+[2020-11-17 16:06:11,819] INFO in _internal:  * Restarting with stat
+[2020-11-17 16:06:56,168] INFO in server: Server initialized for eventlet.
+[2020-11-17 16:06:56,179] INFO in _internal:  * Restarting with stat
+[2020-11-17 16:06:59,404] INFO in server: Server initialized for eventlet.
+[2020-11-17 16:06:59,422] WARNING in _internal:  * Debugger is active!
+[2020-11-17 16:06:59,469] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-17 16:07:21,914] INFO in cos_client: put object, url=:https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review/%E5%88%9D%E9%9F%B3%E6%9C%AA%E6%9D%A5.mp4 ,headers=:{'x-cos-storage-class': 'STANDARD'}
+[2020-11-17 16:07:21,917] DEBUG in cos_auth: format str: put
+/video_review/≥ı“ÙŒ¥¿¥.mp4
+
+x-cos-storage-class=STANDARD
+
+[2020-11-17 16:07:22,010] DEBUG in cos_auth: str_to_sign: sha1
+1605600382;1605610442
+a9608ff8c5fe09d96cdce798419ec7fc5a8c2720
+
+[2020-11-17 16:07:22,013] DEBUG in cos_auth: sign_key: 9c6ed75c0e82a513c96adcbcdcf7ed4ef39f1ad1
+[2020-11-17 16:07:22,015] DEBUG in cos_auth: sign: b6ff41bac42e6bd287f5b7049b75ea66510fa941
+[2020-11-17 16:07:22,017] DEBUG in cos_auth: sign_key9c6ed75c0e82a513c96adcbcdcf7ed4ef39f1ad1
+[2020-11-17 16:07:22,019] DEBUG in cos_auth: q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605600382;1605610442&q-key-time=1605600382;1605610442&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=b6ff41bac42e6bd287f5b7049b75ea66510fa941
+[2020-11-17 16:07:22,022] DEBUG in cos_auth: request headers: {'User-Agent': b'cos-python-sdk-v5.1.8.7', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-cos-storage-class': b'STANDARD', 'Content-Length': '20759590', 'Authorization': 'q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605600382;1605610442&q-key-time=1605600382;1605610442&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=b6ff41bac42e6bd287f5b7049b75ea66510fa941'}
+[2020-11-17 16:07:47,659] INFO in _internal:  * Detected change in 'E:\\—ßœ∞◊ ¡œ\\øŒ≥Ã\\»Ìπ§∏ﬂº∂ µº˘\\¥Û◊˜“µ\\back-end\\server\\app\\utils.py', reloading
+[2020-11-17 16:07:54,927] INFO in _internal:  * Restarting with stat
+[2020-11-17 16:07:57,919] INFO in server: Server initialized for eventlet.
+[2020-11-17 16:07:57,931] WARNING in _internal:  * Debugger is active!
+[2020-11-17 16:07:57,988] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-17 16:08:05,347] INFO in cos_client: put object, url=:https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review/%E5%88%9D%E9%9F%B3%E6%9C%AA%E6%9D%A5.mp4 ,headers=:{'x-cos-storage-class': 'STANDARD'}
+[2020-11-17 16:08:05,351] DEBUG in cos_auth: format str: put
+/video_review/≥ı“ÙŒ¥¿¥.mp4
+
+x-cos-storage-class=STANDARD
+
+[2020-11-17 16:08:05,389] DEBUG in cos_auth: str_to_sign: sha1
+1605600425;1605610485
+a9608ff8c5fe09d96cdce798419ec7fc5a8c2720
+
+[2020-11-17 16:08:05,391] DEBUG in cos_auth: sign_key: 105d1ffe148c17a0aa036e0b0c0fd5bf325b6e07
+[2020-11-17 16:08:05,393] DEBUG in cos_auth: sign: 03fdb0fb013c45639de9d93581be6e7b80d8c411
+[2020-11-17 16:08:05,395] DEBUG in cos_auth: sign_key105d1ffe148c17a0aa036e0b0c0fd5bf325b6e07
+[2020-11-17 16:08:05,396] DEBUG in cos_auth: q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605600425;1605610485&q-key-time=1605600425;1605610485&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=03fdb0fb013c45639de9d93581be6e7b80d8c411
+[2020-11-17 16:08:05,426] DEBUG in cos_auth: request headers: {'User-Agent': b'cos-python-sdk-v5.1.8.7', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-cos-storage-class': b'STANDARD', 'Content-Length': '20759590', 'Authorization': 'q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605600425;1605610485&q-key-time=1605600425;1605610485&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=03fdb0fb013c45639de9d93581be6e7b80d8c411'}
+[2020-11-17 16:08:26,504] INFO in _internal:  * Detected change in 'E:\\—ßœ∞◊ ¡œ\\øŒ≥Ã\\»Ìπ§∏ﬂº∂ µº˘\\¥Û◊˜“µ\\back-end\\server\\app\\api\\video_view.py', reloading
+[2020-11-17 16:08:28,931] INFO in _internal:  * Restarting with stat
+[2020-11-17 16:08:32,087] INFO in server: Server initialized for eventlet.
+[2020-11-17 16:08:32,191] WARNING in _internal:  * Debugger is active!
+[2020-11-17 16:08:32,205] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-17 16:08:34,990] INFO in cos_client: put object, url=:https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review/%E5%88%9D%E9%9F%B3%E6%9C%AA%E6%9D%A5.mp4 ,headers=:{'x-cos-storage-class': 'STANDARD'}
+[2020-11-17 16:08:34,993] DEBUG in cos_auth: format str: put
+/video_review/≥ı“ÙŒ¥¿¥.mp4
+
+x-cos-storage-class=STANDARD
+
+[2020-11-17 16:08:35,034] DEBUG in cos_auth: str_to_sign: sha1
+1605600455;1605610515
+a9608ff8c5fe09d96cdce798419ec7fc5a8c2720
+
+[2020-11-17 16:08:35,036] DEBUG in cos_auth: sign_key: 0cda2ee6f3d677dcd22dfc0645881eea05210f62
+[2020-11-17 16:08:35,037] DEBUG in cos_auth: sign: 63f171500bacf2c943679d77f333de91ccc462fa
+[2020-11-17 16:08:35,038] DEBUG in cos_auth: sign_key0cda2ee6f3d677dcd22dfc0645881eea05210f62
+[2020-11-17 16:08:35,039] DEBUG in cos_auth: q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605600455;1605610515&q-key-time=1605600455;1605610515&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=63f171500bacf2c943679d77f333de91ccc462fa
+[2020-11-17 16:08:35,040] DEBUG in cos_auth: request headers: {'User-Agent': b'cos-python-sdk-v5.1.8.7', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-cos-storage-class': b'STANDARD', 'Content-Length': '20759590', 'Authorization': 'q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605600455;1605610515&q-key-time=1605600455;1605610515&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=63f171500bacf2c943679d77f333de91ccc462fa'}
+[2020-11-17 16:08:42,721] INFO in cos_client: put object, url=:https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review//cover/%E5%88%9D%E9%9F%B3%E6%9C%AA%E6%9D%A5.mp4-0.png ,headers=:{'x-cos-storage-class': 'STANDARD'}
+[2020-11-17 16:08:42,725] DEBUG in cos_auth: format str: put
+/video_review//cover/≥ı“ÙŒ¥¿¥.mp4-0.png
+
+x-cos-storage-class=STANDARD
+
+[2020-11-17 16:08:42,777] DEBUG in cos_auth: str_to_sign: sha1
+1605600462;1605610522
+a4b115257ede648dc6310f68ad1b45aa6910000c
+
+[2020-11-17 16:08:42,780] DEBUG in cos_auth: sign_key: e05de3cc20960569cd0cca77e9f6a411fa815287
+[2020-11-17 16:08:42,782] DEBUG in cos_auth: sign: 2c22618d29e4ed508421a4905d46aec779e338f8
+[2020-11-17 16:08:42,783] DEBUG in cos_auth: sign_keye05de3cc20960569cd0cca77e9f6a411fa815287
+[2020-11-17 16:08:42,784] DEBUG in cos_auth: q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605600462;1605610522&q-key-time=1605600462;1605610522&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=2c22618d29e4ed508421a4905d46aec779e338f8
+[2020-11-17 16:08:42,785] DEBUG in cos_auth: request headers: {'User-Agent': b'cos-python-sdk-v5.1.8.7', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-cos-storage-class': b'STANDARD', 'Content-Length': '1386168', 'Authorization': 'q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605600462;1605610522&q-key-time=1605600462;1605610522&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=2c22618d29e4ed508421a4905d46aec779e338f8'}
+[2020-11-17 16:08:42,990] INFO in cos_client: put object, url=:https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review//cover/%E5%88%9D%E9%9F%B3%E6%9C%AA%E6%9D%A5.mp4-1.png ,headers=:{'x-cos-storage-class': 'STANDARD'}
+[2020-11-17 16:08:43,008] DEBUG in cos_auth: format str: put
+/video_review//cover/≥ı“ÙŒ¥¿¥.mp4-1.png
+
+x-cos-storage-class=STANDARD
+
+[2020-11-17 16:08:43,064] DEBUG in cos_auth: str_to_sign: sha1
+1605600463;1605610523
+1d432d8a38edfdc225f8caded64d38059cb95173
+
+[2020-11-17 16:08:43,066] DEBUG in cos_auth: sign_key: 156bf1250e516f7d0a3607142c405cb13e32824b
+[2020-11-17 16:08:43,067] DEBUG in cos_auth: sign: dd055a3e7867337ce401c0137937f8f117914750
+[2020-11-17 16:08:43,068] DEBUG in cos_auth: sign_key156bf1250e516f7d0a3607142c405cb13e32824b
+[2020-11-17 16:08:43,069] DEBUG in cos_auth: q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605600463;1605610523&q-key-time=1605600463;1605610523&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=dd055a3e7867337ce401c0137937f8f117914750
+[2020-11-17 16:08:43,070] DEBUG in cos_auth: request headers: {'User-Agent': b'cos-python-sdk-v5.1.8.7', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-cos-storage-class': b'STANDARD', 'Content-Length': '1483631', 'Authorization': 'q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605600463;1605610523&q-key-time=1605600463;1605610523&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=dd055a3e7867337ce401c0137937f8f117914750'}
+[2020-11-17 16:08:43,250] INFO in cos_client: put object, url=:https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review//cover/%E5%88%9D%E9%9F%B3%E6%9C%AA%E6%9D%A5.mp4-2.png ,headers=:{'x-cos-storage-class': 'STANDARD'}
+[2020-11-17 16:08:43,252] DEBUG in cos_auth: format str: put
+/video_review//cover/≥ı“ÙŒ¥¿¥.mp4-2.png
+
+x-cos-storage-class=STANDARD
+
+[2020-11-17 16:08:43,438] DEBUG in cos_auth: str_to_sign: sha1
+1605600463;1605610523
+a6c82f7d2176e470fc52fd002ff6b06b187e685d
+
+[2020-11-17 16:08:43,637] DEBUG in cos_auth: sign_key: 156bf1250e516f7d0a3607142c405cb13e32824b
+[2020-11-17 16:08:43,639] DEBUG in cos_auth: sign: 3d10395b9d293505780e914d883a125e48b8a8ae
+[2020-11-17 16:08:43,640] DEBUG in cos_auth: sign_key156bf1250e516f7d0a3607142c405cb13e32824b
+[2020-11-17 16:08:43,641] DEBUG in cos_auth: q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605600463;1605610523&q-key-time=1605600463;1605610523&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=3d10395b9d293505780e914d883a125e48b8a8ae
+[2020-11-17 16:08:43,642] DEBUG in cos_auth: request headers: {'User-Agent': b'cos-python-sdk-v5.1.8.7', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-cos-storage-class': b'STANDARD', 'Content-Length': '1436746', 'Authorization': 'q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605600463;1605610523&q-key-time=1605600463;1605610523&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=3d10395b9d293505780e914d883a125e48b8a8ae'}
+[2020-11-17 16:08:43,901] INFO in cos_client: put object, url=:https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review//cover/%E5%88%9D%E9%9F%B3%E6%9C%AA%E6%9D%A5.mp4-3.png ,headers=:{'x-cos-storage-class': 'STANDARD'}
+[2020-11-17 16:08:43,913] DEBUG in cos_auth: format str: put
+/video_review//cover/≥ı“ÙŒ¥¿¥.mp4-3.png
+
+x-cos-storage-class=STANDARD
+
+[2020-11-17 16:08:43,968] DEBUG in cos_auth: str_to_sign: sha1
+1605600463;1605610523
+44231641f3aac01da1aa47d1fdac89ae500de7af
+
+[2020-11-17 16:08:43,970] DEBUG in cos_auth: sign_key: 156bf1250e516f7d0a3607142c405cb13e32824b
+[2020-11-17 16:08:43,971] DEBUG in cos_auth: sign: 532315a6539752d06ca1d0439ed671e39b584229
+[2020-11-17 16:08:43,972] DEBUG in cos_auth: sign_key156bf1250e516f7d0a3607142c405cb13e32824b
+[2020-11-17 16:08:43,973] DEBUG in cos_auth: q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605600463;1605610523&q-key-time=1605600463;1605610523&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=532315a6539752d06ca1d0439ed671e39b584229
+[2020-11-17 16:08:43,974] DEBUG in cos_auth: request headers: {'User-Agent': b'cos-python-sdk-v5.1.8.7', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-cos-storage-class': b'STANDARD', 'Content-Length': '1425412', 'Authorization': 'q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605600463;1605610523&q-key-time=1605600463;1605610523&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=532315a6539752d06ca1d0439ed671e39b584229'}
+[2020-11-17 16:08:44,242] INFO in cos_client: put object, url=:https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review//cover/%E5%88%9D%E9%9F%B3%E6%9C%AA%E6%9D%A5.mp4-4.png ,headers=:{'x-cos-storage-class': 'STANDARD'}
+[2020-11-17 16:08:44,250] DEBUG in cos_auth: format str: put
+/video_review//cover/≥ı“ÙŒ¥¿¥.mp4-4.png
+
+x-cos-storage-class=STANDARD
+
+[2020-11-17 16:08:44,253] DEBUG in cos_auth: str_to_sign: sha1
+1605600464;1605610524
+d8c09d67e22d70ec2eab86d00b8c94094b837980
+
+[2020-11-17 16:08:44,256] DEBUG in cos_auth: sign_key: 3ef02a4af64fa7328032ce359dae6d3cf3c70600
+[2020-11-17 16:08:44,257] DEBUG in cos_auth: sign: b833aa2013cee0ce77ce3bb004f6e52240002bf1
+[2020-11-17 16:08:44,258] DEBUG in cos_auth: sign_key3ef02a4af64fa7328032ce359dae6d3cf3c70600
+[2020-11-17 16:08:44,259] DEBUG in cos_auth: q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605600464;1605610524&q-key-time=1605600464;1605610524&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=b833aa2013cee0ce77ce3bb004f6e52240002bf1
+[2020-11-17 16:08:44,320] DEBUG in cos_auth: request headers: {'User-Agent': b'cos-python-sdk-v5.1.8.7', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-cos-storage-class': b'STANDARD', 'Content-Length': '1526881', 'Authorization': 'q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605600464;1605610524&q-key-time=1605600464;1605610524&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=b833aa2013cee0ce77ce3bb004f6e52240002bf1'}
+[2020-11-17 16:08:44,481] INFO in cos_client: put object, url=:https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review//cover/%E5%88%9D%E9%9F%B3%E6%9C%AA%E6%9D%A5.mp4-5.png ,headers=:{'x-cos-storage-class': 'STANDARD'}
+[2020-11-17 16:08:44,484] DEBUG in cos_auth: format str: put
+/video_review//cover/≥ı“ÙŒ¥¿¥.mp4-5.png
+
+x-cos-storage-class=STANDARD
+
+[2020-11-17 16:08:44,487] DEBUG in cos_auth: str_to_sign: sha1
+1605600464;1605610524
+869fad219fc8998062ad80e1a5a54c9f4f8527e0
+
+[2020-11-17 16:08:44,488] DEBUG in cos_auth: sign_key: 3ef02a4af64fa7328032ce359dae6d3cf3c70600
+[2020-11-17 16:08:44,490] DEBUG in cos_auth: sign: d760db1267b75f131b2c833f21e40aefb1230121
+[2020-11-17 16:08:44,491] DEBUG in cos_auth: sign_key3ef02a4af64fa7328032ce359dae6d3cf3c70600
+[2020-11-17 16:08:44,492] DEBUG in cos_auth: q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605600464;1605610524&q-key-time=1605600464;1605610524&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=d760db1267b75f131b2c833f21e40aefb1230121
+[2020-11-17 16:08:44,562] DEBUG in cos_auth: request headers: {'User-Agent': b'cos-python-sdk-v5.1.8.7', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-cos-storage-class': b'STANDARD', 'Content-Length': '1513848', 'Authorization': 'q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605600464;1605610524&q-key-time=1605600464;1605610524&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=d760db1267b75f131b2c833f21e40aefb1230121'}
+[2020-11-17 16:08:44,796] INFO in cos_client: put object, url=:https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review//cover/%E5%88%9D%E9%9F%B3%E6%9C%AA%E6%9D%A5.mp4-6.png ,headers=:{'x-cos-storage-class': 'STANDARD'}
+[2020-11-17 16:08:44,804] DEBUG in cos_auth: format str: put
+/video_review//cover/≥ı“ÙŒ¥¿¥.mp4-6.png
+
+x-cos-storage-class=STANDARD
+
+[2020-11-17 16:08:44,806] DEBUG in cos_auth: str_to_sign: sha1
+1605600464;1605610524
+074339e3021ef810fd3b7e818954d695e921f9e4
+
+[2020-11-17 16:08:44,808] DEBUG in cos_auth: sign_key: 3ef02a4af64fa7328032ce359dae6d3cf3c70600
+[2020-11-17 16:08:44,810] DEBUG in cos_auth: sign: c286f133124a35a630b81ff7a40430e7abea0660
+[2020-11-17 16:08:44,843] DEBUG in cos_auth: sign_key3ef02a4af64fa7328032ce359dae6d3cf3c70600
+[2020-11-17 16:08:44,905] DEBUG in cos_auth: q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605600464;1605610524&q-key-time=1605600464;1605610524&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=c286f133124a35a630b81ff7a40430e7abea0660
+[2020-11-17 16:08:44,908] DEBUG in cos_auth: request headers: {'User-Agent': b'cos-python-sdk-v5.1.8.7', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-cos-storage-class': b'STANDARD', 'Content-Length': '1427733', 'Authorization': 'q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605600464;1605610524&q-key-time=1605600464;1605610524&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=c286f133124a35a630b81ff7a40430e7abea0660'}
+[2020-11-17 16:08:45,040] INFO in cos_client: put object, url=:https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review//cover/%E5%88%9D%E9%9F%B3%E6%9C%AA%E6%9D%A5.mp4-7.png ,headers=:{'x-cos-storage-class': 'STANDARD'}
+[2020-11-17 16:08:45,044] DEBUG in cos_auth: format str: put
+/video_review//cover/≥ı“ÙŒ¥¿¥.mp4-7.png
+
+x-cos-storage-class=STANDARD
+
+[2020-11-17 16:08:45,108] DEBUG in cos_auth: str_to_sign: sha1
+1605600465;1605610525
+427b6faeaeac03c75500cf25a14aef4cb21a289d
+
+[2020-11-17 16:08:45,244] DEBUG in cos_auth: sign_key: 909e4647eb210c71111382e5d7d6460b96681ccf
+[2020-11-17 16:08:45,279] DEBUG in cos_auth: sign: a746d00149912592538f4e323f36e6b898319574
+[2020-11-17 16:08:45,286] DEBUG in cos_auth: sign_key909e4647eb210c71111382e5d7d6460b96681ccf
+[2020-11-17 16:08:45,287] DEBUG in cos_auth: q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605600465;1605610525&q-key-time=1605600465;1605610525&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=a746d00149912592538f4e323f36e6b898319574
+[2020-11-17 16:08:45,288] DEBUG in cos_auth: request headers: {'User-Agent': b'cos-python-sdk-v5.1.8.7', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-cos-storage-class': b'STANDARD', 'Content-Length': '1425317', 'Authorization': 'q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605600465;1605610525&q-key-time=1605600465;1605610525&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=a746d00149912592538f4e323f36e6b898319574'}
+[2020-11-17 16:08:45,472] INFO in cos_client: put object, url=:https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review//cover/%E5%88%9D%E9%9F%B3%E6%9C%AA%E6%9D%A5.mp4-8.png ,headers=:{'x-cos-storage-class': 'STANDARD'}
+[2020-11-17 16:08:45,483] DEBUG in cos_auth: format str: put
+/video_review//cover/≥ı“ÙŒ¥¿¥.mp4-8.png
+
+x-cos-storage-class=STANDARD
+
+[2020-11-17 16:08:45,543] DEBUG in cos_auth: str_to_sign: sha1
+1605600465;1605610525
+2e2d37505080afe7fb1cb35fd956c3f4d1f5ac35
+
+[2020-11-17 16:08:45,642] DEBUG in cos_auth: sign_key: 909e4647eb210c71111382e5d7d6460b96681ccf
+[2020-11-17 16:08:45,731] DEBUG in cos_auth: sign: 86c08feb69ecadbc4993e511e0b43589c7c1c626
+[2020-11-17 16:08:45,737] DEBUG in cos_auth: sign_key909e4647eb210c71111382e5d7d6460b96681ccf
+[2020-11-17 16:08:45,738] DEBUG in cos_auth: q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605600465;1605610525&q-key-time=1605600465;1605610525&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=86c08feb69ecadbc4993e511e0b43589c7c1c626
+[2020-11-17 16:08:45,740] DEBUG in cos_auth: request headers: {'User-Agent': b'cos-python-sdk-v5.1.8.7', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-cos-storage-class': b'STANDARD', 'Content-Length': '1525728', 'Authorization': 'q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605600465;1605610525&q-key-time=1605600465;1605610525&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=86c08feb69ecadbc4993e511e0b43589c7c1c626'}
+[2020-11-17 16:08:45,952] INFO in cos_client: put object, url=:https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review//cover/%E5%88%9D%E9%9F%B3%E6%9C%AA%E6%9D%A5.mp4-9.png ,headers=:{'x-cos-storage-class': 'STANDARD'}
+[2020-11-17 16:08:45,964] DEBUG in cos_auth: format str: put
+/video_review//cover/≥ı“ÙŒ¥¿¥.mp4-9.png
+
+x-cos-storage-class=STANDARD
+
+[2020-11-17 16:08:46,018] DEBUG in cos_auth: str_to_sign: sha1
+1605600466;1605610526
+2d93c6e0e30974a30d019b86c6028254b3e5eadc
+
+[2020-11-17 16:08:46,021] DEBUG in cos_auth: sign_key: ec8fdfd44226fb71c7111ac358d2c672da16ecd7
+[2020-11-17 16:08:46,022] DEBUG in cos_auth: sign: 743be4b5d5666c016523372994b03d3d5e9bea36
+[2020-11-17 16:08:46,023] DEBUG in cos_auth: sign_keyec8fdfd44226fb71c7111ac358d2c672da16ecd7
+[2020-11-17 16:08:46,024] DEBUG in cos_auth: q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605600466;1605610526&q-key-time=1605600466;1605610526&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=743be4b5d5666c016523372994b03d3d5e9bea36
+[2020-11-17 16:08:46,026] DEBUG in cos_auth: request headers: {'User-Agent': b'cos-python-sdk-v5.1.8.7', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-cos-storage-class': b'STANDARD', 'Content-Length': '1416863', 'Authorization': 'q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605600466;1605610526&q-key-time=1605600466;1605610526&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=743be4b5d5666c016523372994b03d3d5e9bea36'}
+[2020-11-17 16:09:29,391] INFO in _internal:  * Detected change in 'E:\\—ßœ∞◊ ¡œ\\øŒ≥Ã\\»Ìπ§∏ﬂº∂ µº˘\\¥Û◊˜“µ\\back-end\\server\\app\\utils.py', reloading
+[2020-11-17 16:29:52,556] INFO in server: Server initialized for eventlet.
+[2020-11-17 16:29:52,570] INFO in _internal:  * Restarting with stat
+[2020-11-17 16:29:55,650] INFO in server: Server initialized for eventlet.
+[2020-11-17 16:29:55,713] WARNING in _internal:  * Debugger is active!
+[2020-11-17 16:29:55,773] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-17 16:29:58,699] INFO in cos_client: put object, url=:https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review/%E5%88%9D%E9%9F%B3%E6%9C%AA%E6%9D%A5.mp4 ,headers=:{'x-cos-storage-class': 'STANDARD'}
+[2020-11-17 16:29:58,703] DEBUG in cos_auth: format str: put
+/video_review/≥ı“ÙŒ¥¿¥.mp4
+
+x-cos-storage-class=STANDARD
+
+[2020-11-17 16:29:58,750] DEBUG in cos_auth: str_to_sign: sha1
+1605601738;1605611798
+a9608ff8c5fe09d96cdce798419ec7fc5a8c2720
+
+[2020-11-17 16:29:58,752] DEBUG in cos_auth: sign_key: d1e4fbdf69d8a57a6ba34a4d88ecf073aac802c3
+[2020-11-17 16:29:58,753] DEBUG in cos_auth: sign: bdb0a5c08c27480d1a194490408f5c0c9b0b756f
+[2020-11-17 16:29:58,754] DEBUG in cos_auth: sign_keyd1e4fbdf69d8a57a6ba34a4d88ecf073aac802c3
+[2020-11-17 16:29:58,756] DEBUG in cos_auth: q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605601738;1605611798&q-key-time=1605601738;1605611798&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=bdb0a5c08c27480d1a194490408f5c0c9b0b756f
+[2020-11-17 16:29:58,757] DEBUG in cos_auth: request headers: {'User-Agent': b'cos-python-sdk-v5.1.8.7', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-cos-storage-class': b'STANDARD', 'Content-Length': '20759590', 'Authorization': 'q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605601738;1605611798&q-key-time=1605601738;1605611798&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=bdb0a5c08c27480d1a194490408f5c0c9b0b756f'}
+[2020-11-17 16:31:51,181] INFO in _internal:  * Detected change in 'E:\\—ßœ∞◊ ¡œ\\øŒ≥Ã\\»Ìπ§∏ﬂº∂ µº˘\\¥Û◊˜“µ\\back-end\\server\\app\\utils.py', reloading
+[2020-11-17 16:32:21,109] INFO in _internal:  * Restarting with stat
+[2020-11-17 16:32:24,300] INFO in server: Server initialized for eventlet.
+[2020-11-17 16:32:24,312] WARNING in _internal:  * Debugger is active!
+[2020-11-17 16:32:24,392] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-11-17 16:32:37,086] INFO in cos_client: put object, url=:https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review/%E5%88%9D%E9%9F%B3%E6%9C%AA%E6%9D%A5.mp4 ,headers=:{'x-cos-storage-class': 'STANDARD'}
+[2020-11-17 16:32:37,089] DEBUG in cos_auth: format str: put
+/video_review/≥ı“ÙŒ¥¿¥.mp4
+
+x-cos-storage-class=STANDARD
+
+[2020-11-17 16:32:37,092] DEBUG in cos_auth: str_to_sign: sha1
+1605601897;1605611957
+a9608ff8c5fe09d96cdce798419ec7fc5a8c2720
+
+[2020-11-17 16:32:37,094] DEBUG in cos_auth: sign_key: 95376f906e3e489e3419d3c24115c406bc7b9aeb
+[2020-11-17 16:32:37,145] DEBUG in cos_auth: sign: f32f6d884619025256dfc85126f284b8fbc947c7
+[2020-11-17 16:32:37,147] DEBUG in cos_auth: sign_key95376f906e3e489e3419d3c24115c406bc7b9aeb
+[2020-11-17 16:32:37,148] DEBUG in cos_auth: q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605601897;1605611957&q-key-time=1605601897;1605611957&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=f32f6d884619025256dfc85126f284b8fbc947c7
+[2020-11-17 16:32:37,151] DEBUG in cos_auth: request headers: {'User-Agent': b'cos-python-sdk-v5.1.8.7', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-cos-storage-class': b'STANDARD', 'Content-Length': '20759590', 'Authorization': 'q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605601897;1605611957&q-key-time=1605601897;1605611957&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=f32f6d884619025256dfc85126f284b8fbc947c7'}
+[2020-11-17 16:33:01,612] INFO in cos_client: put object, url=:https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review//cover/%E5%88%9D%E9%9F%B3%E6%9C%AA%E6%9D%A5.mp4-0.png ,headers=:{'x-cos-storage-class': 'STANDARD'}
+[2020-11-17 16:33:01,614] DEBUG in cos_auth: format str: put
+/video_review//cover/≥ı“ÙŒ¥¿¥.mp4-0.png
+
+x-cos-storage-class=STANDARD
+
+[2020-11-17 16:33:01,656] DEBUG in cos_auth: str_to_sign: sha1
+1605601921;1605611981
+a4b115257ede648dc6310f68ad1b45aa6910000c
+
+[2020-11-17 16:33:01,659] DEBUG in cos_auth: sign_key: d04d2d12f0ce3ecfa2108392176b4fa3248b9afe
+[2020-11-17 16:33:01,660] DEBUG in cos_auth: sign: 1cc6b73a978b1d4e560fb2f0b0abc4146428d7b0
+[2020-11-17 16:33:01,662] DEBUG in cos_auth: sign_keyd04d2d12f0ce3ecfa2108392176b4fa3248b9afe
+[2020-11-17 16:33:01,664] DEBUG in cos_auth: q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605601921;1605611981&q-key-time=1605601921;1605611981&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=1cc6b73a978b1d4e560fb2f0b0abc4146428d7b0
+[2020-11-17 16:33:01,666] DEBUG in cos_auth: request headers: {'User-Agent': b'cos-python-sdk-v5.1.8.7', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-cos-storage-class': b'STANDARD', 'Content-Length': '1386057', 'Authorization': 'q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605601921;1605611981&q-key-time=1605601921;1605611981&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=1cc6b73a978b1d4e560fb2f0b0abc4146428d7b0'}
+[2020-11-17 16:33:01,811] INFO in cos_client: put object, url=:https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review//cover/%E5%88%9D%E9%9F%B3%E6%9C%AA%E6%9D%A5.mp4-1.png ,headers=:{'x-cos-storage-class': 'STANDARD'}
+[2020-11-17 16:33:01,851] DEBUG in cos_auth: format str: put
+/video_review//cover/≥ı“ÙŒ¥¿¥.mp4-1.png
+
+x-cos-storage-class=STANDARD
+
+[2020-11-17 16:33:01,853] DEBUG in cos_auth: str_to_sign: sha1
+1605601921;1605611981
+1d432d8a38edfdc225f8caded64d38059cb95173
+
+[2020-11-17 16:33:01,856] DEBUG in cos_auth: sign_key: d04d2d12f0ce3ecfa2108392176b4fa3248b9afe
+[2020-11-17 16:33:01,857] DEBUG in cos_auth: sign: 67ba0794b59cf1aca6ad6b49acecf0dc716590e1
+[2020-11-17 16:33:01,888] DEBUG in cos_auth: sign_keyd04d2d12f0ce3ecfa2108392176b4fa3248b9afe
+[2020-11-17 16:33:01,890] DEBUG in cos_auth: q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605601921;1605611981&q-key-time=1605601921;1605611981&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=67ba0794b59cf1aca6ad6b49acecf0dc716590e1
+[2020-11-17 16:33:01,892] DEBUG in cos_auth: request headers: {'User-Agent': b'cos-python-sdk-v5.1.8.7', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-cos-storage-class': b'STANDARD', 'Content-Length': '1484101', 'Authorization': 'q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605601921;1605611981&q-key-time=1605601921;1605611981&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=67ba0794b59cf1aca6ad6b49acecf0dc716590e1'}
+[2020-11-17 16:33:02,103] INFO in cos_client: put object, url=:https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review//cover/%E5%88%9D%E9%9F%B3%E6%9C%AA%E6%9D%A5.mp4-2.png ,headers=:{'x-cos-storage-class': 'STANDARD'}
+[2020-11-17 16:33:02,119] DEBUG in cos_auth: format str: put
+/video_review//cover/≥ı“ÙŒ¥¿¥.mp4-2.png
+
+x-cos-storage-class=STANDARD
+
+[2020-11-17 16:33:02,123] DEBUG in cos_auth: str_to_sign: sha1
+1605601922;1605611982
+a6c82f7d2176e470fc52fd002ff6b06b187e685d
+
+[2020-11-17 16:33:02,161] DEBUG in cos_auth: sign_key: bb46275114625655a3fc6752d1eb5eb36bb08ed9
+[2020-11-17 16:33:02,163] DEBUG in cos_auth: sign: 1f09775743cf0bce8aab70ab588530156c974f67
+[2020-11-17 16:33:02,165] DEBUG in cos_auth: sign_keybb46275114625655a3fc6752d1eb5eb36bb08ed9
+[2020-11-17 16:33:02,167] DEBUG in cos_auth: q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605601922;1605611982&q-key-time=1605601922;1605611982&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=1f09775743cf0bce8aab70ab588530156c974f67
+[2020-11-17 16:33:02,169] DEBUG in cos_auth: request headers: {'User-Agent': b'cos-python-sdk-v5.1.8.7', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-cos-storage-class': b'STANDARD', 'Content-Length': '1437118', 'Authorization': 'q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605601922;1605611982&q-key-time=1605601922;1605611982&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=1f09775743cf0bce8aab70ab588530156c974f67'}
+[2020-11-17 16:33:02,393] INFO in cos_client: put object, url=:https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review//cover/%E5%88%9D%E9%9F%B3%E6%9C%AA%E6%9D%A5.mp4-3.png ,headers=:{'x-cos-storage-class': 'STANDARD'}
+[2020-11-17 16:33:02,403] DEBUG in cos_auth: format str: put
+/video_review//cover/≥ı“ÙŒ¥¿¥.mp4-3.png
+
+x-cos-storage-class=STANDARD
+
+[2020-11-17 16:33:02,406] DEBUG in cos_auth: str_to_sign: sha1
+1605601922;1605611982
+44231641f3aac01da1aa47d1fdac89ae500de7af
+
+[2020-11-17 16:33:02,407] DEBUG in cos_auth: sign_key: bb46275114625655a3fc6752d1eb5eb36bb08ed9
+[2020-11-17 16:33:02,474] DEBUG in cos_auth: sign: bbf1b0f5124c4e64d64c2fbb4012bbd4e3dafc0c
+[2020-11-17 16:33:02,508] DEBUG in cos_auth: sign_keybb46275114625655a3fc6752d1eb5eb36bb08ed9
+[2020-11-17 16:33:02,538] DEBUG in cos_auth: q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605601922;1605611982&q-key-time=1605601922;1605611982&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=bbf1b0f5124c4e64d64c2fbb4012bbd4e3dafc0c
+[2020-11-17 16:33:02,540] DEBUG in cos_auth: request headers: {'User-Agent': b'cos-python-sdk-v5.1.8.7', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-cos-storage-class': b'STANDARD', 'Content-Length': '1426018', 'Authorization': 'q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605601922;1605611982&q-key-time=1605601922;1605611982&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=bbf1b0f5124c4e64d64c2fbb4012bbd4e3dafc0c'}
+[2020-11-17 16:33:02,844] INFO in cos_client: put object, url=:https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review//cover/%E5%88%9D%E9%9F%B3%E6%9C%AA%E6%9D%A5.mp4-4.png ,headers=:{'x-cos-storage-class': 'STANDARD'}
+[2020-11-17 16:33:02,857] DEBUG in cos_auth: format str: put
+/video_review//cover/≥ı“ÙŒ¥¿¥.mp4-4.png
+
+x-cos-storage-class=STANDARD
+
+[2020-11-17 16:33:02,951] DEBUG in cos_auth: str_to_sign: sha1
+1605601922;1605611982
+d8c09d67e22d70ec2eab86d00b8c94094b837980
+
+[2020-11-17 16:33:02,953] DEBUG in cos_auth: sign_key: bb46275114625655a3fc6752d1eb5eb36bb08ed9
+[2020-11-17 16:33:02,954] DEBUG in cos_auth: sign: 38012c4145963536b366eefa64e70c4877740042
+[2020-11-17 16:33:02,955] DEBUG in cos_auth: sign_keybb46275114625655a3fc6752d1eb5eb36bb08ed9
+[2020-11-17 16:33:02,957] DEBUG in cos_auth: q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605601922;1605611982&q-key-time=1605601922;1605611982&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=38012c4145963536b366eefa64e70c4877740042
+[2020-11-17 16:33:03,035] DEBUG in cos_auth: request headers: {'User-Agent': b'cos-python-sdk-v5.1.8.7', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-cos-storage-class': b'STANDARD', 'Content-Length': '1527141', 'Authorization': 'q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605601922;1605611982&q-key-time=1605601922;1605611982&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=38012c4145963536b366eefa64e70c4877740042'}
+[2020-11-17 16:33:03,217] INFO in cos_client: put object, url=:https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review//cover/%E5%88%9D%E9%9F%B3%E6%9C%AA%E6%9D%A5.mp4-5.png ,headers=:{'x-cos-storage-class': 'STANDARD'}
+[2020-11-17 16:33:03,254] DEBUG in cos_auth: format str: put
+/video_review//cover/≥ı“ÙŒ¥¿¥.mp4-5.png
+
+x-cos-storage-class=STANDARD
+
+[2020-11-17 16:33:03,299] DEBUG in cos_auth: str_to_sign: sha1
+1605601923;1605611983
+869fad219fc8998062ad80e1a5a54c9f4f8527e0
+
+[2020-11-17 16:33:03,301] DEBUG in cos_auth: sign_key: 13c2fa05e851af84fcaa3d669d79de81acdb8634
+[2020-11-17 16:33:03,302] DEBUG in cos_auth: sign: 584d236a72205647c25d2d5bde7103fa60446394
+[2020-11-17 16:33:03,303] DEBUG in cos_auth: sign_key13c2fa05e851af84fcaa3d669d79de81acdb8634
+[2020-11-17 16:33:03,304] DEBUG in cos_auth: q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605601923;1605611983&q-key-time=1605601923;1605611983&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=584d236a72205647c25d2d5bde7103fa60446394
+[2020-11-17 16:33:03,305] DEBUG in cos_auth: request headers: {'User-Agent': b'cos-python-sdk-v5.1.8.7', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-cos-storage-class': b'STANDARD', 'Content-Length': '1514258', 'Authorization': 'q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605601923;1605611983&q-key-time=1605601923;1605611983&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=584d236a72205647c25d2d5bde7103fa60446394'}
+[2020-11-17 16:33:03,535] INFO in cos_client: put object, url=:https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review//cover/%E5%88%9D%E9%9F%B3%E6%9C%AA%E6%9D%A5.mp4-6.png ,headers=:{'x-cos-storage-class': 'STANDARD'}
+[2020-11-17 16:33:03,537] DEBUG in cos_auth: format str: put
+/video_review//cover/≥ı“ÙŒ¥¿¥.mp4-6.png
+
+x-cos-storage-class=STANDARD
+
+[2020-11-17 16:33:03,539] DEBUG in cos_auth: str_to_sign: sha1
+1605601923;1605611983
+074339e3021ef810fd3b7e818954d695e921f9e4
+
+[2020-11-17 16:33:03,606] DEBUG in cos_auth: sign_key: 13c2fa05e851af84fcaa3d669d79de81acdb8634
+[2020-11-17 16:33:03,637] DEBUG in cos_auth: sign: 772b1145a3b462f8ee91a257f506679a57ddfbd0
+[2020-11-17 16:33:03,638] DEBUG in cos_auth: sign_key13c2fa05e851af84fcaa3d669d79de81acdb8634
+[2020-11-17 16:33:03,639] DEBUG in cos_auth: q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605601923;1605611983&q-key-time=1605601923;1605611983&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=772b1145a3b462f8ee91a257f506679a57ddfbd0
+[2020-11-17 16:33:03,641] DEBUG in cos_auth: request headers: {'User-Agent': b'cos-python-sdk-v5.1.8.7', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-cos-storage-class': b'STANDARD', 'Content-Length': '1427719', 'Authorization': 'q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605601923;1605611983&q-key-time=1605601923;1605611983&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=772b1145a3b462f8ee91a257f506679a57ddfbd0'}
+[2020-11-17 16:33:03,943] INFO in cos_client: put object, url=:https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review//cover/%E5%88%9D%E9%9F%B3%E6%9C%AA%E6%9D%A5.mp4-7.png ,headers=:{'x-cos-storage-class': 'STANDARD'}
+[2020-11-17 16:33:03,987] DEBUG in cos_auth: format str: put
+/video_review//cover/≥ı“ÙŒ¥¿¥.mp4-7.png
+
+x-cos-storage-class=STANDARD
+
+[2020-11-17 16:33:04,032] DEBUG in cos_auth: str_to_sign: sha1
+1605601924;1605611984
+427b6faeaeac03c75500cf25a14aef4cb21a289d
+
+[2020-11-17 16:33:04,036] DEBUG in cos_auth: sign_key: 5b82d8b2e084f8dbc5fa11b27f31ffd66a7f7fbd
+[2020-11-17 16:33:04,038] DEBUG in cos_auth: sign: f993b9e6ea5a2a98e409abf9a518b5f83bc58ecd
+[2020-11-17 16:33:04,039] DEBUG in cos_auth: sign_key5b82d8b2e084f8dbc5fa11b27f31ffd66a7f7fbd
+[2020-11-17 16:33:04,040] DEBUG in cos_auth: q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605601924;1605611984&q-key-time=1605601924;1605611984&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=f993b9e6ea5a2a98e409abf9a518b5f83bc58ecd
+[2020-11-17 16:33:04,067] DEBUG in cos_auth: request headers: {'User-Agent': b'cos-python-sdk-v5.1.8.7', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-cos-storage-class': b'STANDARD', 'Content-Length': '1425826', 'Authorization': 'q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605601924;1605611984&q-key-time=1605601924;1605611984&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=f993b9e6ea5a2a98e409abf9a518b5f83bc58ecd'}
+[2020-11-17 16:33:04,223] INFO in cos_client: put object, url=:https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review//cover/%E5%88%9D%E9%9F%B3%E6%9C%AA%E6%9D%A5.mp4-8.png ,headers=:{'x-cos-storage-class': 'STANDARD'}
+[2020-11-17 16:33:04,233] DEBUG in cos_auth: format str: put
+/video_review//cover/≥ı“ÙŒ¥¿¥.mp4-8.png
+
+x-cos-storage-class=STANDARD
+
+[2020-11-17 16:33:04,236] DEBUG in cos_auth: str_to_sign: sha1
+1605601924;1605611984
+2e2d37505080afe7fb1cb35fd956c3f4d1f5ac35
+
+[2020-11-17 16:33:04,238] DEBUG in cos_auth: sign_key: 5b82d8b2e084f8dbc5fa11b27f31ffd66a7f7fbd
+[2020-11-17 16:33:04,239] DEBUG in cos_auth: sign: f4261371ecba022feb0545782ac240d7c8c80306
+[2020-11-17 16:33:04,241] DEBUG in cos_auth: sign_key5b82d8b2e084f8dbc5fa11b27f31ffd66a7f7fbd
+[2020-11-17 16:33:04,297] DEBUG in cos_auth: q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605601924;1605611984&q-key-time=1605601924;1605611984&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=f4261371ecba022feb0545782ac240d7c8c80306
+[2020-11-17 16:33:04,301] DEBUG in cos_auth: request headers: {'User-Agent': b'cos-python-sdk-v5.1.8.7', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-cos-storage-class': b'STANDARD', 'Content-Length': '1526136', 'Authorization': 'q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605601924;1605611984&q-key-time=1605601924;1605611984&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=f4261371ecba022feb0545782ac240d7c8c80306'}
+[2020-11-17 16:33:04,501] INFO in cos_client: put object, url=:https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review//cover/%E5%88%9D%E9%9F%B3%E6%9C%AA%E6%9D%A5.mp4-9.png ,headers=:{'x-cos-storage-class': 'STANDARD'}
+[2020-11-17 16:33:04,554] DEBUG in cos_auth: format str: put
+/video_review//cover/≥ı“ÙŒ¥¿¥.mp4-9.png
+
+x-cos-storage-class=STANDARD
+
+[2020-11-17 16:33:04,601] DEBUG in cos_auth: str_to_sign: sha1
+1605601924;1605611984
+2d93c6e0e30974a30d019b86c6028254b3e5eadc
+
+[2020-11-17 16:33:04,603] DEBUG in cos_auth: sign_key: 5b82d8b2e084f8dbc5fa11b27f31ffd66a7f7fbd
+[2020-11-17 16:33:04,604] DEBUG in cos_auth: sign: 232bc65b90e2a3250681bd37e6fac3fa6da57715
+[2020-11-17 16:33:04,606] DEBUG in cos_auth: sign_key5b82d8b2e084f8dbc5fa11b27f31ffd66a7f7fbd
+[2020-11-17 16:33:04,607] DEBUG in cos_auth: q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605601924;1605611984&q-key-time=1605601924;1605611984&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=232bc65b90e2a3250681bd37e6fac3fa6da57715
+[2020-11-17 16:33:04,721] DEBUG in cos_auth: request headers: {'User-Agent': b'cos-python-sdk-v5.1.8.7', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-cos-storage-class': b'STANDARD', 'Content-Length': '1417260', 'Authorization': 'q-sign-algorithm=sha1&q-ak=AKIDwjGEvMfl5B6rR54cFbhX8aPTM3ZvlKNI&q-sign-time=1605601924;1605611984&q-key-time=1605601924;1605611984&q-header-list=x-cos-storage-class&q-url-param-list=&q-signature=232bc65b90e2a3250681bd37e6fac3fa6da57715'}

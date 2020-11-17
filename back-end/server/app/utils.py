@@ -1,13 +1,15 @@
 from __future__ import annotations
 
+import io
 import random
 import time
-from typing import Tuple
-
+from typing import Tuple, List
+from flask import current_app as app
+import cv2
 from aliyunsdkcore.client import AcsClient
 from aliyunsdkcore.request import CommonRequest
 from bson.objectid import ObjectId
-from flask import current_app as app
+from PIL import Image, ImageOps
 
 from config.secret_config import (AliAccessKeyID, AliAccessKeySecret,
                                   TxSecretId, TxSecretKey, bucket_name)
@@ -36,7 +38,7 @@ class CheckCodeManager:
 
     # 验证是否存在验证码
     @staticmethod
-    def _verify_exist(number, code) -> Tuple[bool, str]:
+    def verify_exist(number, code) -> Tuple[bool, str]:
         if number in CheckCodeManager.check_codes:
             return 1, ''
         else:
@@ -44,7 +46,7 @@ class CheckCodeManager:
 
     # 验证验证码是否过期
     @staticmethod
-    def _verify_time(number, code) -> Tuple[bool, str]:
+    def verify_time(number, code) -> Tuple[bool, str]:
         t = CheckCodeManager.check_codes.get(number)[1]
         if time.time()-t > 5*60:
             return 0, "验证码过期"
@@ -53,7 +55,7 @@ class CheckCodeManager:
 
     # 验证验证码是否正确
     @staticmethod
-    def _verify_correct(number, code) -> Tuple[bool, str]:
+    def verify_correct(number, code) -> Tuple[bool, str]:
         origin_code = CheckCodeManager.check_codes.get(number)[0]
         if origin_code == code:
             return 1, ""
@@ -62,17 +64,17 @@ class CheckCodeManager:
 
     # 删除验证码
     @staticmethod
-    def _delete_code(number, code) -> Tuple[bool, str]:
+    def delete_code(number, code) -> Tuple[bool, str]:
         CheckCodeManager.check_codes.pop(number)
         return 1, ''
 
     def __init__(self) -> None:
         # 定义检测验证码的步骤
         self.do_verify = [
-            self._verify_exist,
-            self._verify_time,
-            self._verify_correct,
-            self._delete_code
+            self.verify_exist,
+            self.verify_time,
+            self.verify_correct,
+            self.delete_code
         ]
 
     # 发送短信
@@ -144,7 +146,42 @@ class TxCosUtil:
         print(response['ETag'])
         return f"https://{app.config['BUCKET_NAME']}.cos.ap-beijing.myqcloud.com/video_review/{key}"
 
+
 txCosUtil = TxCosUtil()
+
+class CaptureFrameUtil:
+    def __init__(self) -> None:
+        pass
+
+    def capture_frame(self, video_path: str) -> Tuple[List, int]:
+        vc = cv2.VideoCapture(video_path)
+        c = 1
+        if vc.isOpened():
+            rval, frame = vc.read()
+        else:
+            rval = False
+        frames_num = vc.get(7)
+        timeF = frames_num // 21
+
+        results = []
+        while rval and len(results)<10: 
+            rval, frame = vc.read()
+            if(c%timeF == 0):
+                f = io.BytesIO()
+                img = Image.fromarray(frame, mode='RGB')
+                r,g,b = img.split()
+                img = Image.merge('RGB', [b,g,r])
+                img.save(f, format='PNG')
+                f.seek(0)
+                results.append(f)
+            c += 1
+        frame_rate = vc.get(5)   # 帧速率
+        duration = frames_num//frame_rate  # 帧速率/视频总帧数 是时间，除以60之后单位是分钟
+        vc.release()
+        return results, duration
+        
+captrueFrameUtil = CaptureFrameUtil()
+        
 
 if __name__ == "__main__":
     txCosUtil.simple_file_upload()
