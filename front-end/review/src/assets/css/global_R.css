@@ -1,0 +1,48 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.red-border{
+  border: 1px solid red;
+}
+.center-absolute{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%)
+}
+.center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.border-round{
+    border-radius: 50%;
+}
+.card-shadow{
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04)
+}
+.el-card{
+  transition:all .4s;
+}
+.el-card:hover{
+  transform:scale(1.05);
+}
+.vertical-center{
+    display: flex;
+    align-items: center;
+}
+/* element-ui样式 */
+.el-breadcrumb {
+    margin-bottom: 15px;
+    font-size: 12px;
+}
+.el-table {
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+.el-pagination {
+    margin-top: 15px;
+}
