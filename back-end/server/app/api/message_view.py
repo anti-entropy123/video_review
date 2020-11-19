@@ -18,9 +18,9 @@ def get_message_list():
     messages = User.get_user_by_id(user_id=user_id).message
     
     data = []
-    for messageId, message in enumerate(messages):
+    for message in messages:
         one = {
-            'messageId': messageId,
+            'messageId': message['messageId'],
             'fromId': message['fromId'],
             'fromName': message['fromName'],
             'date': message['date'],
@@ -38,11 +38,13 @@ def get_message_list():
 @api.route('/message/<message_id>')
 @login_required
 def get_message_detail(message_id):
-    user = User.get_user_by_id(get_jwt_identity())
-    message = Message.get_message_by_id(message_id=message_id)
+    user:User = User.get_user_by_id(get_jwt_identity())
+   
+    message = user.get_message_by_id(message_id=message_id)
     if message not in user.message:
         jsonify(build_response(0, "找不到此消息"))
-
+        
+    user.read_message(message_id=message_id)
     data = {
         'fromId': message['fromId'],
         'fromName': message['fromName'],

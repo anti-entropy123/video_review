@@ -73,12 +73,15 @@ class Config:
     MONGO_URI = "mongodb://localhost:27017/video_review"
     # 关闭对象变化跟踪, 以节省开销
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-
+    # mongodb 数据库配置
     MONGODB_SETTINGS = {
         'db': 'video_review',
         'host': '127.0.0.1'
     }
+    # tx cos 存储桶
     BUCKET_NAME = bucket_name
+    # 文件临时保存路径
+    UPLOAD_FOLDER = '/tmp/video_review/'
 
     @staticmethod
     # 如果需要的话, 在此函数中进行其它的配置

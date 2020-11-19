@@ -1,4 +1,5 @@
 from flask import jsonify, request, abort
+from flask import current_app as app
 from flask_jwt_extended import get_jwt_identity
 
 from .. import db
@@ -6,6 +7,7 @@ from . import api
 from ..utils import build_response, txCosUtil, safe_objectId, captrueFrameUtil
 from ..model import Video, User, Project, Message
 from ..auth import login_required
+import os
 
 # 新建视频
 @api.route('/video/', methods=['POST'])
@@ -32,9 +34,12 @@ def create_video():
     password = parm.get('password', '')
     if permission == 1 and password == '':
         return jsonify(build_response(0, 'password不能为空'))
-    
-    url = txCosUtil.simple_file_upload(file, video_name)
-    filename = file.stream.name
+
+    # 这里把request里的文件存到了一个临时的目录下
+    filename = os.path.join(app.config['UPLOAD_FOLDER'], video_name) 
+    file.save(filename)
+
+    url = txCosUtil.simple_file_upload(filename, video_name)
     frames, duration = captrueFrameUtil.capture_frame(filename)
     covers = []
     for i, frame in enumerate(frames):
@@ -71,6 +76,7 @@ def create_video():
         'url': video.url,
         'videoId': video_id
     }
+    os.remove(filename)
     return jsonify(build_response(data=data))
     
 # 完成审阅

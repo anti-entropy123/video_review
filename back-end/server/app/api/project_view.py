@@ -1,8 +1,9 @@
 from flask import abort, jsonify, request
 from flask_jwt_extended import get_jwt_identity
+from flask_mongoengine import json
 
 from ..auth import login_required
-from ..model import Message, Project, User, Video
+from ..model import Message, Project, User, Video, ProjectMember
 from ..utils import build_response, safe_objectId
 from . import api
 
@@ -57,12 +58,9 @@ def invite_user(project_id):
             "word": word
         }
     )
+    target.receive_message(new_message)
 
-    target.message.append(new_message)
-    target.save()
-
-    project.waitJoin.append(user_id)
-    project.save()
+    project.wait_to_user_join(user_id=user_id)
 
     return jsonify(build_response())
 
@@ -75,22 +73,26 @@ def join_project(project_id):
     except KeyError as e:
         abort(400, {'msg': str(e)})
 
-    user = User.get_user_by_id(get_jwt_identity())
-    project = Project.get_project_by_id(project_id)
-    origin_message = Message.get_message_by_id(message_id)
+    user:User = User.get_user_by_id(get_jwt_identity())
+    # print(str(user.id))
+    # if not message_id.startswith(str(user.id)):
+    #     return jsonify(build_response(0, '无法加入此项目'))
+
+    project:Project = Project.get_project_by_id(project_id)
+    origin_message = user.get_message_by_id(message_id)
     
     # 邀请者 用户id
     inviter_id = origin_message.fromId
     inviter = User.get_user_by_id(inviter_id)
 
-    origin_message.hasProcess = True
-    origin_message.save()
+    user.process_message(message_id=message_id)
 
     project.waitJoin.remove(str(user.id))
-    
     if is_agree:
         # 同意邀请
-        project.objects.append(str(user.id))
+        project.member.append(
+            ProjectMember(userId=str(user.id))
+        )
     project.save()
     
     # 给邀请者发送提醒
@@ -104,8 +106,7 @@ def join_project(project_id):
             'processResult': is_agree
         }
     )
-    inviter.message.append(new_message)
-    inviter.save()
+    inviter.receive_message(new_message)
 
     return jsonify(build_response())
 

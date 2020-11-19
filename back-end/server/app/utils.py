@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import io
+import logging
 import random
 import time
 from typing import Tuple, List
@@ -135,15 +136,17 @@ class TxCosUtil:
         config = CosConfig(Region=self.region, SecretId=self.secret_id, SecretKey=self.secret_key)
         self.client = CosS3Client(config)
     
-    def simple_file_upload(self, f, key:str):
-        response = self.client.put_object(
-            Bucket=bucket_name,
-            Body=f,
-            Key= 'video_review/'+key,
-            StorageClass='STANDARD',
-            EnableMD5=False
-        )
-        print(response['ETag'])
+    def simple_file_upload(self, path:str, key:str):
+        with open(path, 'rb') as f:
+            response = self.client.put_object(
+                Bucket=bucket_name,
+                Body=f,
+                Key= 'video_review/'+key,
+                StorageClass='STANDARD',
+                EnableMD5=False
+            )
+            print(response['ETag'])
+        
         return f"https://{app.config['BUCKET_NAME']}.cos.ap-beijing.myqcloud.com/video_review/{key}"
 
 
@@ -155,16 +158,20 @@ class CaptureFrameUtil:
 
     def capture_frame(self, video_path: str) -> Tuple[List, int]:
         vc = cv2.VideoCapture(video_path)
-        c = 1
-        if vc.isOpened():
-            rval, frame = vc.read()
-        else:
-            rval = False
-        frames_num = vc.get(7)
-        timeF = frames_num // 21
+        print('视频路径', video_path)
+        
+        if not vc.isOpened():
+            raise RuntimeError('无法解析视频')
 
+        frames_num = vc.get(7)             # 总帧数
+        timeF = frames_num // 21           # 帧间隔, 用以平均截帧
+        frame_rate = vc.get(5)             # 帧速率
+        duration = frames_num//frame_rate  # 帧速率/视频总帧数=时间, 单位为秒
+        
         results = []
-        while rval and len(results)<10: 
+        c = 1
+        rval, frame = vc.read()
+        while rval and len(results) < 10: 
             rval, frame = vc.read()
             if(c%timeF == 0):
                 f = io.BytesIO()
@@ -175,8 +182,7 @@ class CaptureFrameUtil:
                 f.seek(0)
                 results.append(f)
             c += 1
-        frame_rate = vc.get(5)   # 帧速率
-        duration = frames_num//frame_rate  # 帧速率/视频总帧数 是时间，除以60之后单位是分钟
+        
         vc.release()
         return results, duration
         
