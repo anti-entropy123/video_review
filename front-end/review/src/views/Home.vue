@@ -99,7 +99,7 @@
       :before-close="AddProjectClose"
     >
       <div class="show-user-list">
-        <div v-for="user in userList" class="show-user-item">
+        <div v-for="user in userList" :key="user.userId" class="show-user-item">
           <div>
           <el-avatar :src="user.avatar"></el-avatar>
           <div>{{user.userName}}
