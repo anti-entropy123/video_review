@@ -1,5 +1,5 @@
 from logging.config import dictConfig
-from logging import DEBUG, INFO, ERROR, WARNING
+from logging import DEBUG, INFO, ERROR, WARNING, getLogger
 from config.secret_config import bucket_name
 import os
 
@@ -13,6 +13,7 @@ def config_logger(
         log_file_max_bytes=10000000, # 10MB
         log_file_max_count=5):
 
+    getLogger('socketio').setLevel(DEBUG)
     # 定义输出到控制台的日志处理器
     console_handler = {
         'class': 'logging.StreamHandler',

@@ -1,15 +1,21 @@
 
 import time
+
+import flask_socketio as io
 from app.utils import build_response
 from flask import request
-from flask_socketio import SocketIO, emit, join_room, leave_room
+from flask_socketio import SocketIO, emit, join_room, leave_room, rooms
 from ..model import Comment, User, Meeting, Video
 from . import ws
 
 name_space = '/meetingRoom'
-
+# meetingId => MeetingMember()
 meetingroom_manager = {}
+# sid => userId
 userId_manager = {}
+# sid => meetingId
+meetingId_manager = {}
+
 # 会议中的一个成员
 class MeetingMember:
     def __init__(self, user_id) -> None:
@@ -19,7 +25,7 @@ class MeetingMember:
 
     def get_member_item(self):
         return {
-            'userId': str(self.user.userId),
+            'userId': str(self.user.id),
             'username': str(self.user.username),
             'avatar': str(self.user.avatar),
             'control': self.control,
@@ -39,8 +45,9 @@ class VideoPlayer:
         self.change_point = time.time()
 
     def pause(self):
+        if self.is_play:
+            self.position += round(time.time()-self.change_point) / 100
         self.is_play = False
-        self.position += (time.time()-self.change_point)
         self.change_point = time.time()
 
     def move_process(self, postion):
@@ -57,7 +64,11 @@ class VideoPlayer:
         return 0 if not self.url else (self.position if not self.is_play else self.position + (time.time()-self.change_point))
 
     def get_isPlay(self):
-        return int(self.is_play and self.url)
+        if self.url and self.is_play:
+            return 1
+        else:
+            return 0
+        # return int(self.url and self.is_play)
 
     def get_video_status(self):
         return {
@@ -94,7 +105,7 @@ class MeetingRoom:
     
     def get_comment_list(self):
         video = Video.objects(url=self.player.url).first()
-        comments = video.comment
+        comments = video.comment if video else []
         result = []
         for comment in comments:
             result.append({
@@ -119,12 +130,18 @@ class MeetingRoom:
         video.save()
 
 @ws.on('connect', namespace=name_space)
-def connected_msg(data):
+def connected_msg():
     print('client connected.')
+
+@ws.on('init', namespace=name_space)
+def init(data):
+    print(data)
     meeting_id = data['meetingId']
     user_id = data['userId']
     
     userId_manager[request.sid] = user_id
+    meetingId_manager[request.sid] = meeting_id
+
     if meeting_id in meetingroom_manager:
         meeting_room: MeetingRoom = meetingroom_manager[meeting_id]
     else:
@@ -133,11 +150,12 @@ def connected_msg(data):
     
     # 加入会议室room, 方便广播
     join_room(meeting_id)
-
+    print(rooms(request.sid))
     # 向会议中所有人更新最新的成员列表
-    ws.emit(
+    io.emit(
         'sycnMember',
         build_response(data=meeting_room.get_member_list()),
+        # broadcast=True   
         room=meeting_id
     )
     # 向新成员发送当前视频的播放
@@ -155,8 +173,8 @@ def connected_msg(data):
     )
 
 @ws.on('disconnect', namespace=name_space)
-def disconnect_msg(data):
-    meeting_id = data['meetingId']
+def disconnect_msg():
+    meeting_id = meetingId_manager[request.sid]
     # print('client disconnected.')
     leave_room(meeting_id)
     userId_manager.pop(request.sid)
@@ -169,10 +187,10 @@ def disconnect_msg(data):
 
 @ws.on('changeProcess', namespace=name_space)
 def controll_player(data):
-    type = data['type']
+    type = int(data['type'])
     postion = data['postion']
     url = data['url']
-    meeting_id = data['meetingId']
+    meeting_id = meetingId_manager[request.sid]
     user = User.get_user_by_id(userId_manager[request.sid])
 
     meeting_room: MeetingRoom = meetingroom_manager[meeting_id]
@@ -193,9 +211,9 @@ def controll_player(data):
         raise RuntimeError('无效的type')
 
     video_status.update(video_player.get_video_status())
-    ws.emit(
+    io.emit(
         'sycnVideoState',
-        build_response(video_status),
+        build_response(data=video_status),
         room=meeting_id
     )
 
@@ -242,7 +260,7 @@ def setPermission(data):
     if comment >= 0:
         target_user.comment = comment
 
-    ws.emit(
+    io.emit(
         'sycnMember',
         build_response(data=meeting_room.get_member_list()),
         room=meeting_id
