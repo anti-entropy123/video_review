@@ -97,7 +97,7 @@ class Project(db.Document):
         self.save()
 
 class Comment(db.EmbeddedDocument):
-    from_ = db.StringField(db_field='from', required=True)
+    fromId = db.StringField(required=True)
     fromName = db.StringField(required=True)
     position = db.IntField(required=True)
     image = db.StringField(required=True)

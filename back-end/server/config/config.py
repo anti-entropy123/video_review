@@ -13,7 +13,6 @@ def config_logger(
         log_file_max_bytes=10000000, # 10MB
         log_file_max_count=5):
 
-    getLogger('socketio').setLevel(DEBUG)
     # 定义输出到控制台的日志处理器
     console_handler = {
         'class': 'logging.StreamHandler',
@@ -58,6 +57,9 @@ def config_logger(
         }
     }
     dictConfig(d)
+    getLogger('socketio').setLevel(ERROR)
+    getLogger('engineio').setLevel(ERROR)
+
 
 class Config:
     # 密钥, 用于session, cookie等

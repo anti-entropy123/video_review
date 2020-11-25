@@ -1,146 +1,34 @@
 
-import time
-
 import flask_socketio as io
-from app.utils import build_response
 from flask import request
-from flask_socketio import SocketIO, emit, join_room, leave_room, rooms
-from ..model import Comment, User, Meeting, Video
+from flask_socketio import emit, join_room, leave_room, rooms
+
+from app.utils import build_response
+
+from ..model import Meeting, User
 from . import ws
+from .entity import (MeetingMember, MeetingRoom, VideoPlayer,
+                     meetingId_manager, meetingroom_manager, userId_manager)
 
 name_space = '/meetingRoom'
-# meetingId => MeetingMember()
-meetingroom_manager = {}
-# sid => userId
-userId_manager = {}
-# sid => meetingId
-meetingId_manager = {}
-
-# 会议中的一个成员
-class MeetingMember:
-    def __init__(self, user_id) -> None:
-        self.user = User.get_user_by_id(user_id=user_id)
-        self.control = True
-        self.comment = True
-
-    def get_member_item(self):
-        return {
-            'userId': str(self.user.id),
-            'username': str(self.user.username),
-            'avatar': str(self.user.avatar),
-            'control': self.control,
-            'comment': self.comment
-        }
-
-# 视频播放器
-class VideoPlayer:
-    def __init__(self) -> None:
-        self.position = 0
-        self.url = None
-        self.is_play = False
-        self.change_point = None
-
-    def play(self):
-        self.is_play = True
-        self.change_point = time.time()
-
-    def pause(self):
-        if self.is_play:
-            self.position += round(time.time()-self.change_point) / 100
-        self.is_play = False
-        self.change_point = time.time()
-
-    def move_process(self, postion):
-        self.position = postion
-        self.change_point = time.time()
-
-    def change_video(self, url):
-        self.url = url
-        self.position = 0
-        self.is_play = False
-        self.change_point = time.time()
-
-    def get_postion(self):
-        return 0 if not self.url else (self.position if not self.is_play else self.position + (time.time()-self.change_point))
-
-    def get_isPlay(self):
-        if self.url and self.is_play:
-            return 1
-        else:
-            return 0
-        # return int(self.url and self.is_play)
-
-    def get_video_status(self):
-        return {
-            'url': self.url,
-            'postion': self.get_postion(),
-            'isPlay': self.get_isPlay()
-        }
-        
-
-# 一个会议室
-class MeetingRoom:
-    def __init__(self, meeting_id) -> None:
-        self.member_list = {}
-        self.meeting_id = meeting_id
-        meeting = Meeting.get_meeting_by_id(meeting_id=meeting_id)
-        self.manager_id = meeting.ownerId
-        self.player = VideoPlayer()
-        meetingroom_manager[meeting_id] = self
-
-    def get_member_list(self):
-        return {
-            'memberNum': len(self.member_list),
-            'memberList': [member.get_member_item() for member in self.member_list.values()]
-        }
-
-    def add_member(self, user_id):
-        self.member_list[user_id] = MeetingMember(user_id=user_id)
-
-    def delete_member(self, user_id):
-        self.member_list.pop(user_id)
-        # 如果此会议室没人在了, 则销毁此会议室
-        if not len(self.member_list):
-            meetingroom_manager.pop(self.meeting_id)
-    
-    def get_comment_list(self):
-        video = Video.objects(url=self.player.url).first()
-        comments = video.comment if video else []
-        result = []
-        for comment in comments:
-            result.append({
-                'fromId': comment.fromId,
-                'fromName': comment.fromName,
-                'imageUrl': comment.url,
-                'content': comment.content,
-                'position': comment.postion
-            })
-        return result
-    
-    def add_comment(self, from_id, from_name, content, image_url, postion):
-        comment = Comment(
-            from_=from_id,
-            fromName=from_name,
-            postion=postion,
-            image=image_url,
-            content=content
-        )
-        video = Video.objects(url=self.player.url).first()
-        video.comment.append(comment)
-        video.save()
 
 @ws.on('connect', namespace=name_space)
 def connected_msg():
-    print('client connected.')
+    pass
+    # print('client connected.')
 
 @ws.on('init', namespace=name_space)
 def init(data):
-    print(data)
+    # print(data)
     meeting_id = data['meetingId']
     user_id = data['userId']
     
     userId_manager[request.sid] = user_id
     meetingId_manager[request.sid] = meeting_id
+    
+    meeting = Meeting.get_meeting_by_id(meeting_id=meeting_id)
+    if not meeting:
+        return emit('errorHandle',build_response(0, '无效的meetingId'))
 
     if meeting_id in meetingroom_manager:
         meeting_room: MeetingRoom = meetingroom_manager[meeting_id]
@@ -155,7 +43,7 @@ def init(data):
     io.emit(
         'sycnMember',
         build_response(data=meeting_room.get_member_list()),
-        # broadcast=True   
+        # broadcast=True
         room=meeting_id
     )
     # 向新成员发送当前视频的播放
@@ -188,8 +76,8 @@ def disconnect_msg():
 @ws.on('changeProcess', namespace=name_space)
 def controll_player(data):
     type = int(data['type'])
-    postion = data['postion']
-    url = data['url']
+    position = data['position']
+    video_id = data['videoId']
     meeting_id = meetingId_manager[request.sid]
     user = User.get_user_by_id(userId_manager[request.sid])
 
@@ -202,13 +90,21 @@ def controll_player(data):
     if type == 0 or type == 1:
         video_player.pause()
     elif type==2:
-        video_player.move_process(postion=postion)
+        video_player.move_process(position=position)
     elif type == 3 or type==4:
         video_player.play()
     elif type == 5:
-        video_player.change_video(url=url)
+        if not meeting_room.manager_id == str(user.id):
+            emit('errorHandle', build_response(0, "你不是管理员"))
+
+        video_player.change_video(video_id=video_id)
+        io.emit(
+            'updateComment',
+            build_response(data=meeting_room.get_comment_list()),
+            room=meeting_id
+        )
     else:
-        raise RuntimeError('无效的type')
+        emit('errorHandle', build_response(0, '无效的type'))
 
     video_status.update(video_player.get_video_status())
     io.emit(
@@ -222,7 +118,7 @@ def addComment(data):
     meeting_id = data['meetingId']
     content = data['content']
     image_url = data['imageUrl']
-    postion = data['postion']
+    position = data['position']
     from_id = userId_manager[request.sid]
     user = User.get_user_by_id(from_id)
     from_name = user.username
@@ -233,7 +129,7 @@ def addComment(data):
         from_name=from_name,
         content=content,
         image_url=image_url,
-        postion=postion
+        position=position
     )
     
     emit(
