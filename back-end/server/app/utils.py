@@ -4,7 +4,7 @@ import io
 import logging
 import random
 import time
-from typing import Tuple, List
+from typing import IO, Tuple, List
 from flask import current_app as app
 import cv2
 from aliyunsdkcore.client import AcsClient
@@ -136,17 +136,16 @@ class TxCosUtil:
         config = CosConfig(Region=self.region, SecretId=self.secret_id, SecretKey=self.secret_key)
         self.client = CosS3Client(config)
     
-    def simple_file_upload(self, path:str, key:str):
-        with open(path, 'rb') as f:
-            response = self.client.put_object(
-                Bucket=bucket_name,
-                Body=f,
-                Key= 'video_review/'+key,
-                StorageClass='STANDARD',
-                EnableMD5=False
-            )
-            print(response['ETag'])
-        
+    def simple_file_upload(self, f:IO, key:str):
+        response = self.client.put_object(
+            Bucket=bucket_name,
+            Body=f,
+            Key= 'video_review/'+key,
+            StorageClass='STANDARD',
+            EnableMD5=False
+        )
+        # print(response['ETag'])
+    
         return f"https://{app.config['BUCKET_NAME']}.cos.ap-beijing.myqcloud.com/video_review/{key}"
 
 
@@ -158,7 +157,7 @@ class CaptureFrameUtil:
 
     def capture_frame(self, video_path: str) -> Tuple[List, int]:
         vc = cv2.VideoCapture(video_path)
-        print('视频路径', video_path)
+        # print('视频路径', video_path)
         
         if not vc.isOpened():
             raise RuntimeError('无法解析视频')

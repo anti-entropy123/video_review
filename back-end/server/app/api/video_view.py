@@ -39,7 +39,9 @@ def create_video():
     filename = os.path.join(app.config['UPLOAD_FOLDER'], video_name) 
     file.save(filename)
 
-    url = txCosUtil.simple_file_upload(filename, video_name)
+    with open(filename, 'rb') as f:
+        url = txCosUtil.simple_file_upload(f, video_name)
+    
     frames, duration = captrueFrameUtil.capture_frame(filename)
     covers = []
     for i, frame in enumerate(frames):
@@ -123,10 +125,10 @@ def review_finish(video_id):
 @login_required
 def my_video():
     user = User.objects(id=safe_objectId(get_jwt_identity())).first()
-    print(user)
+    # print(user)
 
     video_list = user.uploadVideo
-    print(video_list)
+    # print(video_list)
     data = []
     for video_id in video_list:
         video = Video.objects(id=safe_objectId(video_id)).first()

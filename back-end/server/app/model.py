@@ -57,6 +57,9 @@ class User(db.Document):
         self.save()
 
     def get_message_by_id(self, message_id:int):
+        message_id = int(message_id)
+        if message_id >= len(self.message):
+            return None
         return self.message[message_id]
     
     def read_message(self, message_id:int):

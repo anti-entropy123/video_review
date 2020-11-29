@@ -14429,3 +14429,21 @@ KeyError: 'c9f631aa98754c819b1d2a72fd470b3e'
 [2020-11-26 00:51:31,689] INFO in _internal: 127.0.0.1 - - [26/Nov/2020 00:51:31] "[37mGET /socket.io/?EIO=3&transport=polling&t=NO0KDFC&sid=d5aeacd1a67d4942939037d02d57a6b3 HTTP/1.1[0m" 200 -
 [2020-11-26 00:51:33,672] INFO in _internal: 127.0.0.1 - - [26/Nov/2020 00:51:33] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NO0KJzl&sid=680bfd7cfe6546daa86c19215e3f9dee HTTP/1.1[0m" 200 -
 [2020-11-26 00:51:33,673] INFO in _internal: 127.0.0.1 - - [26/Nov/2020 00:51:33] "[37mGET /socket.io/?EIO=3&transport=polling&t=NO0KDjq&sid=680bfd7cfe6546daa86c19215e3f9dee HTTP/1.1[0m" 200 -
+[2020-11-26 01:08:28,574] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-26 01:08:28,850] INFO in _internal:  * Restarting with stat
+[2020-11-26 01:08:30,430] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-26 01:08:30,479] WARNING in _internal:  * Debugger is active!
+[2020-11-26 01:08:30,506] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-26 01:08:30,623] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-26 01:15:35,544] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-26 01:15:35,549] INFO in _internal:  * Restarting with stat
+[2020-11-26 01:15:36,611] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-26 01:15:36,613] WARNING in _internal:  * Debugger is active!
+[2020-11-26 01:15:36,620] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-26 01:15:36,634] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-11-26 01:15:52,445] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\back-end\\server\\app\\api\\video_view.py', reloading
+[2020-11-26 01:15:52,824] INFO in _internal:  * Restarting with stat
+[2020-11-26 01:15:54,221] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-11-26 01:15:54,283] WARNING in _internal:  * Debugger is active!
+[2020-11-26 01:15:54,293] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-11-26 01:15:54,359] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)

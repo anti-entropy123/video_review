@@ -13,7 +13,7 @@ def get_user_info(target_id:str):
 
     if not user:
         return jsonify(build_response(0, "无此用户"))
-    print(dir(user))
+    # print(dir(user))
     parm_list = ['username', 'avatar', 'mobileNum', 'company']
     data = {'userId': target_id}
     for parm in parm_list:

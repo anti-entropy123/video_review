@@ -13,7 +13,7 @@ def role_required(permission):
         @wraps(f)
         def decorated_function(*args, **kwargs):
             identity = get_jwt_identity()
-            print(identity, "can do this permission ?")
+            # print(identity, "can do this permission ?")
             # 在此处验证角色权限, 如果无对应权限, 则抛出 403
             if not permission:
                 abort(403)
