@@ -34,6 +34,10 @@ class VideoPlayer:
         self.change_point = None
 
     @property
+    def cover(self):
+        return self.video.cover[0] if self.video else ''
+
+    @property
     def position(self):
         return self._position
     
@@ -43,6 +47,7 @@ class VideoPlayer:
             self._position = p
         else:
             self._position = self.duration
+        self.change_point = time.time()
 
     @property
     def duration(self):
@@ -76,18 +81,18 @@ class VideoPlayer:
     def is_play(self, play):
         if self._is_play:
             self.position += round(time.time()-self.change_point)
-        self.change_point = time.time()
         self._is_play = play
 
     def play(self):
         self.is_play = True
+        if self.position >= self.duration:
+            self.position = 0
 
     def pause(self):
         self.is_play = False
 
     def move_process(self, position):
         self.position = position if position < self.duration else self.duration
-        self.change_point = time.time()
 
     def change_video(self, video_id):
         video = Video.get_video_by_id(video_id=video_id)
@@ -100,24 +105,15 @@ class VideoPlayer:
         self.position = 0
         self.change_point = time.time()
 
-    def get_position(self):
-        return 0 if not self.url else (self.position if not self.is_play else (self.position + time.time()-self.change_point))
-
-    def get_isPlay(self):
-        if self.url and self.is_play:
-            return 1
-        else:
-            return 0
-        # return int(self.url and self.is_play)
 
     def get_video_status(self):
         return {
             'url': self.url,
-            'position': self.get_position(),
-            'isPlay': self.get_isPlay(),
+            'position': self.position,
+            'isPlay': self.is_play,
             'duration': self.duration,
             'videoName': self.videoName,
-            'cover': self.video.cover[0]
+            'cover': self.cover
         }
 
 # 一个会议室

@@ -78,6 +78,7 @@ def controll_player(data):
     type = int(data['type'])
     position = data['position']
     video_id = data['videoId']
+    key = data['key']
     meeting_id = meetingId_manager[request.sid]
     user = User.get_user_by_id(userId_manager[request.sid])
 
@@ -86,6 +87,7 @@ def controll_player(data):
     video_status = {
         'userName': user.username,
         'reason': type,
+        'key': key
     }
     if type == 0 or type == 1:
         video_player.pause()
