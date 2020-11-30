@@ -28,7 +28,7 @@ class MeetingMember:
 # 视频播放器
 class VideoPlayer:
     def __init__(self) -> None:
-        self.video:Video = None
+        self.video: Video = None
         self._position = 0
         self._is_play = False
         self.change_point = None
@@ -116,7 +116,8 @@ class VideoPlayer:
             'position': self.get_position(),
             'isPlay': self.get_isPlay(),
             'duration': self.duration,
-            'videoName': self.videoName
+            'videoName': self.videoName,
+            'cover': self.video.cover[0]
         }
 
 # 一个会议室

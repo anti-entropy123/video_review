@@ -60,10 +60,10 @@ class User(db.Document):
         message_id = int(message_id)
         if message_id >= len(self.message):
             return None
-        return self.message[message_id]
+        return self.message[int(message_id)]
     
     def read_message(self, message_id:int):
-        self.message[message_id].hasRead = 1
+        self.message[int(message_id)].hasRead = 1
         self.save()
 
     def process_message(self, message_id:int):
