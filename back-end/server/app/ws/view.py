@@ -1,8 +1,7 @@
 
-from os import truncate
 import flask_socketio as io
 from flask import request
-from flask_socketio import emit, join_room, leave_room, rooms
+from flask_socketio import emit, join_room
 
 from app.utils import build_response
 
@@ -24,17 +23,24 @@ def init(data):
     meeting_id = data['meetingId']
     user_id = data['userId']
     
-    userId_manager[request.sid] = user_id
-    meetingId_manager[request.sid] = meeting_id
-    
+    # 获取会议对象
     meeting = Meeting.get_meeting_by_id(meeting_id=meeting_id)
     if not meeting:
         return emit('errorHandle',build_response(0, '无效的meetingId'))
 
+    # 获取会议室对象
     if meeting_id in meetingroom_manager:
         meeting_room: MeetingRoom = meetingroom_manager[meeting_id]
     else:
-        meeting_room = MeetingRoom(meeting_id=meeting_id)
+        try: 
+            meeting_room = MeetingRoom(meeting_id=meeting_id)
+        except RuntimeError as e:
+            emit('errorHandle',build_response(0, str(e)))
+            return
+
+    # 保存此连接的用户的id
+    meetingId_manager[request.sid] = meeting_id
+    userId_manager[request.sid] = user_id
     meeting_room.add_member(user_id=user_id)
     
     # 加入会议室room, 方便广播
@@ -64,15 +70,10 @@ def init(data):
 @ws.on('disconnect', namespace=name_space)
 def disconnect_msg():
     meeting_id = meetingId_manager[request.sid]
-    # print('client disconnected.')
-    leave_room(meeting_id)
+    # FIXME 这里的 request.id 貌似不好用 ? 
+    # todo 应该在断开链接时从meetingRoom中去掉这个用户.
+    meetingId_manager.pop(request.sid)
     userId_manager.pop(request.sid)
-
-# @ws.on('my_event', namespace=name_space)
-# def test_message(message):
-#     print(message)
-#     emit('my_response',
-#          {'data': message['data'], 'count': 1})
 
 @ws.on('changeProcess', namespace=name_space)
 def controll_player(data):
@@ -88,6 +89,9 @@ def controll_player(data):
         'userName': user.username,
         'reason': type,
     }
+    # 注: 变量 flag 的作用是, 标记此请求是否确实改变了后端播放器的某些状态
+    #     例如设置进度条时, 如果新的位置和原位置过于接近, 就不会发生更改
+    #     此时flag就为false
     flag = True
     # 暂停
     if type == 0 or type == 1:

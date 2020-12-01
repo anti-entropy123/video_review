@@ -76,7 +76,7 @@ def login():
     except KeyError as e:
         abort(400, {'msg': str(e)})
 
-    user = User.objects(mobileNum=mobileNum).first()
+    user = User.get_user_by_mobileNum(mobileNum=mobileNum)
     if not user:
         # 没有此用户
         abort(401)
@@ -124,4 +124,28 @@ def reset_password():
     user.save()
     return jsonify(build_response())
     
+@auth.route('/admin/login/', methods=['POST'])
+def admin_login():
+    args = request.json
+    try:
+        mobile_num = args['mobileNum']
+        password = args['password']
+    except KeyError as e:
+        abort(400, {'msg': str(e)})
+    
+    user = User.get_user_by_mobileNum(mobileNum=mobile_num)
+    if not user:
+        # 没有此用户
+        abort(401)
+
+    if password and not check_password_hash(user.password, password): 
+        # 错误的密码
+        abort(401)
+
+    if not user.admin:
+        return jsonify(build_response(0, '你不是管理员'))
+
+    access_token = create_access_token(identity=str(user.id), user_claims={'admin': 1})
+    refresh_token = create_refresh_token(identity=str(user.id), user_claims={'admin': 1})
+    return jsonify(build_response(1, '', token=access_token, refreshToken=refresh_token, userId=str(user.id)), username=user.username)
     

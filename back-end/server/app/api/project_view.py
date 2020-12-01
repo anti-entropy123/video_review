@@ -47,6 +47,9 @@ def invite_user(project_id):
         return jsonify(build_response(0, "没有此用户"))
 
     project = Project.get_project_by_id(project_id)
+    # 检查目标用户是否已经在项目中
+    if user_id in project.member:
+        return jsonify(build_response(0, '此用户已经在项目中'))
 
     new_message = Message(
         fromId=str(inviter.id),
@@ -96,6 +99,8 @@ def join_project(project_id):
         project.member.append(
             ProjectMember(userId=str(user.id))
         )
+        user.joinProject.append(project_id)
+
     project.save()
     # 已处理此消息
     user.process_message(message_id=message_id)

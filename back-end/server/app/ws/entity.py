@@ -1,7 +1,9 @@
+from app.api import project_view
 from os import truncate
 import time
+from typing import Dict, List
 
-from ..model import Comment, Meeting, User, Video
+from ..model import Comment, Meeting, Project, User, Video
 
 # meetingId => MeetingMember()
 meetingroom_manager = {}
@@ -16,6 +18,10 @@ class MeetingMember:
         self.user = User.get_user_by_id(user_id=user_id)
         self.control = True
         self.comment = True
+    
+    @property
+    def avatar(self):
+        return self.user.avatar
 
     def get_member_item(self):
         return {
@@ -28,11 +34,11 @@ class MeetingMember:
 
 # 视频播放器
 class VideoPlayer:
-    def __init__(self) -> None:
+    def __init__(self, video_id:str) -> None:
         self.video: Video = None
         self._position = 0
         self._is_play = False
-        self.change_point = None
+        self.change_video(video_id=video_id)
 
     @property
     def cover(self):
@@ -104,7 +110,7 @@ class VideoPlayer:
         self.position = position if position < self.duration else self.duration
         return True
 
-    def change_video(self, video_id):
+    def change_video(self, video_id:str):
         video = Video.get_video_by_id(video_id=video_id)
         if not video:
             raise KeyError()
@@ -115,6 +121,17 @@ class VideoPlayer:
         self.position = 0
         self.change_point = time.time()
 
+    def get_video_info(self)->dict:
+        project = Project.get_project_by_id(project_id=self.video.belongTo)
+        return {
+            'videoName': self.video.videoName,
+            'uploader': self.video.owner,
+            'duration': self.video.duration,
+            'covers': self.video.cover,
+            'project': project.projectName,
+            'description': self.video.description,
+            'createDate': self.video.createDate
+        }
 
     def get_video_status(self):
         return {
@@ -123,17 +140,23 @@ class VideoPlayer:
             'isPlay': self.is_play,
             'duration': self.duration,
             'videoName': self.videoName,
-            'cover': self.cover
+            'cover': self.cover,
+            'videoInfo': self.get_video_info()
         }
 
 # 一个会议室
 class MeetingRoom:
     def __init__(self, meeting_id) -> None:
-        self.member_list = {}
+        self.member_list:Dict[str, MeetingMember] = {}
         self.meeting_id = meeting_id
-        meeting = Meeting.get_meeting_by_id(meeting_id=meeting_id)
+        meeting:Meeting = Meeting.get_meeting_by_id(meeting_id=meeting_id)
         self.manager_id = meeting.ownerId
-        self.player:VideoPlayer = VideoPlayer()
+        project:Project = Project.get_project_by_id(meeting.belongTo)
+        if project.hasVideo:
+            video_id = project.hasVideo[-1]
+            self.player:VideoPlayer = VideoPlayer(video_id=video_id)
+        else:
+            raise RuntimeError('没有视频')
         meetingroom_manager[meeting_id] = self
 
     def get_member_list(self):
@@ -152,11 +175,11 @@ class MeetingRoom:
             meetingroom_manager.pop(self.meeting_id)
     
     def get_comment_list(self):
-        video = self.player.video
+        video:Video = self.player.video
         if not video:
             return []
 
-        comments = video.comment
+        comments:List[Comment] = video.comment
         result = []
         for comment in comments:
             result.append({
@@ -164,7 +187,8 @@ class MeetingRoom:
                 'fromName': comment.fromName,
                 'imageUrl': comment.image,
                 'content': comment.content,
-                'position': comment.position
+                'position': comment.position,
+                'avatar': self.member_list[comment.fromId].avatar
             })
 
         return result

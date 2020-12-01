@@ -35,11 +35,14 @@ class User(db.Document):
     mail = db.StringField(default='')
     avatar = db.StringField(default='')
     company = db.StringField(default='')
-    hasProject = db.ListField(db.StringField(), default=[])
+    # 自己创建的项目
+    hasProject = db.ListField(db.StringField(), default=[]) 
+    # 加入的项目
     joinProject = db.ListField(db.StringField(), default=[])
     uploadVideo = db.ListField(db.StringField(), default=[])
     message = db.ListField(db.EmbeddedDocumentField(Message), default=[])
     hasMeeting = db.ListField(db.StringField(), default=[])
+    admin = db.BooleanField(default=False)
 
     def __str__(self):
         return f"用户: {self.username}"
@@ -51,6 +54,10 @@ class User(db.Document):
     @classmethod
     def get_user_by_id(cls, user_id:str)->User:
         return cls.objects(id=safe_objectId(user_id)).first()
+
+    @classmethod
+    def get_user_by_mobileNum(cls, mobileNum)->User:
+        return User.objects(mobileNum=mobileNum).first()
 
     def receive_message(self, message: Message):
         message.messageId = len(self.message)
@@ -70,6 +77,7 @@ class User(db.Document):
     def process_message(self, message_id:int):
         self.message[message_id].hasProcess = 1
         self.save()
+
 
 class ProjectMember(db.EmbeddedDocument):
     userId = db.StringField(primary_key=True, required=True, db_field='_id')
@@ -106,7 +114,7 @@ class Comment(db.EmbeddedDocument):
     position = db.IntField(required=True)
     image = db.StringField(required=True)
     content = db.StringField(required=True)
-
+    
     def __str__(self):
         return f"批注: {self.content}"
 

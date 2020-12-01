@@ -45,3 +45,10 @@ def create_meeting():
         'meetingId': meeting_id
     }))
 
+@api.route('/api/meeting/search/')
+
+@api.route('/api/meeting/mine', methods=['GET'])
+@login_required
+def my_meeting():
+    pass
+    # todo

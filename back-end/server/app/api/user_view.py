@@ -1,3 +1,4 @@
+from typing import List
 from flask import jsonify, request, abort
 from flask_jwt_extended import get_jwt_identity
 
@@ -48,13 +49,16 @@ def update_user_info():
 def get_userlist():
     key = request.args['data']
     
-    user_list = User.objects()
+    user_id = get_jwt_identity()
+    # print(user_id)
+    user_list:List[User] = User.objects()
     data = []
     for user in user_list:
-        if (key in user['username'] or
+        if (str(user.id) != user_id) and (
+            key in user['username'] or
             key in user['mail'] or
-            key in user['mobileNum']):
-
+            key in user['mobileNum']
+        ):
            data.append({
                'userId': str(user.id),
                'username': user.username,

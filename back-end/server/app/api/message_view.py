@@ -19,6 +19,7 @@ def get_message_list():
     
     data = []
     for message in messages:
+        sender = User.get_user_by_id(message['fromId'])
         one = {
             'messageId': message['messageId'],
             'fromId': message['fromId'],
@@ -28,7 +29,8 @@ def get_message_list():
             'projectName': message['projectName'],
             'hasRead': message['hasRead'],
             'hasProcess': message['hasProcess'],
-            'type': message['type']
+            'type': message['type'],
+            'avatar': sender.avatar
         }
         data.append(one)
     
