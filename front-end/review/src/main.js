@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
+<<<<<<< HEAD
 import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.css';// 加载 CSS
 // import {Button,Layout,Avatar} from 'ant-design-vue'
@@ -14,6 +15,9 @@ import 'ant-design-vue/dist/antd.css';// 加载 CSS
 
 Vue.config.productionTip = false;
 Vue.use(Antd)
+=======
+import './assets/css/global_R.css'
+>>>>>>> rlj
 Vue.use(ElementUI, { size: "small", zIndex: 3000 });
 Vue.config.productionTip = false;
 
