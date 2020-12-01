@@ -4,8 +4,6 @@
 
 # 日期: 2020 11 05
 
-
-
 FROM ubuntu:latest
 USER root
 

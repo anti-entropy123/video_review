@@ -1,9 +1,8 @@
 from flask import jsonify, request, abort
 from flask_jwt_extended import get_jwt_identity
 
-from .. import db
 from . import api
-from ..utils import build_response, safe_objectId
+from ..utils import txCosUtil, build_response, safe_objectId
 from ..auth import login_required
 from ..model import User
 
@@ -14,7 +13,7 @@ def get_user_info(target_id:str):
 
     if not user:
         return jsonify(build_response(0, "无此用户"))
-    print(dir(user))
+    # print(dir(user))
     parm_list = ['username', 'avatar', 'mobileNum', 'company']
     data = {'userId': target_id}
     for parm in parm_list:
@@ -30,7 +29,7 @@ def update_user_info():
     try:
         username = params['username']
         avatar = params['avatar']
-        mobile = params['mobile']
+        mobile = params['mobileNum']
         company = params['company']
     except KeyError as e:
         abort(400)
@@ -65,3 +64,18 @@ def get_userlist():
            })
     
     return jsonify(build_response(1, '', data))
+
+@api.route('/uploadImg/', methods=['POST'])
+@login_required
+def upload_avatar():
+    try:
+        image = request.files['image']
+    except KeyError as e:
+        abort(400, {'msg': str(e)})
+    
+    user_id = get_jwt_identity()
+
+    url = txCosUtil.simple_file_upload(image, user_id+'.jpg')
+    return jsonify(build_response(data={
+        'url': url
+    }))

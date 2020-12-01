@@ -1,7 +1,11 @@
 <template>
   <div class="file-container">
    <div class="search-header">
+<<<<<<< HEAD
      <span class="project-name">{{projectName}}</span>
+=======
+      <span class="project-name">{{projectName}}</span>
+>>>>>>> 54dc2923834d41b5597bdd6f11b54bf1c53a1e09
 
       <span>3项,73.84MB</span>
       <el-input
@@ -68,7 +72,10 @@ export default {
   data() {
     return {
       imageUrl: "",
+<<<<<<< HEAD
       srcList:[],
+=======
+>>>>>>> 54dc2923834d41b5597bdd6f11b54bf1c53a1e09
        options: [{
             value: '选项1',
             label: '黄金糕'
@@ -86,7 +93,11 @@ export default {
             label: '北京烤鸭'
           }],
           value: ''
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> 54dc2923834d41b5597bdd6f11b54bf1c53a1e09
     };
   },
   methods: {

@@ -1,5 +1,5 @@
 from logging.config import dictConfig
-from logging import DEBUG, INFO, ERROR, WARNING
+from logging import DEBUG, INFO, ERROR, WARNING, getLogger
 from config.secret_config import bucket_name
 import os
 
@@ -57,6 +57,9 @@ def config_logger(
         }
     }
     dictConfig(d)
+    getLogger('socketio').setLevel(ERROR)
+    getLogger('engineio').setLevel(ERROR)
+
 
 class Config:
     # 密钥, 用于session, cookie等
@@ -73,12 +76,15 @@ class Config:
     MONGO_URI = "mongodb://localhost:27017/video_review"
     # 关闭对象变化跟踪, 以节省开销
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-
+    # mongodb 数据库配置
     MONGODB_SETTINGS = {
         'db': 'video_review',
         'host': '127.0.0.1'
     }
+    # tx cos 存储桶
     BUCKET_NAME = bucket_name
+    # 文件临时保存路径
+    UPLOAD_FOLDER = '/tmp/video_review/'
 
     @staticmethod
     # 如果需要的话, 在此函数中进行其它的配置

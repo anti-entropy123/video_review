@@ -1,3 +1,5 @@
+import logging
+
 from flask import Flask
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager
@@ -35,5 +37,7 @@ def create_app(config=None):
 
     from .ws import ws
     ws.init_app(app)
-    
+    logging.getLogger('socketio').setLevel(logging.ERROR)
+    logging.getLogger('engineio').setLevel(logging.ERROR)
+
     return app, ws

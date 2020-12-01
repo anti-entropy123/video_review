@@ -1,41 +1,66 @@
 <template>
 <<<<<<< HEAD
   <div>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 54dc2923834d41b5597bdd6f11b54bf1c53a1e09
     <Header></Header>
   <div id="content">
-    <Menu></Menu>
-    <div id="main">
+<!--    <Menu></Menu>-->
+    <div >
     <Main></Main>
     </div>
   </div>
+<<<<<<< HEAD
+=======
+=======
+    Home
+>>>>>>> 2238b8058cef644734cd614b6928fe000fa9b91a
+>>>>>>> 54dc2923834d41b5597bdd6f11b54bf1c53a1e09
   </div>
 </template>
 
 <script>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 54dc2923834d41b5597bdd6f11b54bf1c53a1e09
 import Header from "./Header";
 import Main from "./Main";
 import Menu from "./Menu"
 export default {
   components: {Header,Main,Menu}
+<<<<<<< HEAD
+=======
+=======
+export default {
+
+>>>>>>> 2238b8058cef644734cd614b6928fe000fa9b91a
+>>>>>>> 54dc2923834d41b5597bdd6f11b54bf1c53a1e09
 }
 </script>
 
 <style>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 54dc2923834d41b5597bdd6f11b54bf1c53a1e09
 #content{
-  background: black;
+  /*background: black;*/
   width: 100%;
   height: 100%;
   float: left;
 }
   Main{
     position: absolute;
-    margin-left: 100px;
+    /*margin-left: 100px;*/
   }
-  #main{
-    position: absolute;
-    margin-left: 256px;
-    width: 74%;
-  }
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 2238b8058cef644734cd614b6928fe000fa9b91a
+>>>>>>> 54dc2923834d41b5597bdd6f11b54bf1c53a1e09
 
 =======
   <el-container class="home-container">

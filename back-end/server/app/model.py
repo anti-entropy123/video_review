@@ -1,16 +1,23 @@
-import time
+from __future__ import annotations
 
-from .utils import safe_objectId
+import time
+from typing import List
+
+from bson.objectid import ObjectId
 
 from . import db
+from .utils import safe_objectId
+
 
 class Message(db.EmbeddedDocument):
+    # messageId = db.StringField(required=True, unique=True)
     fromId = db.StringField(required=True)
     fromName = db.StringField(required=True)
     projectId = db.StringField(required=True)
     projectName = db.StringField(required=True)
     type = db.IntField(required=True)
     content = db.DictField(required=True)
+    messageId = db.IntField(required=True)
 
     hasProcess = db.IntField(default=0)
     hasRead = db.IntField(default=0)
@@ -18,10 +25,6 @@ class Message(db.EmbeddedDocument):
 
     def __str__(self):
         return f'消息: {self.content}'
-    
-    @classmethod
-    def get_message_by_id(cls, message_id:str):
-        return cls.objects(id=safe_objectId(message_id)).first()
 
 
 class User(db.Document):
@@ -41,17 +44,32 @@ class User(db.Document):
     def __str__(self):
         return f"用户: {self.username}"
     
-    def receive_message(self, message: Message):
-        self.message.append(message)
-        self.save()
-
     @classmethod
     def has_user(cls, userId:str):
         return bool(cls.objects(id=safe_objectId(userId)))
 
     @classmethod
-    def get_user_by_id(cls, user_id:str):
+    def get_user_by_id(cls, user_id:str)->User:
         return cls.objects(id=safe_objectId(user_id)).first()
+
+    def receive_message(self, message: Message):
+        message.messageId = len(self.message)
+        self.message.append(message)
+        self.save()
+
+    def get_message_by_id(self, message_id:int):
+        message_id = int(message_id)
+        if message_id >= len(self.message):
+            return None
+        return self.message[int(message_id)]
+    
+    def read_message(self, message_id:int):
+        self.message[int(message_id)].hasRead = 1
+        self.save()
+
+    def process_message(self, message_id:int):
+        self.message[message_id].hasProcess = 1
+        self.save()
 
 class ProjectMember(db.EmbeddedDocument):
     userId = db.StringField(primary_key=True, required=True, db_field='_id')
@@ -75,11 +93,16 @@ class Project(db.Document):
         return bool(cls.objects(id=safe_objectId(project_id)))
 
     @classmethod
-    def get_project_by_id(cls, project_id:str):
+    def get_project_by_id(cls, project_id:str)->Project:
         return cls.objects(id=safe_objectId(project_id)).first()
 
+    def wait_to_user_join(self, user_id:str):
+        self.waitJoin.append(user_id)
+        self.save()
+
 class Comment(db.EmbeddedDocument):
-    from_ = db.StringField(db_field='from', required=True)
+    fromId = db.StringField(required=True)
+    fromName = db.StringField(required=True)
     position = db.IntField(required=True)
     image = db.StringField(required=True)
     content = db.StringField(required=True)
@@ -102,12 +125,13 @@ class Video(db.Document):
     hasReview = db.IntField(default=0)
     reviewResult = db.IntField(default=0)
     reviewSummary = db.StringField(default='')
+    createDate = db.FloatField(default=time.time())
     
     def __str__(self):
         return f"视频: {self.videoName}"
 
     @classmethod
-    def get_video_by_id(cls, video_id):
+    def get_video_by_id(cls, video_id)->Video:
         return cls.objects(id=safe_objectId(video_id)).first()
 
 class Meeting(db.Document):
@@ -126,5 +150,9 @@ class Meeting(db.Document):
         return f"会议: {self.title}"
 
     @classmethod
-    def get_meeting_by_id(cls, meeting_id):
+    def get_meeting_by_id(cls, meeting_id)->Meeting:
         return cls.objects(id=safe_objectId(meeting_id)).first()
+
+    @classmethod
+    def get_meeting_by_projectId(cls, project_id)->List[Meeting]:
+        return cls.objects(belongTo=project_id)

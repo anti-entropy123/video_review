@@ -16,8 +16,13 @@ import 'ant-design-vue/dist/antd.css';// 加载 CSS
 Vue.config.productionTip = false;
 Vue.use(Antd)
 =======
+<<<<<<< HEAD
 import './assets/css/global_R.css'
 >>>>>>> rlj
+=======
+
+>>>>>>> 2238b8058cef644734cd614b6928fe000fa9b91a
+>>>>>>> 54dc2923834d41b5597bdd6f11b54bf1c53a1e09
 Vue.use(ElementUI, { size: "small", zIndex: 3000 });
 Vue.config.productionTip = false;
 
