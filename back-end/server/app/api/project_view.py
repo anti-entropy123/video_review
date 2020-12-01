@@ -3,7 +3,7 @@ from flask_jwt_extended import get_jwt_identity
 from flask_mongoengine import json
 
 from ..auth import login_required
-from ..model import Message, Project, User, Video, ProjectMember
+from ..model import Meeting, Message, Project, User, Video, ProjectMember
 from ..utils import build_response, safe_objectId
 from . import api
 
@@ -35,7 +35,7 @@ def create_project():
 @login_required
 def invite_user(project_id):
     try:
-        user_id = request.json['userId']
+        user_id:str = request.json['userId']
         word = request.json['word']
     except KeyError as e:
         abort(400, {'msg': str(e)})
@@ -68,10 +68,12 @@ def invite_user(project_id):
 @login_required
 def join_project(project_id):
     try:
-        message_id:str = request.json['messageId']
+        message_id:int = int(request.json['messageId'])
         is_agree = request.json['isAgree']
     except KeyError as e:
         abort(400, {'msg': str(e)})
+    except ValueError as e:
+        abort(400, {'msg': '无效的messageId'})
 
     user:User = User.get_user_by_id(get_jwt_identity())
     # print(str(user.id))
@@ -79,22 +81,24 @@ def join_project(project_id):
     #     return jsonify(build_response(0, '无法加入此项目'))
 
     project:Project = Project.get_project_by_id(project_id)
-    origin_message = user.get_message_by_id(message_id)
+    origin_message:Message = user.get_message_by_id(message_id)
     
     # 邀请者 用户id
     inviter_id = origin_message.fromId
     inviter = User.get_user_by_id(inviter_id)
+    try:
+        project.waitJoin.remove(str(user.id))
+    except ValueError as e:
+        return jsonify(build_response(0, '你没有被邀请加入此项目'))
 
-    user.process_message(message_id=message_id)
-
-    project.waitJoin.remove(str(user.id))
     if is_agree:
         # 同意邀请
         project.member.append(
             ProjectMember(userId=str(user.id))
         )
     project.save()
-    
+    # 已处理此消息
+    user.process_message(message_id=message_id)
     # 给邀请者发送提醒
     new_message = Message(
         fromId=str(user.id),
@@ -217,3 +221,25 @@ def remove_user_from_project(project_id:str):
 
     target.receive_message(message)
     return jsonify(build_response())
+
+@api.route('/project/<project_id>/getMeeting')
+@login_required
+def get_meeting(project_id):
+    project = Project.get_project_by_id(project_id=project_id)
+    
+    if not project:
+        return jsonify(build_response(0, '无此项目'))
+
+    meetings = Meeting.get_meeting_by_projectId(project_id=project_id)
+    data = []
+    for meeting in meetings:
+        data.append({
+            'meetingId': str(meeting.id),
+            'title': meeting.title,
+            'ownerName': meeting.ownerName,
+            'startTime': meeting.startTime,
+            'endTime': meeting.endTime,
+            'note': meeting.note,
+            'meetingUrl': ''
+        })
+    return jsonify(build_response(1, '', data=data))

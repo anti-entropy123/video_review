@@ -27,7 +27,7 @@ def get_message_list():
             'projectId': message['projectId'],
             'projectName': message['projectName'],
             'hasRead': message['hasRead'],
-            'hasProcess': message['type'],
+            'hasProcess': message['hasProcess'],
             'type': message['type']
         }
         data.append(one)

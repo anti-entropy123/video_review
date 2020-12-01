@@ -1,3 +1,4 @@
+from os import truncate
 import time
 
 from ..model import Comment, Meeting, User, Video
@@ -51,7 +52,7 @@ class VideoPlayer:
 
     @property
     def duration(self):
-        return self.video.duration if self.video else 1
+        return self.video.duration if self.video else 0
 
     @duration.setter
     def duration(self, d):
@@ -83,16 +84,25 @@ class VideoPlayer:
             self.position += round(time.time()-self.change_point)
         self._is_play = play
 
-    def play(self):
+    def play(self, position):
+        if self.is_play:
+            return False
         self.is_play = True
-        if self.position >= self.duration:
-            self.position = 0
+        self.position = position
+        return True
 
-    def pause(self):
+    def pause(self, position):
+        if not self.is_play:
+            return False
         self.is_play = False
+        self.position = position
+        return True
 
     def move_process(self, position):
+        if abs(position-self.position) < 1:
+            return False
         self.position = position if position < self.duration else self.duration
+        return True
 
     def change_video(self, video_id):
         video = Video.get_video_by_id(video_id=video_id)

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import time
+from typing import List
 
 from bson.objectid import ObjectId
 
@@ -151,3 +152,7 @@ class Meeting(db.Document):
     @classmethod
     def get_meeting_by_id(cls, meeting_id)->Meeting:
         return cls.objects(id=safe_objectId(meeting_id)).first()
+
+    @classmethod
+    def get_meeting_by_projectId(cls, project_id)->List[Meeting]:
+        return cls.objects(belongTo=project_id)

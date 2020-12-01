@@ -1,4 +1,5 @@
 
+from os import truncate
 import flask_socketio as io
 from flask import request
 from flask_socketio import emit, join_room, leave_room, rooms
@@ -38,7 +39,7 @@ def init(data):
     
     # 加入会议室room, 方便广播
     join_room(meeting_id)
-    print(rooms(request.sid))
+    # print(rooms(request.sid))
     # 向会议中所有人更新最新的成员列表
     io.emit(
         'sycnMember',
@@ -78,7 +79,6 @@ def controll_player(data):
     type = int(data['type'])
     position = data['position']
     video_id = data['videoId']
-    key = data['key']
     meeting_id = meetingId_manager[request.sid]
     user = User.get_user_by_id(userId_manager[request.sid])
 
@@ -87,14 +87,18 @@ def controll_player(data):
     video_status = {
         'userName': user.username,
         'reason': type,
-        'key': key
     }
+    flag = True
+    # 暂停
     if type == 0 or type == 1:
-        video_player.pause()
+        flag = video_player.pause(position)
+    # 拖动进度条
     elif type==2:
-        video_player.move_process(position=position)
+        flag = video_player.move_process(position=position)
+    # 播放
     elif type == 3 or type==4:
-        video_player.play()
+        flag = video_player.play(position)
+    # 切换视频
     elif type == 5:
         if not meeting_room.manager_id == str(user.id):
             emit('errorHandle', build_response(0, "你不是管理员"))
@@ -109,11 +113,13 @@ def controll_player(data):
         emit('errorHandle', build_response(0, '无效的type'))
 
     video_status.update(video_player.get_video_status())
-    io.emit(
-        'sycnVideoState',
-        build_response(data=video_status),
-        room=meeting_id
-    )
+    # print(video_status)
+    if flag:
+        io.emit(
+            'sycnVideoState',
+            build_response(data=video_status),
+            room=meeting_id
+        )
 
 @ws.on('addComment', namespace=name_space)
 def addComment(data):

@@ -44,3 +44,4 @@ def create_meeting():
     return jsonify(build_response(1, '', data={
         'meetingId': meeting_id
     }))
+
