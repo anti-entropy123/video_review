@@ -5,12 +5,7 @@ from typing import Dict, List
 
 from ..model import Comment, Meeting, Project, User, Video
 
-# meetingId => MeetingMember()
-meetingroom_manager = {}
-# sid => userId
-userId_manager = {}
-# sid => meetingId
-meetingId_manager = {}
+
 
 # 会议中的一个成员
 class MeetingMember:
@@ -207,3 +202,10 @@ class MeetingRoom:
 
         video.comment.append(comment)
         video.save()
+
+# meetingId => MeetingMember()
+meetingroom_manager:Dict[str, MeetingRoom] = {}
+# sid => userId
+userId_manager:Dict[str, str] = {}
+# sid => meetingId
+meetingId_manager:Dict[str, str] = {}

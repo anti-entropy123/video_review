@@ -31,6 +31,9 @@ def create_app(config=None):
     # auth蓝图, 封装用户登陆和jwt token管理相关模块
     from .auth import auth as auth_blueprint
     app.register_blueprint(auth_blueprint, url_prefix='/api')
+    # admin 蓝图, 封装管理员相关接口
+    from .api import admin as admin_blueprint
+    app.register_blueprint(admin_blueprint, url_prefix='/api/admin')
     # main蓝图, 封装其它视图相关模块
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)

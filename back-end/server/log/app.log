@@ -14668,3 +14668,45 @@ ValueError: Too many packets in payload
 [2020-12-02 17:47:30,357] WARNING in _internal:  * Debugger is active!
 [2020-12-02 17:47:30,365] INFO in _internal:  * Debugger PIN: 192-798-533
 [2020-12-02 17:47:30,425] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-12-02 17:56:11,619] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-12-02 17:56:11,624] INFO in _internal:  * Restarting with stat
+[2020-12-02 17:56:12,780] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-12-02 17:56:12,805] WARNING in _internal:  * Debugger is active!
+[2020-12-02 17:56:12,813] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-12-02 17:56:12,862] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-12-02 20:14:32,162] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-12-02 20:14:32,167] INFO in _internal:  * Restarting with stat
+[2020-12-02 20:14:33,191] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-12-02 20:14:33,191] WARNING in _internal:  * Debugger is active!
+[2020-12-02 20:14:33,199] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-12-02 20:14:33,213] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-12-02 20:16:25,467] INFO in _internal: 127.0.0.1 - - [02/Dec/2020 20:16:25] "[37mPOST /api/admin/login/ HTTP/1.1[0m" 200 -
+[2020-12-02 20:16:31,944] INFO in _internal: 127.0.0.1 - - [02/Dec/2020 20:16:31] "[35m[1mPOST /api/admin/login/ HTTP/1.1[0m" 500 -
+[2020-12-02 20:17:01,172] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\back-end\\server\\app\\auth\\views.py', reloading
+[2020-12-02 20:17:01,512] INFO in _internal:  * Restarting with stat
+[2020-12-02 20:17:05,893] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-12-02 20:17:05,897] INFO in _internal:  * Restarting with stat
+[2020-12-02 20:17:06,918] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-12-02 20:17:06,918] WARNING in _internal:  * Debugger is active!
+[2020-12-02 20:17:06,927] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-12-02 20:17:06,974] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-12-02 20:17:09,942] INFO in _internal: 127.0.0.1 - - [02/Dec/2020 20:17:09] "[37mPOST /api/admin/login/ HTTP/1.1[0m" 200 -
+[2020-12-02 20:17:49,830] INFO in _internal: 127.0.0.1 - - [02/Dec/2020 20:17:49] "[37mGET /api/admin/userManager HTTP/1.1[0m" 200 -
+[2020-12-02 20:18:33,760] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\back-end\\server\\app\\api\\__init__.py', reloading
+[2020-12-02 20:18:34,150] INFO in _internal:  * Restarting with stat
+[2020-12-02 20:18:35,223] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-12-02 20:18:35,224] WARNING in _internal:  * Debugger is active!
+[2020-12-02 20:18:35,231] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-12-02 20:18:35,306] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-12-02 20:18:46,055] INFO in _internal: 127.0.0.1 - - [02/Dec/2020 20:18:46] "[37mGET /api/admin/userManager HTTP/1.1[0m" 200 -
+[2020-12-02 20:18:56,697] INFO in _internal: 127.0.0.1 - - [02/Dec/2020 20:18:56] "[37mGET /api/admin/userManager?username=yjn HTTP/1.1[0m" 200 -
+[2020-12-02 20:19:12,396] INFO in _internal: 127.0.0.1 - - [02/Dec/2020 20:19:12] "[35m[1mGET /api/admin/videoManage?username=yjn HTTP/1.1[0m" 500 -
+[2020-12-02 20:19:31,389] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\back-end\\server\\app\\api\\admin_view.py', reloading
+[2020-12-02 20:19:31,905] INFO in _internal:  * Restarting with stat
+[2020-12-02 20:19:33,038] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-12-02 20:19:33,039] WARNING in _internal:  * Debugger is active!
+[2020-12-02 20:19:33,046] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-12-02 20:19:33,105] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-12-02 20:19:34,129] INFO in _internal: 127.0.0.1 - - [02/Dec/2020 20:19:34] "[37mGET /api/admin/videoManage?username=yjn HTTP/1.1[0m" 200 -
+[2020-12-02 20:19:58,978] INFO in _internal: 127.0.0.1 - - [02/Dec/2020 20:19:58] "[37mGET /api/admin/projectManage HTTP/1.1[0m" 200 -
+[2020-12-02 20:20:14,225] INFO in _internal: 127.0.0.1 - - [02/Dec/2020 20:20:14] "[37mGET /api/admin/meetingManage HTTP/1.1[0m" 200 -

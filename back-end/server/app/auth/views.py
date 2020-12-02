@@ -147,5 +147,5 @@ def admin_login():
 
     access_token = create_access_token(identity=str(user.id), user_claims={'admin': 1})
     refresh_token = create_refresh_token(identity=str(user.id), user_claims={'admin': 1})
-    return jsonify(build_response(1, '', token=access_token, refreshToken=refresh_token, userId=str(user.id)), username=user.username)
+    return jsonify(build_response(1, '', token=access_token, refreshToken=refresh_token, userId=str(user.id), username=user.username))
     
