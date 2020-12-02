@@ -5,7 +5,7 @@ from flask_jwt_extended import get_jwt_identity
 from . import api
 from ..utils import txCosUtil, build_response, safe_objectId
 from ..auth import login_required
-from ..model import User
+from ..model import Message, User
 
 @api.route('/user/<target_id>', methods=['GET'])
 @login_required
@@ -15,11 +15,16 @@ def get_user_info(target_id:str):
     if not user:
         return jsonify(build_response(0, "无此用户"))
     # print(dir(user))
-    parm_list = ['username', 'avatar', 'mobileNum', 'company']
-    data = {'userId': target_id}
-    for parm in parm_list:
-        data[parm] = getattr(user, parm)
-
+    messages: List[Message] = user.message
+    messageToRead = sum([not message.hasRead for message in messages])
+    data = {
+        'username': user.username,
+        'userId': str(user.id),
+        'avatar': user.avatar,
+        'mobileNum': user.mobileNum,
+        'company': user.company,
+        'messageToRead': messageToRead
+    }
     return jsonify(build_response(data=data))
 
 @api.route('/userInfo/', methods=['POST'])

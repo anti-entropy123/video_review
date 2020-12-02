@@ -78,7 +78,6 @@ class User(db.Document):
         self.message[message_id].hasProcess = 1
         self.save()
 
-
 class ProjectMember(db.EmbeddedDocument):
     userId = db.StringField(primary_key=True, required=True, db_field='_id')
     
@@ -107,6 +106,28 @@ class Project(db.Document):
     def wait_to_user_join(self, user_id:str):
         self.waitJoin.append(user_id)
         self.save()
+    
+    # 项目解散
+    def dissolution(self):
+        # 删除项目下所有的会议
+        meetings_id = self.hasMeeting
+        for meeting_id in meetings_id:
+            Meeting.get_meeting_by_id(meeting_id=meeting_id).delete_meeting()
+        # 删除项目下所有的视频
+        videos_id = self.hasVideo
+        for video_id in videos_id:
+            Video.get_video_by_id(video_id=video_id).delete_video()
+        # 删除所有项目成员
+        users_id = [member.userId for member in self.member]
+        for user_id in users_id:
+            user = User.get_user_by_id(user_id)
+            user.joinProject.remove(str(self.id))
+            user.save()
+        owner = User.get_user_by_id(self.owner)
+        owner.hasProject.remove(str(self.id))
+        owner.save()
+        # 删除自身
+        self.delete()
 
 class Comment(db.EmbeddedDocument):
     fromId = db.StringField(required=True)
@@ -142,6 +163,15 @@ class Video(db.Document):
     def get_video_by_id(cls, video_id)->Video:
         return cls.objects(id=safe_objectId(video_id)).first()
 
+    def delete_video(self):
+        # 删除用户下相关信息
+        user = User.get_user_by_id(self.owner)
+        user.uploadVideo.remove(str(self.id))
+        user.save()
+        # TODO 将来可以考虑删除COS中的视频文件
+        # 删除自身
+        self.delete()
+
 class Meeting(db.Document):
     title = db.StringField(required=True)
     ownerId = db.StringField(required=True)
@@ -168,3 +198,13 @@ class Meeting(db.Document):
     @classmethod
     def get_meeting_by_ownerId(cls, user_id:str)->List[Meeting]:
         return cls.objects(ownerId=user_id)
+    
+    def delete_meeting(self):
+        # 删除用户下的数据
+        user = User.get_user_by_id(self.ownerId)
+        user.hasMeeting.remove(str(self.id))
+        user.save()
+        # 删除自身
+        self.delete()
+        
+        

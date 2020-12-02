@@ -1,7 +1,7 @@
 
 import flask_socketio as io
 from flask import request
-from flask_socketio import emit, join_room
+from flask_socketio import emit, join_room, rooms
 
 from app.utils import build_response
 
@@ -69,11 +69,12 @@ def init(data):
 
 @ws.on('disconnect', namespace=name_space)
 def disconnect_msg():
-    meeting_id = meetingId_manager[request.sid]
+    # meeting_id = meetingId_manager[request.sid]
+    print('sid 有效性检测:', request.sid in meetingId_manager)
     # FIXME 这里的 request.id 貌似不好用 ? 
     # todo 应该在断开链接时从meetingRoom中去掉这个用户.
-    meetingId_manager.pop(request.sid)
-    userId_manager.pop(request.sid)
+    # meetingId_manager.pop(request.sid)
+    # userId_manager.pop(request.sid)
 
 @ws.on('changeProcess', namespace=name_space)
 def controll_player(data):

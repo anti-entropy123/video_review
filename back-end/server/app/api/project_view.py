@@ -1,3 +1,4 @@
+from typing import List
 from flask import abort, jsonify, request
 from flask_jwt_extended import get_jwt_identity
 from flask_mongoengine import json
@@ -48,7 +49,7 @@ def invite_user(project_id):
 
     project = Project.get_project_by_id(project_id)
     # 检查目标用户是否已经在项目中
-    if user_id in project.member:
+    if user_id in [member.userId for member in project.member]:
         return jsonify(build_response(0, '此用户已经在项目中'))
 
     new_message = Message(
@@ -62,7 +63,6 @@ def invite_user(project_id):
         }
     )
     target.receive_message(new_message)
-
     project.wait_to_user_join(user_id=user_id)
 
     return jsonify(build_response())
@@ -248,3 +248,28 @@ def get_meeting(project_id):
             'meetingUrl': ''
         })
     return jsonify(build_response(1, '', data=data))
+
+@api.route('/project/<project_id>/leave', methods=['POST'])
+@login_required
+def leave_project(project_id):
+    user_id = get_jwt_identity()
+    user = User.get_user_by_id(user_id=user_id)
+    project = Project.get_project_by_id(project_id=project_id)
+    if not project:
+        return jsonify(build_response(0, '没有此项目'))
+    
+    # 用户是项目的建立者, 该项目解散
+    if user_id == project.owner:
+        project.dissolution()
+    # 用户是项目的成员, 该项目中删去此用户
+    elif user_id in [member.userId for member in project.member]:
+        user.hasProject.remove(project_id)
+        user.save()
+        i = [member.userId for member in project.member].index(user_id)
+        del project.member[i]
+        project.save()
+    else:
+        return jsonify(build_response(0, '你不在此项目中'))
+    
+    return jsonify(build_response())
+        
