@@ -164,3 +164,7 @@ class Meeting(db.Document):
     @classmethod
     def get_meeting_by_projectId(cls, project_id)->List[Meeting]:
         return cls.objects(belongTo=project_id)
+    
+    @classmethod
+    def get_meeting_by_ownerId(cls, user_id:str)->List[Meeting]:
+        return cls.objects(ownerId=user_id)

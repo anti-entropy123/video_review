@@ -14567,3 +14567,39 @@ ValueError: Too many packets in payload
 [2020-12-01 19:09:25,958] WARNING in _internal:  * Debugger is active!
 [2020-12-01 19:09:25,967] INFO in _internal:  * Debugger PIN: 192-798-533
 [2020-12-01 19:09:26,012] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-12-02 11:41:14,320] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-12-02 11:41:14,427] INFO in _internal:  * Restarting with stat
+[2020-12-02 11:41:19,512] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-12-02 11:41:19,777] WARNING in _internal:  * Debugger is active!
+[2020-12-02 11:41:19,930] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-12-02 11:41:20,083] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-12-02 11:43:52,493] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\back-end\\server\\app\\api\\meeting_view.py', reloading
+[2020-12-02 11:43:53,130] INFO in _internal:  * Restarting with stat
+[2020-12-02 11:43:55,014] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-12-02 11:43:55,015] WARNING in _internal:  * Debugger is active!
+[2020-12-02 11:43:55,024] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-12-02 11:43:55,038] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-12-02 11:44:15,136] INFO in _internal: 127.0.0.1 - - [02/Dec/2020 11:44:15] "[37mGET /api/meeting/search?meetingId=5fa5410563bf2db674e0e342 HTTP/1.1[0m" 200 -
+[2020-12-02 11:44:39,593] INFO in _internal: 127.0.0.1 - - [02/Dec/2020 11:44:39] "[37mGET /api/meeting/mine HTTP/1.1[0m" 200 -
+[2020-12-02 11:44:57,592] INFO in _internal: 127.0.0.1 - - [02/Dec/2020 11:44:57] "[37mGET /api/meeting/todo HTTP/1.1[0m" 200 -
+[2020-12-02 11:45:44,674] INFO in _internal: 127.0.0.1 - - [02/Dec/2020 11:45:44] "[37mGET /api/meeting/todo HTTP/1.1[0m" 200 -
+[2020-12-02 11:46:51,357] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\back-end\\server\\app\\api\\meeting_view.py', reloading
+[2020-12-02 11:46:51,910] INFO in _internal:  * Restarting with stat
+[2020-12-02 11:46:54,045] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-12-02 11:46:54,156] WARNING in _internal:  * Debugger is active!
+[2020-12-02 11:46:54,168] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-12-02 11:46:54,379] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-12-02 11:46:59,321] INFO in _internal:  * Detected change in 'E:\\Ñ§Ï°×ÊÁÏ\\¿Î³Ì\\Èí¹¤¸ß¼¶Êµ¼ù\\´ó×÷Òµ\\back-end\\server\\app\\api\\meeting_view.py', reloading
+[2020-12-02 11:46:59,980] INFO in _internal:  * Restarting with stat
+[2020-12-02 11:47:02,390] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-12-02 11:47:02,393] WARNING in _internal:  * Debugger is active!
+[2020-12-02 11:47:02,534] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-12-02 11:47:02,549] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-12-02 11:47:07,011] INFO in _internal: 127.0.0.1 - - [02/Dec/2020 11:47:07] "[37mGET /api/meeting/todo HTTP/1.1[0m" 200 -
+[2020-12-02 11:47:15,580] INFO in _internal: 127.0.0.1 - - [02/Dec/2020 11:47:15] "[37mGET /api/meeting/history HTTP/1.1[0m" 200 -
+[2020-12-02 11:49:33,301] INFO in _internal:  * Restarting with stat
+[2020-12-02 11:49:42,452] WARNING in _internal:  * Debugger is active!
+[2020-12-02 11:49:42,717] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-12-02 11:52:13,171] INFO in _internal:  * Restarting with stat
+[2020-12-02 11:52:20,902] WARNING in _internal:  * Debugger is active!
+[2020-12-02 11:52:21,044] INFO in _internal:  * Debugger PIN: 611-914-660
