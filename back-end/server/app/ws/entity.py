@@ -1,3 +1,4 @@
+from types import ClassMethodDescriptorType
 from app.api import project_view
 from os import truncate
 import time
@@ -139,6 +140,24 @@ class VideoPlayer:
             'videoInfo': self.get_video_info()
         }
 
+    def guess_states(self, type, video_id):
+        if type == 0 or type == 1:
+            is_play = False
+            url = self.url
+        elif type == 2:
+            is_play = self.is_play
+            url = self
+        elif type == 3 or type == 4:
+            is_play = True
+            url = self.url
+        elif type == 5:
+            is_play = False
+            url = Video.get_video_by_id(video_id=video_id).url
+        else:
+            raise RuntimeError('无效的type')
+        
+        return is_play, url
+
 # 一个会议室
 class MeetingRoom:
     def __init__(self, meeting_id) -> None:
@@ -152,7 +171,7 @@ class MeetingRoom:
             self.player:VideoPlayer = VideoPlayer(video_id=video_id)
         else:
             raise RuntimeError('没有视频')
-        meetingroom_manager[meeting_id] = self
+        self.command_cache = (None, None, None)
 
     def get_member_list(self):
         return {
@@ -167,7 +186,7 @@ class MeetingRoom:
         self.member_list.pop(user_id)
         # 如果此会议室没人在了, 则销毁此会议室
         if not len(self.member_list):
-            meetingroom_manager.pop(self.meeting_id)
+            sid_manager.destroy_meetingroom(self.meeting_id)
     
     def get_comment_list(self):
         video:Video = self.player.video
@@ -203,9 +222,52 @@ class MeetingRoom:
         video.comment.append(comment)
         video.save()
 
-# meetingId => MeetingMember()
-meetingroom_manager:Dict[str, MeetingRoom] = {}
-# sid => userId
-userId_manager:Dict[str, str] = {}
-# sid => meetingId
-meetingId_manager:Dict[str, str] = {}
+    def push_cache(self, is_play:bool, position:int, url:str):
+            self.command_cache = (is_play, position, url)
+
+    def is_echo(self, is_play:bool, position:int, url:str):
+        return self.command_cache[0] == is_play and self.command_cache[1] == position and self.command_cache[2] == url
+# # meetingId => MeetingMember()
+# meetingroom_manager:Dict[str, MeetingRoom] = {}
+# # sid => userId
+# userId_manager:Dict[str, str] = {}
+# # sid => meetingId
+# meetingId_manager:Dict[str, str] = {}
+
+class SidObject:
+    def __init__(self, sid, meeting_id, user_id, meetingroom:MeetingRoom) -> None:
+        self.sid = sid
+        self.meeting_id = meeting_id
+        self.user_id = user_id
+        self.meetingroom = meetingroom
+
+# sid -> all data
+class SidManager:
+    # meetingId -> MeetingRomm
+    meetingrooms = {}
+    sid_objects = {}
+    _sid_test_total = 0
+    _sid_test_true = 0
+    
+    def enter_meetingroom(self, sid, meeting_id, user_id) -> SidObject:
+        meeting_room = self.meetingrooms.get(meeting_id, None)
+        if not meeting_room:
+            meeting_room = MeetingRoom(meeting_id)
+        self.meetingrooms[meeting_id] = meeting_room
+        sid_object = SidObject(sid, meeting_id, user_id, meeting_room)
+        self.sid_objects[sid] = sid_object
+        return sid_object
+
+    def destroy_meetingroom(self, meeting_id):
+        self.meetingrooms.pop(meeting_id)
+
+    def get_meetingRoom_by_meetingId(self, meeting_id:str)->MeetingRoom:
+        return self.meetingrooms.get(meeting_id, None)
+    
+    def __getitem__(self, sid:str)->SidObject:
+        return self.sid_objects.get(sid, None)
+
+    def __contains__(self, sid:str)->bool:
+        return sid in self.sid_objects
+
+sid_manager = SidManager()

@@ -44,10 +44,11 @@ def admin_required(fn):
     def wrapper(*args, **kwargs):
         verify_jwt_in_request()
         user_id = get_jwt_identity()
-        claims = get_jwt_claims()
-        if not User.has_user(userId=user_id):
+        # claims = get_jwt_claims()
+        user = User.get_user_by_id(user_id=user_id)
+        if not user:
             return jsonify(build_response(0, "token失效, 请重新登陆"))
-        elif not claims.get('admin', 0):
+        elif not user.admin:
             return jsonify(build_response(0, '你不是管理员'))
         else:
             return fn(*args, **kwargs)

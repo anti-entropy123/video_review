@@ -1,20 +1,25 @@
-from app.utils import build_response
+import math
 from typing import List
 
-from flask.json import jsonify
-from app.model import Meeting, Project, User, Video
-from . import admin
-from ..auth import admin_required
 from flask import request
-from ..ws.entity import meetingroom_manager
+from flask.json import jsonify
 
-@admin.route('/userManager', methods=['GET'])
+from app.model import Meeting, Project, User, Video
+from app.utils import build_response
+
+from ..auth import admin_required
+from . import admin
+
+number_per_page = 8
+
+@admin.route('/userManage', methods=['GET'])
 @admin_required
 def user_manage():
     username = request.args.get('username', None)
     mail = request.args.get('mail', None)
     mobile_num = request.args.get('mobileNum', None)
-    
+    page = request.args.get('page', 1)-1
+
     select = {}
     if username:
         select['username'] = username
@@ -23,18 +28,23 @@ def user_manage():
     if mobile_num:
         select['mobileNum'] = mobile_num
     
-    users:List[User] = User.objects(**select)
-    data = []
+    total_page = math.ceil(User.objects(**select).count() / number_per_page)
+    users:List[User] = User.objects(**select).skip(page*number_per_page).limit(number_per_page)
+    user_list = []
     for user in users:
-        data.append({
+        user_list.append({
             'avatar': user.avatar,
+            'userId': str(user.id),
             'username': user.username,
             'mobileNum': user.mobileNum,
             'mail': user.mail,
             'uploadNum': len(user.uploadVideo),
             'projectNum': len(user.joinProject)+len(user.hasProject)
         })
-
+    data = {
+        'totalPage': total_page,
+        'userList': user_list
+    }
     return jsonify(build_response(data=data))
 
 @admin.route('/videoManage', methods=['GET'])
@@ -42,11 +52,12 @@ def user_manage():
 def video_manage():
     username = request.args.get('username', None)
     projectName = request.args.get('projectName', None)
-    
+    page = request.args.get('page', 1)-1
+
     select = {}
     data = []
     videos:List[Video]  = []
-    projects:List[Project] = []
+    projects_name:List[str] = []
     if username:
         select['owner'] = username
     if projectName:
@@ -54,31 +65,42 @@ def video_manage():
         for project in _projects:
             select['belongTo'] = str(project.id)
             videos += Video.objects(**select)
-        
         for i in range(len(videos)):
-            videos[i].projectName = projectName
+            projects_name.append(projectName)
+            # videos[i].projectName = projectName
     
     else:
-        videos = Video.objects(**select)
+        videos:List[Video] = Video.objects(**select)
+        # print(videos)
         for i in range(len(videos)):
-            videos[i].projectName = Project.get_project_by_id(videos[i].belongTo).projectName
+            projects_name.append(Project.get_project_by_id(videos[i].belongTo).projectName)
+            # print(videos[i].projectName)
   
-    for project, video in zip(projects, videos):
-        data.append({
+    total_page = math.ceil(len(videos)/number_per_page)
+    video_list = []
+    for i, video in enumerate(videos[page*number_per_page:page*number_per_page+number_per_page]):
+        owner = username if username else User.get_user_by_id(video.owner).username
+        video_list.append({
+            'videoId': str(video.id),
             'videoName': video.videoName,
             'videoUrl': video.url,
-            'owner': video.owner,
-            'belongTo': video.projectName,
+            'owner': owner,
+            'belongTo': projects_name[i],
             'comment': video.comment
         })
 
+    data = {
+        'totalPage': total_page,
+        'videoList': video_list
+    }
     return jsonify(build_response(data=data))
 
-@admin.route('/projectManage', methods=['GET'])
+@admin.route('projectManage', methods=['GET'])
 @admin_required
 def project_manage():
     projectName = request.args.get('projectName', None)
     owner = request.args.get('owner', None)
+    page = request.args.get('page', 1)-1
 
     select = {}
     if projectName:
@@ -89,11 +111,13 @@ def project_manage():
             return jsonify(build_response(data=[]))
         select['owner'] = str(user.id)
     
-    data = []
+    project_list = []
     projects:List[Project] = Project.objects(**select)
-    for project in projects:
+    total_page = math.ceil(len(projects)/number_per_page)
+    for project in projects[page*number_per_page:page*number_per_page+number_per_page]:
         owner_name = User.get_user_by_id(project.owner).username if not owner else owner
-        data.append({
+        project_list.append({
+            'projectId': str(project.id),
             'projectName': project.projectName,
             'owner': owner_name,
             'memberNum': len(project.member) + 1,
@@ -101,13 +125,18 @@ def project_manage():
             'meetingNum': len(project.hasMeeting)
         })
     
+    data = {
+        'totalPage': total_page,
+        'projectList': project_list
+    }
     return jsonify(build_response(data=data))
     
 @admin.route('/meetingManage', methods=['GET'])
 @admin_required
 def meeting_manage():
     project_name = request.args.get('projectName', None)
-    
+    page = request.args.get('page', 1)-1
+
     select = {}
     if project_name:
         project = Project.objects(projectName=project_name)
@@ -116,14 +145,19 @@ def meeting_manage():
         select['belongTo'] = str(project.id)
     
     meetings:List[Meeting] = Meeting.objects(**select)
-    data = []
+    total_page = math.ceil(len(meetings)/number_per_page)
+    meeting_list = []
     for meeting in meetings:
         belongTo = project_name if project_name else Project.get_project_by_id(meeting.belongTo).projectName
-        data.append({
+        meeting_list.append({
             'title': meeting.title,
             'belongTo': belongTo,
             'onlineNum': 0 if str(meeting.id) not in meetingroom_manager else len(meetingroom_manager[str(meeting.id)].member_list),
             'currentVideo': '' if str(meeting.id) not in meetingroom_manager else meetingroom_manager[str(meeting.id)].player.video.videoName
         })
 
+    data = {
+        'totalPage': total_page,
+        'meetingList': meeting_list
+    }
     return jsonify(build_response(data=data))
