@@ -43,21 +43,22 @@ class User(db.Document):
     message = db.ListField(db.EmbeddedDocumentField(Message), default=[])
     hasMeeting = db.ListField(db.StringField(), default=[])
     admin = db.BooleanField(default=False)
+    alive = db.BooleanField(default=True)
 
     def __str__(self):
         return f"用户: {self.username}"
     
     @classmethod
     def has_user(cls, userId:str):
-        return bool(cls.objects(id=safe_objectId(userId)))
+        return bool(cls.objects(id=safe_objectId(userId), alive=True))
 
     @classmethod
     def get_user_by_id(cls, user_id:str)->User:
-        return cls.objects(id=safe_objectId(user_id)).first()
+        return cls.objects(id=safe_objectId(user_id), alive=True).first()
 
     @classmethod
     def get_user_by_mobileNum(cls, mobileNum)->User:
-        return User.objects(mobileNum=mobileNum).first()
+        return User.objects(mobileNum=mobileNum, alive=True).first()
 
     def receive_message(self, message: Message):
         message.messageId = len(self.message)
@@ -91,17 +92,18 @@ class Project(db.Document):
     waitJoin = db.ListField(db.StringField(), default=[])
     hasVideo = db.ListField(db.StringField(), default=[])
     hasMeeting = db.ListField(db.StringField(), default=[])
+    alive = db.BooleanField(default=True)
 
     def __str__(self):
         return f"项目: {self.projectName}"
 
     @classmethod
     def has_project(cls, project_id:str):
-        return bool(cls.objects(id=safe_objectId(project_id)))
+        return bool(cls.objects(id=safe_objectId(project_id), alive=True))
 
     @classmethod
     def get_project_by_id(cls, project_id:str)->Project:
-        return cls.objects(id=safe_objectId(project_id)).first()
+        return cls.objects(id=safe_objectId(project_id), alive=True).first()
 
     def wait_to_user_join(self, user_id:str):
         self.waitJoin.append(user_id)
@@ -127,14 +129,18 @@ class Project(db.Document):
         owner.hasProject.remove(str(self.id))
         owner.save()
         # 删除自身
-        self.delete()
+        self.alive = False
+        self.save()
 
 class Comment(db.EmbeddedDocument):
+    commentId = db.IntField(required=True)
     fromId = db.StringField(required=True)
     fromName = db.StringField(required=True)
     position = db.IntField(required=True)
     image = db.StringField(required=True)
     content = db.StringField(required=True)
+    
+    alive = db.BooleanField(default=True)
     
     def __str__(self):
         return f"批注: {self.content}"
@@ -155,13 +161,14 @@ class Video(db.Document):
     reviewResult = db.IntField(default=0)
     reviewSummary = db.StringField(default='')
     createDate = db.FloatField(default=time.time())
-    
+    alive = db.BooleanField(default=True)
+
     def __str__(self):
         return f"视频: {self.videoName}"
 
     @classmethod
     def get_video_by_id(cls, video_id)->Video:
-        return cls.objects(id=safe_objectId(video_id)).first()
+        return cls.objects(id=safe_objectId(video_id), alive=True).first()
 
     def delete_video(self):
         # 删除用户下相关信息
@@ -170,7 +177,8 @@ class Video(db.Document):
         user.save()
         # TODO 将来可以考虑删除COS中的视频文件
         # 删除自身
-        self.delete()
+        self.alive = False
+        self.save()
 
 class Meeting(db.Document):
     title = db.StringField(required=True)
@@ -183,21 +191,22 @@ class Meeting(db.Document):
     txMeetingId = db.StringField(required=True)
     
     note = db.StringField(default="")
+    alive = db.BooleanField(default=True)
 
     def __str__(self) -> str:
         return f"会议: {self.title}"
 
     @classmethod
     def get_meeting_by_id(cls, meeting_id)->Meeting:
-        return cls.objects(id=safe_objectId(meeting_id)).first()
+        return cls.objects(id=safe_objectId(meeting_id), alive=True).first()
 
     @classmethod
     def get_meeting_by_projectId(cls, project_id)->List[Meeting]:
-        return cls.objects(belongTo=project_id)
+        return cls.objects(belongTo=project_id, alive=True)
     
     @classmethod
     def get_meeting_by_ownerId(cls, user_id:str)->List[Meeting]:
-        return cls.objects(ownerId=user_id)
+        return cls.objects(ownerId=user_id, alive=True)
     
     def delete_meeting(self):
         # 删除用户下的数据
@@ -205,6 +214,8 @@ class Meeting(db.Document):
         user.hasMeeting.remove(str(self.id))
         user.save()
         # 删除自身
-        self.delete()
+        self.alive = False
+        self.save()
+    
         
         

@@ -7,7 +7,7 @@ from app.utils import build_response
 
 from ..model import Meeting, User, Video
 from . import ws
-from .entity import (MeetingMember, MeetingRoom, SidObject, VideoPlayer, sid_manager)
+from .entity import (MeetingMember, MeetingRoom, VideoPlayer, sid_manager)
 
 name_space = '/meetingRoom'
 
@@ -43,7 +43,7 @@ def init(data):
     # meeting_room.add_member(user_id=user_id)
     
     try:
-        sid_object = sid_manager.enter_meetingroom(sdid=request.sid, meeting_id=meeting_id, user_id=user_id)
+        sid_object = sid_manager.enter_meetingroom(sid=request.sid, meeting_id=meeting_id, user_id=user_id)
     except RuntimeError as e:
         emit('errorHandle',build_response(0, str(e)))
         return
@@ -63,7 +63,7 @@ def init(data):
     video_status = meetingroom.player.get_video_status()
     video_status['reason'] = ''
     video_status['userName'] = ''
-    meetingroom.push_cache(video_status['isPlay'], video_status['position'], video_status['url'])
+    meetingroom.push_cache(video_status['isPlay'], video_status['position'], video_status['url'], type=-1)
     emit(
         'sycnVideoState', 
         build_response(data=video_status) 
@@ -123,9 +123,10 @@ def controll_player(data):
         return
 
     # 如果检测到回声, 直接阻断
-    if meeting_room.is_echo(is_play=is_play, position=position, url=url):
+    if meeting_room.is_echo(is_play=is_play, position=position, url=url, type=type):
         return
     
+    # flag = True
     # 暂停 或 开始批注
     if type == 0 or type == 1:
         video_player.pause(position)
@@ -149,7 +150,7 @@ def controll_player(data):
         )
     
     video_status.update(video_player.get_video_status())
-    meeting_room.push_cache(video_status['isPlay'], video_status['position'], video_status['url'])
+    meeting_room.push_cache(video_status['isPlay'], video_status['position'], video_status['url'], type=type)
     io.emit(
         'sycnVideoState',
         build_response(data=video_status),
@@ -186,6 +187,28 @@ def addComment(data):
         'updateComment',
         build_response(data=meeting_room.get_comment_list()),
         room=meeting_id
+    )
+
+@ws.on('removeComment', namespace=name_space)
+def removeComment(data):
+    try:
+        comment_id = int(data['commentId'])
+    except KeyError as e:
+        emit('errorHandle', build_response(0, str(e)))
+        return
+    
+    sid_object = sid_manager[request.sid]
+    meetingroom = sid_object.meetingroom
+    try:
+        meetingroom.remove_comment(user_id=sid_object.user_id, comment_id=comment_id)
+    except RuntimeError as e:
+        emit('errorHandle', build_response(0, str(e)))
+        return    
+
+    emit(
+        'updateComment',
+        build_response(data=meetingroom.get_comment_list()),
+        room=sid_object.meeting_id
     )
 
 @ws.on('memberPermission', namespace=name_space)

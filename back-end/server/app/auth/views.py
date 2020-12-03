@@ -50,10 +50,10 @@ def register():
     if not result: return jsonify({'result': result, 'message': message})
 
     # 查询数据库中是否有此用户名
-    if User.objects(username=username).first():
+    if User.objects(username=username, alive=True).first():
         return jsonify(build_response(0, "此用户名已被使用"))
     
-    if User.objects(mobileNum=mobileNum).first():
+    if User.objects(mobileNum=mobileNum, alive=True).first():
         return jsonify(build_response(0, "此手机号已经被使用"))
 
     # 向数据库中增加用户
@@ -112,7 +112,7 @@ def reset_password():
     except KeyError as e:
         abort(400, {'msg': str(e)})
 
-    user = User.objects(mobileNum=mobileNum).first()
+    user = User.objects(mobileNum=mobileNum, alive=True).first()
     if not user: 
         return jsonify(build_response(0, "用户不存在"))
     

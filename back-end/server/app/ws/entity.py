@@ -1,6 +1,4 @@
-from types import ClassMethodDescriptorType
-from app.api import project_view
-from os import truncate
+
 import time
 from typing import Dict, List
 
@@ -172,6 +170,7 @@ class MeetingRoom:
         else:
             raise RuntimeError('没有视频')
         self.command_cache = (None, None, None)
+        self.time_lock = time.time()
 
     def get_member_list(self):
         return {
@@ -196,37 +195,72 @@ class MeetingRoom:
         comments:List[Comment] = video.comment
         result = []
         for comment in comments:
-            result.append({
-                'fromId': comment.fromId,
-                'fromName': comment.fromName,
-                'imageUrl': comment.image,
-                'content': comment.content,
-                'position': comment.position,
-                'avatar': self.member_list[comment.fromId].avatar
-            })
+            if comment.alive:
+                result.append({
+                    'commentId': comment.commentId,
+                    'fromId': comment.fromId,
+                    'fromName': comment.fromName,
+                    'imageUrl': comment.image,
+                    'content': comment.content,
+                    'position': comment.position,
+                    'avatar': self.member_list[comment.fromId].avatar
+                })
 
         return result
     
     def add_comment(self, from_id, from_name, content, image_url, position):
+        video = self.player.video
+        if not video:
+            raise RuntimeError('当前没在播放视频')
         comment = Comment(
+            commentId=len(video.comment),
             fromId=from_id,
             fromName=from_name,
             position=position,
             image=image_url,
             content=content
         )
-        video = self.player.video
-        if not video:
-            raise RuntimeError('当前没在播放视频')
-
         video.comment.append(comment)
         video.save()
 
-    def push_cache(self, is_play:bool, position:int, url:str):
-            self.command_cache = (is_play, position, url)
+    def remove_comment(self, user_id, comment_id):
+        video = self.player.video
+        if not video:
+            raise RuntimeError('当前没在播放视频')
+        comment_id = int(comment_id)
+        if comment_id >= len(video.comment):
+            raise RuntimeError('没有此批注')
+        if not video.comment[comment_id].fromId == user_id:
+            raise RuntimeError('你无法删除此批注')
+        
+        video.comment[comment_id].alive = False
+        video.save()
 
-    def is_echo(self, is_play:bool, position:int, url:str):
-        return self.command_cache[0] == is_play and self.command_cache[1] == position and self.command_cache[2] == url
+    def push_cache(self, is_play:bool, position:int, url:str, type:int):
+            self.command_cache = (is_play, position, url, type)
+
+    def is_echo(self, is_play:bool, position:float, url:str, type:int):
+        # print('指令:', is_play, position, url, type)
+        # print('缓存指令', self.command_cache)
+        reason = ''
+        current_time = time.time()
+        if self.command_cache[3] != 2 and type != 2 and current_time-self.time_lock < 0.08:
+            reason = '过于频繁'
+            result = True
+        # elif self.command_cache[3] == 2 and (type==2 or type==3):
+        #     result = True
+        #     reason = '过于频繁'
+        else:
+            result = (
+                self.command_cache[0] == is_play and abs(self.command_cache[1]-position)<1 and self.command_cache[2] == url
+            ) or (
+                self.player.is_play == is_play and abs(self.player.position-position)<1 and self.player.url == url        
+            )
+            reason = '状态没有实质性改变'
+        print('回声检测结果', result, reason)
+        if not result: self.time_lock = current_time
+        return result
+
 # # meetingId => MeetingMember()
 # meetingroom_manager:Dict[str, MeetingRoom] = {}
 # # sid => userId
@@ -253,7 +287,8 @@ class SidManager:
         meeting_room = self.meetingrooms.get(meeting_id, None)
         if not meeting_room:
             meeting_room = MeetingRoom(meeting_id)
-        self.meetingrooms[meeting_id] = meeting_room
+            self.meetingrooms[meeting_id] = meeting_room
+        meeting_room.add_member(user_id=user_id)
         sid_object = SidObject(sid, meeting_id, user_id, meeting_room)
         self.sid_objects[sid] = sid_object
         return sid_object

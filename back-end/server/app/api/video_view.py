@@ -25,7 +25,7 @@ def create_video():
     except KeyError as e:
         abort(400, {'msg': str(e)})
 
-    if not Project.objects(id=safe_objectId(upload_to_project)):
+    if not Project.objects(id=safe_objectId(upload_to_project), alive=True):
         return jsonify(build_response(0, "无此项目"))
 
     if sum([(i in video_name) for i in r"\/"]) and (".mp4" in video_name or '.mkv' in video_name):
@@ -62,13 +62,13 @@ def create_video():
     video.save()
     video_id = str(video.id)
     user_id = get_jwt_identity()
-    uploader = User.objects(id=safe_objectId(user_id)).first()
+    uploader = User.objects(id=safe_objectId(user_id), alive=True).first()
     video_list = uploader.uploadVideo
     if not video_id in video_list:
         uploader.uploadVideo = video_list + [video_id]
         uploader.save()
 
-    project = Project.objects(id=safe_objectId(upload_to_project)).first()
+    project = Project.objects(id=safe_objectId(upload_to_project), alive=True).first()
     video_list = project.hasVideo
     if not video_id in video_list:
         project.hasVideo = video_list + [video_id]
@@ -93,17 +93,17 @@ def review_finish(video_id):
         abort(400, {'msg': str(e)})
 
     # 数据库中写入视频
-    video = Video.objects(id=safe_objectId(video_id)).first()
+    video = Video.objects(id=safe_objectId(video_id), alive=True).first()
     video.reviewResult = review_result
     video.reviewSummary = summary
     video.hasReview = True
     video.save()
 
-    reviewer = User.objects(id=safe_objectId(get_jwt_identity())).first()
-    project = Project.objects(id=safe_objectId(video.belongTo)).first()
+    reviewer = User.objects(id=safe_objectId(get_jwt_identity()), alive=True).first()
+    project = Project.objects(id=safe_objectId(video.belongTo), alive=True).first()
 
     # 通知用户视频被审阅
-    user = User.objects(id=safe_objectId(video.owner)).first()
+    user = User.objects(id=safe_objectId(video.owner), alive=True).first()
     new_message = Message(
         fromId = str(reviewer.id),
         fromName = reviewer.username,
@@ -124,14 +124,14 @@ def review_finish(video_id):
 @api.route('/video/mine/', methods=['GET'])
 @login_required
 def my_video():
-    user = User.objects(id=safe_objectId(get_jwt_identity())).first()
+    user = User.objects(id=safe_objectId(get_jwt_identity()), alive=True).first()
     # print(user)
 
     video_list = user.uploadVideo
     # print(video_list)
     data = []
     for video_id in video_list:
-        video = Video.objects(id=safe_objectId(video_id)).first()
+        video = Video.objects(id=safe_objectId(video_id), alive=True).first()
         one = {
             'url': video.url,
             'videoName': video.videoName,

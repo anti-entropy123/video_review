@@ -1,11 +1,15 @@
+import math
+import random
 from typing import List
-from flask import jsonify, request, abort
+
+from flask import abort, jsonify, request
 from flask_jwt_extended import get_jwt_identity
 
-from . import api
-from ..utils import txCosUtil, build_response, safe_objectId
 from ..auth import login_required
 from ..model import Message, User
+from ..utils import build_response, safe_objectId, txCosUtil
+from . import api
+
 
 @api.route('/user/<target_id>', methods=['GET'])
 @login_required
@@ -56,7 +60,7 @@ def get_userlist():
     
     user_id = get_jwt_identity()
     # print(user_id)
-    user_list:List[User] = User.objects()
+    user_list:List[User] = User.objects(alive=True)
     data = []
     for user in user_list:
         if (str(user.id) != user_id) and (
@@ -74,6 +78,7 @@ def get_userlist():
     
     return jsonify(build_response(1, '', data))
 
+
 @api.route('/uploadImg/', methods=['POST'])
 @login_required
 def upload_avatar():
@@ -84,7 +89,8 @@ def upload_avatar():
     
     user_id = get_jwt_identity()
 
-    url = txCosUtil.simple_file_upload(image, user_id+'.jpg')
+    url = txCosUtil.simple_file_upload(image, f'/img/{user_id}/{str(random.randint(10000, 1000000))}.jpg')
+    # print(url)
     return jsonify(build_response(data={
         'url': url
     }))

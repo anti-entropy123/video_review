@@ -19,8 +19,8 @@ def create_project():
     user_id = get_jwt_identity()
     user = User.get_user_by_id(user_id=user_id)
 
-    if Project.objects(projectName=project_name):
-        return jsonify(build_response(0, '此项目名已被使用'))
+    # if Project.objects(projectName=project_name):
+    #     return jsonify(build_response(0, '此项目名已被使用'))
     
     project = Project(
         projectName=project_name,

@@ -8,6 +8,7 @@ from app.model import Meeting, Project, User, Video
 from app.utils import build_response
 
 from ..auth import admin_required
+from ..ws.entity import sid_manager
 from . import admin
 
 number_per_page = 8
@@ -18,7 +19,7 @@ def user_manage():
     username = request.args.get('username', None)
     mail = request.args.get('mail', None)
     mobile_num = request.args.get('mobileNum', None)
-    page = request.args.get('page', 1)-1
+    page = int(request.args.get('page', 1))-1
 
     select = {}
     if username:
@@ -39,7 +40,8 @@ def user_manage():
             'mobileNum': user.mobileNum,
             'mail': user.mail,
             'uploadNum': len(user.uploadVideo),
-            'projectNum': len(user.joinProject)+len(user.hasProject)
+            'projectNum': len(user.joinProject)+len(user.hasProject),
+            'alive': user.alive
         })
     data = {
         'totalPage': total_page,
@@ -52,10 +54,10 @@ def user_manage():
 def video_manage():
     username = request.args.get('username', None)
     projectName = request.args.get('projectName', None)
-    page = request.args.get('page', 1)-1
+    page = int(request.args.get('page', 1))-1
 
     select = {}
-    data = []
+    data = []    
     videos:List[Video]  = []
     projects_name:List[str] = []
     if username:
@@ -86,7 +88,8 @@ def video_manage():
             'videoUrl': video.url,
             'owner': owner,
             'belongTo': projects_name[i],
-            'comment': video.comment
+            'comment': video.comment,
+            'alive': video.alive
         })
 
     data = {
@@ -100,7 +103,7 @@ def video_manage():
 def project_manage():
     projectName = request.args.get('projectName', None)
     owner = request.args.get('owner', None)
-    page = request.args.get('page', 1)-1
+    page = int(request.args.get('page', 1))-1
 
     select = {}
     if projectName:
@@ -122,7 +125,8 @@ def project_manage():
             'owner': owner_name,
             'memberNum': len(project.member) + 1,
             'videoNum': len(project.hasVideo),
-            'meetingNum': len(project.hasMeeting)
+            'meetingNum': len(project.hasMeeting),
+            'alive': project.alive
         })
     
     data = {
@@ -130,12 +134,13 @@ def project_manage():
         'projectList': project_list
     }
     return jsonify(build_response(data=data))
-    
+
+
 @admin.route('/meetingManage', methods=['GET'])
 @admin_required
 def meeting_manage():
     project_name = request.args.get('projectName', None)
-    page = request.args.get('page', 1)-1
+    page = int(request.args.get('page', 1))-1
 
     select = {}
     if project_name:
@@ -152,8 +157,9 @@ def meeting_manage():
         meeting_list.append({
             'title': meeting.title,
             'belongTo': belongTo,
-            'onlineNum': 0 if str(meeting.id) not in meetingroom_manager else len(meetingroom_manager[str(meeting.id)].member_list),
-            'currentVideo': '' if str(meeting.id) not in meetingroom_manager else meetingroom_manager[str(meeting.id)].player.video.videoName
+            'onlineNum': 0 if str(meeting.id) not in sid_manager.meetingrooms else len(sid_manager.get_meetingRoom_by_meetingId(str(meeting.id)).member_list),
+            'currentVideo': '' if str(meeting.id) not in sid_manager.meetingrooms else  sid_manager.get_meetingRoom_by_meetingId(str(meeting.id)).player.video.videoName,
+            'alive': meeting.alive
         })
 
     data = {
