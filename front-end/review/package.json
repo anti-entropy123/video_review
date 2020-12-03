@@ -13,8 +13,12 @@
     "ant-design-vue": "^1.7.2",
     "axios": "^0.21.0",
     "element-ui": "^2.14.0",
+    "video.js": "^7.10.2",
+    "view-design": "^4.4.0",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.4.9",
+    "vue-socket.io": "^3.0.10",
+    "vue-video-player": "^5.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

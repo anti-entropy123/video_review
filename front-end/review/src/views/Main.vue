@@ -23,7 +23,8 @@
         </div>
   <!--卡片循环-->
        <div class="cards" v-if="e == 3 && topMenu=='files'">
-        <a-card class="card" hoverable v-for="n in 3">
+         <router-link  to="/meeting" >
+        <a-card  class="card" hoverable v-for="n in 3">
         <img
           slot="cover"
           alt="example"
@@ -39,6 +40,7 @@
           />
         </a-card-meta>
       </a-card>
+         </router-link>
       </div>
         <div class="cards" v-else-if="e==4 && topMenu=='files'" >
           <a-card class="card" hoverable  v-for="n in 4">

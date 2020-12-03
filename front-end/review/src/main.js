@@ -7,15 +7,31 @@ import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.css';// 加载 CSS
-// import {Button,Layout,Avatar} from 'ant-design-vue'
-// Vue.use(Button).use(Layout).use(Avatar)
-// Vue.component(Layout.name, Layout);
-// import { Button } from 'ant-design-vue';
+// import Video from 'video.js'
+// import 'video.js/dist/video-js.css'
+import VueSocketIO from 'vue-socket.io'
+import ViewUI from 'view-design';
+import 'view-design/dist/styles/iview.css';
+import VideoPlayer from 'vue-video-player';
+import 'video.js/dist/video-js.css';
+import 'vue-video-player/src/custom-theme.css';
 
+// require('video.js/dist/video-js.css')
+// require('vue-video-player/src/custom-theme.css')
+
+Vue.use(VideoPlayer)
 Vue.config.productionTip = false;
 Vue.use(Antd)
+Vue.use(ViewUI);
+// Vue.use(Video)
 Vue.use(ElementUI, { size: "small", zIndex: 3000 });
 Vue.config.productionTip = false;
+Vue.use(new VueSocketIO({
+    debug: true,
+    connection: '188.131.227.20:1314/meetingRoom',
+  }
+))
+
 
 import axios from "axios";
 Vue.prototype.$http = axios;
