@@ -273,4 +273,18 @@ def leave_project(project_id):
         return jsonify(build_response(0, '你不在此项目中'))
     
     return jsonify(build_response())
-        
+
+@api.route('/project/<project_id>/removeVideo', methods=['DELETE'])
+@login_required
+def remove_video(project_id):
+    try:
+        video_id = request.args['videoId']
+    except KeyError as e:
+        abort(400, {'msg': str(e)})
+    
+    project = Project.get_project_by_id(project_id=project_id)
+    if not project:
+        return jsonify(0, '没有此项目')
+
+    project.remove_video(video_id=video_id)
+    return jsonify(build_response())

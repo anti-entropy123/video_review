@@ -109,6 +109,15 @@ class Project(db.Document):
         self.waitJoin.append(user_id)
         self.save()
     
+    # 删除项目下的视频
+    def remove_video(self, video_id:str):
+        if not video_id in self.hasVideo:
+            return
+        
+        video = Video.get_video_by_id(video_id=video_id).delete_video()
+        self.hasVideo.remove(video_id)
+        self.save()
+
     # 项目解散
     def dissolution(self):
         # 删除项目下所有的会议
