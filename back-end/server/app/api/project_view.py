@@ -1,12 +1,15 @@
+import time
 from typing import List
+
 from flask import abort, jsonify, request
 from flask_jwt_extended import get_jwt_identity
 from flask_mongoengine import json
 
 from ..auth import login_required
-from ..model import Meeting, Message, Project, User, Video, ProjectMember
+from ..model import Meeting, Message, Project, ProjectMember, User, Video
 from ..utils import build_response, safe_objectId
 from . import api
+
 
 @api.route('/project/', methods=['POST'])
 @login_required
@@ -60,7 +63,8 @@ def invite_user(project_id):
         type=3,
         content={
             "word": word
-        }
+        },
+        date=time.time()
     )
     target.receive_message(new_message)
     project.wait_to_user_join(user_id=user_id)
@@ -113,7 +117,8 @@ def join_project(project_id):
         type=4,
         content={
             'processResult': is_agree
-        }
+        },
+        date=time.time()
     )
     inviter.receive_message(new_message)
 
@@ -155,7 +160,8 @@ def get_project_data(project_id):
         video = Video.get_video_by_id(video_id)
         video_list.append({
             'videoName': video.videoName,
-            'cover': video.cover,
+            'coverList': video.cover,
+            'cover': video.cover[0],
             'videoId': video_id,
             'hasReview': video.hasReview,
             'createDate': video.createDate,
@@ -188,7 +194,7 @@ def get_project_list():
 @login_required
 def remove_user_from_project(project_id:str):
     try:
-        userId = request.data['userId']
+        userId = request.args['userId']
     except KeyError as e:
         abort(400, {'msg': str(e)})
     
@@ -221,7 +227,8 @@ def remove_user_from_project(project_id:str):
         projectId=str(project.id),
         projectName=project.projectName,
         type=5,
-        content={}
+        content={},
+        date=time.time()
     )
 
     target.receive_message(message)
@@ -272,4 +279,18 @@ def leave_project(project_id):
         return jsonify(build_response(0, '你不在此项目中'))
     
     return jsonify(build_response())
-        
+
+@api.route('/project/<project_id>/removeVideo', methods=['DELETE'])
+@login_required
+def remove_video(project_id):
+    try:
+        video_id = request.args['videoId']
+    except KeyError as e:
+        abort(400, {'msg': str(e)})
+    
+    project = Project.get_project_by_id(project_id=project_id)
+    if not project:
+        return jsonify(0, '没有此项目')
+
+    project.remove_video(video_id=video_id)
+    return jsonify(build_response())

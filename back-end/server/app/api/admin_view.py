@@ -69,7 +69,6 @@ def video_manage():
             videos += Video.objects(**select)
         for i in range(len(videos)):
             projects_name.append(projectName)
-            # videos[i].projectName = projectName
     
     else:
         videos:List[Video] = Video.objects(**select)
@@ -89,7 +88,8 @@ def video_manage():
             'owner': owner,
             'belongTo': projects_name[i],
             'comment': video.comment,
-            'alive': video.alive
+            'alive': video.alive,
+            'cover': video.cover[0]
         })
 
     data = {

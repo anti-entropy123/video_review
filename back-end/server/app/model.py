@@ -16,12 +16,12 @@ class Message(db.EmbeddedDocument):
     projectId = db.StringField(required=True)
     projectName = db.StringField(required=True)
     type = db.IntField(required=True)
-    content = db.DictField(required=True)
     messageId = db.IntField(required=True)
+    date = db.FloatField(required=True)
 
+    content = db.DictField(default=None)
     hasProcess = db.IntField(default=0)
     hasRead = db.IntField(default=0)
-    date = db.FloatField(default=time.time())
 
     def __str__(self):
         return f'消息: {self.content}'
@@ -49,16 +49,34 @@ class User(db.Document):
         return f"用户: {self.username}"
     
     @classmethod
-    def has_user(cls, userId:str):
-        return bool(cls.objects(id=safe_objectId(userId), alive=True))
+    def has_user(cls, userId:str, deep:bool=False):
+        select = {
+            'id': safe_objectId(userId)
+        }
+        if not deep:
+            select['alive'] = True
+
+        return bool(cls.objects(**select))
 
     @classmethod
-    def get_user_by_id(cls, user_id:str)->User:
-        return cls.objects(id=safe_objectId(user_id), alive=True).first()
+    def get_user_by_id(cls, user_id:str, deep:bool=False)->User:
+        select = {
+            'id': safe_objectId(user_id)
+        }
+        if not deep:
+            select['alive'] = True
+
+        return cls.objects(**select).first()
 
     @classmethod
-    def get_user_by_mobileNum(cls, mobileNum)->User:
-        return User.objects(mobileNum=mobileNum, alive=True).first()
+    def get_user_by_mobileNum(cls, mobileNum, deep:bool=False)->User:
+        select = {
+            'mobileNum': mobileNum
+        }
+        if not deep:
+            select['alive'] = True
+
+        return User.objects(**select).first()
 
     def receive_message(self, message: Message):
         message.messageId = len(self.message)
@@ -98,34 +116,55 @@ class Project(db.Document):
         return f"项目: {self.projectName}"
 
     @classmethod
-    def has_project(cls, project_id:str):
-        return bool(cls.objects(id=safe_objectId(project_id), alive=True))
+    def has_project(cls, project_id:str, deep:bool=False):
+        select = {
+            'id': safe_objectId(project_id)
+        }
+        if not deep:
+            select['alive'] = True
+
+        return bool(cls.objects(**select))
 
     @classmethod
-    def get_project_by_id(cls, project_id:str)->Project:
-        return cls.objects(id=safe_objectId(project_id), alive=True).first()
+    def get_project_by_id(cls, project_id:str, deep:bool=False)->Project:
+        select = {
+            'id': safe_objectId(project_id)
+        }
+        if not deep:
+            select['alive'] = True
+
+        return cls.objects(**select).first()
 
     def wait_to_user_join(self, user_id:str):
         self.waitJoin.append(user_id)
         self.save()
     
+    # 删除项目下的视频
+    def remove_video(self, video_id:str):
+        if not video_id in self.hasVideo:
+            return
+        
+        video = Video.get_video_by_id(video_id=video_id, deep=True).delete_video()
+        self.hasVideo.remove(video_id)
+        self.save()
+
     # 项目解散
     def dissolution(self):
         # 删除项目下所有的会议
         meetings_id = self.hasMeeting
         for meeting_id in meetings_id:
-            Meeting.get_meeting_by_id(meeting_id=meeting_id).delete_meeting()
+            Meeting.get_meeting_by_id(meeting_id=meeting_id, deep=True).delete_meeting()
         # 删除项目下所有的视频
         videos_id = self.hasVideo
         for video_id in videos_id:
-            Video.get_video_by_id(video_id=video_id).delete_video()
+            Video.get_video_by_id(video_id=video_id, deep=True).delete_video()
         # 删除所有项目成员
         users_id = [member.userId for member in self.member]
         for user_id in users_id:
-            user = User.get_user_by_id(user_id)
+            user = User.get_user_by_id(user_id, deep=True)
             user.joinProject.remove(str(self.id))
             user.save()
-        owner = User.get_user_by_id(self.owner)
+        owner = User.get_user_by_id(self.owner, deep=True)
         owner.hasProject.remove(str(self.id))
         owner.save()
         # 删除自身
@@ -139,6 +178,7 @@ class Comment(db.EmbeddedDocument):
     position = db.IntField(required=True)
     image = db.StringField(required=True)
     content = db.StringField(required=True)
+    date = db.FloatField(required=True)
     
     alive = db.BooleanField(default=True)
     
@@ -167,12 +207,18 @@ class Video(db.Document):
         return f"视频: {self.videoName}"
 
     @classmethod
-    def get_video_by_id(cls, video_id)->Video:
-        return cls.objects(id=safe_objectId(video_id), alive=True).first()
+    def get_video_by_id(cls, video_id, deep:bool=False)->Video:
+        select = {
+            'id': safe_objectId(video_id)
+        }
+        if not deep:
+            select['alive'] = True
+
+        return cls.objects(**select).first()
 
     def delete_video(self):
         # 删除用户下相关信息
-        user = User.get_user_by_id(self.owner)
+        user = User.get_user_by_id(self.owner, deep=True)
         user.uploadVideo.remove(str(self.id))
         user.save()
         # TODO 将来可以考虑删除COS中的视频文件
@@ -197,20 +243,38 @@ class Meeting(db.Document):
         return f"会议: {self.title}"
 
     @classmethod
-    def get_meeting_by_id(cls, meeting_id)->Meeting:
-        return cls.objects(id=safe_objectId(meeting_id), alive=True).first()
+    def get_meeting_by_id(cls, meeting_id, deep:bool=False)->Meeting:
+        select = {
+            'id': safe_objectId(meeting_id)
+        }
+        if not deep:
+            select['alive'] = True
+
+        return cls.objects(**select).first()
 
     @classmethod
-    def get_meeting_by_projectId(cls, project_id)->List[Meeting]:
-        return cls.objects(belongTo=project_id, alive=True)
+    def get_meeting_by_projectId(cls, project_id, deep:bool=False)->List[Meeting]:
+        select = {
+            'belongTo': project_id
+        }
+        if not deep:
+            select['alive'] = True
+
+        return cls.objects(**select)
     
     @classmethod
-    def get_meeting_by_ownerId(cls, user_id:str)->List[Meeting]:
-        return cls.objects(ownerId=user_id, alive=True)
+    def get_meeting_by_ownerId(cls, user_id:str, deep:bool=False)->List[Meeting]:
+        select = {
+            'ownerId': user_id
+        }
+        if not deep:
+            select['alive'] = True
+
+        return cls.objects(**select)
     
     def delete_meeting(self):
         # 删除用户下的数据
-        user = User.get_user_by_id(self.ownerId)
+        user = User.get_user_by_id(self.ownerId, deep=True)
         user.hasMeeting.remove(str(self.id))
         user.save()
         # 删除自身

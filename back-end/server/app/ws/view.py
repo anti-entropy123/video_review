@@ -7,7 +7,7 @@ from app.utils import build_response
 
 from ..model import Meeting, User, Video
 from . import ws
-from .entity import (MeetingMember, MeetingRoom, VideoPlayer, sid_manager)
+from .entity import (MeetingMember, MeetingRoom, SidObject, VideoPlayer, sid_manager)
 
 name_space = '/meetingRoom'
 
@@ -82,12 +82,14 @@ def disconnect_msg():
     if request.sid in sid_manager:
         sid_manager._sid_test_true += 1
         test = True
+        sid_manager.disconnect_sid(request.sid)
 
-    print('sid 有效性检测:', test, sid_manager._sid_test_true // sid_manager._sid_test_total)
+    print('sid 有效性检测:', test, round(sid_manager._sid_test_true / sid_manager._sid_test_total, 2))
     # FIXME 这里的 request.id 貌似不好用 ? 
     # todo 应该在断开链接时从meetingRoom中去掉这个用户.
     # meetingId_manager.pop(request.sid)
     # userId_manager.pop(request.sid)
+    
 
 @ws.on('changeProcess', namespace=name_space)
 def controll_player(data):

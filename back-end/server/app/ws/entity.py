@@ -4,8 +4,6 @@ from typing import Dict, List
 
 from ..model import Comment, Meeting, Project, User, Video
 
-
-
 # 会议中的一个成员
 class MeetingMember:
     def __init__(self, user_id) -> None:
@@ -218,7 +216,8 @@ class MeetingRoom:
             fromName=from_name,
             position=position,
             image=image_url,
-            content=content
+            content=content,
+            date=time.time()
         )
         video.comment.append(comment)
         video.save()
@@ -257,7 +256,7 @@ class MeetingRoom:
                 self.player.is_play == is_play and abs(self.player.position-position)<1 and self.player.url == url        
             )
             reason = '状态没有实质性改变'
-        print('回声检测结果', result, reason)
+        # print('回声检测结果', result, reason)
         if not result: self.time_lock = current_time
         return result
 
@@ -299,6 +298,13 @@ class SidManager:
     def get_meetingRoom_by_meetingId(self, meeting_id:str)->MeetingRoom:
         return self.meetingrooms.get(meeting_id, None)
     
+    def disconnect_sid(self, sid):
+        if not sid in self:
+            return
+        sid_object = self[sid]
+        sid_object.meetingroom.delete_member(sid_object.user_id)
+        self.sid_objects.pop(sid)
+
     def __getitem__(self, sid:str)->SidObject:
         return self.sid_objects.get(sid, None)
 
