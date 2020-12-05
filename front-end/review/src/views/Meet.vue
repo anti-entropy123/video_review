@@ -144,19 +144,14 @@
           meetingId: "5fcb98682fd62669086c8dad",
           projectId: "5fcb46f7872ad7704cb534c2",
           videos:[{
-            value: '5fbe93d6077dd49c9e0955ac',
-            label: '初音未来.mp4',
-          },{
-            value: '5fcb4716872ad7704cb534c3',
-            label: '八重樱.mp4',
+            value: '',
+            label: '',
           },],
+          videoList:{},
           videoId: "5fcb4716872ad7704cb534c3",
           videoName: "",
           videoInfo:[],
-          videoSize:[{
-            videoWidth:"",
-            videoHeight:""
-          }],
+          videoSize:[],
           memberNum: 1,
           comments: [],
           avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
@@ -280,10 +275,6 @@
             }
           );
           if (res.result == 1) {
-            // this.$message({
-            //   message: "获取用户信息",
-            //   type: "success"
-            // });
             this.avatar = res.data.avatar;
           }
         },
@@ -357,17 +348,24 @@
         //获取项目中所有视频
         async getVideo(projectId){
           const {data: res} =await this.$http.get(
-            `/project/${projectId}/userAndVideo/`
+            `/project/${projectId}/userAndVideo`
           ).catch(function (error) {
               console.log(error);
             }
           );
-          console.log('++++++++++++++=')
-          console.log(projectId)
+          console.log('++++++++++++++')
           console.log(res)
           if (res.result == 1) {
-            console.log('++++++++++++++=')
-            console.log(res.data)
+            // console.log(res.data.userList)
+            // console.log(res.data.videoList);
+            this.videoList = res.data.videoList;
+            console.log(this.videoList);
+            var i =0;
+            for (var video of this.videoList){
+              this.videos[i].label = video.videoName;
+              this.videos[i].value = video.videoId;
+            }
+            console.log(this.videos[0]);
           }
         }
       },
@@ -540,7 +538,7 @@
     /*height:66%;*/
     display: flex;
     justify-content: center;
-    margin-top: 0px;
+    margin-top: 14px;
   }
   .video{
     width: 70%;
