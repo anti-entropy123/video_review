@@ -1,13 +1,17 @@
-from flask import jsonify, request, abort
+import os
+import time
+
+from flask import abort
 from flask import current_app as app
+from flask import jsonify, request
 from flask_jwt_extended import get_jwt_identity
 
 from .. import db
-from . import api
-from ..utils import build_response, txCosUtil, safe_objectId, captrueFrameUtil
-from ..model import Video, User, Project, Message
 from ..auth import login_required
-import os
+from ..model import Message, Project, User, Video
+from ..utils import build_response, captrueFrameUtil, safe_objectId, txCosUtil
+from . import api
+
 
 # 新建视频
 @api.route('/video/', methods=['POST'])
@@ -113,7 +117,8 @@ def review_finish(video_id):
         content = {
             'videoName': video.videoName,
             'reviewResult': review_result
-        }
+        },
+        date=time.time()
     )
     reviewer.message.append(new_message)
     reviewer.save()
@@ -144,5 +149,3 @@ def my_video():
         data.append(one)
     
     return jsonify(build_response(1, '', data=data))
-
-    

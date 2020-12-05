@@ -216,7 +216,8 @@ class MeetingRoom:
             fromName=from_name,
             position=position,
             image=image_url,
-            content=content
+            content=content,
+            date=time.time()
         )
         video.comment.append(comment)
         video.save()
