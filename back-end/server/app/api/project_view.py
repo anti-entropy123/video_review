@@ -155,7 +155,8 @@ def get_project_data(project_id):
         video = Video.get_video_by_id(video_id)
         video_list.append({
             'videoName': video.videoName,
-            'cover': video.cover,
+            'coverList': video.cover,
+            'cover': video.cover[0],
             'videoId': video_id,
             'hasReview': video.hasReview,
             'createDate': video.createDate,
@@ -188,7 +189,7 @@ def get_project_list():
 @login_required
 def remove_user_from_project(project_id:str):
     try:
-        userId = request.data['userId']
+        userId = request.args['userId']
     except KeyError as e:
         abort(400, {'msg': str(e)})
     

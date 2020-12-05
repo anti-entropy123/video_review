@@ -1,4 +1,5 @@
 from collections import UserDict
+from typing import List
 from flask import jsonify, request, abort
 from flask_jwt_extended import get_jwt_identity, jwt_required
 from flask_mongoengine import json
@@ -15,7 +16,7 @@ from ..auth import login_required
 def get_message_list():
     user_id = get_jwt_identity()
 
-    messages = User.get_user_by_id(user_id=user_id).message
+    messages:List[Message] = User.get_user_by_id(user_id=user_id).message
     
     data = []
     for message in messages:
@@ -30,8 +31,10 @@ def get_message_list():
             'hasRead': message['hasRead'],
             'hasProcess': message['hasProcess'],
             'type': message['type'],
-            'avatar': sender.avatar
+            'avatar': sender.avatar,
+            **message.content
         }
+
         data.append(one)
     
     data = sorted(data, key=lambda x: x['date'], reverse=True)

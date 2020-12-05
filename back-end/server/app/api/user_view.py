@@ -1,5 +1,6 @@
 import math
 import random
+import time
 from typing import List
 
 from flask import abort, jsonify, request
@@ -78,7 +79,6 @@ def get_userlist():
     
     return jsonify(build_response(1, '', data))
 
-
 @api.route('/uploadImg/', methods=['POST'])
 @login_required
 def upload_avatar():
@@ -89,7 +89,7 @@ def upload_avatar():
     
     user_id = get_jwt_identity()
 
-    url = txCosUtil.simple_file_upload(image, f'/img/{user_id}/{str(random.randint(10000, 1000000))}.jpg')
+    url = txCosUtil.simple_file_upload(image, f'/img/{user_id}/{str(int(time.time()))[-5:]+str(random.randint(10000, 1000000))}.jpg')
     # print(url)
     return jsonify(build_response(data={
         'url': url

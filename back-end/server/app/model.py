@@ -16,9 +16,9 @@ class Message(db.EmbeddedDocument):
     projectId = db.StringField(required=True)
     projectName = db.StringField(required=True)
     type = db.IntField(required=True)
-    content = db.DictField(required=True)
     messageId = db.IntField(required=True)
 
+    content = db.DictField(default=None)
     hasProcess = db.IntField(default=0)
     hasRead = db.IntField(default=0)
     date = db.FloatField(default=time.time())
