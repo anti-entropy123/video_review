@@ -30,22 +30,21 @@
   </a-layout-header>
 <!--  视频区-->
   <div class="left">
-    <button> </button>
     <div class="videos">
       <video-player class="video"
         width="60%"
         ref="videoPlayer"
-        :playsinline="false"
+        :playsinline="true"
         :options="playerOptions"
         @play="onPlayerPlay($event)"
         @pause="onPlayerPause($event)"
       />
       <Draw class="draw" ref="draw" style="position: absolute"
        v-bind:Size="videoSize" v-if="isDraw==true" v-on:getImg="getImg"> </Draw>
-      <div  :style="
+      <div   :style="
         `width:${this.videoSize[0]}px;height:${this.videoSize[1]}px;position: absolute`
       " >
-        <img v-if="isCheckComment==true" v-bind:src="currentImageUrl"  style="width: 100%;">
+        <img v-cloak v-if="isCheckComment==true" v-bind:src="currentImageUrl"  style="width: 100%;">
       </div>
     </div>
     <!--    评论框-->
@@ -104,11 +103,10 @@
 
 <script>
   import Header from "./Header";
-  import Palette from "./palette";
   import Draw from "./Draw"
   import axios from "axios";
     export default {
-      components: {Draw, Palette, Header},
+      components: {Draw, Header},
       name: "Meet",
       data() {
         return {
@@ -141,17 +139,18 @@
               fullscreenToggle: true // 全屏按钮
             }
           },
-          userId: "5fa16ff1fce66d747a963a59",
+          userId: "5fcb46a9872ad7704cb534c1",
           userName: 'yjn',
-          meetingId: "5fbe907c4e42f17d1f405f08",
+          meetingId: "5fcb98682fd62669086c8dad",
+          projectId: "5fcb46f7872ad7704cb534c2",
           videos:[{
             value: '5fbe93d6077dd49c9e0955ac',
             label: '初音未来.mp4',
           },{
-            value: '5fc457e76d206f1f4afc3185',
+            value: '5fcb4716872ad7704cb534c3',
             label: '八重樱.mp4',
           },],
-          videoId: "5fc457e76d206f1f4afc3185",
+          videoId: "5fcb4716872ad7704cb534c3",
           videoName: "",
           videoInfo:[],
           videoSize:[{
@@ -355,9 +354,26 @@
           this.$set(this.videoSize,1,this.$refs.videoPlayer.$el.clientHeight);
           console.log(this.videoSize)//高度
         },
+        //获取项目中所有视频
+        async getVideo(projectId){
+          const {data: res} =await this.$http.get(
+            `/project/${projectId}/userAndVideo/`
+          ).catch(function (error) {
+              console.log(error);
+            }
+          );
+          console.log('++++++++++++++=')
+          console.log(projectId)
+          console.log(res)
+          if (res.result == 1) {
+            console.log('++++++++++++++=')
+            console.log(res.data)
+          }
+        }
       },
       mounted() {
         this.avatar = this.getHead(this.userId);
+        this.getVideo(this.projectId);
         this.getVideoSize();
         let that = this;
         window.onresize = () => {
@@ -584,6 +600,9 @@
     font-size: 14px;
     font-family: fangsong;
     color:#0b034d;
+  }
+  [v-cloak] {
+    display: none;
   }
 
 </style>

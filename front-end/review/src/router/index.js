@@ -3,7 +3,6 @@ import Router from 'vue-router'
 import Home from '@/views/Home'
 import Login from '@/views/Login'
 import Meet from '@/views/Meet'
-import Palette from '@/views/Palette'
 import Draw from '@/views/Draw'
 Vue.use(Router)
 const routes = [
@@ -19,10 +18,6 @@ const routes = [
     path: '/meeting',
     name:'Meet',
     component: Meet
-  },{
-    path:'/palette',
-    name:'Palette',
-    component: Palette
   },
   {
     path:'/draw',

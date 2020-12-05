@@ -25,4 +25,7 @@ body{
 .video-js.vjs-paused .vjs-big-play-button{
   z-index:100;
 }
+.vjs-has-started .vjs-control-bar{
+  z-index:100;
+}
 </style>
