@@ -10,6 +10,7 @@
         编辑面板
       </button>
     </p>
+
     <div
       class="palette_wrapper"
       ref="palette_wrapper"
@@ -51,7 +52,6 @@
           &times;
         </span>
       </div>
-
       <!-- 矩形编辑框 -->
       <div
         class="rectangle"
@@ -181,11 +181,9 @@ const transformKey =
   document.body.style.transform === undefined
     ? '-webkit-transform'
     : 'transform';
-// const documentWidth = document.body.clientWidth - 20;
-// const documentHeight = document.body.clientHeight - 75;//window.devicePixelRatio
-// console.log(document.body.clientHeight);
+
 export default {
-  name: 'palette',
+  name: 'Palette',
   props: {
     point: {
       type: String,

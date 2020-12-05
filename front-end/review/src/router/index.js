@@ -4,6 +4,7 @@ import Home from '@/views/Home'
 import Login from '@/views/Login'
 import Meet from '@/views/Meet'
 import Palette from '@/views/Palette'
+import Draw from '@/views/Draw'
 Vue.use(Router)
 const routes = [
   {
@@ -22,7 +23,12 @@ const routes = [
     path:'/palette',
     name:'Palette',
     component: Palette
-  }
+  },
+  {
+    path:'/draw',
+    name:'Draw',
+    component: Draw
+  },
 ]
 
 

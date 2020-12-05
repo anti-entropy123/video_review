@@ -22,4 +22,7 @@ body{
     width: 100%;
     height: 100%;
   }
+.video-js.vjs-paused .vjs-big-play-button{
+  z-index:100;
+}
 </style>
