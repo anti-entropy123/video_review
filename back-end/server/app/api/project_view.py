@@ -86,8 +86,11 @@ def join_project(project_id):
     # print(str(user.id))
     # if not message_id.startswith(str(user.id)):
     #     return jsonify(build_response(0, '无法加入此项目'))
-
+    print(project_id)
     project:Project = Project.get_project_by_id(project_id)
+    if not project:
+        return jsonify(build_response(0, '没有此项目'))
+        
     origin_message:Message = user.get_message_by_id(message_id)
     
     # 邀请者 用户id

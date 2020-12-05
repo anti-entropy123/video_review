@@ -145,7 +145,10 @@ class Project(db.Document):
             return
         
         video = Video.get_video_by_id(video_id=video_id, deep=True).delete_video()
-        self.hasVideo.remove(video_id)
+        try:
+            self.hasVideo.remove(video_id)
+        except ValueError as e:
+            print('项目中没有视频', video_id)
         self.save()
 
     # 项目解散
@@ -162,10 +165,19 @@ class Project(db.Document):
         users_id = [member.userId for member in self.member]
         for user_id in users_id:
             user = User.get_user_by_id(user_id, deep=True)
-            user.joinProject.remove(str(self.id))
+            try:
+                user.joinProject.remove(str(self.id))
+            except KeyError as e:
+                print('项目中没有用户', user_id)
+
             user.save()
+
         owner = User.get_user_by_id(self.owner, deep=True)
-        owner.hasProject.remove(str(self.id))
+        try:
+            owner.hasProject.remove(str(self.id))
+        except KeyError as e:
+            print('用户', owner, '没有项目', self)
+        
         owner.save()
         # 删除自身
         self.alive = False
@@ -219,7 +231,10 @@ class Video(db.Document):
     def delete_video(self):
         # 删除用户下相关信息
         user = User.get_user_by_id(self.owner, deep=True)
-        user.uploadVideo.remove(str(self.id))
+        try:
+            user.uploadVideo.remove(str(self.id))
+        except KeyError as e:
+            print('用户', user, '没有上传', self)
         user.save()
         # TODO 将来可以考虑删除COS中的视频文件
         # 删除自身
@@ -275,7 +290,11 @@ class Meeting(db.Document):
     def delete_meeting(self):
         # 删除用户下的数据
         user = User.get_user_by_id(self.ownerId, deep=True)
-        user.hasMeeting.remove(str(self.id))
+        try:
+            user.hasMeeting.remove(str(self.id))
+        except KeyError as e:
+            print('用户', user, '没有建立会议', self)
+        
         user.save()
         # 删除自身
         self.alive = False
