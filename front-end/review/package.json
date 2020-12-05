@@ -10,14 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-<<<<<<< HEAD
     "ant-design-vue": "^1.7.2",
-=======
-<<<<<<< HEAD
->>>>>>> rlj
-=======
->>>>>>> 2238b8058cef644734cd614b6928fe000fa9b91a
->>>>>>> 54dc2923834d41b5597bdd6f11b54bf1c53a1e09
     "axios": "^0.21.0",
     "element-ui": "^2.14.0",
     "vue": "^2.5.2",
