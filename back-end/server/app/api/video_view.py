@@ -144,7 +144,8 @@ def my_video():
             'duration': video.duration,
             'status': video.hasReview,
             'cover': video.cover,
-            'videoId': video_id
+            'videoId': video_id,
+            'date': video.createDate
         }
         data.append(one)
     
