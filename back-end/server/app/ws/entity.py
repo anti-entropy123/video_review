@@ -185,7 +185,10 @@ class MeetingRoom:
         self.member_list[user_id] = MeetingMember(user_id=user_id)
 
     def delete_member(self, user_id):
-        self.member_list.pop(user_id)
+        meeting_id_list = [str(meeting_member.user.id) for meeting_member in self.member_list]
+        i = meeting_id_list.index(user_id)
+        if i >= 0:
+            del self.member_list[i]
         # 如果此会议室没人在了, 则销毁此会议室
         if not len(self.member_list):
             sid_manager.destroy_meetingroom(self.meeting_id)
@@ -206,7 +209,7 @@ class MeetingRoom:
                     'imageUrl': comment.image,
                     'content': comment.content,
                     'position': comment.position,
-                    'avatar': self.member_list[comment.fromId].avatar
+                    'avatar': User.get_user_by_id(comment.fromId, deep=True).avatar
                 })
 
         return result
