@@ -89,7 +89,7 @@ def join_project(project_id):
     inviter_id = origin_message.fromId
     inviter = User.get_user_by_id(inviter_id)
     try:
-        project.confirm_to_join(user_id=user, isAgree=is_agree)
+        project.confirm_to_join(user=user, isAgree=is_agree)
     except ValueError as e:
         return jsonify(build_response(0, '你没有被邀请加入此项目'))
 

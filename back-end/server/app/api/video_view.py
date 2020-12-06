@@ -131,7 +131,7 @@ def review_finish(video_id):
 @api.route('/video/mine/', methods=['GET'])
 @login_required
 def my_video():
-    user = User.get_project_by_id(get_jwt_identity())
+    user = User.get_user_by_id(get_jwt_identity())
     video_list = user.uploadVideo
     # print(video_list)
     data = []

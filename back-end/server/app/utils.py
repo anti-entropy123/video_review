@@ -186,11 +186,11 @@ class TxCosUtil:
 
     def upload_image(self, user_id:str, f:IO)->str:
         # 生成一个(大概率)不会碰撞的文件名
-        self.simple_file_upload(f, f'img/{user_id}/{str(int(time.time()))[-5:]+str(random.randint(10000, 1000000))}.jpg')
+        return self.simple_file_upload(f, f'img/{user_id}/{str(int(time.time()))[-5:]+str(random.randint(10000, 1000000))}.jpg')
         
     def upload_video(self, user_id:str, f:IO)->str:
         # 生成一个(大概率)不会碰撞的文件名
-        self.simple_file_upload(f, f'video/{user_id}/{str(int(time.time()))[-5:]+str(random.randint(10000, 1000000))}.jpg')
+        return self.simple_file_upload(f, f'video/{user_id}/{str(int(time.time()))[-5:]+str(random.randint(10000, 1000000))}.jpg')
 
 txCosUtil = TxCosUtil()
         
