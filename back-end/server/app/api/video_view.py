@@ -116,11 +116,11 @@ def review_finish(video_id):
         projectId = str(project.id),
         projectName = project.projectName,
         type = 1,
-        content = {
-            'videoName': video.videoName,
-            'reviewResult': review_result
-        },
         date=time.time()
+    )
+    new_message.fill_content(
+        videoName = video.videoName,
+        reviewResult = review_result
     )
     reviewer.message.append(new_message)
     reviewer.save()

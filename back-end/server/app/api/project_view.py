@@ -56,12 +56,10 @@ def invite_user(project_id):
         fromName=inviter.username,
         projectId=project_id,
         projectName=project.projectName,
-        type=3,
-        content={
-            "word": word
-        },
+        type=3,    
         date=time.time()
     )
+    new_message.fill_content(word=word)
     target.receive_message(new_message)
     project.wait_to_user_join(user_id=user_id)
 
@@ -102,11 +100,9 @@ def join_project(project_id):
         projectId=project_id,
         projectName=project.projectName,
         type=4,
-        content={
-            'processResult': is_agree
-        },
         date=time.time()
     )
+    new_message.fill_content(processResult=is_agree)
     inviter.receive_message(new_message)
 
     return jsonify(build_response())
@@ -204,14 +200,10 @@ def remove_user_from_project(project_id:str):
     if not str(user.id) == project.owner:
         return jsonify(build_response(0, '你没有此权限'))
     
-    i = -1
-    for index, member in enumerate(project.member):
-        if member.userId == userId:
-            i = index
-            break
+    if not target not in project:
+        return jsonify(build_response(0, "对方不是此项目的成员"))
 
-    project.member.pop(i)
-    project.save()
+    project.remove_member(target, False, False)
 
     message = Message(
         fromId=str(user.id),
@@ -219,10 +211,9 @@ def remove_user_from_project(project_id:str):
         projectId=str(project.id),
         projectName=project.projectName,
         type=5,
-        content={},
         date=time.time()
     )
-
+    message.fill_content()
     target.receive_message(message)
     return jsonify(build_response())
 

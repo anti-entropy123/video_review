@@ -10,6 +10,44 @@ from . import db
 from .utils import safe_objectId
 
 
+class MessageContent(db.EmbeddedDocument):
+    videoName = db.StringField(required=False)
+    reviewResult = db.StringField(required=False)
+    meetingId = db.StringField(required=False)
+    word = db.StringField(required=False)
+    processResult = db.StringField(required=False)
+
+    # type = 0
+    @classmethod
+    def upload_new_video_message(cls, video_name:str)->MessageContent:
+        return MessageContent(videoName=video_name)
+    
+    # type = 1
+    @classmethod
+    def video_has_reviewd(cls, video_name:str, review_result:bool)->MessageContent:
+        return MessageContent(videoName = video_name, reviewResult = review_result)
+
+    # type = 2
+    @classmethod
+    def book_new_meeting(cls, meeting_id:str)->MessageContent:
+        return MessageContent(meetingId=meeting_id)
+    
+    # type = 3
+    @classmethod
+    def invite_join_project(cls, word:str)->MessageContent:
+        return MessageContent(word=word)
+
+    # type = 4
+    @classmethod
+    def invite_has_processed(cls, process_result:bool)->MessageContent:
+        return MessageContent(processResult=process_result)
+
+    # type = 5
+    @classmethod
+    def remove_project_member(cls)->MessageContent:
+        return MessageContent()
+
+    
 class Message(db.EmbeddedDocument):
     # messageId = db.StringField(required=True, unique=True)
     fromId = db.StringField(required=True)
@@ -19,14 +57,32 @@ class Message(db.EmbeddedDocument):
     type = db.IntField(required=True)
     messageId = db.IntField(required=True)
     date = db.FloatField(required=True)
-
-    content = db.DictField(default=None)
+    content = db.EmbeddedDocumentField(MessageContent, required=True)
+    
     hasProcess = db.IntField(default=0)
     hasRead = db.IntField(default=0)
 
     def __str__(self):
         return f'消息: {self.content}'
 
+    def fill_content(self,  **kwargs):
+        content = None
+        if self.type == 0:
+            content = MessageContent.upload_new_video_message(**kwargs)
+        elif self.type == 1:
+            content = MessageContent.video_has_reviewd(**kwargs)
+        elif self.type == 2:
+            content = MessageContent.book_new_meeting(**kwargs)
+        elif self.type == 3:
+            content = MessageContent.invite_join_project(**kwargs)
+        elif self.type == 4:
+            content = MessageContent.invite_has_processed(**kwargs)
+        elif self.type == 5:
+            content = MessageContent.remove_project_member(**kwargs)
+        else:
+            raise RuntimeError('无效的type')
+        
+        self.content = content
 
 class User(db.Document):
     username = db.StringField(required=True)
@@ -235,6 +291,7 @@ class Comment(db.EmbeddedDocument):
     
     alive = db.BooleanField(default=True)
     
+
     def __str__(self):
         return f"批注: {self.content}"
 
