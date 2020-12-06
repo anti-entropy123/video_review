@@ -125,31 +125,6 @@ class CheckCodeManager:
  
 checkCodeManager = CheckCodeManager()
 
-class TxCosUtil:
-    secret_id = TxSecretId        # 替换为用户的 secretId
-    secret_key = TxSecretKey      # 替换为用户的 secretKey
-    region = 'ap-beijing'         # 替换为用户的 Region
-    # token = None                # 使用临时密钥需要传入 Token，默认为空，可不填
-    # scheme = 'https'            # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
-    
-    def __init__(self):
-        config = CosConfig(Region=self.region, SecretId=self.secret_id, SecretKey=self.secret_key)
-        self.client = CosS3Client(config)
-    
-    def simple_file_upload(self, f:IO, key:str):
-        response = self.client.put_object(
-            Bucket=bucket_name,
-            Body=f,
-            Key= 'video_review/'+key,
-            StorageClass='STANDARD',
-            EnableMD5=False
-        )
-        # print(response['ETag'])
-    
-        return f"https://{app.config['BUCKET_NAME']}.cos.ap-beijing.myqcloud.com/video_review/{key}"
-
-
-txCosUtil = TxCosUtil()
 
 class CaptureFrameUtil:
     def __init__(self) -> None:
@@ -186,6 +161,38 @@ class CaptureFrameUtil:
         return results, duration
         
 captrueFrameUtil = CaptureFrameUtil()
+
+class TxCosUtil:
+    secret_id = TxSecretId        # 替换为用户的 secretId
+    secret_key = TxSecretKey      # 替换为用户的 secretKey
+    region = 'ap-beijing'         # 替换为用户的 Region
+    # token = None                # 使用临时密钥需要传入 Token，默认为空，可不填
+    # scheme = 'https'            # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
+    
+    def __init__(self):
+        config = CosConfig(Region=self.region, SecretId=self.secret_id, SecretKey=self.secret_key)
+        self.client = CosS3Client(config)
+    
+    def simple_file_upload(self, f:IO, key:str):
+        response = self.client.put_object(
+            Bucket=bucket_name,
+            Body=f,
+            Key= 'video_review/'+key,
+            StorageClass='STANDARD',
+            EnableMD5=False
+        )
+        # print(response['ETag'])
+        return f"https://{app.config['BUCKET_NAME']}.cos.ap-beijing.myqcloud.com/video_review/{key}"
+
+    def upload_image(self, user_id:str, f:IO)->str:
+        # 生成一个(大概率)不会碰撞的文件名
+        self.simple_file_upload(f, f'img/{user_id}/{str(int(time.time()))[-5:]+str(random.randint(10000, 1000000))}.jpg')
+        
+    def upload_video(self, user_id:str, f:IO)->str:
+        # 生成一个(大概率)不会碰撞的文件名
+        self.simple_file_upload(f, f'video/{user_id}/{str(int(time.time()))[-5:]+str(random.randint(10000, 1000000))}.jpg')
+
+txCosUtil = TxCosUtil()
         
 
 if __name__ == "__main__":

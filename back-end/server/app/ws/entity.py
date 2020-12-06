@@ -162,6 +162,7 @@ class MeetingRoom:
         meeting:Meeting = Meeting.get_meeting_by_id(meeting_id=meeting_id)
         self.manager_id = meeting.ownerId
         project:Project = Project.get_project_by_id(meeting.belongTo)
+        self.project = project
         if project.hasVideo:
             video_id = project.hasVideo[-1]
             self.player:VideoPlayer = VideoPlayer(video_id=video_id)
@@ -177,6 +178,10 @@ class MeetingRoom:
         }
 
     def add_member(self, user_id):
+        user = User.get_user_by_id(user_id=user_id)
+        if user not in self.project:
+            raise RuntimeError('你不是项目成员')
+        
         self.member_list[user_id] = MeetingMember(user_id=user_id)
 
     def delete_member(self, user_id):

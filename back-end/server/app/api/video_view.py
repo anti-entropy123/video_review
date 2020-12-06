@@ -29,11 +29,17 @@ def create_video():
     except KeyError as e:
         abort(400, {'msg': str(e)})
 
-    if not Project.objects(id=safe_objectId(upload_to_project), alive=True):
+    project = Project.get_project_by_id(project_id=upload_to_project)
+    if not project:
         return jsonify(build_response(0, "无此项目"))
 
     if sum([(i in video_name) for i in r"\/"]) and (".mp4" in video_name or '.mkv' in video_name):
         return jsonify(build_response(0, "video_name 不合法"))
+
+    user_id = get_jwt_identity()
+    uploader = User.get_user_by_id(user_id=user_id)
+    if not uploader in project:
+        return jsonify(build_response(0, "你不是此项目的成员"))
 
     password = parm.get('password', '')
     if permission == 1 and password == '':
@@ -43,14 +49,17 @@ def create_video():
     filename = os.path.join(app.config['UPLOAD_FOLDER'], video_name) 
     file.save(filename)
 
-    with open(filename, 'rb') as f:
-        url = txCosUtil.simple_file_upload(f, video_name)
-    
-    frames, duration = captrueFrameUtil.capture_frame(filename)
-    covers = []
-    for i, frame in enumerate(frames):
-        u = txCosUtil.simple_file_upload(frame, f'/cover/{video_name}-{i}.png')
-        covers.append(u)
+    try:
+        with open(filename, 'rb') as f:
+            url = txCosUtil.upload_video(user_id=user_id, f=f)
+        
+        frames, duration = captrueFrameUtil.capture_frame(filename)
+        covers = []
+        for i, frame in enumerate(frames):
+            u = txCosUtil.upload_image(user_id=user_id, f=frame)
+            covers.append(u)
+    finally:
+        os.remove(filename)
 
     # 数据库插入此视频
     video = Video(
@@ -65,24 +74,18 @@ def create_video():
     )
     video.save()
     video_id = str(video.id)
-    user_id = get_jwt_identity()
-    uploader = User.objects(id=safe_objectId(user_id), alive=True).first()
-    video_list = uploader.uploadVideo
-    if not video_id in video_list:
-        uploader.uploadVideo = video_list + [video_id]
+    if not video_id in uploader.uploadVideo:
+        uploader.uploadVideo.append(video_id)
         uploader.save()
 
-    project = Project.objects(id=safe_objectId(upload_to_project), alive=True).first()
-    video_list = project.hasVideo
-    if not video_id in video_list:
-        project.hasVideo = video_list + [video_id]
+    if not video_id in project.hasVideo:
+        project.hasVideo.append(video_id)
         project.save()
 
     data = {
         'url': video.url,
         'videoId': video_id
     }
-    os.remove(filename)
     return jsonify(build_response(data=data))
     
 # 完成审阅
@@ -97,17 +100,16 @@ def review_finish(video_id):
         abort(400, {'msg': str(e)})
 
     # 数据库中写入视频
-    video = Video.objects(id=safe_objectId(video_id), alive=True).first()
-    video.reviewResult = review_result
-    video.reviewSummary = summary
-    video.hasReview = True
-    video.save()
+    video = Video.get_video_by_id(video_id=video_id)
+    if not video:
+        return jsonify(build_response(0, '没有此视频'))
+    video.set_review_result(result=review_result, summary=summary)
 
-    reviewer = User.objects(id=safe_objectId(get_jwt_identity()), alive=True).first()
-    project = Project.objects(id=safe_objectId(video.belongTo), alive=True).first()
-
-    # 通知用户视频被审阅
-    user = User.objects(id=safe_objectId(video.owner), alive=True).first()
+    # 视频审阅者
+    reviewer = User.get_user_by_id(get_jwt_identity())
+    project = Project.get_project_by_id(video.belongTo)
+    # 视频上传者
+    user = User.get_user_by_id(video.owner)
     new_message = Message(
         fromId = str(reviewer.id),
         fromName = reviewer.username,
@@ -129,14 +131,12 @@ def review_finish(video_id):
 @api.route('/video/mine/', methods=['GET'])
 @login_required
 def my_video():
-    user = User.objects(id=safe_objectId(get_jwt_identity()), alive=True).first()
-    # print(user)
-
+    user = User.get_project_by_id(get_jwt_identity())
     video_list = user.uploadVideo
     # print(video_list)
     data = []
     for video_id in video_list:
-        video = Video.objects(id=safe_objectId(video_id), alive=True).first()
+        video = Video.get_video_by_id(video_id=video_id)
         one = {
             'url': video.url,
             'videoName': video.videoName,
@@ -148,4 +148,4 @@ def my_video():
         }
         data.append(one)
     
-    return jsonify(build_response(1, '', data=data))
+    return jsonify(build_response(data=data))

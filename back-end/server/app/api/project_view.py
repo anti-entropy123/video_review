@@ -21,13 +21,9 @@ def create_project():
 
     user_id = get_jwt_identity()
     user = User.get_user_by_id(user_id=user_id)
-
-    # if Project.objects(projectName=project_name):
-    #     return jsonify(build_response(0, '此项目名已被使用'))
-    
     project = Project(
         projectName=project_name,
-        owner=str(get_jwt_identity())
+        owner=user_id
     )
     project.save()
 
@@ -52,7 +48,7 @@ def invite_user(project_id):
 
     project = Project.get_project_by_id(project_id)
     # 检查目标用户是否已经在项目中
-    if user_id in [member.userId for member in project.member]:
+    if target in project:
         return jsonify(build_response(0, '此用户已经在项目中'))
 
     new_message = Message(
@@ -83,10 +79,6 @@ def join_project(project_id):
         abort(400, {'msg': '无效的messageId'})
 
     user:User = User.get_user_by_id(get_jwt_identity())
-    # print(str(user.id))
-    # if not message_id.startswith(str(user.id)):
-    #     return jsonify(build_response(0, '无法加入此项目'))
-    print(project_id)
     project:Project = Project.get_project_by_id(project_id)
     if not project:
         return jsonify(build_response(0, '没有此项目'))
@@ -97,18 +89,10 @@ def join_project(project_id):
     inviter_id = origin_message.fromId
     inviter = User.get_user_by_id(inviter_id)
     try:
-        project.waitJoin.remove(str(user.id))
+        project.confirm_to_join(user_id=user, isAgree=is_agree)
     except ValueError as e:
         return jsonify(build_response(0, '你没有被邀请加入此项目'))
 
-    if is_agree:
-        # 同意邀请
-        project.member.append(
-            ProjectMember(userId=str(user.id))
-        )
-        user.joinProject.append(project_id)
-
-    project.save()
     # 已处理此消息
     user.process_message(message_id=message_id)
     # 给邀请者发送提醒
@@ -135,6 +119,12 @@ def get_project_data(project_id):
 
     # 找到此项目
     project = Project.get_project_by_id(project_id)
+    if not project:
+        return jsonify(build_response(0, '没有此项目'))
+    user = User.get_user_by_id(get_jwt_identity())
+    if user not in project:
+        return jsonify(build_response(0, '你无法查看此项目'))
+
     # 项目主
     owner = User.get_user_by_id(project.owner)
     user_list.append({
@@ -145,14 +135,14 @@ def get_project_data(project_id):
     })
 
     # 普通成员
-    for user in project.member:
-        userId = user['userId']
-        title = user['title']
+    for member in project.member:
+        userId = member.userId
+        title = member.title
         member = User.get_user_by_id(userId)
         member.title = title
         member.userId = userId
         user_list.append({
-            'userId': str(member.id),
+            'userId': userId,
             'userName': member.username,
             'title': title,
             'avatar': member['avatar']
@@ -205,7 +195,6 @@ def remove_user_from_project(project_id:str):
     project = Project.get_project_by_id(project_id=project_id)
     target = User.get_user_by_id(userId)
     
-
     if not project:
         return jsonify(build_response(0, '无此项目'))
     
@@ -241,9 +230,13 @@ def remove_user_from_project(project_id:str):
 @login_required
 def get_meeting(project_id):
     project = Project.get_project_by_id(project_id=project_id)
-    
+    user = User.get_user_by_id(get_jwt_identity())
+
     if not project:
         return jsonify(build_response(0, '无此项目'))
+
+    if user not in project:
+        return jsonify(build_response(0, '你不在此项目中'))
 
     meetings = Meeting.get_meeting_by_projectId(project_id=project_id)
     data = []
@@ -268,18 +261,15 @@ def leave_project(project_id):
     if not project:
         return jsonify(build_response(0, '没有此项目'))
     
+    if user not in project:
+        return jsonify(build_response(0, "你不是项目成员"))
+    
     # 用户是项目的建立者, 该项目解散
     if user_id == project.owner:
         project.dissolution()
     # 用户是项目的成员, 该项目中删去此用户
-    elif user_id in [member.userId for member in project.member]:
-        user.hasProject.remove(project_id)
-        user.save()
-        i = [member.userId for member in project.member].index(user_id)
-        del project.member[i]
-        project.save()
     else:
-        return jsonify(build_response(0, '你不在此项目中'))
+        project.remove_member(user, True, False)
     
     return jsonify(build_response())
 

@@ -89,7 +89,7 @@ def upload_avatar():
     
     user_id = get_jwt_identity()
 
-    url = txCosUtil.simple_file_upload(image, f'/img/{user_id}/{str(int(time.time()))[-5:]+str(random.randint(10000, 1000000))}.jpg')
+    url = txCosUtil.upload_image(user_id=user_id, f=image)
     # print(url)
     return jsonify(build_response(data={
         'url': url

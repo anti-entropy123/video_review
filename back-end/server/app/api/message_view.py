@@ -16,7 +16,6 @@ from ..auth import login_required
 @login_required
 def get_message_list():
     user_id = get_jwt_identity()
-
     messages:List[Message] = User.get_user_by_id(user_id=user_id).message
     
     data = []
@@ -33,7 +32,7 @@ def get_message_list():
             'hasProcess': message['hasProcess'],
             'type': message['type'],
             'avatar': sender.avatar,
-            **message.content
+            # **message.content
         }
         sentence = ""
         if message.type == 0:
@@ -65,15 +64,4 @@ def get_message_detail(message_id):
         jsonify(build_response(0, "找不到此消息"))
         
     user.read_message(message_id=message_id)
-    data = {
-        'fromId': message['fromId'],
-        'fromName': message['fromName'],
-        'date': message['date'],
-        'projectId': message['projectId'],
-        'projectName': message['projectName'],
-        'type': message['type']
-    }
-    content = message['content']
-    data.update(content)
-
-    return jsonify(build_response(data=data))
+    return jsonify(build_response())

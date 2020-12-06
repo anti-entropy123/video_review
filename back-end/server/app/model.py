@@ -4,6 +4,7 @@ import time
 from typing import List
 
 from bson.objectid import ObjectId
+from flask.app import Flask
 
 from . import db
 from .utils import safe_objectId
@@ -139,6 +140,18 @@ class Project(db.Document):
         self.waitJoin.append(user_id)
         self.save()
     
+    def confirm_to_join(self, user:User, is_agree:bool):
+        self.waitJoin.remove(str(user.id))
+        if is_agree:
+            # 同意邀请
+            self.member.append(
+                ProjectMember(userId=str(user.id))
+            )
+            user.joinProject.append(str(self.id))
+            user.save()
+
+        self.save()
+
     # 删除项目下的视频
     def remove_video(self, video_id:str):
         if not video_id in self.hasVideo:
@@ -149,6 +162,28 @@ class Project(db.Document):
             self.hasVideo.remove(video_id)
         except ValueError as e:
             print('项目中没有视频', video_id)
+        self.save()
+
+    def remove_member(self, user:User, is_leave:bool=True, is_owner=False):
+        user.hasProject.remove(str(self.id))
+        user.save()
+        new_message = Message(
+            fromId = self.owner,
+            fromName = User.get_user_by_id(self.owner).username,
+            projectId = str(self.id),
+            projectName = str(self.projectName),
+            type = 5,
+            date = time.time()
+        )
+        user.receive_message(new_message)
+        if is_owner or is_leave:
+            return
+    
+        i = [member.userId for member in self.member].index(str(user.id))
+        if i >= 0:
+            del self.member[i]
+        else:
+            print(self, '没有此成员', user)
         self.save()
 
     # 项目解散
@@ -162,26 +197,32 @@ class Project(db.Document):
         for video_id in videos_id:
             Video.get_video_by_id(video_id=video_id, deep=True).delete_video()
         # 删除所有项目成员
-        users_id = [member.userId for member in self.member]
-        for user_id in users_id:
+        for user_id in self.member_id_list():
             user = User.get_user_by_id(user_id, deep=True)
-            try:
-                user.joinProject.remove(str(self.id))
-            except KeyError as e:
-                print('项目中没有用户', user_id)
-
-            user.save()
+            self.remove_member(user)
 
         owner = User.get_user_by_id(self.owner, deep=True)
-        try:
-            owner.hasProject.remove(str(self.id))
-        except KeyError as e:
-            print('用户', owner, '没有项目', self)
-        
-        owner.save()
+        self.remove_member(owner, is_owner=True)
         # 删除自身
         self.alive = False
         self.save()
+
+    def member_id_list(self):
+        return [member.userId for member in self.member]
+
+    def __contains__(self, key):
+        object_id = str(key.id)
+        # 用户
+        if isinstance(key, User):
+            return object_id == self.owner or object_id in self.member_id_list()
+        # 视频
+        elif isinstance(key, Video):
+            return object_id in self.hasVideo
+        # 会议
+        elif isinstance(key, Meeting):
+            return object_id in self.hasMeeting
+        else:
+            return False
 
 class Comment(db.EmbeddedDocument):
     commentId = db.IntField(required=True)
@@ -239,6 +280,12 @@ class Video(db.Document):
         # TODO 将来可以考虑删除COS中的视频文件
         # 删除自身
         self.alive = False
+        self.save()
+    
+    def set_review_result(self, result:bool, summary:str):
+        self.reviewResult = result
+        self.reviewSummary = summary
+        self.hasReview = True
         self.save()
 
 class Meeting(db.Document):
