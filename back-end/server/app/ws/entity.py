@@ -4,25 +4,9 @@ from typing import Dict, List
 
 from ..model import Comment, Meeting, Project, User, Video
 
-# 会议中的一个成员
-class MeetingMember:
-    def __init__(self, user_id) -> None:
-        self.user = User.get_user_by_id(user_id=user_id)
-        self.control = True
-        self.comment = True
-    
-    @property
-    def avatar(self):
-        return self.user.avatar
-
-    def get_member_item(self):
-        return {
-            'userId': str(self.user.id),
-            'username': str(self.user.username),
-            'avatar': str(self.user.avatar),
-            'control': self.control,
-            'comment': self.comment
-        }
+VideoPlayer = None
+MeetingMember = None
+MeetingRoom = None
 
 # 视频播放器
 class VideoPlayer:
@@ -151,6 +135,7 @@ class MeetingRoom:
             self.player:VideoPlayer = VideoPlayer(video_id=video_id)
         else:
             raise RuntimeError('没有视频')
+
         self.command_cache = (None, None, None)
         self.time_lock = time.time()
 
@@ -160,16 +145,15 @@ class MeetingRoom:
             'memberList': [member.get_member_item() for member in self.member_list.values()]
         }
 
-    def add_member(self, user_id):
-        user = User.get_user_by_id(user_id=user_id)
-        if user not in self.project:
+    def add_member(self, user_id:str, member: MeetingMember):
+        if member.user not in self.project:
             raise RuntimeError('你不是项目成员')
         
-        self.member_list[user_id] = MeetingMember(user_id=user_id)
+        self.member_list[user_id] = member
 
     def delete_member(self, user_id):
-        # print(self.member_list)
-        meeting_id_list = self.member_list.pop(user_id)
+        # print(self.member_list)        
+        self.member_list.pop(user_id)
         # 如果此会议室没人在了, 则销毁此会议室
         if not len(self.member_list):
             sid_manager.destroy_meetingroom(self.meeting_id)
@@ -272,55 +256,115 @@ class MeetingRoom:
             raise RuntimeError('无效的type')
         
         return is_play, position, url
-# # meetingId => MeetingMember()
-# meetingroom_manager:Dict[str, MeetingRoom] = {}
-# # sid => userId
-# userId_manager:Dict[str, str] = {}
-# # sid => meetingId
-# meetingId_manager:Dict[str, str] = {}
+        
 
-class SidObject:
-    def __init__(self, sid, meeting_id, user_id, meetingroom:MeetingRoom) -> None:
+# 会议中的一个成员
+class MeetingMember:
+    def __init__(self, sid, user_id, room:MeetingRoom) -> None:
+        self.user = User.get_user_by_id(user_id=user_id)
+        self.control = True
+        self.comment = True
         self.sid = sid
-        self.meeting_id = meeting_id
-        self.user_id = user_id
-        self.meetingroom = meetingroom
+        self.room = room
+        self._type_to_func = {
+            0: self.pause_video,
+            1: self.start_comment,
+            2: self.move_video_position,
+            3: self.play_video,
+            4: self.end_comment,
+            5: self.change_video_src,
+            6: self.move_to_comment
+        }
+
+    def get_member_item(self):
+        return {
+            'userId': str(self.user.id),
+            'username': str(self.user.username),
+            'avatar': str(self.user.avatar),
+            'control': self.control,
+            'comment': self.comment
+        }
+
+    def can_control(self):
+        if not self.control:
+            raise RuntimeError('你没有控制权限')
+
+    def can_comment(self):
+        if not self.comment:
+            raise RuntimeError('你没有批注权限')
+    
+    def is_manager(self)->bool:
+        if not str(self.user.id) == self.room.meeting_id:
+            raise RuntimeError('你不是管理员')
+
+    def pause_video(self, position:float):
+        self.can_control()
+        self.room.player.pause(position=position)
+
+    def start_comment(self, position:float):
+        self.can_comment()
+        self.room.player.pause(position=position)
+
+    def move_video_position(self, position:float):
+        self.can_control()
+        self.room.player.move_process(position=position)
+    
+    def play_video(self, position:float):
+        self.can_control()
+        self.room.player.play(position=position)
+    
+    def end_comment(self, position:float):
+        self.can_comment()
+        self.room.player.play(position=position)
+
+    def change_video_src(self, video_id:str):
+        self.is_manager()
+        self.room.player.change_video(video_id=video_id)
+
+    def move_to_comment(self, position:float):
+        self.can_control()
+        self.room.player.pause(position=position)
+
+    def do_operation(self, type:int, **kwargs):
+        self._type_to_func[type](**kwargs)
 
 # sid -> all data
 class SidManager:
     # meetingId -> MeetingRomm
-    meetingrooms = {}
-    sid_objects = {}
+    rooms = {}
+    members = {}
     _sid_test_total = 0
     _sid_test_true = 0
     
-    def enter_meetingroom(self, sid, meeting_id, user_id) -> SidObject:
-        meeting_room = self.meetingrooms.get(meeting_id, None)
+    def enter_meetingroom(self, sid, meeting_id, user_id) -> MeetingMember:
+        meeting_room = self.rooms.get(meeting_id, None)
         if not meeting_room:
             meeting_room = MeetingRoom(meeting_id)
-            self.meetingrooms[meeting_id] = meeting_room
-        meeting_room.add_member(user_id=user_id)
-        sid_object = SidObject(sid, meeting_id, user_id, meeting_room)
-        self.sid_objects[sid] = sid_object
-        return sid_object
+            self.rooms[meeting_id] = meeting_room
+
+        member = MeetingMember(sid, user_id, meeting_room)
+        meeting_room.add_member(user_id, member)
+        
+        self.members[sid] = member
+        return member
 
     def destroy_meetingroom(self, meeting_id):
-        self.meetingrooms.pop(meeting_id)
+        self.rooms.pop(meeting_id)
 
     def get_meetingRoom_by_meetingId(self, meeting_id:str)->MeetingRoom:
-        return self.meetingrooms.get(meeting_id, None)
+        return self.rooms.get(meeting_id, None)
     
     def disconnect_sid(self, sid):
         if not sid in self:
             return
-        sid_object = self[sid]
-        sid_object.meetingroom.delete_member(sid_object.user_id)
-        self.sid_objects.pop(sid)
+        member = self[sid]
+        member.room.delete_member(str(member.user.id))
+        self.members.pop(sid)
 
-    def __getitem__(self, sid:str)->SidObject:
-        return self.sid_objects.get(sid, None)
+    def __getitem__(self, sid:str)->MeetingMember:
+        return self.members.get(sid, None)
 
     def __contains__(self, sid:str)->bool:
-        return sid in self.sid_objects
+        return sid in self.members
 
 sid_manager = SidManager()

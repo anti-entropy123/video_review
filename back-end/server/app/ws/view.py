@@ -7,7 +7,7 @@ from app.utils import build_response
 
 from ..model import Meeting, User, Video
 from . import ws
-from .entity import (MeetingMember, MeetingRoom, SidObject, VideoPlayer, sid_manager)
+from .entity import (MeetingMember, MeetingRoom, VideoPlayer, sid_manager)
 
 name_space = '/meetingRoom'
 
@@ -43,12 +43,12 @@ def init(data):
     # meeting_room.add_member(user_id=user_id)
     
     try:
-        sid_object = sid_manager.enter_meetingroom(sid=request.sid, meeting_id=meeting_id, user_id=user_id)
+        member = sid_manager.enter_meetingroom(sid=request.sid, meeting_id=meeting_id, user_id=user_id)
     except RuntimeError as e:
         emit('errorHandle',build_response(0, str(e)))
         return
 
-    meetingroom = sid_object.meetingroom
+    meetingroom = member.room
     # 加入会议室room, 方便广播
     join_room(meeting_id)
     # print(rooms(request.sid))
@@ -85,84 +85,59 @@ def disconnect_msg():
         sid_manager.disconnect_sid(request.sid)
 
     print('sid 有效性检测:', test, round(sid_manager._sid_test_true / sid_manager._sid_test_total, 2))
-    # FIXME 这里的 request.id 貌似不好用 ? 
-    # todo 应该在断开链接时从meetingRoom中去掉这个用户.
-    # meetingId_manager.pop(request.sid)
-    # userId_manager.pop(request.sid)
     
-
 @ws.on('changeProcess', namespace=name_space)
 def controll_player(data):
     try:
         type = int(data['type'])
-        position = data['position']
+        position = float(data['position'])
         video_id = data['videoId']
-        comment_id = data.get('commentId', None)
-        if comment_id:
-            comment_id = int(comment_id)
+        comment_id = int(data['commentId']) if type==6 else None
+        print(type, comment_id)
 
     except KeyError as e:
-        emit('errorHandle', build_response(0, str(e)))
+        emit('errorHandle', build_response(0, '缺失参数'+str(e)))
+        return
+    except TypeError as e:
+        emit('errorHandle', build_response(0, '参数类型有误'))
         return
 
-    sid_object = sid_manager[request.sid]
+    member = sid_manager[request.sid]
 
-    meeting_id = sid_object.meeting_id
-    user = User.get_user_by_id(sid_object.user_id)
-    meeting_room:MeetingRoom = sid_object.meetingroom
+    meeting_room:MeetingRoom = member.room
+    meeting_id = meeting_room.meeting_id
+    user = member.user
+    
     video_player:VideoPlayer = meeting_room.player
     video_status = {
         'userName': user.username,
         'reason': type,
     }
-    if type == 6:
-        video_status.update({
-            'commentId': comment_id
-        })
-    # 注: 变量 flag 的作用是, 标记此请求是否确实改变了后端播放器的某些状态
-    #     例如设置进度条时, 如果新的位置和原位置过于接近, 就不会发生更改
-    #     此时flag就为false
-    # flag = True
-    # 暂停
-
-    # 推断 is_play 和 url
+ 
     try:
         is_play, position, url = meeting_room.guess_states(type=type, video_id=video_id, position=position, comment_id=comment_id)
+        # 如果检测到回声, 直接阻断
+        if meeting_room.is_echo(is_play=is_play, position=position, url=url, type=type):
+            return
+        args = {
+            'position': position,
+            'video_id': video_id
+        }
+        member.do_operation(type=type, **args)
+        # 切换视频
+        if type == 5:
+            io.emit(
+                'updateComment',
+                build_response(data=meeting_room.get_comment_list()),
+                room=meeting_id
+            )
+        meeting_room.push_cache(video_status['isPlay'], video_status['position'], video_status['url'], type=type)
     except RuntimeError as e:
         emit('errorHandle', build_response(0, str(e)))
         return
 
-    # 如果检测到回声, 直接阻断
-    if meeting_room.is_echo(is_play=is_play, position=position, url=url, type=type):
-        return
-    
-    # flag = True
-    # 暂停 或 开始批注
-    if type == 0 or type == 1:
-        video_player.pause(position)
-    # 拖动进度条
-    elif type==2:
-        video_player.move_process(position=position)
-    # 播放
-    elif type == 3 or type==4:
-        video_player.play(position)
-    # 切换视频
-    elif type == 5:
-        if not meeting_room.manager_id == str(user.id):
-            emit('errorHandle', build_response(0, "你不是管理员"))
-            return
-
-        video_player.change_video(video_id=video_id)
-        io.emit(
-            'updateComment',
-            build_response(data=meeting_room.get_comment_list()),
-            room=meeting_id
-        )
-    elif type == 6:
-        video_player.pause(position=position)
-
     video_status.update(video_player.get_video_status())
-    meeting_room.push_cache(video_status['isPlay'], video_status['position'], video_status['url'], type=type)
+    print(video_status)
     io.emit(
         'sycnVideoState',
         build_response(data=video_status),
@@ -180,13 +155,12 @@ def addComment(data):
         emit('errorHandle', build_response(0, str(e)))
         return
 
-    sid_object = sid_manager[request.sid]
+    member = sid_manager[request.sid]
 
-    from_id = sid_object.user_id
-    user = User.get_user_by_id(from_id)
-    from_name = user.username
+    from_id = str(member.user.id)
+    from_name = member.user.username
 
-    meeting_room: MeetingRoom = sid_object.meetingroom
+    meeting_room: MeetingRoom = member.room
     meeting_room.add_comment(
         from_id=from_id,
         from_name=from_name,
@@ -194,7 +168,6 @@ def addComment(data):
         image_url=image_url,
         position=position
     )
-    
     emit(
         'updateComment',
         build_response(data=meeting_room.get_comment_list()),
@@ -209,33 +182,32 @@ def removeComment(data):
         emit('errorHandle', build_response(0, str(e)))
         return
     
-    sid_object = sid_manager[request.sid]
-    meetingroom = sid_object.meetingroom
+    member = sid_manager[request.sid]
+    meetingroom = member.room
     try:
-        meetingroom.remove_comment(user_id=sid_object.user_id, comment_id=comment_id)
+        meetingroom.remove_comment(user_id=str(member.user.id), comment_id=comment_id)
     except RuntimeError as e:
         emit('errorHandle', build_response(0, str(e)))
         return    
-
     emit(
         'updateComment',
         build_response(data=meetingroom.get_comment_list()),
-        room=sid_object.meeting_id
+        room=meetingroom.meeting_id
     )
 
 @ws.on('memberPermission', namespace=name_space)
 def setPermission(data):
     try:
         target_id = data['userId']
-        meeting_id = data['meetingId']
+        # meeting_id = data['meetingId']
     except KeyError as e:
         emit('errorHandle', build_response(0, str(e)))
         return
 
-    sid_object = sid_manager[request.sid]
+    member = sid_manager[request.sid]
 
-    meeting_room: MeetingRoom = sid_object.meetingroom
-    user_id = sid_object.user_id
+    meeting_room: MeetingRoom = member.room
+    user_id = str(member.user.id)
     if not user_id == meeting_room.manager_id:
         emit('errorHandle', build_response(0, "你不是管理员"))
         return
@@ -253,5 +225,5 @@ def setPermission(data):
     io.emit(
         'sycnMember',
         build_response(data=meeting_room.get_member_list()),
-        room=meeting_id
+        room=meeting_room.meeting_id
     )
