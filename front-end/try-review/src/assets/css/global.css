@@ -1,0 +1,19 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, "PingFang SC", "Microsoft Yahei", sans-serif;
+  font-size: 14px;
+}
+
+
+img {
+  width: 100%;
+}
+#app{
+  width: 100%;
+  height: 100%;
+}
+.video-js.vjs-paused .vjs-big-play-button{
+  z-index:100;
+}

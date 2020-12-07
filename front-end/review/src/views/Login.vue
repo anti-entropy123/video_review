@@ -230,7 +230,8 @@ export default {
               type: "success"
             });
             // 将登录成功之后的toen,保存到客户端的sessionStorage 中
-            window.sessionStorage.setItem("token", res.token);
+            // window.sessionStorage.setItem("token", res.token);
+            window.sessionStorage.setItem("token","eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MDcyMzk1OTEsIm5iZiI6MTYwNzIzOTU5MSwianRpIjoiZDhiNzI5YzktNGVjMS00M2Q5LTkxNmItY2Y4ZTdjOTY3NDE5IiwiaWRlbnRpdHkiOiI1ZmNiNDZhOTg3MmFkNzcwNGNiNTM0YzEiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.4LDlAwh-bUk8WkAuj_D7cdptaxD5zThExd0TBOIpXu4")
             window.sessionStorage.setItem("userId", res.userId);
 
             this.$router.push("/");
