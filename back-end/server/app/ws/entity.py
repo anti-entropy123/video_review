@@ -136,23 +136,6 @@ class VideoPlayer:
             'videoInfo': self.get_video_info()
         }
 
-    def guess_states(self, type, video_id):
-        if type == 0 or type == 1:
-            is_play = False
-            url = self.url
-        elif type == 2:
-            is_play = self.is_play
-            url = self
-        elif type == 3 or type == 4:
-            is_play = True
-            url = self.url
-        elif type == 5:
-            is_play = False
-            url = Video.get_video_by_id(video_id=video_id).url
-        else:
-            raise RuntimeError('无效的type')
-        
-        return is_play, url
 
 # 一个会议室
 class MeetingRoom:
@@ -266,6 +249,29 @@ class MeetingRoom:
         if not result: self.time_lock = current_time
         return result
 
+    def guess_states(self, type, video_id, position, comment_id):
+        player = self.player
+        if type == 0 or type == 1:
+            is_play = False
+            url = player.url
+        elif type == 2:
+            is_play = player.is_play
+            url = player
+        elif type == 3 or type == 4:
+            is_play = True
+            url = player.url
+        elif type == 5:
+            is_play = False
+            url = Video.get_video_by_id(video_id=video_id).url
+        elif type == 6:
+            is_play = False
+            url = player.url
+            comment:Comment = player.video.comment[comment_id]
+            position = comment.position
+        else:
+            raise RuntimeError('无效的type')
+        
+        return is_play, position, url
 # # meetingId => MeetingMember()
 # meetingroom_manager:Dict[str, MeetingRoom] = {}
 # # sid => userId

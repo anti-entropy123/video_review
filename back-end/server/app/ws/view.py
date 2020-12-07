@@ -97,6 +97,10 @@ def controll_player(data):
         type = int(data['type'])
         position = data['position']
         video_id = data['videoId']
+        comment_id = data.get('commentId', None)
+        if comment_id:
+            comment_id = int(comment_id)
+
     except KeyError as e:
         emit('errorHandle', build_response(0, str(e)))
         return
@@ -111,6 +115,10 @@ def controll_player(data):
         'userName': user.username,
         'reason': type,
     }
+    if type == 6:
+        video_status.update({
+            'commentId': comment_id
+        })
     # 注: 变量 flag 的作用是, 标记此请求是否确实改变了后端播放器的某些状态
     #     例如设置进度条时, 如果新的位置和原位置过于接近, 就不会发生更改
     #     此时flag就为false
@@ -119,7 +127,7 @@ def controll_player(data):
 
     # 推断 is_play 和 url
     try:
-        is_play, url = meeting_room.player.guess_states(type=type, video_id=video_id)
+        is_play, position, url = meeting_room.guess_states(type=type, video_id=video_id, position=position, comment_id=comment_id)
     except RuntimeError as e:
         emit('errorHandle', build_response(0, str(e)))
         return
@@ -150,7 +158,9 @@ def controll_player(data):
             build_response(data=meeting_room.get_comment_list()),
             room=meeting_id
         )
-    
+    elif type == 6:
+        video_player.pause(position=position)
+
     video_status.update(video_player.get_video_status())
     meeting_room.push_cache(video_status['isPlay'], video_status['position'], video_status['url'], type=type)
     io.emit(

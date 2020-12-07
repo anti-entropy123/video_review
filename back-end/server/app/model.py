@@ -15,7 +15,7 @@ class MessageContent(db.EmbeddedDocument):
     reviewResult = db.StringField(required=False)
     meetingId = db.StringField(required=False)
     word = db.StringField(required=False)
-    processResult = db.StringField(required=False)
+    processResult = db.BooleanField(required=False)
 
     # type = 0
     @classmethod
