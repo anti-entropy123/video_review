@@ -1,5 +1,4 @@
 from flask import abort, jsonify, request
-from flask import json
 from flask_jwt_extended import (create_access_token, create_refresh_token,
                                 get_jwt_identity, jwt_refresh_token_required)
 from werkzeug.security import check_password_hash, generate_password_hash
