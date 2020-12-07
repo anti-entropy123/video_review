@@ -35,8 +35,8 @@ def create_app(config=None):
     from .api import admin as admin_blueprint
     app.register_blueprint(admin_blueprint, url_prefix='/api/admin')
     # main蓝图, 封装其它视图相关模块
-    from .main import main as main_blueprint
-    app.register_blueprint(main_blueprint)
+    # from .main import main as main_blueprint
+    # app.register_blueprint(main_blueprint)
 
     from .ws import ws
     ws.init_app(app)

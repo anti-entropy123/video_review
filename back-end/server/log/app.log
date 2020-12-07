@@ -14728,3 +14728,9 @@ ValueError: Too many packets in payload
 [2020-12-06 16:54:49,637] WARNING in _internal:  * Debugger is active!
 [2020-12-06 16:54:49,650] INFO in _internal:  * Debugger PIN: 192-798-533
 [2020-12-06 16:54:49,686] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
+[2020-12-07 09:57:19,575] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-12-07 09:57:19,591] INFO in _internal:  * Restarting with stat
+[2020-12-07 09:57:20,558] WARNING in _internal: WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+[2020-12-07 09:57:20,559] WARNING in _internal:  * Debugger is active!
+[2020-12-07 09:57:20,566] INFO in _internal:  * Debugger PIN: 192-798-533
+[2020-12-07 09:57:20,599] INFO in _internal:  * Running on http://0.0.0.0:1314/ (Press CTRL+C to quit)
