@@ -100,6 +100,7 @@ class VideoPlayer:
     def get_video_info(self)->dict:
         project = Project.get_project_by_id(project_id=self.video.belongTo)
         return {
+            'videoId': str(self.video.id),
             'videoName': self.video.videoName,
             'uploader': self.video.owner,
             'duration': self.video.duration,
@@ -127,6 +128,7 @@ class MeetingRoom:
         self.member_list:Dict[str, MeetingMember] = {}
         self.meeting_id = meeting_id
         meeting:Meeting = Meeting.get_meeting_by_id(meeting_id=meeting_id)
+        self.meeting = meeting
         self.manager_id = meeting.ownerId
         project:Project = Project.get_project_by_id(meeting.belongTo)
         self.project = project
@@ -256,7 +258,9 @@ class MeetingRoom:
             raise RuntimeError('无效的type')
         
         return is_play, position, url
-        
+    
+    def __contains__(self, user_id):
+        return user_id in self.member_list
 
 # 会议中的一个成员
 class MeetingMember:
@@ -286,42 +290,44 @@ class MeetingMember:
         }
 
     def can_control(self):
+        print(self.user, '的控制权为:', self.control)
         if not self.control:
             raise RuntimeError('你没有控制权限')
 
     def can_comment(self):
+        print(self.user, '的批注权为', self.comment)
         if not self.comment:
             raise RuntimeError('你没有批注权限')
     
     def is_manager(self)->bool:
-        if not str(self.user.id) == self.room.meeting_id:
+        if not str(self.user.id) == self.room.meeting.ownerId:
             raise RuntimeError('你不是管理员')
 
-    def pause_video(self, position:float):
+    def pause_video(self, position:float, **kwargs):
         self.can_control()
         self.room.player.pause(position=position)
 
-    def start_comment(self, position:float):
+    def start_comment(self, position:float, **kwargs):
         self.can_comment()
         self.room.player.pause(position=position)
 
-    def move_video_position(self, position:float):
+    def move_video_position(self, position:float, **kwargs):
         self.can_control()
         self.room.player.move_process(position=position)
     
-    def play_video(self, position:float):
+    def play_video(self, position:float, **kwargs):
         self.can_control()
         self.room.player.play(position=position)
     
-    def end_comment(self, position:float):
+    def end_comment(self, position:float, **kwargs):
         self.can_comment()
         self.room.player.play(position=position)
 
-    def change_video_src(self, video_id:str):
+    def change_video_src(self, video_id:str, **kwargs):
         self.is_manager()
         self.room.player.change_video(video_id=video_id)
 
-    def move_to_comment(self, position:float):
+    def move_to_comment(self, position:float,**kwargs):
         self.can_control()
         self.room.player.pause(position=position)
 
@@ -342,8 +348,12 @@ class SidManager:
             meeting_room = MeetingRoom(meeting_id)
             self.rooms[meeting_id] = meeting_room
 
-        member = MeetingMember(sid, user_id, meeting_room)
-        meeting_room.add_member(user_id, member)
+        # 如果在会议室中, 复用, 否则建立新的
+        if user_id in meeting_room:
+            member = meeting_room.member_list[user_id]
+        else:
+            member = MeetingMember(sid, user_id, meeting_room)
+            meeting_room.add_member(user_id, member)
         
         self.members[sid] = member
         return member

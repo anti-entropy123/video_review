@@ -1,8 +1,6 @@
 <template>
 <div id="components-layout-demo-basic">
-
   <a-layout-header class="user">
-
     <div class="title">
       视频协作平台
     </div>
@@ -19,9 +17,6 @@
           <a target="_blank" rel="noopener noreferrer" href="http://www.baidu.com/">15min后**会议召开</a>
         </a-menu-item>
         <a-menu-divider/>
-<!--        <a-menu-item key="3" disabled>-->
-<!--          3rd menu item（disabled）-->
-<!--        </a-menu-item>-->
       </a-menu>
     </a-dropdown>
       </div>

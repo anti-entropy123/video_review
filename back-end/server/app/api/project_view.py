@@ -102,7 +102,7 @@ def join_project(project_id):
         type=4,
         date=time.time()
     )
-    new_message.fill_content(processResult=is_agree)
+    new_message.fill_content(process_result=is_agree)
     inviter.receive_message(new_message)
 
     return jsonify(build_response())
@@ -200,7 +200,8 @@ def remove_user_from_project(project_id:str):
     if not str(user.id) == project.owner:
         return jsonify(build_response(0, '你没有此权限'))
     
-    if not target not in project:
+    print(str(target.id), project.member_id_list(), str(user.id) in project.member_id_list())
+    if not target in project:
         return jsonify(build_response(0, "对方不是此项目的成员"))
 
     project.remove_member(target, False, False)
@@ -236,6 +237,7 @@ def get_meeting(project_id):
             'meetingId': str(meeting.id),
             'title': meeting.title,
             'ownerName': meeting.ownerName,
+            'ownerId': meeting.ownerId,
             'startTime': meeting.startTime,
             'endTime': meeting.endTime,
             'note': meeting.note,
@@ -252,8 +254,8 @@ def leave_project(project_id):
     if not project:
         return jsonify(build_response(0, '没有此项目'))
     
-    if user not in project:
-        return jsonify(build_response(0, "你不是项目成员"))
+    # if user not in project:
+    #     return jsonify(build_response(0, "你不是项目成员"))
     
     # 用户是项目的建立者, 该项目解散
     if user_id == project.owner:

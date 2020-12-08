@@ -82,11 +82,12 @@ def my_meeting():
         meeting_list.append({
             'meetingId': str(meeting.id),
             'meetingName': meeting.title,
-            'userName': meeting.ownerName,
+            'ownerName': meeting.ownerName,
+            'ownerId': meeting.ownerId,
             'duration': meeting.endTime-meeting.startTime,
             'status': (time()>meeting.endTime),
             'note': meeting.note,
-            'time': meeting.startTime,
+            'time': meeting.startTime
             # 'cover': '',
         })
     
@@ -119,7 +120,8 @@ def meeting_todo():
             meeting_list.append({
                 'meetingId': str(meeting.id),
                 'title': meeting.title,
-                'userName': meeting.ownerName,
+                'ownerName': meeting.ownerName,
+                'ownerId': meeting.ownerId,
                 'startTime': meeting.startTime,
                 'endTime': meeting.endTime,
                 'note': meeting.note,
@@ -157,8 +159,8 @@ def history_meeting():
             data.append({
                 'meetingId': str(meeting.id),
                 'meetingName': meeting.title,
-                'userId': meeting.ownerId,
-                'userName': meeting.ownerName,
+                'ownerId': meeting.ownerId,
+                'ownerName': meeting.ownerName,
                 'time': meeting.startTime,
                 'duration': meeting.endTime-meeting.startTime,
                 'note': meeting.note,

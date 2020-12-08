@@ -19,33 +19,33 @@ class MessageContent(db.EmbeddedDocument):
 
     # type = 0
     @classmethod
-    def upload_new_video_message(cls, video_name:str)->MessageContent:
+    def upload_new_video_message(cls, video_name:str, **kwargs)->MessageContent:
         return MessageContent(videoName=video_name)
     
     # type = 1
     @classmethod
-    def video_has_reviewd(cls, video_name:str, review_result:bool)->MessageContent:
+    def video_has_reviewd(cls, video_name:str, review_result:bool, **kwargs)->MessageContent:
         return MessageContent(videoName = video_name, reviewResult = review_result)
 
     # type = 2
     @classmethod
-    def book_new_meeting(cls, meeting_id:str)->MessageContent:
+    def book_new_meeting(cls, meeting_id:str, **kwargs)->MessageContent:
         return MessageContent(meetingId=meeting_id)
     
     # type = 3
     @classmethod
-    def invite_join_project(cls, word:str)->MessageContent:
+    def invite_join_project(cls, word:str, **kwargs)->MessageContent:
         return MessageContent(word=word)
 
     # type = 4
     @classmethod
-    def invite_has_processed(cls, process_result:bool)->MessageContent:
+    def invite_has_processed(cls, process_result:bool, **kwargs)->MessageContent:
         return MessageContent(processResult=process_result)
 
     # type = 5
     @classmethod
-    def remove_project_member(cls)->MessageContent:
-        return MessageContent()
+    def remove_project_member(cls, **kwargs)->MessageContent:
+        return MessageContent(word="")
 
     
 class Message(db.EmbeddedDocument):
@@ -90,7 +90,7 @@ class User(db.Document):
     mobileNum = db.StringField(required=True)
 
     mail = db.StringField(default='')
-    avatar = db.StringField(default='')
+    avatar = db.StringField(default='https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png')
     company = db.StringField(default='')
     # 自己创建的项目
     hasProject = db.ListField(db.StringField(), default=[]) 
@@ -197,7 +197,11 @@ class Project(db.Document):
         self.save()
     
     def confirm_to_join(self, user:User, is_agree:bool):
-        self.waitJoin.remove(str(user.id))
+        try:
+            self.waitJoin.remove(str(user.id))
+        except ValueError as e:
+            pass
+
         if is_agree:
             # 同意邀请
             self.member.append(
@@ -221,26 +225,37 @@ class Project(db.Document):
         self.save()
 
     def remove_member(self, user:User, is_leave:bool=True, is_owner=False):
-        user.hasProject.remove(str(self.id))
-        user.save()
-        new_message = Message(
-            fromId = self.owner,
-            fromName = User.get_user_by_id(self.owner).username,
-            projectId = str(self.id),
-            projectName = str(self.projectName),
-            type = 5,
-            date = time.time()
-        )
-        user.receive_message(new_message)
-        if is_owner or is_leave:
-            return
+        try:
+            if is_owner:
+                user.hasProject.remove(str(self.id))
+            else:
+                user.joinProject.remove(str(self.id))
+            user.save()
+        except ValueError as e:
+            pass
+        
+        if not is_owner:
+            try:
+                i = self.member_id_list().index(str(user.id))
+                del self.member[i]
+                self.save()
+            except ValueError as e:
+                print(self, '没有此成员', user)
+            
+        # 如果是项目负责人解散或者成员自己退出, 则不需要发通知
+        if not (is_owner or is_leave):
+            new_message = Message(
+                fromId = self.owner,
+                fromName = User.get_user_by_id(self.owner).username,
+                projectId = str(self.id),
+                projectName = str(self.projectName),
+                type = 5,
+                date = time.time()
+            )
+            new_message.fill_content()
+            user.receive_message(new_message)
+       
     
-        i = [member.userId for member in self.member].index(str(user.id))
-        if i >= 0:
-            del self.member[i]
-        else:
-            print(self, '没有此成员', user)
-        self.save()
 
     # 项目解散
     def dissolution(self):
@@ -270,6 +285,7 @@ class Project(db.Document):
         object_id = str(key.id)
         # 用户
         if isinstance(key, User):
+            # print(object_id, self.member_id_list(), object_id in self.member_id_list())
             return object_id == self.owner or object_id in self.member_id_list()
         # 视频
         elif isinstance(key, Video):

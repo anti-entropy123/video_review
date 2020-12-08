@@ -11,13 +11,10 @@ export default {
 </script>
 
 <style>
-*{
-  margin: 0;
-  padding: 0;
+.video-js.vjs-paused .vjs-big-play-button{
+  z-index:100;
 }
-body{
-  background: #ffffff;
-  box-sizing: border-box;
+.vjs-has-started .vjs-control-bar{
+  z-index:100;
 }
-
 </style>

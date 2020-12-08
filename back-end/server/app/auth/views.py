@@ -59,7 +59,9 @@ def register():
     user = User(
         username  = username, 
         password  = generate_password_hash(password), 
-        mobileNum = mobileNum)
+        mobileNum = mobileNum,
+        # avatar = 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png'
+        )
     user.save()
 
     return jsonify(build_response())

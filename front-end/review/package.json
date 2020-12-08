@@ -1,5 +1,5 @@
 {
-  "name": "review",
+  "name": "try-review",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "R1895 <1535045887@qq.com>",
@@ -12,9 +12,15 @@
   "dependencies": {
     "ant-design-vue": "^1.7.2",
     "axios": "^0.21.0",
-    "element-ui": "^2.14.0",
+    "element-ui": "^2.14.1",
+    "nprogress": "^0.2.0",
+    "video.js": "^7.10.2",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-hover-mask": "^1.0.0",
+    "vue-quill-editor": "^3.0.6",
+    "vue-router": "^3.0.1",
+    "vue-socket.io": "^3.0.10",
+    "vue-video-player": "^5.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

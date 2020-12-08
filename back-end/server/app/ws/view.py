@@ -21,7 +21,8 @@ def init(data):
     # print(data)
     meeting_id = data['meetingId']
     user_id = data['userId']
-    
+    print('初始化:', '会议id', meeting_id, '用户id', user_id)
+
     # 获取会议对象
     meeting = Meeting.get_meeting_by_id(meeting_id=meeting_id)
     if not meeting:
@@ -131,13 +132,18 @@ def controll_player(data):
                 build_response(data=meeting_room.get_comment_list()),
                 room=meeting_id
             )
-        meeting_room.push_cache(video_status['isPlay'], video_status['position'], video_status['url'], type=type)
+        if type == 6:
+            video_status.update({
+                'commentId': comment_id
+            })
+        
     except RuntimeError as e:
         emit('errorHandle', build_response(0, str(e)))
         return
 
     video_status.update(video_player.get_video_status())
-    print(video_status)
+    meeting_room.push_cache(video_status['isPlay'], video_status['position'], video_status['url'], type=type)
+    # print(video_status)
     io.emit(
         'sycnVideoState',
         build_response(data=video_status),
@@ -204,7 +210,7 @@ def setPermission(data):
         emit('errorHandle', build_response(0, str(e)))
         return
 
-    member = sid_manager[request.sid]
+    member:MeetingMember = sid_manager[request.sid]
 
     meeting_room: MeetingRoom = member.room
     user_id = str(member.user.id)
@@ -214,14 +220,18 @@ def setPermission(data):
 
     target_user: MeetingMember = meeting_room.member_list[target_id]
     
+    print('member', 'target', member is target_user)
+
     control = data.get('control', -1)
     if control >= 0:
         target_user.control = control
 
     comment = data.get('comment', -1)
+    # print('接受到的参数为', control, comment)
     if comment >= 0:
         target_user.comment = comment
 
+    print('设置后的权限', target_user.control, target_user.comment)
     io.emit(
         'sycnMember',
         build_response(data=meeting_room.get_member_list()),

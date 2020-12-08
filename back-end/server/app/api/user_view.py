@@ -94,3 +94,23 @@ def upload_avatar():
     return jsonify(build_response(data={
         'url': url
     }))
+
+@api.route('/userAvatar', methods=['GET'])
+def get_user_avatar():
+    try:
+        mobileNum = request.args['mobileNum']
+    except KeyError as e:
+        abort(400, {'msg': str(e)})
+    
+    user:User = User.objects(mobileNum=mobileNum).first()
+    
+    avatar = None
+    if user:
+        avatar = user.avatar
+    else:
+        avatar = 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png'
+    
+    data = {
+        'avatarUrl': avatar
+    }
+    return jsonify(build_response(1, '', data))
