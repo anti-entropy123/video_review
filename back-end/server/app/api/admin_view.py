@@ -157,8 +157,8 @@ def meeting_manage():
         meeting_list.append({
             'title': meeting.title,
             'belongTo': belongTo,
-            'onlineNum': 0 if str(meeting.id) not in sid_manager.meetingrooms else len(sid_manager.get_meetingRoom_by_meetingId(str(meeting.id)).member_list),
-            'currentVideo': '' if str(meeting.id) not in sid_manager.meetingrooms else  sid_manager.get_meetingRoom_by_meetingId(str(meeting.id)).player.video.videoName,
+            'onlineNum': 0 if str(meeting.id) not in sid_manager.rooms else len(sid_manager.get_meetingRoom_by_meetingId(str(meeting.id)).member_list),
+            'currentVideo': '' if str(meeting.id) not in sid_manager.rooms else sid_manager.get_meetingRoom_by_meetingId(str(meeting.id)).player.video.videoName,
             'alive': meeting.alive
         })
 

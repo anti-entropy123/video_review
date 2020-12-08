@@ -21,7 +21,7 @@ def init(data):
     # print(data)
     meeting_id = data['meetingId']
     user_id = data['userId']
-    print('初始化:', '会议id', meeting_id, '用户id', user_id)
+    # print('初始化:', '会议id', meeting_id, '用户id', user_id)
 
     # 获取会议对象
     meeting = Meeting.get_meeting_by_id(meeting_id=meeting_id)
@@ -108,7 +108,7 @@ def controll_player(data):
         position = float(data['position'])
         video_id = data['videoId']
         comment_id = int(data['commentId']) if type==6 else None
-        print(type, comment_id)
+        # print(type, comment_id)
 
     except KeyError as e:
         emit('errorHandle', build_response(0, '缺失参数'+str(e)))
@@ -234,7 +234,7 @@ def setPermission(data):
 
     target_user: MeetingMember = meeting_room.member_list[target_id]
     
-    print('member', 'target', member is target_user)
+    # print('member', 'target', member is target_user)
 
     control = data.get('control', -1)
     if control >= 0:
@@ -245,7 +245,7 @@ def setPermission(data):
     if comment >= 0:
         target_user.comment = comment
 
-    print('设置后的权限', target_user.control, target_user.comment)
+    # print('设置后的权限', target_user.control, target_user.comment)
     io.emit(
         'sycnMember',
         build_response(data=meeting_room.get_member_list()),

@@ -15,8 +15,8 @@ def create_meeting():
         parms = request.json
         title = parms['title']
         belong_to = parms['belongTo']
-        start_time = int(parms['startTime'])
-        end_time = int(parms['endTime'])
+        start_time = int(parms['startTime'])//1000
+        end_time = int(parms['endTime'])//1000
         note = parms.get('note', '')
     except KeyError as e:
         return abort(400, {'msg': str(e)})

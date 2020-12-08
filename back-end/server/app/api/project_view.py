@@ -200,7 +200,7 @@ def remove_user_from_project(project_id:str):
     if not str(user.id) == project.owner:
         return jsonify(build_response(0, '你没有此权限'))
     
-    print(str(target.id), project.member_id_list(), str(user.id) in project.member_id_list())
+    # print(str(target.id), project.member_id_list(), str(user.id) in project.member_id_list())
     if not target in project:
         return jsonify(build_response(0, "对方不是此项目的成员"))
 

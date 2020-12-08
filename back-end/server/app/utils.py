@@ -9,7 +9,7 @@ import cv2
 from aliyunsdkcore.client import AcsClient
 from aliyunsdkcore.request import CommonRequest
 from bson.objectid import ObjectId
-from PIL import Image, ImageOps
+from PIL import Image,
 
 from config.secret_config import (AliAccessKeyID, AliAccessKeySecret,
                                   TxSecretId, TxSecretKey, bucket_name)
