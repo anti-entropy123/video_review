@@ -7,9 +7,9 @@
       <div class="message">
         <div class="selectVideo">
 
-          <a-select v-if="isAdmin==false" :options="videos" placeholder="更换视频" @change="changeSrc" style="width: 200px" :default-value="videoId" disabled>
-          </a-select>
-          <a-select v-else :options="videos" placeholder="更换视频" @change="changeSrc" style="width: 120px">
+          <!-- <a-select v-if="isAdmin" :options="videos" placeholder="更换视频" @change="changeSrc" style="width: 200px" :default-value="videoId" >
+          </a-select> -->
+          <a-select :options="videos" placeholder="更换视频" @change="changeSrc" style="width: 120px" :disabled="isAdmin">
           </a-select>
 
         </div>
@@ -29,7 +29,7 @@
                 OK
               </a-button>
             </template>
-            <div v-if="isAdmin==true" style="height: 30px">
+            <div v-if="isAdmin" style="height: 30px;margin-top:5px">
               <span>权限管理</span>
               <div style="float: right">
                 <span style="padding: 5px;">控制</span>
@@ -40,11 +40,14 @@
               <a-avatar :src="member.avatar"/>
               <span>{{member.username}}</span>
               <div style="float: right">
-                <a-switch v-if="isAdmin==true" :checked="member.control" @change="memberPermission(index,1)" />
-                <a-switch v-if="isAdmin==true" :checked="member.comment" @change="memberPermission(index,2)" />
+                <a-switch v-if="isAdmin" :checked="member.control" @change="memberPermission(index,1)" />
+                <a-switch v-if="isAdmin" :checked="member.comment" @change="memberPermission(index,2)" />
               </div>
             </div>
           </a-modal>
+          <a-button style="margin-left:10px" type="danger" >
+            退出会议
+          </a-button>
         </div>
         <a-avatar v-bind:src="avatar" size="large"  />
       </div>
@@ -140,6 +143,7 @@
   export default {
     components: {Draw, Header},
     name: "Review",
+
     data() {
       return {
         // videoName:'项目名称',
@@ -437,9 +441,15 @@
           that.videos = result;
         }
       },
+      beforeRouteLeave(to, from, next) {
+        this.$destroy();
+        next();
+}
+
     },
     mounted() {
-      this.isAdmin = this.$route.query.isAdmin
+      this.isAdmin = this.$route.query.isAdmin ==='true'
+
       // this.isAdmin = false
       this.meetingId = this.$route.query.meetingId
       this.projectId = window.sessionStorage.getItem('projectId')
@@ -464,8 +474,16 @@
         that.getVideoSize();
       }
     },
+    beforeDestroy(){
+      console.log('before destory');
+      this.$socket.emit('destory');
+      exit();
+    },
     destroyed() {
       window.onresize = null;
+     console.log('destoryed')
+      this.$socket.emit('destroy');
+
     },
     computed: {
       player() {

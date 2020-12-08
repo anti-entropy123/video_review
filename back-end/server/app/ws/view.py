@@ -78,15 +78,29 @@ def init(data):
 @ws.on('disconnect', namespace=name_space)
 def disconnect_msg():
     # meeting_id = meetingId_manager[request.sid]
-    sid_manager._sid_test_total += 1
-    test = False
-    if request.sid in sid_manager:
-        sid_manager._sid_test_true += 1
-        test = True
-        sid_manager.disconnect_sid(request.sid)
+    pass
 
-    print('sid 有效性检测:', test, round(sid_manager._sid_test_true / sid_manager._sid_test_total, 2))
-    
+@ws.on('destory', namespace=name_space)
+def destory():
+    # print('destory被调用')
+    # sid_manager._sid_test_total += 1
+    # test = False
+    if request.sid in sid_manager:
+        meeting_room = sid_manager[request.sid].room
+        meeting_id = meeting_room.meeting_id
+        # sid_manager._sid_test_true += 1
+        # test = True
+        sid_manager.disconnect_sid(request.sid)
+        # print('现在的成员数量有', len(meeting_room.member_list))
+        io.emit(
+            'sycnMember',
+            build_response(data=meeting_room.get_member_list()),
+            # broadcast=True
+            room=meeting_id
+        )
+
+    # print('sid 有效性检测:', test, round(sid_manager._sid_test_true / sid_manager._sid_test_total, 2))
+
 @ws.on('changeProcess', namespace=name_space)
 def controll_player(data):
     try:

@@ -339,9 +339,7 @@ class SidManager:
     # meetingId -> MeetingRomm
     rooms = {}
     members = {}
-    _sid_test_total = 0
-    _sid_test_true = 0
-    
+
     def enter_meetingroom(self, sid, meeting_id, user_id) -> MeetingMember:
         meeting_room = self.rooms.get(meeting_id, None)
         if not meeting_room:

@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import io
-import logging
 import random
 import time
 from typing import IO, Tuple, List
@@ -193,7 +192,6 @@ class TxCosUtil:
         return self.simple_file_upload(f, f'video/{user_id}/{str(int(time.time()))[-5:]+str(random.randint(10000, 1000000))}.mp4')
 
 txCosUtil = TxCosUtil()
-        
 
 if __name__ == "__main__":
     txCosUtil.simple_file_upload()
