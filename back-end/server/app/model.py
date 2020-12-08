@@ -3,9 +3,6 @@ from __future__ import annotations
 import time
 from typing import List
 
-from bson.objectid import ObjectId
-from flask.app import Flask
-
 from . import db
 from .utils import safe_objectId
 
