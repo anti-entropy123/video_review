@@ -6,7 +6,7 @@
       </div>
       <div class="message">
         <div class="selectVideo">
-          <a-select :options="videos" placeholder="更换视频" @change="changeSrc" :default-value="videoId">
+          <a-select :options="videos" placeholder="更换视频" @change="changeSrc" style="width: 120px" :disabled="!isAdmin">
           </a-select>
         </div>
         <div class="bell">
@@ -25,22 +25,25 @@
                 OK
               </a-button>
             </template>
-            <div style="height: 30px">
+            <div v-if="isAdmin" style="height: 30px;">
               <span>权限管理</span>
               <div style="float: right">
                 <span style="padding: 5px;">控制</span>
                 <span style="padding: 10px;">批注</span>
               </div>
             </div>
-            <div v-for="(member,index) in memberList">
+            <div v-for="(member,index) in memberList" style="margin-top:6px">
               <a-avatar :src="member.avatar"/>
               <span>{{member.username}}</span>
               <div style="float: right">
-                <a-switch :checked="member.control" @change="memberPermission(index,1)" />
-                <a-switch :checked="member.comment" @change="memberPermission(index,2)" />
+                <a-switch v-if="isAdmin" :checked="member.control" @change="memberPermission(index,1)" />
+                <a-switch v-if="isAdmin" :checked="member.comment" @change="memberPermission(index,2)" />
               </div>
             </div>
           </a-modal>
+          <a-button style="margin-left:10px" type="danger" @click="goBack">
+            退出会议
+          </a-button>
         </div>
         <a-avatar v-bind:src="avatar" size="large"  />
       </div>
@@ -136,6 +139,7 @@
   export default {
     components: {Draw, Header},
     name: "Review",
+
     data() {
       return {
         // videoName:'项目名称',
@@ -170,14 +174,14 @@
         userId: "5fcb46a9872ad7704cb534c1",
         userName: '',
         meetingId: "5fcb98682fd62669086c8dad",
-        projectId: "5fcb46f7872ad7704cb534c2",
+        projectId: "",
         videos:[{
-          value: '',
-          label: '',
+          value:"",
+          label:""
         },],
         memberList:[],
         videoList:{},
-        videoId: "5fcc767ed1dc9f29f849bd41",
+        videoId: "",
         videoName: "",
         videoInfo:[],
         videoSize:[],
@@ -227,6 +231,8 @@
       // 视频进度条鼠标左键抬起事件(mouseup)监听回调
       // 即拖动进度条.
       onPlayerTimeupdate: function (e) {
+        this.isCheckComment = false;
+        this.currentImageUrl = "";
         this.changeVideo(2);
         e.stopPropagation();
       },
@@ -249,6 +255,7 @@
         this.changeVideo(5)
       },
       toPosition:function (position,imageUrl,index) {
+        this.currentImageUrl = "";
         this.player.currentTime(position)
         let myPlayer = this.$refs.videoPlayer.player;
         myPlayer.pause();
@@ -407,42 +414,71 @@
       },
       //获取项目中所有视频
       async getVideo(projectId){
+        var that = this;
         const {data: res} =await this.$http.get(
           `/project/${projectId}/userAndVideo`
         ).catch(function (error) {
             console.log(error);
           }
         );
-        console.log('++++++++++++++')
         console.log(res)
         if (res.result == 1) {
-          console.log(res.data.userList)
-          // console.log(res.data.videoList);
-          this.userList = res.data.userList;
-          this.videoList = res.data.videoList;
+          that.userList = res.data.userList;
+          that.videoList = res.data.videoList;
           console.log(this.videoList);
-          var i =0;
-          for (var video of this.videoList){
-            this.videos[i].label = video.videoName;
-            this.videos[i].value = video.videoId;
+          var i = 0;
+          let result = []
+          for (let vid of this.videoList){
+            result.push({
+              'label': vid.videoName,
+              'value': vid.videoId
+            })
           }
-          console.log(this.videos[0]);
+          that.videos = result;
         }
       },
-
-
+      goBack() {
+        this.$router.push({
+          // path: `/file/`+this.projectId,
+          path: `/file/0`,
+        });
+      },
     },
     mounted() {
+      this.isAdmin = this.$route.query.isAdmin ==='true'
+      // this.isAdmin = false
+      this.meetingId = this.$route.query.meetingId
+      this.projectId = window.sessionStorage.getItem('projectId')
+      this.userId = window.localStorage.getItem('userId')
+       this.$socket.emit("init", {
+          userId: this.userId,
+          meetingId: this.meetingId,
+        });
+      console.log("``````````````````````")
+      console.log('isAdmin:'+this.isAdmin)
+      console.log('meetingId:'+this.meetingId)
+      console.log('projectId'+this.projectId)
+      console.log('userId'+this.userId)
+      console.log('this.videoId'+this.videoId);
+      console.log("``````````````````````")
       this.avatar = this.getHead(this.userId);
       this.getVideo(this.projectId);
+
       this.getVideoSize();
       let that = this;
       window.onresize = () => {
         that.getVideoSize();
       }
     },
+    beforeDestroy(){
+      // console.log('before destory');
+      // this.$socket.emit('destory');
+    },
     destroyed() {
       window.onresize = null;
+     console.log('destoryed')
+      this.$socket.emit('destroy');
+
     },
     computed: {
       player() {
@@ -461,10 +497,14 @@
         this.url = data.data.url;
         this.duration = data.data.duration;
         this.videoName = data.data.videoName;
+        console.log(data.data.videoInfo.videoId)
+        this.videoId = data.data.videoInfo.videoId;
+        console.log(this.videoId)
         // 设置封面
         this.player.poster(data.data.cover);
         if (Math.abs(data.data.position - this.player.currentTime()) >= 1) {
           this.player.currentTime(data.data.position);
+          this.currentImageUrl = "";
         }
         //如果有人定位了批注锚点
         console.log(data.data);
@@ -475,7 +515,6 @@
           // this.player.currentTime(this.comments[data.data.commentId].position)
           this.currentImageUrl = this.comments[data.data.commentId].imageUrl;
           this.isCheckComment = true;
-          console.log('~~~~~~~~~~')
         }
         // 检查是否切换了视频源
         if (this.player.src() != data.data.url) {

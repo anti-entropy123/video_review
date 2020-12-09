@@ -104,7 +104,7 @@ Vue.filter('messageType',(type) =>{
 
 } )
 Vue.filter('dataFilter',(value)=>{//这里的value是拿到json里面的关于时间的值
-  value=value*1000
+  // value=value*1000
   var year = 24*60*60*1000*365;//拿到一年的毫秒数
   var month = 24*60*60*1000*30;//拿到一个月的毫秒数
   var day = 24*60*60*1000;//拿到一天的毫秒数
@@ -163,7 +163,7 @@ var seconds = parseInt((date%minute)/1000)>0?`${parseInt((date%minute)/1000)}秒
 }
 
 )
-
+ 
 // 定义directive
 Vue.directive('drag', {
 

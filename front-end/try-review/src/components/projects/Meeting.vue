@@ -1,119 +1,204 @@
 <template>
   <div>
-    <el-header style="position: relative">
+    <el-header style="position: relative;margin-top:20px">
       <el-tabs v-model="activeName" type="card" @tab-click="handleClick">
         <el-tab-pane label="全部会议" name="first">
-
           <div class="meeting-list">
-                  <div>会议列表</div>
-          <el-divider></el-divider>
-            <div
+            <div class="meeting-title">会议列表</div>
+            <div class="meeting-divider"></div>
+
+            <el-row
               v-for="meeting in meetingList"
               :key="meeting.meetingId"
               class="meeting-item"
             >
-              <el-card style="height:100%">
-                <div style="display:flex">
-                    <div><h3>{{meeting.title}}</h3></div>
-                  <a href="">会议号:{{meeting.meetingUrl}}</a>
+              <el-col :span="2"
+                ><el-image
+                  class="meeting-icon"
+                  src="../../../static/images/meeting-icon.png"
+                ></el-image
+              ></el-col>
+              <el-col :offset="1" :span="8">
+                <div>
+                  <h3>《{{ meeting.title }}》&ensp;审阅会</h3>
                 </div>
-
-                <div class="meeting-owner">{{meeting.ownerName}}</div>
-                <div class="meeting-time">
-               <div style="margin-right:10px">开始时间:{{meeting.startTime}}</div>
-                        <div>结束时间:{{meeting.endTime}}</div>
+                <div class="meeting-owner">
+                  创建者: &ensp;{{ meeting.ownerName }}
                 </div>
-
-              </el-card>
-            </div>
+              </el-col>
+              <el-col :span="8" class="meeting-time">
+                <div style="margin-right:10px">
+                  开始时间:{{ meeting.startTime | dateFormat }}
+                </div>
+                <div>结束时间:{{ meeting.endTime | dateFormat }}</div>
+              </el-col>
+              <el-col :offset="2" :span="3">
+                <el-button
+                  v-if="showType(meeting.startTime, meeting.endTime) == 0"
+                  @click="enterMeeting(meeting.meetingId, meeting.ownerId)"
+                  >未开始</el-button
+                >
+                <el-button
+                  v-if="showType(meeting.startTime, meeting.endTime) == 1"
+                  @click="enterMeeting(meeting.meetingId, meeting.ownerId)"
+                  >加入会议</el-button
+                >
+                <el-button
+                  v-if="showType(meeting.startTime, meeting.endTime) == 2"
+                  @click="enterMeeting(meeting.meetingId, meeting.ownerId)"
+                  >已经结束</el-button
+                >
+              </el-col>
+            </el-row>
           </div>
         </el-tab-pane>
-         <el-tab-pane label="历史会议" name="history">
-              <div class="meeting-list">
-                 <div
-          v-for="meeting in historyMeetingList"
-          :key="meeting.meetingId"
-          class="meeting-item"
-        >
-          <el-card>
-            <el-form :model="meeting">
-              <el-form-item label="title">
-                <span>{{ meeting.title }}</span>
-              </el-form-item>
-              <el-form-item label="ownerName">
-                <span>{{ meeting.ownerName }}</span>
-              </el-form-item>
-              <el-form-item label="startTime">
-                <span>{{ meeting.startTime }}</span>
-              </el-form-item>
-              <el-form-item label="endTime">
-                <span>{{ meeting.endTime }}</span>
-              </el-form-item>
-              <el-form-item label="note">
-                <span>{{ meeting.note }}</span>
-              </el-form-item>
-            </el-form>
-          </el-card>
-        </div>
-        </div></el-tab-pane>
-    <el-tab-pane label="待办列表" name="todo">
-      <div class="meeting-list">
-<div
-          v-for="meeting in todoMeetingList"
-          :key="meeting.meetingId"
-          class="meeting-item"
-        >
-          <el-card>
-            <el-form :model="meeting">
-              <el-form-item label="title">
-                <span>{{ meeting.title }}</span>
-              </el-form-item>
-              <el-form-item label="ownerName">
-                <span>{{ meeting.ownerName }}</span>
-              </el-form-item>
-              <el-form-item label="startTime">
-                <span>{{ meeting.startTime }}</span>
-              </el-form-item>
-              <el-form-item label="endTime">
-                <span>{{ meeting.endTime }}</span>
-              </el-form-item>
-              <el-form-item label="note">
-                <span>{{ meeting.note }}</span>
-              </el-form-item>
-            </el-form>
-          </el-card>
-        </div>
-      </div>
-       </el-tab-pane>
-        <el-tab-pane label="我创建的" name="mine">
-             <div class="meeting-list">
-          <div
-          v-for="meeting in mineMeetingList"
-          :key="meeting.meetingId"
-          class="meeting-item"
-        >
-          <el-card>
-            <el-form :model="meeting">
-              <el-form-item label="title">
-                <span>{{ meeting.title }}</span>
-              </el-form-item>
-              <el-form-item label="ownerName">
-                <span>{{ meeting.ownerName }}</span>
-              </el-form-item>
-              <el-form-item label="startTime">
-                <span>{{ meeting.startTime }}</span>
-              </el-form-item>
-              <el-form-item label="endTime">
-                <span>{{ meeting.endTime }}</span>
-              </el-form-item>
-              <el-form-item label="note">
-                <span>{{ meeting.note }}</span>
-              </el-form-item>
-            </el-form>
-          </el-card>
-        </div>
-             </div></el-tab-pane>
+        <el-tab-pane label="历史会议" name="history">
+          <div class="meeting-list">
+            <div class="meeting-title">历史会议</div>
 
+            <el-row
+              v-for="meeting in historyMeetingList"
+              :key="meeting.meetingId"
+              class="meeting-item"
+            >
+              <el-col :span="2"
+                ><el-image
+                  class="meeting-icon"
+                  src="../../../static/images/meeting-icon.png"
+                ></el-image
+              ></el-col>
+              <el-col :offset="1" :span="8">
+                <div>
+                  <h3>《{{ meeting.title }}》&ensp;审阅会</h3>
+                </div>
+                <div class="meeting-owner">
+                  创建者: &ensp;{{ meeting.ownerName }}
+                </div>
+              </el-col>
+              <el-col :span="8" class="meeting-time">
+                <div style="margin-right:10px">
+                  开始时间:{{ meeting.startTime | dateFormat }}
+                </div>
+                <div>结束时间:{{ meeting.endTime | dateFormat }}</div>
+              </el-col>
+              <el-col :offset="2" :span="3">
+                <el-button
+                  v-if="showType(meeting.startTime, meeting.endTime) == 0"
+                  @click="enterMeeting(meeting.meetingId, meeting.ownerId)"
+                  >未开始</el-button
+                >
+                <el-button
+                  v-if="showType(meeting.startTime, meeting.endTime) == 1"
+                  @click="enterMeeting(meeting.meetingId, meeting.ownerId)"
+                  >加入会议</el-button
+                >
+                <el-button
+                  v-if="showType(meeting.startTime, meeting.endTime) == 2"
+                  @click="enterMeeting(meeting.meetingId, meeting.ownerId)"
+                  >已经结束</el-button
+                >
+              </el-col>
+            </el-row>
+          </div></el-tab-pane
+        >
+        <el-tab-pane label="待办列表" name="todo">
+          <div class="meeting-list">
+            <div class="meeting-title">代办列表</div>
+            <el-divider></el-divider>
+            <el-row
+              v-for="meeting in todoMeetingList"
+              :key="meeting.meetingId"
+              class="meeting-item"
+            >
+              <el-col :span="2"
+                ><el-image
+                  class="meeting-icon"
+                  src="../../../static/images/meeting-icon.png"
+                ></el-image
+              ></el-col>
+              <el-col :offset="1" :span="8">
+                <div>
+                  <h3>《{{ meeting.title }}》&ensp;审阅会</h3>
+                </div>
+                <div class="meeting-owner">
+                  创建者: &ensp;{{ meeting.ownerName }}
+                </div>
+              </el-col>
+              <el-col :span="8" class="meeting-time">
+                <div style="margin-right:10px">
+                  开始时间:{{ meeting.startTime | dateFormat }}
+                </div>
+                <div>结束时间:{{ meeting.endTime | dateFormat }}</div>
+              </el-col>
+              <el-col :offset="2" :span="3">
+                <el-button
+                  v-if="showType(meeting.startTime, meeting.endTime) == 0"
+                  @click="enterMeeting(meeting.meetingId, meeting.ownerId)"
+                  >未开始</el-button
+                >
+                <el-button
+                  v-if="showType(meeting.startTime, meeting.endTime) == 1"
+                  @click="enterMeeting(meeting.meetingId, meeting.ownerId)"
+                  >加入会议</el-button
+                >
+                <el-button
+                  v-if="showType(meeting.startTime, meeting.endTime) == 2"
+                  @click="enterMeeting(meeting.meetingId, meeting.ownerId)"
+                  >已经结束</el-button
+                >
+              </el-col>
+            </el-row>
+          </div>
+        </el-tab-pane>
+        <el-tab-pane label="我创建的" name="mine">
+          <div class="meeting-list">
+            <div class="meeting-title">我创建的</div>
+            <div class="meeting-divider"></div>
+            <el-row
+              v-for="meeting in mineMeetingList"
+              :key="meeting.meetingId"
+              class="meeting-item"
+            >
+              <el-col :span="2"
+                ><el-image
+                  class="meeting-icon"
+                  src="../../../static/images/meeting-icon.png"
+                ></el-image
+              ></el-col>
+              <el-col :offset="1" :span="8">
+                <div>
+                  <h3>《{{ meeting.meetingName }}》&ensp;审阅会</h3>
+                </div>
+                <div class="meeting-owner">
+                  创建者: &ensp;{{ meeting.ownerName }}
+                </div>
+              </el-col>
+              <el-col :span="8" class="meeting-time">
+                <div style="margin-right:10px">
+                  开始时间:{{ meeting.startTime | dateFormat }}
+                </div>
+                <div>结束时间:{{ meeting.endTime | dateFormat }}</div>
+              </el-col>
+              <el-col :offset="2" :span="3">
+                <el-button
+                  v-if="showType(meeting.startTime, meeting.endTime) == 0"
+                  @click="enterMeeting(meeting.meetingId, meeting.ownerId)"
+                  >未开始</el-button
+                >
+                <el-button
+                  v-if="showType(meeting.startTime, meeting.endTime) == 1"
+                  @click="enterMeeting(meeting.meetingId, meeting.ownerId)"
+                  >加入会议</el-button
+                >
+                <el-button
+                  v-if="showType(meeting.startTime, meeting.endTime) == 2"
+                  @click="enterMeeting(meeting.meetingId, meeting.ownerId)"
+                  >已经结束</el-button
+                >
+              </el-col>
+            </el-row>
+          </div></el-tab-pane
+        >
       </el-tabs>
 
       <el-input
@@ -162,59 +247,49 @@
 </template>
 
 <script>
-  import { Message } from "element-ui";
+import { Message } from "element-ui";
 
-  export default {
+export default {
   name: "Meeting",
   data() {
     return {
       todoMeetingList: [],
-      meetingList:[],
-      historyMeetingList:[],
-      mineMeetingList:[],
+      meetingList: [],
+      historyMeetingList: [],
+      mineMeetingList: [],
       activeName: "first",
       meetingInput: "",
-      projectId:'',
+      projectId: "",
       showCreateMeetingVisible: false,
       meeting: {
-        title:'',
-        belongTo: '',
-        startTime:'',
-        endTime:'',
-        note:''
-      },
-
+        title: "",
+        belongTo: "",
+        startTime: "",
+        endTime: "",
+        note: ""
+      }
     };
   },
   methods: {
     CreateMeetingClose() {
-      this.meeting.title = '';
-      this.meeting.startTime='';
-      this.meeting.endTime='';
-      this.meeting.note = '';
+      this.meeting.title = "";
+      this.meeting.startTime = "";
+      this.meeting.endTime = "";
+      this.meeting.note = "";
     },
     async createMeeting() {
       const { data: res } = await this.$http.post("meeting/", this.meeting);
       if (res.result === 1) {
-        // this.$message({
-        //   message: "成功创建会议",
-        //   type: "success"
-        // });
-        Message.success("成功创建会议");
-        this.getMeeting(this.projectId)
-         this.activeName='first'
+        this.getMeeting(this.projectId);
+        this.activeName = "first";
       } else {
-        // this.$message({
-        //   message: res.message,
-        //   type: "error"
-        // });
-        Message.error("error");
+        Message.error(res.message);
       }
       this.showCreateMeetingVisible = false;
     },
     async searchMeeting() {
       const { data: res } = await this.$http
-        .post(`meeting/search/`, {
+        .get(`meeting/search`, {
           linkNum: this.meetingInput
         })
         .catch(function(error) {
@@ -222,70 +297,60 @@
         });
 
       if (res.result == 1) {
-        this.meetingList=res.data.meetingList
+        this.meetingList = res.data.meetingList;
         console.log(res);
       } else {
-        // this.$message({
-        //   message: res.message,
-        //   type: "error"
-        // });
-        Message.error("error")
+        Message.error(res.message);
       }
     },
     async getMeetingByName(name) {
-        switch(name){
-          case 'first':this.getMeeting(this.projectId); break;
-          case 'todo': this.getTodoMeeting(); break;
-          case 'mine': this.getMineMeeting(); break;
-          case 'history':this.getHistoryMeeting();break;
-        }
+      switch (name) {
+        case "first":
+          this.getMeeting(this.projectId);
+          break;
+        case "todo":
+          this.getTodoMeeting();
+          break;
+        case "mine":
+          this.getMineMeeting();
+          break;
+        case "history":
+          this.getHistoryMeeting();
+          break;
+      }
     },
-    async getTodoMeeting(){
+    async getTodoMeeting() {
       const { data: res } = await this.$http
         .get(`meeting/todo`)
         .catch(error => console.log(error));
       if (res.result == 1) {
-        this.todoMeetingList=res.data.meetingList
+        this.todoMeetingList = res.data.meetingList;
       } else {
-        // this.$message({
-        //   message: res.message,
-        //   type: "error"
-        // });
-        Message.error("error")
+        Message.error(res.message);
       }
     },
-    async getHistoryMeeting(){
+    async getHistoryMeeting() {
       const { data: res } = await this.$http
         .get(`meeting/history`)
         .catch(error => console.log(error));
       if (res.result == 1) {
-        this.histroyMeetingList=res.data
+        this.histroyMeetingList = res.data;
       } else {
-        // this.$message({
-        //   message: res.message,
-        //   type: "error"
-        // });
-        Message.error("error")
+        Message.error(res.message);
       }
     },
-    async getMineMeeting(){
+    async getMineMeeting() {
       const { data: res } = await this.$http
         .get(`meeting/mine`)
         .catch(error => console.log(error));
       if (res.result == 1) {
-        this.mineMeetingList=res.data.meetingList
+        this.mineMeetingList = res.data.meetingList;
       } else {
-        // this.$message({
-        //   message: res.message,
-        //   type: "error"
-        // });
-        Message.error("error")
+        Message.error(res.message);
       }
     },
     handleClick(tab, event) {
-
-        this.getMeetingByName(tab.name);
-
+      this.getMeetingByName(tab.name);
     },
     async getMeeting(project) {
       const { data: res } = await this.$http
@@ -294,25 +359,36 @@
           console.log(error);
         });
       if (res.result == 1) {
-        // this.$message({
-        //   message: "获取会议列表",
-        //   type: "success"
-        // });
-        Message.success("获取会议列表")
+        // Message.success("获取会议列表");
         this.meetingList = res.data;
       } else {
-        // this.$message({
-        //   message: res.message,
-        //   type: "error"
-        // });
-        Message.error("error")
+        Message.error(res.message);
+      }
+    },
+    enterMeeting(meetingId, ownerId) {
+
+      let isAdmin =
+        window.localStorage.getItem("userId") === ownerId ? true : false;
+      this.$router.push({
+        path: "/review",
+        query: { meetingId: meetingId, isAdmin: isAdmin }
+      });
+    },
+    showType(start, end) {
+      var now = new Date().getTime();
+      if (start > now) {
+        return 0;
+      } else if (now < end) {
+        return 1;
+      } else {
+        return 2;
       }
     }
   },
   mounted() {
     this.token = window.sessionStorage.getItem("token");
     this.projectId = this.$route.params.id;
-    this.meeting.belongTo = this.$route.params.id
+    this.meeting.belongTo = this.$route.params.id;
     console.log(this.projectId);
     this.getMeeting(this.projectId);
   }
@@ -324,24 +400,41 @@
   width: 80%;
   display: flex;
   flex-direction: column;
-  margin-left:10%;
+  margin-left: 10%;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
 }
-.meeting-item{
+.meeting-divider {
+  margin-left: 20px;
+  width: 98%;
+  height: 1px;
+  background-color: #ccc;
+  margin: 4px 0;
+}
+.meeting-title {
+  height: 18px;
+  line-height: 18px;
+  font-size: 16px;
+  margin: 4px 0 4px 30px;
+}
+.meeting-item {
   width: 100%;
   position: relative;
-  height: 100px;
-}
-.meeting-owner{
-  position: absolute;
-  bottom: 10px;
-  left: 30px;
-
-}
-.meeting-time{
+  height: 80px;
   display: flex;
-  position: absolute;
-  bottom: 10px;
-  right: 30px;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+.meeting-icon {
+  height: 60px;
+  margin-top: 10px;
+  margin-left: 15px;
+}
+.meeting-time {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
 }
 .search-meeting {
   width: 300px;

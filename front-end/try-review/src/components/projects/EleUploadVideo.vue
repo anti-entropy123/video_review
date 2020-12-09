@@ -231,27 +231,21 @@
             console.log(error);
           });
         if (res.result == 1) {
-          // this.$message({
-          //   message: "获取项目视频列表和用户列表成功",
-          //   type: "success"
-          // });
-          Message.success("获取项目视频列表和用户列表成功");
+       
+          // Message.success("获取项目视频列表和用户列表成功");
           this.videoList = res.data.videoList;
           this.userList = res.data.userList;
         } else {
-          // this.$message({
-          //   message: res.message,
-          //   type: "error"
-          // });
-          Message.error("error")
+     
+          Message.error(res.message)
         }
       },
       // 上传失败
       handleUploadError(err, file, fileList) {
-        // this.$message.error("上传失败, 请重试!");
+       
         Message.error("上传失败, 请重试!");
         this.videoUploadPercent = 0;
-        this.$emit("error", err, file, fileList);
+        this.$emit(res.message, err, file, fileList);
       },
       async  httpRequest(file, isVideo, videoDiv) {
 

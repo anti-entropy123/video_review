@@ -3,11 +3,15 @@
     <el-row class="search-header">
       <el-col :span="6">
         <span class="project-name">{{ projectName }}</span>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;共{{this.videoList.length}}个视频</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;共{{ this.videoList.length }}个视频</span>
       </el-col>
 
       <el-col :span="4">
-        <el-input prefix-icon="el-icon-search" class="project-search" placeholder="搜索文件"></el-input>
+        <el-input
+          prefix-icon="el-icon-search"
+          class="project-search"
+          placeholder="搜索文件"
+        ></el-input>
       </el-col>
 
       <el-col :offset="6" :span="7">
@@ -18,18 +22,25 @@
               :key="index"
               :style="`zIndex:${10 - index}`"
               @click="showUserList"
-              v-if="index<3"
+              v-if="index < 3"
             >
-              <el-tooltip class="item" effect="light" :content="user.userName" placement="bottom  ">
+              <el-tooltip
+                class="item"
+                effect="light"
+                :content="user.userName"
+                placement="bottom  "
+              >
                 <el-avatar :src="user.avatar"></el-avatar>
               </el-tooltip>
             </div>
           </template>
           <div
-            v-if="userList.length>3"
+            v-if="userList.length > 3"
             class="user-item user-num"
             @click="showUserList"
-          >{{ userList.length }}</div>
+          >
+            {{ userList.length }}
+          </div>
         </div>
       </el-col>
       <el-col :span="1">
@@ -63,41 +74,51 @@
         class="video-upload"
         :projectId="projectId"
       ></upload-video>
-      <div v-for="video in videoList" :key="video.videoId" class="video-item">
-        <div class="video-cover-div">
+      <div v-for="(video,index) in videoList" :key="video.videoId" class="video-item" ref="vv" @mousemove='updateXY'>
+        <div class="video-cover-div"  @mouseover="mousein(video.coverList,index)">
           <el-image
-            class= "video-cover "
+            class="video-cover"
             :src="video.cover"
             fit="cover"
-            @click="goMeeting()"
+            @click="goVideo(video.videoId)"
             @mouseover="mouseOver(video.coverList)"
             @mouseleave="mouseLeave(video.coverList)"
           ></el-image>
         </div>
 
-        <div class="video-duration">{{video.duration| timeFormat}}</div>
+        <div class="video-duration">{{ video.duration | timeFormat }}</div>
         <div class="video-description">{{ video.videoName }}</div>
         <div class="video-time">
-          {{
-          video.createDate*1000 | dateFormat
-          }}
+          {{ (video.createDate * 1000) | dateFormat }}
         </div>
         <el-popover placement="bottom" trigger="click" width="150px">
           <div style="display: flex;flex-direction: column;">
             <!-- <el-button type="text"></el-button>
             <el-button type="text" icon="el-icon-delete">分享</el-button>-->
-            <el-button type="text" icon="el-icon-delete" @click="deleteVideo(video,video.videoId)">删除</el-button>
+            <el-button
+              type="text"
+              icon="el-icon-delete"
+              @click="deleteVideo(video, video.videoId)"
+              >删除</el-button
+            >
           </div>
 
           <i class="el-icon-more require-more" slot="reference"></i>
         </el-popover>
       </div>
     </div>
-    <el-dialog :title="projectName" :visible.sync="showUserListVisible" width="30%">
+    <el-dialog
+      :title="projectName"
+      :visible.sync="showUserListVisible"
+      width="30%"
+    >
       <div class="show-user-list">
         <el-row v-for="user in userList" :key="user.userId">
           <el-col :offset="2" :span="15" class="flex-center">
-            <el-avatar style="width: 35px;height: 35px;object-fit: scale-down" :src="user.avatar"></el-avatar>
+            <el-avatar
+              style="width: 35px;height: 35px;object-fit: scale-down"
+              :src="user.avatar"
+            ></el-avatar>
             <span style="margin-left: 5px">{{ user.userName }}</span>
           </el-col>
           <el-col :span="4" class="flex-center">
@@ -106,7 +127,11 @@
           <el-col :span="2" class="flex-center">
             <el-popover placement="right" width="100" trigger="click">
               <el-button-group style="display: flex;flex-direction: column">
-                <el-button type="text" @click.native="removeUserById(user.userId)">移除成员</el-button>
+                <el-button
+                  type="text"
+                  @click.native="removeUserById(user.userId)"
+                  >移除成员</el-button
+                >
                 <el-button type="text">设为管理员</el-button>
               </el-button-group>
 
@@ -123,10 +148,14 @@
       <div
         style="height: 32px;line-height: 32px;border: 1px solid #e0e0e0;border-radius: 10px;display: flex;justify-content: center;margin-top: 5px;cursor: pointer"
         @click="inviteUser"
-      >邀请更多成员</div>
+      >
+        邀请更多成员
+      </div>
       <span slot="footer" class="dialog-footer">
         <el-button @click="showUserListVisible = false">取 消</el-button>
-        <el-button type="primary" @click="showUserListVisible = false">确 定</el-button>
+        <el-button type="primary" @click="showUserListVisible = false"
+          >确 定</el-button
+        >
       </span>
     </el-dialog>
     <el-dialog
@@ -137,7 +166,11 @@
     >
       <el-form>
         <el-row>
-          <el-input placeholder="请输入用户信息" v-model="inviteInput" prefix-icon="el-icon-search">
+          <el-input
+            placeholder="请输入用户信息"
+            v-model="inviteInput"
+            prefix-icon="el-icon-search"
+          >
             <template slot="append">
               <el-button @click="searchUser">搜索</el-button>
             </template>
@@ -145,9 +178,17 @@
         </el-row>
         <div v-if="visitUser.length === 0">未找到指定用户</div>
         <div class="visit-list">
-          <el-row type="flex" class="visit-user" v-for="user in visitUser" :key="user.userId">
+          <el-row
+            type="flex"
+            class="visit-user"
+            v-for="user in visitUser"
+            :key="user.userId"
+          >
             <el-col :span="4" class="visit-user-col">
-              <el-avatar style="width: 35px;height: 35px;object-fit: scale-down" :src="user.avatar"></el-avatar>
+              <el-avatar
+                style="width: 35px;height: 35px;object-fit: scale-down"
+                :src="user.avatar"
+              ></el-avatar>
             </el-col>
             <el-col :span="4" class="visit-user-col">
               <span>{{ user.username }}</span>
@@ -156,14 +197,18 @@
               <span>{{ user.mobileNum }}</span>
             </el-col>
             <el-col :offset="3" :span="3" class="visit-user-col">
-              <el-button @click="inviteUserbyId(user.userId)" type="text">邀请</el-button>
+              <el-button @click="inviteUserbyId(user.userId)" type="text"
+                >邀请</el-button
+              >
             </el-col>
           </el-row>
         </div>
       </el-form>
       <span slot="footer" class="dialog-footer">
         <el-button @click="showVisitUserVisible = false">取 消</el-button>
-        <el-button type="primary" @click="showUserListVisible = false">邀请</el-button>
+        <el-button type="primary" @click="showUserListVisible = false"
+          >邀请</el-button
+        >
       </span>
     </el-dialog>
   </div>
@@ -198,20 +243,42 @@ export default {
       videoList: [],
       visitUser: [],
       //存放封面的数组
-      index:[],
+      index: [],
       showUserListVisible: false,
       showVisitUserVisible: false,
       showCreateMeetingVisible: false,
       projectId: "",
       inviteInput: "",
       // video: null
+      x:0,
+      coverList:[],
+      videoNum:0,
+      left:0,
+      right:0
     };
   },
   methods: {
-    async deleteVideo(video,id) {
+    updateXY:function(event){
+      this.x=event.offsetX;
+      let coverNum = Math.floor(this.x/(this.right-this.left)*10);
+      // videolist [index] 这一项cover赋值
+      let img = new Image();
+      img.src = this.coverList[coverNum];
+      let that = this;
+      img.onload = function () {
+        that.videoList[that.videoNum].cover = that.coverList[coverNum];
+      }
+    },
+    mousein(coverList,index){
+      this.left = this.$refs.vv[index].getBoundingClientRect().left;
+      this.right = this.$refs.vv[index].getBoundingClientRect().right;
+      this.coverList = coverList;
+      this.videoNum = index;
+    },
+    async deleteVideo(video, id) {
       const { data: res } = await this.$http
         .delete(`project/${this.projectId}/removeVideo`, {
-          params:{
+          params: {
             videoId: id
           }
         })
@@ -223,10 +290,7 @@ export default {
           return v != video;
         });
       } else {
-        this.$message({
-          message: res.message,
-          type: "error"
-        });
+        Message.error(res.message);
       }
     },
     CreateMeetingClose() {
@@ -235,17 +299,9 @@ export default {
     async createMeeting() {
       const { data: res } = await this.$http.post("meeting/", this.meeting);
       if (res.result === 1) {
-        Message.success("成功创建会议")
-        // this.$message({
-        //   message: "成功创建会议",
-        //   type: "success"
-        // });
+        // Message.success("成功创建会议")
       } else {
-        Message.error("error")
-        // this.$message({
-        //   message: res.message,
-        //   type: "error"
-        // });
+        Message.error(res.message);
       }
       this.showCreateMeetingVisible = false;
     },
@@ -273,20 +329,11 @@ export default {
           console.log(error);
         });
       if (res.result == 1) {
-        Message.success("获取项目视频列表和用户列表成功")
-        // this.$message({
-        //   message: "获取项目视频列表和用户列表成功",
-        //   type: "success"
-        // });
-
         this.videoList = res.data.videoList;
+        console.log(this.videoList);
         this.userList = res.data.userList;
       } else {
-        Message.error("error")
-        // this.$message({
-        //   message: res.message,
-        //   type: "error"
-        // });
+        Message.error(res.message);
       }
     },
     async searchUser() {
@@ -300,41 +347,23 @@ export default {
           console.log(error);
         });
       if (res.result == 1) {
-        Message.success("获取用户列表成功")
-        // this.$message({
-        //   message: "获取用户列表成功",
-        //   type: "success"
-        // });
         this.visitUser = res.data;
       } else {
-        Message.error("error")
-        // this.$message({
-        //   message: res.message,
-        //   type: "error"
-        // });
+        Message.error(res.message);
       }
     },
     async inviteUserbyId(id) {
       const { data: res } = await this.$http
         .post(`project/${this.projectId}/inviteUser/`, {
           userId: id,
-          word: "我喜欢你"
+          word: "info"
         })
         .catch(function(error) {
           console.log(error);
         });
       if (res.result == 1) {
-        Message.success("邀请成功")
-        // this.$message({
-        //   message: "邀请成功",
-        //   type: "success"
-        // });
       } else {
-        Message.error("error")
-        // this.$message({
-        //   message: res.message,
-        //   type: "error"
-        // });
+        Message.error(res.message);
       }
     },
     async removeUserById(id) {
@@ -348,17 +377,8 @@ export default {
           console.log(error);
         });
       if (res.result == 1) {
-        Message.success("邀请成功")
-        // this.$message({
-        //   message: "邀请成功",
-        //   type: "success"
-        // });
       } else {
-        Message.error("error")
-        // this.$message({
-        //   message: res.message,
-        //   type: "error"
-        // });
+        Message.error(res.message);
       }
     },
     showUserList() {
@@ -374,7 +394,7 @@ export default {
       this.inviteInput = "";
     },
     handleUploadError(error) {
-      console.log("error", error);
+      console.log(res.message, error);
     },
     handleResponse(response) {},
     mouseOver(cover) {
@@ -382,7 +402,14 @@ export default {
     },
     mouseLeave(cover) {
       console.log("leave:" + cover);
-    }
+    },
+    // goVideo(videoId){
+    //   this.$router.push({
+    //     path: "/video",
+    //     query: { projectId: this.projectId, videoId: videoId }
+    //   });
+    // },
+
   },
   computed: {
     showList() {
@@ -390,10 +417,12 @@ export default {
     }
   },
   mounted() {
-    this.token = window.sessionStorage.getItem("token");
     this.projectId = this.$route.params.id;
-    console.log(this.projectId);
-    this.getProjectInfo(this.projectId);
+    if (this.projectId != 0) {
+      this.getProjectInfo(this.projectId);
+    } else {
+      Message.warning("点击项目,获取项目信息");
+    }
   },
   updated() {
     if (this.projectId != this.$route.params.id) {
@@ -420,8 +449,7 @@ export default {
   width: 180px;
 }
 .project-name {
-
-  color: #409EFF;
+  color: #409eff;
 
   font-size: 24px;
 }
@@ -464,8 +492,8 @@ export default {
   grid-template-columns: repeat(4, 1fr);
   grid-row-gap: 20px;
   grid-column-gap: 60px;
-  padding:20px 50px;
-  grid-template-rows: repeat(2, 200px);
+  padding: 20px 50px;
+  grid-template-rows: repeat(2, 180px);
 }
 .video-upload {
   border-radius: 10px;
@@ -491,7 +519,7 @@ export default {
   opacity: 90%;
 }
 .video-item .video-cover-div {
-  height: 146px;
+  height: 126px;
   width: 280px;
   overflow: hidden;
 }
@@ -501,7 +529,7 @@ export default {
   margin-left: 5px;
   white-space: nowrap;
   overflow: hidden;
-
+  font-size: 16px;
   text-overflow: ellipsis;
 }
 .video-time {
@@ -517,9 +545,9 @@ export default {
   cursor: pointer;
   transition: all 0.5s ease-in-out;
 }
-.video-cover:hover {
-  transform: scale(1.1);
-}
+/*.video-cover:hover {*/
+/*  transform: scale(1.1);*/
+/*}*/
 .require-more {
   transform: rotate(90deg);
   position: absolute;

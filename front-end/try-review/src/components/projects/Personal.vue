@@ -30,7 +30,7 @@
 
     <div class="video-list">
       <el-card
-        v-for="(video, index) in videoList"
+        v-for="video in videoList"
         :key="video.videoId"
         class="video-item"
       >
@@ -74,18 +74,10 @@
       async getPersonal(){
         const { data: res } = await this.$http.get(`video/mine/`);
         if (res.result === 1) {
-          // this.$message({
-          //   message: "获取个人中心",
-          //   type: "success"
-          // });
-          Message.success("获取个人中心")
+          // Message.success("获取个人中心")
          this.videoList=res.data
         } else {
-          // this.$message({
-          //   message: res.message,
-          //   type: "error"
-          // });
-          Message.error("error")
+          Message.error(res.message)
         }
       },
     },

@@ -24,7 +24,6 @@ import MyMeeting from "../components/user/MyMeeting";
 import Meeting from "../components/projects/Meeting"
 import Review from "@/views/Review";
 import Account from "../components/user/Account";
-
 Vue.use(Router)
 const originalPush = Router.prototype.push
 Router.prototype.push = function push(location) {
@@ -36,6 +35,7 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
+    redirect:'/file/0',
     children:[
       {
         path:'/file/:id',
@@ -70,11 +70,11 @@ const routes = [
         name: 'UserInfo',
         component: UserInfo,
       },
-      // {
-      //   path: '/user/message',
-      //   name: 'Message',
-      //   component: Message,
-      // },
+      {
+        path: '/user/message',
+        name: 'Message',
+        component: Message,
+      },
       {
         path: '/user/myVideo',
         name: 'MyVideo',

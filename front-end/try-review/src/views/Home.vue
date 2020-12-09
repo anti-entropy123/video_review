@@ -1,7 +1,11 @@
 <template>
   <el-container class="home-container" v-drag>
     <el-header class="home-header">
-      <el-image class="header-title" src="../../static/images/logo.png" @click="goWelcome"></el-image>
+      <el-image
+        class="header-title"
+        src="../../static/images/logo.png"
+        @click="goWelcome"
+      ></el-image>
       <h1 class="header-title2" @click="goWelcome">视频审阅平台</h1>
       <div class="header-right">
         <el-popover placement="bottom-start" width="250" trigger="click">
@@ -9,7 +13,7 @@
             <h2 style="font-size:16px">消息</h2>
             <div class="divider"></div>
             <el-row
-              v-for="message  in messageList.slice(0,3)"
+              v-for="message in messageList.slice(0, 3)"
               :key="message.messageId"
               class="message-item"
               @click.native="handleRead(message.messageId)"
@@ -19,58 +23,95 @@
               </el-col>
               <el-col :span="18">
                 <div class="message-content">
-                  {{message.sentence}}
-                  <span class="message-time">{{message.date|dataFilter}}</span>
+                  {{ message.sentence }}
+                  <span class="message-time">{{
+                    message.date | dataFilter
+                  }}</span>
                 </div>
                 <div class="message-handle">
-                   <div v-if="message.hasProcess===1||message.type!=3" >已处理</div>
-                    <div v-if="message.hasProcess===0&&message.type===3">
-                    <el-button @click="pocessVisit(message.messageId,message.projectId,1)" size="mini" plain>同意</el-button>
+                  <div v-if="message.hasProcess === 1 || message.type != 3">
+                    已处理
+                  </div>
+                  <div v-if="message.hasProcess === 0 && message.type === 3">
+                    <el-button
+                      @click="
+                        pocessVisit(message.messageId, message.projectId, 1)
+                      "
+                      size="mini"
+                      plain
+                      >同意</el-button
+                    >
                     <el-button
                       size="mini"
                       type="danger"
-                      @click="pocessVisit(message.messageId,message.projectId,0)"
+                      @click="
+                        pocessVisit(message.messageId, message.projectId, 0)
+                      "
                       plain
-                    >拒绝</el-button>
+                      >拒绝</el-button
+                    >
                   </div>
                 </div>
               </el-col>
-              <div class="message-item-isread" v-if="message.hasRead===0"></div>
+              <div
+                class="message-item-isread"
+                v-if="message.hasRead === 0"
+              ></div>
             </el-row>
             <template v-if="showMore">
               <el-row
-                v-for="message in messageList.slice(3,messageListLength)"
+                v-for="message in messageList.slice(3, messageListLength)"
                 :key="message.messageId"
                 class="message-item"
-                 @click="handleRead(message.messageId)"
+                @click="handleRead(message.messageId)"
               >
                 <el-col :span="6">
                   <el-avatar :src="message.avatar"></el-avatar>
                 </el-col>
                 <el-col :span="18">
                   <div class="message-content">
-                    {{message.fromName}}{{message.type|messageType}}
-                    <span
-                      class="message-time"
-                    >{{message.date|dataFilter}}</span>
+                    {{ message.fromName }}{{ message.type | messageType }}
+                    <span class="message-time">{{
+                      message.date | dataFilter
+                    }}</span>
                   </div>
                   <div class="message-handle">
-                    <div v-if="message. hasProcess===1||message.type!=3" >已处理</div>
-                    <div v-if="message. hasProcess===0&&message.type===3">
-                      <button class="agree-btn" @click.stop="pocessVisit(message.messageId,1)">同意</button>
+                    <div v-if="message.hasProcess === 1 || message.type != 3">
+                      已处理
+                    </div>
+                    <div v-if="message.hasProcess === 0 && message.type === 3">
+                      <button
+                        class="agree-btn"
+                        @click.stop="pocessVisit(message.messageId, 1)"
+                      >
+                        同意
+                      </button>
                       <button
                         class="refuse-btn"
                         type="danger"
-                        @click.stop="pocessVisit(message.messageId,message.projectId,0)"
-                      >拒绝</button>
+                        @click.stop="
+                          pocessVisit(message.messageId, message.projectId, 0)
+                        "
+                      >
+                        拒绝
+                      </button>
                     </div>
                   </div>
                 </el-col>
-                 <div class="message-item-isread" v-if="message.hasRead===0"></div>
+                <div
+                  class="message-item-isread"
+                  v-if="message.hasRead === 0"
+                ></div>
               </el-row>
             </template>
             <div class="divider"></div>
-            <div v-if="messageListLength>3&&!showMore" class="get-more" @click="showMore=true">显示更多</div>
+            <div
+              v-if="messageListLength > 3 && !showMore"
+              class="get-more"
+              @click="showMore = true"
+            >
+              显示更多
+            </div>
           </div>
 
           <i
@@ -78,11 +119,18 @@
             style="font-size:28px;color:#333"
             slot="reference"
           >
-            <div class="not-read" v-show="userInfo.messageToRead>0">{{userInfo.messageToRead}}</div>
+            <div class="not-read" v-show="userInfo.messageToRead > 0">
+              {{ userInfo.messageToRead }}
+            </div>
           </i>
         </el-popover>
 
-        <el-tooltip class="item" effect="light" :content="userInfo.username" placement="bottom">
+        <el-tooltip
+          class="item"
+          effect="light"
+          :content="userInfo.username"
+          placement="bottom"
+        >
           <div class="header-user" @click="goUserInfo">
             <el-avatar size="medium" :src="userInfo.avatar"></el-avatar>
           </div>
@@ -96,9 +144,17 @@
             <div class="aside-project">
               <i class="fas fa-list"></i> 项目群组
             </div>
-            <el-tooltip class="item" effect="light" content="搜索项目" placement="top-start">
-              <i class="el-icon-search"
-              style="  cursor: pointer;" @click="searchProject = true"></i>
+            <el-tooltip
+              class="item"
+              effect="light"
+              content="搜索项目"
+              placement="top-start"
+            >
+              <i
+                class="el-icon-search"
+                style="  cursor: pointer;"
+                @click="searchProject = true"
+              ></i>
             </el-tooltip>
           </template>
           <template v-else>
@@ -113,17 +169,18 @@
         </div>
         <el-divider></el-divider>
         <div class="project-list">
-          <div class="project-add" @click="addProjectVisible=true">
+          <div class="project-add" @click="addProjectVisible = true">
             <i class="icon"></i>
             <span>新建项目</span>
           </div>
           <div
             v-for="(project, index) in projectList"
             :key="index"
-            :class="['project-item',activeIndex===index?'project-item-active':'']"
-            @click="
-              changeProject(project,index)
-            "
+            :class="[
+              'project-item',
+              activeIndex === index ? 'project-item-active' : ''
+            ]"
+            @click="changeProject(project, index)"
           >
             <div class="project-name">
               <i class="fas fa-cube" style="margin-right:4px; "></i>
@@ -140,7 +197,8 @@
                     type="text"
                     icon="el-icon-delete"
                     @click="deleteProject(project.projectId)"
-                  >删除项目</el-button>
+                    >删除项目</el-button
+                  >
                 </div>
                 <i slot="reference" class="el-icon-more project-more"></i>
               </el-popover>
@@ -162,13 +220,25 @@
           </el-tabs>
         </el-header>
         <el-main class="content-wrap">
-          <router-view :active="isActive" :projectName="projectName"></router-view>
+          <router-view
+            :active="isActive"
+            :projectName="projectName"
+          ></router-view>
         </el-main>
       </el-container>
     </el-container>
 
-    <el-dialog title="创建项目" :visible.sync="addProjectVisible" width="30%" @close="AddProjectClose">
-      <el-form ref="addProjectFormRef" :model="addProjectForm" label-width="80px">
+    <el-dialog
+      title="创建项目"
+      :visible.sync="addProjectVisible"
+      width="30%"
+      @close="AddProjectClose"
+    >
+      <el-form
+        ref="addProjectFormRef"
+        :model="addProjectForm"
+        label-width="80px"
+      >
         <el-form-item label="项目名称">
           <el-input v-model="addProjectForm.projectName"></el-input>
         </el-form-item>
@@ -182,9 +252,9 @@
 </template>
 
 <script>
-  import { Message } from "element-ui";
+import { Message } from "element-ui";
 
-  export default {
+export default {
   name: "Home",
   data() {
     return {
@@ -217,21 +287,17 @@
       this.$router.push("/welcome");
     },
     handleClick(tab, event) {
-      let projectId = window.sessionStorage.getItem('projectId')
-      let path = "/" + this.activeName + "/" + projectId
+      let projectId = window.sessionStorage.getItem("projectId");
+      let path = "/" + this.activeName + "/" + projectId;
       this.$router.push(path);
-
     },
     async getMessageList() {
       const { data: res } = await this.$http.get("messages/");
       if (res.result === 1) {
         this.messageList = res.data;
       } else {
-        // this.$message({
-        //   message: res.message,
-        //   type: "error"
-        // });
-        Message.error("error")
+
+        Message.error(res.message);
       }
     },
     async pocessVisit(messageId, projectId, n) {
@@ -245,21 +311,20 @@
         }
       );
       if (res.result === 1) {
-        this.getProjects()
+        this.getProjects();
       } else {
-        // this.$message({
-        //   message: res.message,
-        //   type: "error"
-        // });
-        Message.error("error");
+
+        Message.error(res.message);
       }
     },
 
     changeProject(project, index) {
+      window.sessionStorage.setItem("projectId", project.projectId);
       this.activeIndex = index;
       this.projectName = project.projectName;
       this.currentProjectId = project.projectId;
-      console.log('test'+this.currentProjectId)
+
+      console.log("test" + this.currentProjectId);
       this.activeName = "file";
       this.$router.replace(`/file/${this.currentProjectId}`);
     },
@@ -272,11 +337,8 @@
       if (res.result === 1) {
         this.userInfo = res.data;
       } else {
-        // this.$message({
-        //   message: res.message,
-        //   type: "error"
-        // });
-        Message.error("error")
+
+        Message.error(res.message);
       }
     },
 
@@ -289,7 +351,6 @@
         });
       if (res.result == 1) {
         this.getProjects();
-
         let _this = this;
         setTimeout(function() {
           console.log(_this.projectList);
@@ -300,11 +361,8 @@
           );
         }, 300);
       } else {
-        // this.$message({
-        //   message: res.message,
-        //   type: "error"
-        // });
-        Message.error("error")
+
+        Message.error(res.message);
       }
     },
     async getProjects() {
@@ -318,11 +376,8 @@
 
         this.projectList = res.data;
       } else {
-        // this.$message({
-        //   message: res.message,
-        //   type: "error"
-        // });
-        Message.error("error")
+
+        Message.error(res.message);
       }
     },
     async exitProject(id) {
@@ -365,15 +420,15 @@
         this.getInfo();
       }
     },
-   async handleRead(id){
-         const { data: res } = await this.$http
+    async handleRead(id) {
+      const { data: res } = await this.$http
         .get(`message/${id}`)
         .catch(function(error) {
           console.log(error);
         });
-        if(res.result===1){
-          this.getMessageList()
-        }
+      if (res.result === 1) {
+        this.getMessageList();
+      }
     }
   },
   computed: {
@@ -384,12 +439,12 @@
   mounted() {
     this.getProjects();
     this.getMessageList();
-    this.activeIndex=0
+    this.activeIndex = 0;
     let _this = this;
     setTimeout(function() {
       if (_this.projectList.length != 0) {
         _this.currentProjectId = _this.projectList[0].projectId;
-        window.sessionStorage.setItem('projectId',_this.currentProjectId)
+        window.sessionStorage.setItem("projectId", _this.currentProjectId);
         _this.projectName = _this.projectList[0].projectName;
         _this.$router.push(`/file/${_this.currentProjectId}`);
       }
@@ -429,7 +484,6 @@
   flex: 1;
   justify-content: flex-end;
   align-items: center;
-
 }
 .message-icon {
   position: relative;
@@ -488,22 +542,21 @@
   transition: all 1s;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
 }
-.project-add:hover{
-  margin-left:35px;
+.project-add:hover {
+  margin-left: 35px;
 }
-.project-add .icon{
+.project-add .icon {
   display: inline-block;
   height: 15px;
   width: 15px;
-  background-size:25px 25px;
-  background-image: url('../../static/images/addProject.png');
+  background-size: 25px 25px;
+  background-image: url("../../static/images/addProject.png");
   background-position: center;
-  margin-right:4px;
+  margin-right: 4px;
 }
-.project-add span{
-
+.project-add span {
   font-size: 16px;
-  color:#333
+  color: #333;
 }
 
 .project-item {
@@ -521,7 +574,7 @@
 .project-more {
   position: absolute;
   right: 2px;
-  top:14px;
+  top: 14px;
   transform: rotate(90deg);
 
   opacity: 0;
@@ -545,7 +598,6 @@
 
 .project-item:hover {
   background-color: rgba(228, 241, 255, 0.589);
-
 }
 .project-item:hover .project-name {
   color: rgb(45, 145, 245);
@@ -579,14 +631,14 @@
   height: 100px;
   position: relative;
 }
-.message-item-isread{
+.message-item-isread {
   height: 8px;
   width: 8px;
   border-radius: 50%;
   background-color: red;
   position: absolute;
-  top:-8px;
-  right:0px;
+  top: -8px;
+  right: 0px;
 }
 .message-content {
   height: 50px;
@@ -611,7 +663,6 @@
   border: 1px solid #f0f0f0;
   margin: 4px 0 12px 0;
 }
-
 
 .not-read {
   position: absolute;

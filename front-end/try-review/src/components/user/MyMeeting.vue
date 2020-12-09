@@ -11,7 +11,7 @@
               v-for="meeting in mineMeetingList"
               :key="meeting.meetingId"
               class="meeting-item"
-              @click="enterMeeting(meeting.meetingId)"
+              @click="enterMeeting(meeting.meetingId,)"
             >
               <h3 class="meeting-name">{{meeting.meetingName}}</h3>
               <div class="meeting-long">会议时长:{{meeting.duration |dataFilter2}}</div>
@@ -117,11 +117,7 @@
         this.meetingList = res.data.meetingList;
         console.log(res);
       } else {
-        // this.$message({
-        //   message: res.message,
-        //   type: "error"
-        // });
-        Message.error("error")
+        Message.error(res.message)
       }
     },
     async getMeetingByName(name) {
@@ -144,11 +140,7 @@
       if (res.result == 1) {
         this.todoMeetingList = res.data.meetingList;
       } else {
-        // this.$message({
-        //   message: res.message,
-        //   type: "error"
-        // });
-        Message.error("error")
+        Message.error(res.message)
       }
     },
     async getHistoryMeeting() {
@@ -158,11 +150,8 @@
       if (res.result == 1) {
         this.histroyMeetingList = res.data;
       } else {
-        // this.$message({
-        //   message: res.message,
-        //   type: "error"
-        // });
-        Message.error("error")
+
+        Message.error(res.message)
       }
     },
     async getMineMeeting() {
@@ -172,15 +161,16 @@
       if (res.result == 1) {
         this.mineMeetingList = res.data.meetingList;
       } else {
-        // this.$message({
-        //   message: res.message,
-        //   type: "error"
-        // });
-        Message.error("error")
+        Message.error(res.message)
       }
     },
     async enterMeeting(id) {
-      //路由跳转
+      this.$router.push(
+        {
+          path:'/review',
+          param: {projectId: id}  
+        }
+      )
     },
     handleClick(tab, event) {
       this.getMeetingByName(tab.name);

@@ -78,11 +78,8 @@
           this.accountForm.password=res.data
         }
         else{
-             // this.$message({
-             //    message: res.message,
-             //    type: "error"
-             //  });
-            Message.error("error");
+  
+            Message.error(res.message);
         }
     },
     getCode() {

@@ -1,7 +1,7 @@
 <template>
     <el-row  class="message-container">
       <el-col class="message-list" :span="6">
-        <div v-for="(message,index) in messageList" :key="message.messageId" @click="showDetail(message.messageId);message.hasRead=1">
+        <div v-for="message in messageList" :key="message.messageId" @click="showDetail(message.messageId);message.hasRead=1">
           <el-card class="message-item" >
             <i class="el-icon-close message-close" @click.stop="deleteMessage(message)"></i>
             <el-badge :is-dot="message.hasRead===0" class="dot-item"></el-badge>
@@ -88,38 +88,23 @@
       async getMessageList(){
         const { data: res } = await this.$http.get('messages/');
         if(res.result === 1){
-          // this.$message({
-          //   message: "获取通知成功",
-          //   type: "success"
-          // });
-          Message.success("获取通知成功")
+
+          // Message.success("获取通知成功")
           this.messageList = res.data
           console.log(res)
         } else {
-          // this.$message({
-          //   message: res.message,
-          //   type: "error"
-          // });
-          Message.error("error")
+          Message.error(res.message)
         }
       },
       async getMessageDetail(i){
         this.currentMessageId = i
         const { data: res } = await this.$http.get(`message/${i}`);
         if(res.result === 1){
-          // this.$message({
-          //   message: "获取详情成功",
-          //   type: "success"
-          // });
-          Message.success("获取详情成功")
+
+          // Message.success("获取详情成功")
           this.messageDetail =res.data
-          console.log(res)
         } else {
-          // this.$message({
-          //   message: res.message,
-          //   type: "error"
-          // });
-          Message.error("error");
+          Message.error(res.message);
         }
 
       },
@@ -131,19 +116,11 @@
           messageId:this.currentMessageId
         });
         if(res.result === 1){
-          // this.$message({
-          //   message: "处理成功",
-          //   type: "success"
-          // });
-          Message.success("处理成功");
+          // Message.success("处理成功");
           this.messageDetail =res.data
           console.log(res)
         } else {
-          // this.$message({
-          //   message: res.message,
-          //   type: "error"
-          // });
-          Message.error("error")
+          Message.error(res.message)
         }
         this.visible = false
 
