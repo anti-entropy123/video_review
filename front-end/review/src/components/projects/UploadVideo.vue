@@ -1,5 +1,5 @@
 <template>
-  <el-card >
+  <div >
     <div class="upload-box">
       <el-upload
         class="video-upload"
@@ -34,7 +34,7 @@
     <p class="Upload_pictures">
       <span style="color:rgb(134, 161, 236);font-size:24px;cursor:pointer">点击上传</span>
     </p>
-  </el-card>
+  </div>
 </template>
 
 <script>
@@ -131,7 +131,7 @@
     color: rgb(134, 161, 236);
   }
   .Upload_pictures{
-    margin-top: 25px;
+    margin-top: 0px;
     display: flex;
     justify-content: center;
   }

@@ -1,6 +1,6 @@
 <template>
     <el-container class="container">
-    <h3 class="title">视图管睆</h3>
+    <h3 class="title">视图管理</h3>
 
     </el-container>
 </template>

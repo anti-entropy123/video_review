@@ -74,7 +74,7 @@ def video_manage():
         videos:List[Video] = Video.objects(**select)
         # print(videos)
         for i in range(len(videos)):
-            projects_name.append(Project.get_project_by_id(videos[i].belongTo).projectName)
+            projects_name.append(Project.get_project_by_id(videos[i].belongTo, deep=True).projectName)
             # print(videos[i].projectName)
   
     total_page = math.ceil(len(videos)/number_per_page)

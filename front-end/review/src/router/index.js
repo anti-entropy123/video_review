@@ -167,22 +167,21 @@ router.beforeEach((to, from, next) => {
     return next();
   }
   if(to.path === '/admin/login'){
-    window.localStorage.removeItem('adm-token')
+    window.localStorage.removeItem('token');
     return next()
   }
-   const admTokenStr = window.localStorage.getItem('adm-token')
+ 
   const tokenStr = window.localStorage.getItem("token");
-   if (to.path ==='/admin' || to.path==='/admin/viewManage' ||to.path==='/admin/meetingManage'||to.path==='/admin/videoManage' || to.path==='/admin/roleManage' || to.path === '/admin/userManage' || to.path==='/admin/projectManage'){
-     if (!admTokenStr){
-       return next("/admin/login");
-     }
-   }else{
-     if (!tokenStr) {
-       return next("/welcome");
-     }
-   }
-
+  if (!tokenStr) {
+    if (to.path ==='/admin' || to.path==='/admin/viewManage' ||to.path==='/admin/meetingManage'||to.path==='/admin/videoManage' || to.path==='/admin/roleManage' || to.path === '/admin/userManage' || to.path==='/admin/projectManage'){
+      return next("/admin/login");
+    }else{
+      return next("/login");
+    }
+  }
+   
   next();
+
 });
 
 export default router;

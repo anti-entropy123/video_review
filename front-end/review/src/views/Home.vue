@@ -6,7 +6,7 @@
         src="../../static/images/logo.png"
         @click="goWelcome"
       ></el-image>
-      <h1 class="header-title2" @click="goWelcome">视频审阅平台</h1>
+      <div class="header-title2" @click="goWelcome">视频审阅平台</div>
       <div class="header-right">
         <el-popover placement="bottom-start" width="250" trigger="click">
           <div class="message-list">
@@ -25,7 +25,7 @@
                 <div class="message-content">
                   {{ message.sentence }}
                   <span class="message-time">{{
-                    message.date | dataFilter
+                    message.date*1000 | dataFilter
                   }}</span>
                 </div>
                 <div class="message-handle">
@@ -63,7 +63,7 @@
                 v-for="message in messageList.slice(3, messageListLength)"
                 :key="message.messageId"
                 class="message-item"
-                @click="handleRead(message.messageId)"
+                @click.native="handleRead(message.messageId)"
               >
                 <el-col :span="6">
                   <el-avatar :src="message.avatar"></el-avatar>
@@ -72,7 +72,7 @@
                   <div class="message-content">
                     {{ message.fromName }}{{ message.type | messageType }}
                     <span class="message-time">{{
-                      message.date | dataFilter
+                      message.date*1000 | dataFilter
                     }}</span>
                   </div>
                   <div class="message-handle">
@@ -216,7 +216,7 @@
           <el-tabs v-model="activeName" @tab-click="handleClick">
             <el-tab-pane label="文件" name="file"></el-tab-pane>
             <el-tab-pane label="会议" name="meeting"></el-tab-pane>
-            <el-tab-pane label="回收站" name="recycle"></el-tab-pane>
+            <!-- <el-tab-pane label="回收站" name="recycle"></el-tab-pane> -->
           </el-tabs>
         </el-header>
         <el-main class="content-wrap">
@@ -470,6 +470,9 @@ export default {
   align-items: center;
 }
 .header-title {
+  margin-left: -3px;
+  font-weight:bold;
+  color: #333;
   cursor: pointer;
   height: 46px;
   width: 100px;

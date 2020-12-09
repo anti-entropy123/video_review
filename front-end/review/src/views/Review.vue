@@ -6,12 +6,8 @@
       </div>
       <div class="message">
         <div class="selectVideo">
-
-          <!-- <a-select v-if="isAdmin" :options="videos" placeholder="更换视频" @change="changeSrc" style="width: 200px" :default-value="videoId" >
-          </a-select> -->
-          <a-select :options="videos" placeholder="更换视频" @change="changeSrc" style="width: 120px" :disabled="isAdmin">
+          <a-select :options="videos" placeholder="更换视频" @change="changeSrc" style="width: 120px" :disabled="!isAdmin">
           </a-select>
-
         </div>
         <div class="bell">
           <a-button type="primary" @click="() => (visible = true)">
@@ -29,14 +25,14 @@
                 OK
               </a-button>
             </template>
-            <div v-if="isAdmin" style="height: 30px;margin-top:5px">
+            <div v-if="isAdmin" style="height: 30px;">
               <span>权限管理</span>
               <div style="float: right">
                 <span style="padding: 5px;">控制</span>
                 <span style="padding: 10px;">批注</span>
               </div>
             </div>
-            <div v-for="(member,index) in memberList">
+            <div v-for="(member,index) in memberList" :key="member.memberId" style="margin-top:6px">
               <a-avatar :src="member.avatar"/>
               <span>{{member.username}}</span>
               <div style="float: right">
@@ -45,7 +41,7 @@
               </div>
             </div>
           </a-modal>
-          <a-button style="margin-left:10px" type="danger" >
+          <a-button style="margin-left:10px" type="danger" @click="goBack">
             退出会议
           </a-button>
         </div>
@@ -83,7 +79,7 @@
           <a-button class="submit" type="primary" v-if="textEmpty==false" @click="submitComment()">
             提交
           </a-button>
-          <a-button class="submit" type="primary" v-else="textEmpty==true" disabled>
+          <a-button class="submit" type="primary" v-else disabled>
             提交
           </a-button>
         </div>
@@ -96,7 +92,7 @@
         <a-menu-item key="fileinfo"> 文件信息</a-menu-item>
       </a-menu>
       <div class="commantCards" v-if="current=='commant'">
-        <ul class="discusses" v-for="(comment,index) in comments">
+        <ul class="discusses" v-for="(comment,index) in comments" :key="comment.commentId">
           <li>
             <div class="discuss">
               <div id="user">
@@ -178,7 +174,7 @@
         userId: "5fcb46a9872ad7704cb534c1",
         userName: '',
         meetingId: "5fcb98682fd62669086c8dad",
-        projectId: "5fcb46f7872ad7704cb534c2",
+        projectId: "",
         videos:[{
           value:"",
           label:""
@@ -441,15 +437,15 @@
           that.videos = result;
         }
       },
-      beforeRouteLeave(to, from, next) {
-        this.$destroy();
-        next();
-}
-
+      goBack() {
+        this.$router.push({
+          // path: `/file/`+this.projectId,
+          path: `/file/0`,
+        });
+      },
     },
     mounted() {
-      this.isAdmin = this.$route.query.isAdmin ==='true'
-
+      this.isAdmin = this.$route.query.isAdmin 
       // this.isAdmin = false
       this.meetingId = this.$route.query.meetingId
       this.projectId = window.sessionStorage.getItem('projectId')
@@ -461,8 +457,8 @@
       console.log("``````````````````````")
       console.log('isAdmin:'+this.isAdmin)
       console.log('meetingId:'+this.meetingId)
-    console.log('projectId'+this.projectId)
-    console.log('userId'+this.userId)
+      console.log('projectId'+this.projectId)
+      console.log('userId'+this.userId)
       console.log('this.videoId'+this.videoId);
       console.log("``````````````````````")
       this.avatar = this.getHead(this.userId);
@@ -475,9 +471,8 @@
       }
     },
     beforeDestroy(){
-      console.log('before destory');
-      this.$socket.emit('destory');
-      exit();
+      // console.log('before destory');
+      // this.$socket.emit('destory');
     },
     destroyed() {
       window.onresize = null;
@@ -670,9 +665,7 @@
     float: left;
     margin-top: 4px;
   }
-  .draw{
 
-  }
   .commantHead{
     background: #dcdee2;
     color: black;

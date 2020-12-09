@@ -1,6 +1,6 @@
 <template>
   <el-container class="container">
-      <h3 class="title">权陝管睆</h3>
+      <h3 class="title">权限管理</h3>
 
   </el-container>
 </template>

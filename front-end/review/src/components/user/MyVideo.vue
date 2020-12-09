@@ -7,9 +7,6 @@
             class="video-cover"
             :src="video.cover[0]"
             fit="cover"
-            @click="goMeeting()"
-            @mouseover="mouseOver(video.coverList)"
-            @mouseleave="mouseLeave(video.coverList)"
           ></el-image>
         </div>
 
@@ -17,7 +14,7 @@
         <div class="video-description">{{ video.videoName|videoNameFormat }}</div>
         <div class="video-time">
           {{
-          video.createDate | dateFormat
+          video.date| dateFormat
           }}
         </div>
         <el-popover placement="bottom" trigger="click" width="150px">
@@ -46,7 +43,6 @@
           video: "",
       imageUrl: "",
       srcList: [],
-
       videoList: [],
       //存放封面的数组
       index: [],

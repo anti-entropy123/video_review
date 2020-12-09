@@ -3,7 +3,7 @@
     <el-card class="login-box" v-if="loginOrRegister">
       <!-- 头像 -->
       <div class="avatar-box">
-        <img src="../assets/logo.png" alt="" />
+        <img :src="logo"  alt="" />
       </div>
       <!-- 表单 -->
       <el-form
@@ -25,6 +25,7 @@
               <el-input
                 v-model="loginForm.mobileNum"
                 prefix-icon="el-icon-phone"
+                @blur="getUserAvatar"
               ></el-input>
             </el-form-item>
             <el-form-item prop="password">
@@ -74,9 +75,9 @@ cursor:pointer;"
       >
         <i class="el-icon-arrow-left"></i>登陆
       </div>
-      <div class="avatar-box">
-        <img src="../assets/logo.png" alt="" />
-      </div>
+      <!-- <div class="avatar-box">
+        <img :src="logo" alt="" />
+      </div> -->
       <el-form
         ref="RegisterFormRef"
         :model="registerForm"
@@ -161,21 +162,22 @@ cursor:pointer;"
         activeIndex: "0",
         //18502616338 123
         loginForm: {
-          mobileNum: "18502616338",
-          password: "123456",
-          checkcode: "god's code"
+          mobileNum: "",
+          password: "",
+          checkcode: "",
         },
         registerForm: {
-          username: "mxf",
-          password: "123456",
-          checkPassword: "123456",
-          mobileNum: "15169611397",
-          checkCode: "god's code"
+          username: "",
+          password: "",
+          checkPassword: "",
+          mobileNum: "",
+          checkCode: ""
         },
         RegisterFormRules: {
           username: [
             { required: true, message: "请输入用户名", trigger: "blur" },
             { min: 3, max: 10, message: "长度在3 到 10 个字符", trigger: "blur" }
+            
           ],
           password: [
             { required: true, message: "请输入密码", trigger: "blur" },
@@ -200,7 +202,7 @@ cursor:pointer;"
         },
         LoginFormRules: {
           mobileNum: [
-            { required: true, message: "请输入用户名", trigger: "blur" }
+            { required: true, validator: checkPhone, trigger: "blur" }
           ],
           password: [
             { required: true, message: "请输入密码", trigger: "blur" },
@@ -211,10 +213,23 @@ cursor:pointer;"
               trigger: "blur"
             }
           ]
-        }
+        },
+        logo:''
       };
     },
     methods: {
+      async getUserAvatar(){
+           const { data: res } = await this.$http.get(`userAvatar`,{
+             params:{
+               mobileNum:this.loginForm.mobileNum
+             }
+           });
+           if (res.result ===1 ){
+            this.logo= res.data.avatarUrl
+           }else{
+             Message.error(res.message)
+           }
+      },
       resetRegisterForm() {
         this.$refs.RegisterFormRef.resetFields();
       },
@@ -271,6 +286,7 @@ cursor:pointer;"
               // });
               Message.success("注册成功")
               this.loginOrRegister = true;
+              this.loginForm.mobileNum=this.registerForm.mobileNum
             } else {
               // this.$message({
               //   message: res.message,
@@ -305,13 +321,16 @@ cursor:pointer;"
       goLogin() {
         this.loginOrRegister = true;
       }
+    },
+    mounted(){
+      this.getUserAvatar()
     }
   };
 </script>
 
 <style scoped>
   .login-container {
-    background-color: #e7fae1;
+    background-color: #e1e8fa ;
     height: 100vh;
   }
   .el-card {

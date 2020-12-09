@@ -3,9 +3,10 @@
     <el-row class="search-header">
       <el-col :span="6">
         <span class="project-name">{{ projectName }}</span>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;共{{ this.videoList.length }}个视频</span>
       </el-col>
-
+      <el-col :span="2">
+        <span> 共{{ this.videoList.length }}个视频</span>
+      </el-col>
       <el-col :span="4">
         <el-input
           prefix-icon="el-icon-search"
@@ -14,7 +15,7 @@
         ></el-input>
       </el-col>
 
-      <el-col :offset="6" :span="7">
+      <el-col :offset="4" :span="7">
         <div class="user-list">
           <template v-for="(user, index) in userList">
             <div
@@ -64,7 +65,7 @@
       <!--      />-->
       <upload-video
         @refreshVideo="getProjectInfo(projectId)"
-        class="video-upload"
+        class="video-upload-else"
         :projectId="projectId"
       ></upload-video>
     </div>
@@ -74,20 +75,28 @@
         class="video-upload"
         :projectId="projectId"
       ></upload-video>
-      <div v-for="video in videoList" :key="video.videoId" class="video-item">
-        <div class="video-cover-div">
+      <div
+        v-for="(video, index) in videoList"
+        :key="video.videoId"
+        class="video-item"
+        ref="vv"
+        @mousemove="updateXY"
+      >
+        <div
+          class="video-cover-div"
+          @mouseover="mousein(video.coverList, index)"
+        >
           <el-image
-            class="video-cover "
+            class="video-cover"
             :src="video.cover"
             fit="cover"
-            @click="goMeeting()"
-            @mouseover="mouseOver(video.coverList)"
-            @mouseleave="mouseLeave(video.coverList)"
           ></el-image>
         </div>
 
         <div class="video-duration">{{ video.duration | timeFormat }}</div>
-        <div class="video-description">{{ video.videoName }}</div>
+        <div class="video-description">
+          {{ video.videoName | videoNameFormat }}
+        </div>
         <div class="video-time">
           {{ (video.createDate * 1000) | dateFormat }}
         </div>
@@ -248,11 +257,45 @@ export default {
       showVisitUserVisible: false,
       showCreateMeetingVisible: false,
       projectId: "",
-      inviteInput: ""
+      inviteInput: "",
       // video: null
+      x: 0,
+      coverList: [],
+      videoNum: 0,
+      left: 0,
+      right: 0
     };
   },
   methods: {
+    updateXY: function(event) {
+      this.x = event.offsetX;
+      console.log(this.x);
+      let coverNum = Math.floor((this.x / (this.right - this.left)) * 10);
+      console.log(this.right - this.left);
+      console.log(coverNum);
+      console.log(this.coverList[coverNum]);
+      // videolist [index] 这一项cover赋值
+      let img = new Image();
+      img.src = this.coverList[coverNum];
+      let that = this;
+      img.onload = function() {
+        that.videoList[that.videoNum].cover = that.coverList[coverNum];
+      };
+    },
+    mousein(coverList, index) {
+      this.left = this.$refs.vv[index].getBoundingClientRect().left;
+      this.right = this.$refs.vv[index].getBoundingClientRect().right;
+      this.coverList = coverList;
+      this.videoNum = index;
+      // console.log(left);
+      // console.log(right);
+      // 获取x 坐标
+      // console.log(coverNum);
+      // console.log(coverList[coverNum])
+      //videolist [index] 这一项
+      // coverList[coverNum];
+      // console.log(coverList);
+    },
     async deleteVideo(video, id) {
       const { data: res } = await this.$http
         .delete(`project/${this.projectId}/removeVideo`, {
@@ -277,7 +320,7 @@ export default {
     async createMeeting() {
       const { data: res } = await this.$http.post("meeting/", this.meeting);
       if (res.result === 1) {
-        // Message.success("成功创建会议")
+        Message.success("成功创建会议");
       } else {
         Message.error(res.message);
       }
@@ -308,6 +351,7 @@ export default {
         });
       if (res.result == 1) {
         this.videoList = res.data.videoList;
+        console.log(this.videoList);
         this.userList = res.data.userList;
       } else {
         Message.error(res.message);
@@ -325,6 +369,13 @@ export default {
         });
       if (res.result == 1) {
         this.visitUser = res.data;
+        let userlist = this.userList;
+        console.log(userlist)
+        userlist.forEach(user => {
+          this.visitUser = this.visitUser.filter(v => {
+            return v.userId != user.userId;
+          });
+        });
       } else {
         Message.error(res.message);
       }
@@ -339,6 +390,7 @@ export default {
           console.log(error);
         });
       if (res.result == 1) {
+        Message.success("用户邀请成功");
       } else {
         Message.error(res.message);
       }
@@ -354,6 +406,7 @@ export default {
           console.log(error);
         });
       if (res.result == 1) {
+        Message.success("用户删除成功");
       } else {
         Message.error(res.message);
       }
@@ -364,22 +417,29 @@ export default {
     inviteUser() {
       this.showUserListVisible = false;
       this.showVisitUserVisible = true;
-      this.searchUser();
+      // this.searchUser();
     },
 
     VisitUserClose(done) {
       this.inviteInput = "";
+      this.visitUser = [];
     },
     handleUploadError(error) {
-      console.log(res.message, error);
+      Message.error(error);
     },
-    handleResponse(response) {},
-    mouseOver(cover) {
-      console.log("over:" + cover);
-    },
-    mouseLeave(cover) {
-      console.log("leave:" + cover);
-    }
+    handleResponse(response) {}
+    // mouseOver(cover) {
+    //   console.log("over:" + cover);
+    // },
+    // mouseLeave(cover) {
+    //   console.log("leave:" + cover);
+    // },
+    // goVideo(videoId){
+    //   this.$router.push({
+    //     path: "/video",
+    //     query: { projectId: this.projectId, videoId: videoId }
+    //   });
+    // },
   },
   computed: {
     showList() {
@@ -455,7 +515,15 @@ export default {
 .user-add i {
   font-size: 28px;
 }
-
+.file-upload {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .video-list {
   width: 100%;
   display: grid;
@@ -465,11 +533,7 @@ export default {
   padding: 20px 50px;
   grid-template-rows: repeat(2, 180px);
 }
-.video-upload {
-  border-radius: 10px;
-  border: 2px dashed rgb(134, 161, 236);
-  overflow: hidden;
-}
+
 .video-item {
   position: relative;
   border-radius: 10px;
@@ -515,9 +579,9 @@ export default {
   cursor: pointer;
   transition: all 0.5s ease-in-out;
 }
-.video-cover:hover {
-  transform: scale(1.1);
-}
+/*.video-cover:hover {*/
+/*  transform: scale(1.1);*/
+/*}*/
 .require-more {
   transform: rotate(90deg);
   position: absolute;
@@ -525,16 +589,22 @@ export default {
   bottom: 10px;
   cursor: pointer;
 }
-.file-upload {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.video-upload {
+  border-radius: 10px;
+  padding: 1em;
+  background-image: url("../../../static/images/border.png");
+  background-size: 100% 100%;
+  overflow: hidden;
 }
-
+.video-upload-else {
+  padding: 35px 0 15px 0;
+  width: 350px;
+  height: 250px;
+  border-radius: 10px;
+  background-image: url("../../../static/images/border.png");
+  background-size: 100% 100%;
+  overflow: hidden;
+}
 .show-user-list {
   display: flex;
   flex-direction: column;

@@ -1,8 +1,6 @@
 <template>
   <el-container class="container">
-
       <h3 class="title">视频管理</h3>
-
     <el-main>
       <el-card class="search">
         搜索
@@ -81,24 +79,26 @@ export default {
       videoName: "",
       videoOwner: "",
       videoTable: [],
-      totalPage:10
+      currentPage: 1,
+      totalPage: 1,
+      username:''
     };
   },
   methods: {
     async getManageVideo() {
-      const { data: res } = await this.$http.get("admin/videoManage");
+      const { data: res } = await this.$http.get("admin/videoManage",{
+        params:{
+          username:this.username,
+          projectName:this.projectName,
+          page: this.currentPage
+        }
+
+      });
       if (res.result === 1) {
-        this.$message({
-          message: "查询会议",
-          type: "success"
-        });
         this.videoTable = res.data.videoList;
-        this.totalPage = res.data.totalPage;
+        this.totalPage = parseInt( res.data.totalPage);
       } else {
-        this.$message({
-          message: res.message,
-          type: "error"
-        });
+        Message.error(res.message)
       }
     },
      toggleSelection(rows) {

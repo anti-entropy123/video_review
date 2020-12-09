@@ -8,19 +8,20 @@
         v-for="(video, index) in recycleList"
         :key="video.videoId"
         class="video-item"
+        ref="vv"
+        @mousemove="updateXY"
       >
-      <div class="video-cover-div">
+      <div class="video-cover-div"  @mouseover="mousein(video.coverList, index)">
         <el-image
           class="video-cover"
-          :src="video.cover[0]"
+          :src="video.cover"
           fit="cover"
-          @click="goMeeting()"
         >
 
         </el-image>
         </div>
         <div class="video-duration">{{video.duration| timeFormat}}</div>
-        <div class="video-description">{{ video.videoName }}
+        <div class="video-description">{{ video.videoName| videoNameFormat }}
 
         </div>
         <div class="video-time">{{
@@ -52,9 +53,14 @@
     },
     data(){
       return{
+             x: 0,
+      coverList: [],
+      videoNum: 0,
+      left: 0,
+      right: 0,
         recycleList:[
           {
-            "cover": [
+            coverList: [
               "https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review/cover/kiana-0.jpg",
               "https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review/cover/kiana-1.jpg",
               "https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review/cover/kiana-2.jpg",
@@ -110,10 +116,11 @@
             "duration": 3600,
             "hasReview": 0,
             "videoId": "5fb23a0fa8601c6b5e3f3c3c",
-            "videoName": "\u4e0b\u8f7d.mp4"
-          },
+            "videoName": "\u4e0b\u8f7d.mp4",
+            cover:"https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review/cover/kiana-0.jpg"
+            },
           {
-            "cover": [
+            coverList: [
               "https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review//cover/\u4e0b\u8f7d.mp4-0.png",
               "https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review//cover/\u4e0b\u8f7d.mp4-1.png",
               "https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review//cover/\u4e0b\u8f7d.mp4-2.png",
@@ -132,7 +139,7 @@
             "videoName": "\u4e0b\u8f7d.mp4"
           },
           {
-            "cover": [
+            coverList: [
               "https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review//cover/\u4e0b\u8f7d.mp4-0.png",
               "https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review//cover/\u4e0b\u8f7d.mp4-1.png",
               "https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review//cover/\u4e0b\u8f7d.mp4-2.png",
@@ -148,10 +155,11 @@
             "duration": 17,
             "hasReview": 0,
             "videoId": "5fc385aa6d206f1f4afc317f",
-            "videoName": "\u4e0b\u8f7d.mp4"
+            "videoName": "\u4e0b\u8f7d.mp4",
+            cover:'https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review//cover/\u4e0b\u8f7d.mp4-0.png'
           },
           {
-            "cover": [
+            coverList: [
               "https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review//cover/\u4e0b\u8f7d.mp4-0.png",
               "https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review//cover/\u4e0b\u8f7d.mp4-1.png",
               "https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review//cover/\u4e0b\u8f7d.mp4-2.png",
@@ -167,7 +175,8 @@
             "duration": 17,
             "hasReview": 0,
             "videoId": "5fc60ecf005d6175b95c40b7",
-            "videoName": "\u4e0b\u8f7d.mp4"
+            "videoName": "\u4e0b\u8f7d.mp4",
+            cover:'https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review//cover/\u4e0b\u8f7d.mp4-0.png'
           }
         ]
 
@@ -177,6 +186,27 @@
       showList() {
         return this.recycleList.length===0
       }
+    },
+    methods:{
+          updateXY: function(event) {
+      this.x = event.offsetX;
+      let coverNum = Math.floor((this.x / (this.right - this.left)) * 10);
+      // recycleList [index] 这一项cover赋值
+      let img = new Image();
+      img.src = this.coverList[coverNum];
+      let that = this;
+      img.onload = function() {
+        that.recycleList[that.videoNum].cover = that.coverList[coverNum];
+      };
+    },
+    mousein(coverList, index) {
+      this.left = this.$refs.vv[index].getBoundingClientRect().left;
+      this.right = this.$refs.vv[index].getBoundingClientRect().right;
+      this.coverList = coverList;
+      console.log(typeof(this.videoNum))
+      this.videoNum = index;
+       
+    },
     }
   }
 </script>
@@ -255,9 +285,9 @@
     cursor: pointer;
     transition: all 0.5s ease-in-out;
   }
-  .video-cover:hover{
+  /* .video-cover:hover{
     transform: scale(1.1);
-  }
+  } */
   .require-more {
     transform: rotate(90deg);
     position: absolute;

@@ -85,7 +85,8 @@ export default {
       projectOwner: "",
       projectName: "",
       projectTable: [],
-        totalPage:10
+        totalPage:10,
+        page:1,
     };
   },
   methods: {
@@ -112,19 +113,19 @@ export default {
       this.getUser();
     },
     async getManageProject() {
-      const { data: res } = await this.$http.get("admin/projectManage");
+      const { data: res } = await this.$http.get("admin/projectManage",{
+        params:{
+          projectName:this.projectName,
+          owner:this.projectOwner,
+          page:this.page
+        }
+      });
       if (res.result === 1) {
-        this.$message({
-          message: "管理项目",
-          type: "success"
-        });
+      
         this.projectTable = res.data.projectList;
                this.totalPage = res.data.totalPage;
       } else {
-        this.$message({
-          message: res.message,
-          type: "error"
-        });
+        Message.error(res.message)
       }
     },
     handleDelete(index, row) {

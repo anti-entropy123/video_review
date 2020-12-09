@@ -36,6 +36,7 @@
 </template>
 
 <script>
+import { Message } from "element-ui";
     export default {
         name: "AdminLogin",
       data(){
@@ -43,7 +44,7 @@
             imgSrc:"../../../static/images/people-in-couch-1024248.jpg",
                 loginForm: {
           mobileNum: "18502616338",
-          password: "123",
+          password: "123456",
         },
                   LoginFormRules: {
           mobileNum: [
@@ -74,19 +75,15 @@
               const { data: res } = await this.$http.post("/admin/login/", this.loginForm);
               console.log(res);
               if (res.result === 1) {
-                this.$message({
-                  message: "登录成功",
-                  type: "success"
-                });
+  
                 // 将登录成功之后的toen,保存到客户端的sessionStorage 中
-                window.localStorage.setItem("adm-token", res.token);
-
+                              window.localStorage.setItem("token", res.token);
+              window.localStorage.setItem("userId", res.userId);
+              window.localStorage.setItem('mobileNum',this.loginForm.mobileNum)
                 this.$router.push("/admin");
               } else {
-                this.$message({
-                  message: res.message,
-                  type: "error"
-                });
+                Message.error(res.message)
+              
               }
             } else {
               return false;

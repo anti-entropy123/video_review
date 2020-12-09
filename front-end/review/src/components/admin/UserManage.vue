@@ -1,10 +1,11 @@
 <template>
   <el-container class="container">
-      <h3 class="title">用户管理</h3>
-    <el-main>
+    <h3 class="title">用户管理</h3>
+    <el-main >
       <el-card class="shadow">
-        <div style="font-size: larger">查询</div>
-        <el-row :gutter="10" style="margin-top: 10px;margin-bottom:10px">
+        
+        <el-row :gutter="10" style="margin-top: 5px;margin-bottom:5px">
+          
           <el-col :span="2">
             <div class="search_tag">userName:</div>
           </el-col>
@@ -15,7 +16,11 @@
               @keyup.enter.native="getSearch()"
               clearable
             >
-              <el-button slot="append" icon="el-icon-search" @click="getSearch()"></el-button>
+              <el-button
+                slot="append"
+                icon="el-icon-search"
+                @click="getSearch()"
+              ></el-button>
             </el-input>
           </el-col>
 
@@ -29,7 +34,11 @@
               @keyup.enter.native="getSearch()"
               clearable
             >
-              <el-button slot="append" icon="el-icon-search" @click="getSearch()"></el-button>
+              <el-button
+                slot="append"
+                icon="el-icon-search"
+                @click="getSearch()"
+              ></el-button>
             </el-input>
           </el-col>
         </el-row>
@@ -46,6 +55,7 @@
             tooltip-effect="dark"
             style="width: 100%"
             @selection-change="handleSelectionChange"
+            size="mini"
           >
             >
             <el-table-column type="selection" width="40"></el-table-column>
@@ -56,7 +66,12 @@
               width="200"
               :show-overflow-tooltip="true"
             ></el-table-column>
-            <el-table-column align="center" prop="avatar" label="头像" width="80">
+            <el-table-column
+              align="center"
+              prop="avatar"
+              label="头像"
+              width="80"
+            >
               <template slot-scope="scope">
                 <el-avatar :src="scope.row.avatar"></el-avatar>
               </template>
@@ -69,28 +84,50 @@
               :show-overflow-tooltip="true"
             ></el-table-column>
 
-            <el-table-column prop="mobileNum" label="手机号" align="center" width="200"></el-table-column>
-            <el-table-column prop="uploadNum" label="上传视频数" align="center" width="120">
+            <el-table-column
+              prop="mobileNum"
+              label="手机号"
+              align="center"
+              width="200"
+            ></el-table-column>
+            <el-table-column
+              prop="uploadNum"
+              label="上传视频数"
+              align="center"
+              width="120"
+            >
               <template slot-scope="scope">
                 <el-button
                   type="text"
                   size="mini"
                   @click="showVideoDialog(scope.$index, scope.row.userId)"
-                >{{scope.row.uploadNum}}</el-button>
+                  >{{ scope.row.uploadNum }}</el-button
+                >
               </template>
             </el-table-column>
-            <el-table-column prop="projectNum" label="参与项目数" align="center" width="120">
+            <el-table-column
+              prop="projectNum"
+              label="参与项目数"
+              align="center"
+              width="120"
+            >
               <template slot-scope="scope">
                 <el-button
                   type="text"
                   size="mini"
                   @click="showProjectDialog(scope.$index, scope.row.userId)"
-                >{{scope.row.projectNum}}</el-button>
+                  >{{ scope.row.projectNum }}</el-button
+                >
               </template>
             </el-table-column>
             <el-table-column label="操作" align="center" width="150">
               <template slot-scope="scope">
-                <el-button type="text" size="mini" @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+                <el-button
+                  type="text"
+                  size="mini"
+                  @click="handleDelete(scope.$index, scope.row)"
+                  >删除</el-button
+                >
               </template>
             </el-table-column>
           </el-table>
@@ -107,13 +144,23 @@
         </el-row>
       </div>
     </el-main>
-    <el-dialog title="项目" :visible.sync="showProjectVisible" width="30%" @close="showProjectClose">
-    <!-- <el-table>
+    <el-dialog
+      title="项目"
+      :visible.sync="showProjectVisible"
+      width="30%"
+      @close="showProjectClose"
+    >
+      <!-- <el-table>
 
     </el-table> -->
     </el-dialog>
-    <el-dialog title="会议" :visible.sync="showVideoVisible" width="30%" @close="showVideoClose">
-    <!-- <el-table>
+    <el-dialog
+      title="会议"
+      :visible.sync="showVideoVisible"
+      width="30%"
+      @close="showVideoClose"
+    >
+      <!-- <el-table>
 
     </el-table> -->
     </el-dialog>
@@ -132,7 +179,6 @@ export default {
       search_input_userId: "",
       search_input_mobileNumber: "",
       currentPage: 1,
-
       totalPage: 2,
       userTable: [],
       multipleSelection: [],
@@ -181,17 +227,12 @@ export default {
         }
       });
       if (res.result === 1) {
-        this.$message({
-          message: "获取用户成功",
-          type: "success"
-        });
         this.userTable = res.data.userList;
-               this.totalPage = res.data.totalPage;
+       
+        this.totalPage = parseInt(res.data.totalPage);
+         
       } else {
-        this.$message({
-          message: res.message,
-          type: "error"
-        });
+        Message.error(res.message);
       }
       this.search_input_nickname = "";
       this.search_input_userId = "";
@@ -200,35 +241,34 @@ export default {
     showVideoDialog(index, id) {
       // 通过userId获取video列表 展示video列表 每个列表6个 分页展示
       console.log(index, id);
-      this.showVideoVisible=true
+      this.showVideoVisible = true;
     },
     showProjectDialog(index, id) {
       // 通过userId获取项目列表 展示video列表 每个列表6个 分页展示
       console.log(index, id);
-      this.showProjectVisible=true
+      this.showProjectVisible = true;
     },
-    showProjectClose(){
+    showProjectClose() {},
+    showMeetingClose() {},
+    showVideoClose(){
 
-    },
-    showMeetingClose(){
-
-    },
+    }
   },
   computed: {}
 };
 </script>
 
 <style scoped>
-.container{
+.container {
   display: flex;
   flex-direction: column;
-    margin: 10px 0 0 20px;
+  margin: 10px 0 0 20px;
 }
 .title {
   background-color: #fff;
   width: 100px;
-  height: 36px;
-  line-height: 36px;
+  height: 28px;
+  line-height: 28px;
   border-radius: 5px;
   text-align: center;
   font-size: 18px;
@@ -241,9 +281,8 @@ export default {
 
 .content {
   margin-top: 10px;
-
   background-color: #fff;
-  height: 450px;
+  height: 620px;
   padding-top: 10px;
 }
 .inner-title {

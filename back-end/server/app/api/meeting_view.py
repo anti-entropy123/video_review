@@ -115,7 +115,7 @@ def meeting_todo():
     current_time = time()*1000
     for project in projects:
         meetings = Meeting.get_meeting_by_projectId(project_id=str(project.id))
-        meetings_todo:List[Meeting] = list(filter(lambda x: current_time < x.startTime, meetings))   
+        meetings_todo:List[Meeting] = list(filter(lambda x: current_time < x.endTime, meetings))   
         for meeting in meetings_todo:
             meeting_list.append({
                 'meetingId': str(meeting.id),

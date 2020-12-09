@@ -65,6 +65,7 @@
 </template>
 
 <script>
+import {Message} from 'element-ui';
 export default {
   name: "MeetingManage",
   data() {
@@ -100,17 +101,12 @@ export default {
     async getManageMeeting() {
       const { data: res } = await this.$http.get("admin/meetingManage");
       if (res.result === 1) {
-        this.$message({
-          message: "查询会议",
-          type: "success"
-        });
+       
         this.meetingTable = res.data.meetingList;
                this.totalPage = res.data.totalPage;
       } else {
-        this.$message({
-          message: res.message,
-          type: "error"
-        });
+        Message.error(res.message)
+        
       }
     }
   },

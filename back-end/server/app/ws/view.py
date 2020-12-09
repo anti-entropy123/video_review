@@ -80,9 +80,9 @@ def disconnect_msg():
     # meeting_id = meetingId_manager[request.sid]
     pass
 
-@ws.on('destory', namespace=name_space)
+@ws.on('destroy', namespace=name_space)
 def destory():
-    # print('destory被调用')
+    print('destroy被调用')
     # sid_manager._sid_test_total += 1
     # test = False
     if request.sid in sid_manager:

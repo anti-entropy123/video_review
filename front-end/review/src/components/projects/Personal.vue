@@ -42,7 +42,7 @@
           fit="scale-down"
         >
         </el-image>
-        <div class="video-description">{{ video.videoName }}</div>
+        <div class="video-description">{{ video.videoName |videoNameFormat }}</div>
         <span style="font-size: 9px;color:#333">{{ video.duration }}</span>
         <el-popover
           placement="bottom"
@@ -174,13 +174,6 @@
     position: relative;
   }
 
-  .project-name {
-    background: linear-gradient(to right, red, blue);
-    -webkit-background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
-  }
   .require-more{
     transform: rotate(90deg);
     position: absolute;
