@@ -15,8 +15,8 @@ def create_meeting():
         parms = request.json
         title = parms['title']
         belong_to = parms['belongTo']
-        start_time = int(parms['startTime'])//1000
-        end_time = int(parms['endTime'])//1000
+        start_time = int(parms['startTime'])
+        end_time = int(parms['endTime'])
         note = parms.get('note', '')
     except KeyError as e:
         return abort(400, {'msg': str(e)})
@@ -112,7 +112,7 @@ def meeting_todo():
     
     projects = [Project.get_project_by_id(project_id=project_id) for project_id in projects_id]
     meeting_list = []
-    current_time = time()
+    current_time = time()*1000
     for project in projects:
         meetings = Meeting.get_meeting_by_projectId(project_id=str(project.id))
         meetings_todo:List[Meeting] = list(filter(lambda x: current_time < x.startTime, meetings))   
@@ -151,9 +151,11 @@ def history_meeting():
     
     projects = [Project.get_project_by_id(project_id=project_id) for project_id in projects_id]
     data = []
-    current_time = time()
+    current_time = time()*1000
     for project in projects:
         meetings = Meeting.get_meeting_by_projectId(project_id=str(project.id))
+        for x in meetings:
+            print(current_time, x.endTime, current_time > x.endTime)
         meetings_todo:List[Meeting] = list(filter(lambda x: current_time > x.endTime, meetings))   
         for meeting in meetings_todo:
             data.append({
