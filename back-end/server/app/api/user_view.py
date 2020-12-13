@@ -1,6 +1,3 @@
-import math
-import random
-import time
 from typing import List
 
 from flask import abort, jsonify, request
@@ -8,7 +5,7 @@ from flask_jwt_extended import get_jwt_identity
 
 from ..auth import login_required
 from ..model import Message, User
-from ..utils import build_response, safe_objectId, txCosUtil
+from ..utils import build_response, txCosUtil
 from . import api
 
 
@@ -43,7 +40,7 @@ def update_user_info():
         mobile = params['mobileNum']
         company = params['company']
     except KeyError as e:
-        abort(400)
+        abort(400, {'msg': str(e)})
     
     user = User.get_user_by_id(user_id=user_id)
     user.username = username

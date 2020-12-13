@@ -6,13 +6,14 @@ from . import api
 
 @api.app_errorhandler(400)
 def parm_error(e):
+    # print(e.description)
     if 'msg' in e.description:
         message = "缺少参数: " + e.description['msg']
     elif 'type_error' in e.description:
         message = "错误的id参数"
     else:
-        message = "未知的错误"
-    return jsonify(build_response(0, message))
+        message = str(e)
+    return jsonify(build_response(0, message=message))
 
 @api.app_errorhandler(403)
 def unauthorized(e):

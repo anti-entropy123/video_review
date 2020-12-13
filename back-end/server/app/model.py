@@ -62,7 +62,7 @@ class Message(db.EmbeddedDocument):
     def __str__(self):
         return f'消息: {self.content}'
 
-    def fill_content(self,  **kwargs):
+    def fill_content(self, **kwargs):
         content = None
         if self.type == 0:
             content = MessageContent.upload_new_video_message(**kwargs)
@@ -103,7 +103,7 @@ class User(db.Document):
         return f"用户: {self.username}"
     
     @classmethod
-    def has_user(cls, userId:str, deep:bool=False):
+    def has_user(cls, userId:str, deep:bool=False)->bool:
         select = {
             'id': safe_objectId(userId)
         }
@@ -275,7 +275,7 @@ class Project(db.Document):
         self.alive = False
         self.save()
 
-    def member_id_list(self):
+    def member_id_list(self)->List[str]:
         return [member.userId for member in self.member]
 
     def __contains__(self, key):

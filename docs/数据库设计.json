@@ -1,0 +1,104 @@
+// 此json文档描述了本项目MongoDB数据库各集合文档的一般格式. 大部分数据仅为示例.
+// user
+{
+    "_id": ObjectId("5fcb47a8872ad7704cb534c4"),
+    "username": "用户姓名",
+    "password": "pbkdf2:sha256:150000$Mt8GOJ6b$159b6b6ab6d555be22f6841b258f5f2bebccecaa088b47818e8199578f88ec79",
+    "mobileNum": "123456789",
+    "mail": "123456@qq.com",
+    "avatar": "https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review//img/5fcb47a8872ad7704cb534c4/57785652139.jpg",
+    "company": "tju",
+    "hasProject": [
+        "5fcb4837872ad7704cb534c5",
+        "5fcb4b3a3815cb9e40a1daa1"
+    ],
+    "uploadVideo": [
+        "5fcb486d872ad7704cb534c6",
+        "5fcb4f312fd62669086c8da6"
+    ],
+    "message": [
+        {
+            "fromId": "5fcb46a9872ad7704cb534c1",
+            "fromName": "闹钟你别闹",
+            "projectId": "5fcb46f7872ad7704cb534c2",
+            "projectName": "希儿",
+            "type": 3,
+            "messageId": 0,
+            "date": 1607354129.7034593,
+            "content": {
+                "word": "这是我的项目, 快来加入吧"
+            },
+            "hasProcess": 0,
+            "hasRead": 1
+        }
+    ],
+    "hasMeeting": [
+        "5fd04e7dd7032a3086ba9596"
+    ],
+    "admin": false,
+    "alive": true,
+    "joinProject": [
+        "5fcb46f7872ad7704cb534c2"
+    ]
+}
+// project
+{
+    "_id": ObjectId("5fcb46f7872ad7704cb534c2"),
+    "projectName": "希儿",
+    "owner": "5fcb46a9872ad7704cb534c1",
+    "waitJoin": [
+        "5fcd920e923cbdeb8acb0d3d",
+        "5fcb47a8872ad7704cb534c4"
+    ],
+    "hasVideo": [
+        "5fcb4716872ad7704cb534c3",
+        "5fcd8cfb923cbdeb8acb0d3c"
+    ],
+    "hasMeeting": [
+        "5fd03d552058891b4785ea30",
+        "5fd04d93d7032a3086ba9595"
+    ],
+    "alive": true,
+    "member": [
+        {
+            "_id": "5fcb93db2fd62669086c8dac",
+            "title": "审阅人员"
+        }
+    ]
+}
+// video
+{
+    "_id": ObjectId("5fd06759110e8a17dea75fa7"),
+    "videoName": "miku.mp4",
+    "owner": "5fcb46a9872ad7704cb534c1",
+    "duration": 15,
+    "permission": 0,
+    "url": "https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review/video/5fcb46a9872ad7704cb534c1/93454164867.mp4",
+    "cover": [
+        "https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review/img/5fcb46a9872ad7704cb534c1/93464177158.jpg",
+        "https://hexo-blog-1258787237.cos.ap-beijing.myqcloud.com/video_review/img/5fcb46a9872ad7704cb534c1/93464665790.jpg"
+    ],
+    "belongTo": "5fd0661e110e8a17dea75fa6",
+    "comment": [],
+    "password": "",
+    "description": "",
+    "hasReview": 0,
+    "reviewResult": 0,
+    "reviewSummary": "",
+    "createDate": 1607487321.5010457,
+    "alive": true
+}
+// meeting
+{
+    "_id": ObjectId("5fd03d552058891b4785ea30"),
+    "title": "这是会议标题",
+    "ownerId": "5fcb46a9872ad7704cb534c1",
+    "ownerName": "闹钟你别闹",
+    "belongTo": "5fcb46f7872ad7704cb534c2",
+    "startTime": 1607482708000,
+    "endTime": 1607482709000,
+    "meetingUrl": "todo",
+    "txMeetingId": "todo",
+    "note": "这里是会议备注",
+    "alive": true
+}

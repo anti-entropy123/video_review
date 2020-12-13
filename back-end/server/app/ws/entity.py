@@ -289,12 +289,12 @@ class MeetingMember:
             'comment': self.comment
         }
 
-    def can_control(self):
+    def can_control(self)->bool:
         # print(self.user, '的控制权为:', self.control)
         if not self.control:
             raise RuntimeError('你没有控制权限')
 
-    def can_comment(self):
+    def can_comment(self)->bool:
         # print(self.user, '的批注权为', self.comment)
         if not self.comment:
             raise RuntimeError('你没有批注权限')
