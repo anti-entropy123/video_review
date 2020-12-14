@@ -72,8 +72,6 @@ def login():
         mobileNum = request.json['mobileNum']
         password = request.json.get('password', None)
         checkcode = request.json.get('checkcode', None)
-        if not password and not checkcode:
-            raise KeyError('password or checkcode')
     except KeyError as e:
         abort(400, {'msg': str(e)})
 
@@ -81,14 +79,20 @@ def login():
     if not user:
         # 没有此用户
         abort(401)
-
+    
     result, message = 1, ''
-    if password and not check_password_hash(user.password, password): 
-        # 错误的密码
-        abort(401)
+    # 使用密码登录
+    if password:
+        if check_password_hash(user.password, password=password):
+            pass
+        else:
+            abort(401)  
+    # 使用验证码登录
     elif checkcode:
         result, message = checkCodeManager.verify_code(mobileNum=mobileNum, code=checkcode)
-
+    else:
+        return jsonify(build_response(0, "无效的登录方式"))
+        
     if result:
         access_token = create_access_token(identity=str(user.id))
         refresh_token = create_refresh_token(identity=str(user.id))
