@@ -4,8 +4,8 @@ from flask_jwt_extended import (create_access_token, create_refresh_token,
 from werkzeug.security import check_password_hash, generate_password_hash
 
 from ..model import User
-from ..utils import checkCodeManager, build_response
-from . import auth
+from ..utils import checkCodeManager, build_response, wx_util
+from . import auth, openId_required
 
 @auth.route('/checkCode', methods=['GET'])
 def get_checkcode():
@@ -16,6 +16,17 @@ def get_checkcode():
         return jsonify(build_response(0, "缺少参数: mobileNum"))
 
     result, message = checkCodeManager.send_CheckCode(mobile)
+    return jsonify(build_response(result, message))
+
+@auth.route('/wx/checkCode', methods=['GET'])
+def wx_get_checkcode():
+    try:
+        mobileNum = request.args['mobileNum']
+    # operation = request.args.get('operation', 'register')
+    except KeyError as e:
+        abort(400, {'msg': str(e)})
+    
+    result, message = checkCodeManager.send_CheckCode(mobileNum=mobileNum)
     return jsonify(build_response(result, message))
 
 # @auth.route('/user/checkCode', methods=['GET'])
@@ -83,7 +94,7 @@ def login():
     result, message = 1, ''
     # 使用密码登录
     if password:
-        if check_password_hash(user.password, password=password):
+        if user.verify_password(password=password):
             pass
         else:
             abort(401)  
@@ -160,3 +171,64 @@ def admin_login():
         )
     return jsonify(build_response(1, '', token=access_token, refreshToken=refresh_token, userId=str(user.id), username=user.username))
     
+@auth.route('/wx/login/', methods=['POST'])
+def wx_login():
+    try:
+        code = request.json['code']
+    except KeyError as e:
+        abort(400, {'msg': str(e)})
+    
+    open_id = wx_util.get_openid_by_code(code=code)
+    if not open_id:
+        return jsonify(build_response(0, '无效的code'))
+    user = User.get_user_by_openId(open_id=open_id)
+    data = {
+        'openId': open_id
+    }
+    if not user:
+        data['firstTime'] = True
+        data['tempToken'] = create_access_token(identity=open_id)
+    else:
+        data['firstTime'] = False
+        data['userId'] = str(user.id)
+        data['token'] = create_access_token(identity=str(user.id))
+        data['refreshToken'] = create_refresh_token(identity=str(user.id))
+    
+    return jsonify(build_response(1, '', **data))
+
+@auth.route('/wx/bindMobileNum/', methods=['POST'])
+@openId_required
+def bind_mobileNum():
+    try:
+        checkcode = request.json['checkCode']
+        mobileNum = request.json['mobileNum']
+    except KeyError as e:
+        abort(400, {'msg': str(e)})
+    open_id = get_jwt_identity()
+    # 校验验证码
+    result, message = checkCodeManager.verify_code(mobileNum, checkcode)
+    if not result: 
+        return jsonify({'result': result, 'message': message})
+    
+    user = User.get_user_by_mobileNum(mobileNum=mobileNum)
+    if not user:
+        needUserInfo = True
+        user_info = wx_util.get_wx_user_info(openId=open_id)
+        user = User(
+            username  = user_info['nickname'], 
+            mobileNum = mobileNum,
+            openId    = open_id,
+            avatar    = user_info['headimgurl'],
+        )
+        user.save()
+    else:
+        needUserInfo = False
+        user.openId = open_id
+        user.save()
+    
+    return jsonify(build_response(
+        token=create_access_token(identity=str(user.id)),
+        refreshToken=create_refresh_token(identity=str(user.id)),
+        userId=str(user.id),
+        needUserInfo=needUserInfo
+    ))

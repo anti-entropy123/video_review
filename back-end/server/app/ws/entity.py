@@ -165,28 +165,13 @@ class MeetingRoom:
         if not video:
             return []
 
-        comments:List[Comment] = video.comment
-        result = []
-        for comment in comments:
-            if comment.alive:
-                result.append({
-                    'commentId': comment.commentId,
-                    'fromId': comment.fromId,
-                    'fromName': comment.fromName,
-                    'imageUrl': comment.image,
-                    'content': comment.content,
-                    'position': comment.position,
-                    'avatar': User.get_user_by_id(comment.fromId, deep=True).avatar
-                })
+        return video.get_comment_list()
 
-        return result
-    
     def add_comment(self, from_id, from_name, content, image_url, position):
-        video = self.player.video
+        video:Video = self.player.video
         if not video:
             raise RuntimeError('当前没在播放视频')
         comment = Comment(
-            commentId=len(video.comment),
             fromId=from_id,
             fromName=from_name,
             position=position,
@@ -194,8 +179,7 @@ class MeetingRoom:
             content=content,
             date=time.time()
         )
-        video.comment.append(comment)
-        video.save()
+        video.insert_comment(comment=comment)
 
     def remove_comment(self, user_id, comment_id):
         video = self.player.video

@@ -3,6 +3,8 @@ from __future__ import annotations
 import time
 from typing import List
 
+from werkzeug.security import check_password_hash
+
 from . import db
 from .utils import safe_objectId
 
@@ -83,9 +85,10 @@ class Message(db.EmbeddedDocument):
 
 class User(db.Document):
     username = db.StringField(required=True)
-    password = db.StringField(required=True)
     mobileNum = db.StringField(required=True)
 
+    openId = db.StringField(required=False)
+    password = db.StringField(required=False)
     mail = db.StringField(default='')
     avatar = db.StringField(default='https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png')
     company = db.StringField(default='')
@@ -123,6 +126,16 @@ class User(db.Document):
         return cls.objects(**select).first()
 
     @classmethod
+    def get_user_by_openId(cls, open_id:str, deep:bool=False)->User:
+        select = {
+            'openId': open_id
+        }
+        if not deep:
+            select['alive'] = True
+
+        return cls.objects(**select).first()
+
+    @classmethod
     def get_user_by_mobileNum(cls, mobileNum, deep:bool=False)->User:
         select = {
             'mobileNum': mobileNum
@@ -130,7 +143,15 @@ class User(db.Document):
         if not deep:
             select['alive'] = True
 
-        return User.objects(**select).first()
+        return cls.objects(**select).first()
+
+    def verify_password(self, password:str)->bool:
+        try:
+            pwhash = self.password
+        except Exception as e:
+            return False
+
+        return check_password_hash(pwhash=pwhash, password=password)
 
     def receive_message(self, message: Message):
         message.messageId = len(self.message)
@@ -297,21 +318,20 @@ class Comment(db.EmbeddedDocument):
     commentId = db.IntField(required=True)
     fromId = db.StringField(required=True)
     fromName = db.StringField(required=True)
-    position = db.IntField(required=True)
+    position = db.FloatField(required=True)
     image = db.StringField(required=True)
     content = db.StringField(required=True)
     date = db.FloatField(required=True)
     
     alive = db.BooleanField(default=True)
     
-
     def __str__(self):
         return f"批注: {self.content}"
 
 class Video(db.Document):
     videoName = db.StringField(required=True)
     owner = db.StringField(required=True)
-    duration = db.IntField(required=True)
+    duration = db.FloatField(required=True)
     permission = db.IntField(required=True)
     url = db.StringField(required=True)
     cover = db.ListField(db.StringField(), required=True, max_length=50)
@@ -357,6 +377,35 @@ class Video(db.Document):
         self.reviewSummary = summary
         self.hasReview = True
         self.save()
+
+    def get_comment_list(self, deep:bool=False)->List:
+        comments:List[Comment] = self.comment
+        result = []
+        for comment in comments:
+            if deep or comment.alive:
+                result.append({
+                    'commentId': comment.commentId,
+                    'fromId': comment.fromId,
+                    'fromName': comment.fromName,
+                    'imageUrl': comment.image,
+                    'content': comment.content,
+                    'position': comment.position,
+                    'avatar': User.get_user_by_id(comment.fromId, deep=True).avatar,
+                    'date': comment.date
+                })
+
+        return result
+
+    def insert_comment(self, comment:Comment, from_user:User=None)->int:
+        if from_user:
+            comment.fromId = str(from_user.id)
+            comment.fromName = from_user.username
+
+        comment.commentId = len(self.comment)
+        comment.date = time.time()
+        self.comment.append(comment)
+        self.save()
+        return comment.commentId
 
 class Meeting(db.Document):
     title = db.StringField(required=True)

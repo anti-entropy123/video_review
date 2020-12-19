@@ -1,18 +1,23 @@
 from __future__ import annotations
 
 import io
+import json
 import random
 import time
-from typing import IO, Tuple, List
-from flask import current_app as app
+from typing import IO, List, Tuple
+
 import cv2
+import requests
 from aliyunsdkcore.client import AcsClient
 from aliyunsdkcore.request import CommonRequest
 from bson.objectid import ObjectId
+from flask import current_app as app
 from PIL import Image
+from requests.api import head
 
 from config.secret_config import (AliAccessKeyID, AliAccessKeySecret,
-                                  TxSecretId, TxSecretKey, bucket_name)
+                                  TxSecretId, TxSecretKey, bucket_name,
+                                  wx_appid, wx_secret)
 from qcloud_cos import CosConfig, CosS3Client
 
 
@@ -195,3 +200,86 @@ txCosUtil = TxCosUtil()
 
 if __name__ == "__main__":
     txCosUtil.simple_file_upload()
+
+class WxUtil:
+    secret = wx_secret
+    appid = wx_appid
+    headers = {
+        'accept': '*/*',
+        'connection': 'Keep-Alive',
+        'user-agent': 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1)'
+    }
+    _expires_in = 7200
+    _access_token = ''
+    _last_time = 0
+
+    @property
+    def access_token(self)->str:
+        if time.time() - self._last_time >= self._expires_in-20:
+            self.get_access_token()
+        return self._access_token
+
+    def __init__(self) -> None:
+        # self.get_access_token()
+        pass
+
+    def get_openid_by_code(self, code:str)->str:
+        url = f"https://api.weixin.qq.com/sns/jscode2session"
+        params = {
+            'appid': self.appid,
+            'secret': self.secret,
+            'js_code': code,
+            'grant_type': 'authorization_code'
+        }
+        response = requests.get(
+            url=url,
+            params=params,
+            headers=self.headers
+        )
+        result:dict = response.json()
+        print(result)
+        try:
+            openId = result['openid']
+            session_key = result['session_key']
+        except KeyError as e:
+            return ''
+        
+        return openId
+
+    def get_wx_user_info(self, openId:str)->dict:
+        url = f"https://api.weixin.qq.com/cgi-bin/user/info"
+        params = {
+            'access_token': self.access_token,
+            'openid': openId,
+            'lang': 'zh_CN'
+        }
+        response = requests.get(
+            url=url,
+            headers=self.headers,
+            params=params
+        )
+        # return response.json()
+        return {
+            'nickname': '新用户',
+            'headimgurl': 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png'
+        }
+
+    def get_access_token(self):
+        url = f"https://api.weixin.qq.com/cgi-bin/token"
+        params = {
+            'grant_type': 'client_credential',
+            'appid': self.appid,
+            'secret': self.secret
+        }
+        response = requests.get(
+            url=url,
+            headers=self.headers,
+            params=params
+        )
+        data = response.json()
+        print('获取新的 access_token')
+        self._expires_in = data['expires_in']
+        self._last_time = time.time()
+        self._access_token = data['access_token']
+
+wx_util = WxUtil()

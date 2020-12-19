@@ -1,5 +1,6 @@
 import os
 import time
+from typing import List
 
 from flask import abort
 from flask import current_app as app
@@ -8,7 +9,7 @@ from flask_jwt_extended import get_jwt_identity
 
 from .. import db
 from ..auth import login_required
-from ..model import Message, Project, User, Video
+from ..model import Comment, Message, Project, User, Video
 from ..utils import build_response, captrueFrameUtil, safe_objectId, txCosUtil
 from . import api
 
@@ -149,4 +150,47 @@ def my_video():
         }
         data.append(one)
     
+    return jsonify(build_response(data=data))
+
+@api.route('/video/<video_id>/comments', methods=['GET'])
+@login_required
+def get_comment(video_id:str):
+    user = User.get_user_by_id(get_jwt_identity())
+    video = Video.get_video_by_id(video_id=video_id)
+    if not video:
+        return jsonify(build_response(message='没有此视频'))
+    
+    project = Project.get_project_by_id(video.belongTo)
+    if not user in project:
+        return jsonify(build_response(message='你不能查看此视频的批注'))
+    
+    data = video.get_comment_list()
+    return jsonify(build_response(data=data))
+
+@api.route('/video/<video_id>/comment/', methods=['POST'])
+@login_required
+def insert_comment(video_id:str):
+    try:
+        content:str = request.json['content']
+        imageUrl:str = request.json['imageUrl']
+        position:float = request.json['position']
+    except KeyError as e:
+        abort(400, {'msg': str(e)})
+
+    user = User.get_user_by_id(get_jwt_identity())
+    video = Video.get_video_by_id(video_id=video_id)
+    if not video:
+        return jsonify(build_response(message='没有此视频'))
+    
+    project = Project.get_project_by_id(video.belongTo)
+    if not user in project:
+        return jsonify(build_response(message='你不能对此视频做批注'))
+    
+    comment = Comment(
+        position=position,
+        image=imageUrl,
+        content=content
+    )
+    comment_id = video.insert_comment(comment=comment, from_user=user)
+    data = {'commentId': comment_id}
     return jsonify(build_response(data=data))

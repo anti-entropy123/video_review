@@ -14747,3 +14747,76 @@ ValueError: Too many packets in payload
 [2020-12-07 22:29:59,367] INFO in _internal:  * Restarting with stat
 [2020-12-07 22:30:00,651] WARNING in _internal:  * Debugger is active!
 [2020-12-07 22:30:00,662] INFO in _internal:  * Debugger PIN: 264-103-222
+[2020-12-16 18:25:04,391] DEBUG in connectionpool: Starting new HTTPS connection (1): api.weixin.qq.com:443
+[2020-12-16 18:25:04,700] DEBUG in connectionpool: https://api.weixin.qq.com:443 "GET /cgi-bin/token?grant_type=client_credential&appid=wxfe8a1124c4785c6f&secret=3877b5c0e575b3660650cf14cdf4b2fc HTTP/1.1" 200 194
+[2020-12-16 18:27:28,950] DEBUG in connectionpool: Starting new HTTPS connection (1): api.weixin.qq.com:443
+[2020-12-16 18:27:29,321] DEBUG in connectionpool: https://api.weixin.qq.com:443 "GET /cgi-bin/token?grant_type=client_credential&appid=wxfe8a1124c4785c6f&secret=3877b5c0e575b3660650cf14cdf4b2fc HTTP/1.1" 200 194
+[2020-12-16 18:27:29,605] INFO in _internal:  * Restarting with stat
+[2020-12-16 18:27:30,540] DEBUG in connectionpool: Starting new HTTPS connection (1): api.weixin.qq.com:443
+[2020-12-16 18:27:30,763] DEBUG in connectionpool: https://api.weixin.qq.com:443 "GET /cgi-bin/token?grant_type=client_credential&appid=wxfe8a1124c4785c6f&secret=3877b5c0e575b3660650cf14cdf4b2fc HTTP/1.1" 200 194
+[2020-12-16 18:27:31,047] WARNING in _internal:  * Debugger is active!
+[2020-12-16 18:27:31,053] INFO in _internal:  * Debugger PIN: 264-103-222
+[2020-12-16 18:28:20,450] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\utils.py', reloading
+[2020-12-16 18:28:20,826] INFO in _internal:  * Restarting with stat
+[2020-12-16 18:28:26,673] INFO in _internal:  * Restarting with stat
+[2020-12-16 18:28:27,906] WARNING in _internal:  * Debugger is active!
+[2020-12-16 18:28:27,912] INFO in _internal:  * Debugger PIN: 264-103-222
+[2020-12-16 18:59:04,517] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\auth\\views.py', reloading
+[2020-12-16 18:59:05,042] INFO in _internal:  * Restarting with stat
+[2020-12-16 18:59:06,223] WARNING in _internal:  * Debugger is active!
+[2020-12-16 18:59:06,230] INFO in _internal:  * Debugger PIN: 264-103-222
+[2020-12-16 19:02:20,908] INFO in _internal:  * Restarting with stat
+[2020-12-16 19:02:24,126] WARNING in _internal:  * Debugger is active!
+[2020-12-16 19:02:24,162] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-12-16 19:02:45,611] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\auth\\views.py', reloading
+[2020-12-16 19:02:47,848] INFO in _internal:  * Restarting with stat
+[2020-12-16 19:02:50,879] WARNING in _internal:  * Debugger is active!
+[2020-12-16 19:02:50,893] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-12-16 19:04:07,597] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\utils.py', reloading
+[2020-12-16 19:09:14,813] INFO in _internal:  * Restarting with stat
+[2020-12-16 19:09:18,127] WARNING in _internal:  * Debugger is active!
+[2020-12-16 19:09:18,141] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-12-16 19:11:48,948] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\utils.py', reloading
+[2020-12-16 19:11:58,394] INFO in _internal:  * Restarting with stat
+[2020-12-16 19:12:01,728] WARNING in _internal:  * Debugger is active!
+[2020-12-16 19:12:01,774] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-12-16 19:12:29,047] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\utils.py', reloading
+[2020-12-16 19:12:31,540] INFO in _internal:  * Restarting with stat
+[2020-12-16 19:12:34,778] WARNING in _internal:  * Debugger is active!
+[2020-12-16 19:12:34,793] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-12-16 19:13:39,349] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\utils.py', reloading
+[2020-12-16 19:13:46,150] INFO in _internal:  * Restarting with stat
+[2020-12-16 19:13:49,158] WARNING in _internal:  * Debugger is active!
+[2020-12-16 19:13:49,170] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-12-16 19:16:27,496] INFO in _internal:  * Restarting with stat
+[2020-12-16 19:16:30,514] WARNING in _internal:  * Debugger is active!
+[2020-12-16 19:16:30,526] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-12-16 19:16:53,525] INFO in _internal:  * Restarting with stat
+[2020-12-16 19:16:56,393] WARNING in _internal:  * Debugger is active!
+[2020-12-16 19:16:56,405] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-12-16 19:17:38,395] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\auth\\views.py', reloading
+[2020-12-16 19:17:55,877] INFO in _internal:  * Restarting with stat
+[2020-12-16 19:17:58,858] WARNING in _internal:  * Debugger is active!
+[2020-12-16 19:17:58,870] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-12-16 19:19:16,868] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\auth\\__init__.py', reloading
+[2020-12-16 19:19:18,859] INFO in _internal:  * Restarting with stat
+[2020-12-16 19:19:21,975] WARNING in _internal:  * Debugger is active!
+[2020-12-16 19:19:21,993] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-12-16 19:42:45,430] INFO in _internal:  * Restarting with stat
+[2020-12-16 19:42:50,267] WARNING in _internal:  * Debugger is active!
+[2020-12-16 19:42:50,285] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-12-16 19:45:32,587] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\model.py', reloading
+[2020-12-16 19:46:15,713] INFO in _internal:  * Restarting with stat
+[2020-12-16 19:46:22,871] WARNING in _internal:  * Debugger is active!
+[2020-12-16 19:46:22,929] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-12-16 19:51:39,892] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\model.py', reloading
+[2020-12-16 19:51:44,160] INFO in _internal:  * Restarting with stat
+[2020-12-16 19:51:50,598] WARNING in _internal:  * Debugger is active!
+[2020-12-16 19:51:50,641] INFO in _internal:  * Debugger PIN: 611-914-660
+[2020-12-19 16:42:57,367] INFO in _internal:  * Restarting with stat
+[2020-12-19 16:42:58,408] WARNING in _internal:  * Debugger is active!
+[2020-12-19 16:42:58,413] INFO in _internal:  * Debugger PIN: 264-103-222
+[2020-12-19 16:56:41,675] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\api\\video_view.py', reloading
+[2020-12-19 16:56:42,050] INFO in _internal:  * Restarting with stat
+[2020-12-19 16:56:43,266] WARNING in _internal:  * Debugger is active!
+[2020-12-19 16:56:43,272] INFO in _internal:  * Debugger PIN: 264-103-222

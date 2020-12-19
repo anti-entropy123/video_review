@@ -4,7 +4,7 @@ from flask_jwt_extended import get_jwt_identity, verify_jwt_in_request
 from flask import abort
 from flask_jwt_extended.utils import get_jwt_claims, user_loader
 from ..model import User
-from ..utils import build_response
+from ..utils import build_response, wx_util
 from bson import ObjectId
 import bson
 
@@ -50,6 +50,19 @@ def admin_required(fn):
             return jsonify(build_response(0, "token失效, 请重新登陆"))
         elif not user.admin:
             return jsonify(build_response(0, '你不是管理员'))
+        else:
+            return fn(*args, **kwargs)
+
+    return wrapper
+
+def openId_required(fn):
+    @wraps(fn)
+    def wrapper(*args, **kwargs):
+        verify_jwt_in_request()
+        openId = get_jwt_identity()
+        info = wx_util.get_wx_user_info(openId=openId)
+        if not 'nickname' in info:
+            return jsonify(build_response(0, "无效的临时Token"))
         else:
             return fn(*args, **kwargs)
 
