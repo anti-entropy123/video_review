@@ -259,6 +259,7 @@ class WxUtil:
             params=params
         )
         # return response.json()
+        # todo
         return {
             'nickname': '新用户',
             'headimgurl': 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png'

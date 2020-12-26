@@ -131,7 +131,10 @@ def reset_password():
     user = User.objects(mobileNum=mobileNum, alive=True).first()
     if not user: 
         return jsonify(build_response(0, "用户不存在"))
-    
+    # user = User.get_user_by_id(get_jwt_identity())
+    # if user.mobileNum != mobileNum:
+    #     return jsonify(build_response(0, "请输入本人手机号"))
+
     result, message = checkCodeManager.verify_code(user.mobileNum, checkcode)
     if not result:
         return jsonify(build_response(result, message))

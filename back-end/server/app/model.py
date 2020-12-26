@@ -146,11 +146,10 @@ class User(db.Document):
         return cls.objects(**select).first()
 
     def verify_password(self, password:str)->bool:
-        try:
-            pwhash = self.password
-        except Exception as e:
+        pwhash = self.password
+        if not pwhash:
             return False
-
+            
         return check_password_hash(pwhash=pwhash, password=password)
 
     def receive_message(self, message: Message):
