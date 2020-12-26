@@ -14,8 +14,9 @@ from . import api
 @api.route('/project/', methods=['POST'])
 @login_required
 def create_project():
+    args = request.json or {}
     try:
-        project_name = request.json['projectName']
+        project_name = args['projectName']
     except KeyError as e:
         abort(400, {'msg': str(e)})
 
@@ -34,9 +35,10 @@ def create_project():
 @api.route('/project/<project_id>/inviteUser/', methods=['POST'])
 @login_required
 def invite_user(project_id):
+    args = request.json or {}
     try:
-        user_id:str = request.json['userId']
-        word = request.json['word']
+        user_id:str = args['userId']
+        word = args['word']
     except KeyError as e:
         abort(400, {'msg': str(e)})
 
@@ -68,9 +70,10 @@ def invite_user(project_id):
 @api.route('/project/<project_id>/join/', methods=['POST'])
 @login_required
 def join_project(project_id):
+    args = request.json or {}
     try:
-        message_id:int = int(request.json['messageId'])
-        is_agree = request.json['isAgree']
+        message_id:int = int(args['messageId'])
+        is_agree = args['isAgree']
     except KeyError as e:
         abort(400, {'msg': str(e)})
     except ValueError as e:

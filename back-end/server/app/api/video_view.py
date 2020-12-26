@@ -93,8 +93,8 @@ def create_video():
 @api.route('/video/<video_id>/review/', methods=['POST'])
 @login_required
 def review_finish(video_id):
+    parm = request.json or {}
     try:
-        parm = request.json
         review_result = parm['reviewResult']
         summary = parm['summary']
     except KeyError as e:
@@ -170,10 +170,11 @@ def get_comment(video_id:str):
 @api.route('/video/<video_id>/comment/', methods=['POST'])
 @login_required
 def insert_comment(video_id:str):
+    args = request.json or {}
     try:
-        content:str = request.json['content']
-        imageUrl:str = request.json['imageUrl']
-        position:float = request.json['position']
+        content:str = args['content']
+        imageUrl:str = args['imageUrl']
+        position:float = args['position']
     except KeyError as e:
         abort(400, {'msg': str(e)})
 

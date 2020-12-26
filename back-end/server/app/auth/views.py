@@ -45,7 +45,7 @@ def wx_get_checkcode():
 
 @auth.route('/register/', methods=['POST'])
 def register():
-    data = request.json
+    data = request.json or {}
     try:
         username  = data['username']
         password  = data['password']
@@ -79,10 +79,11 @@ def register():
 
 @auth.route('/login/', methods=['POST'])
 def login():
+    args = request.json or {}
     try:
-        mobileNum = request.json['mobileNum']
-        password = request.json.get('password', None)
-        checkcode = request.json.get('checkcode', None)
+        mobileNum = args['mobileNum']
+        password = args.get('password', None)
+        checkcode = args.get('checkcode', None)
     except KeyError as e:
         abort(400, {'msg': str(e)})
 
@@ -120,7 +121,7 @@ def refresh():
 
 @auth.route('/user/resetPassword/', methods=['POST'])
 def reset_password():
-    args = request.json
+    args = request.json or {}
     try:
         mobileNum = args['mobileNum']
         password = args['password']
@@ -145,7 +146,7 @@ def reset_password():
     
 @auth.route('/admin/login/', methods=['POST'])
 def admin_login():
-    args = request.json
+    args = request.json or {}
     try:
         mobile_num = args['mobileNum']
         password = args['password']
@@ -176,8 +177,9 @@ def admin_login():
     
 @auth.route('/wx/login/', methods=['POST'])
 def wx_login():
+    args = request.json or {}
     try:
-        code = request.json['code']
+        code = args['code']
     except KeyError as e:
         abort(400, {'msg': str(e)})
     
@@ -202,9 +204,10 @@ def wx_login():
 @auth.route('/wx/bindMobileNum/', methods=['POST'])
 @openId_required
 def bind_mobileNum():
+    args = request.json or {}
     try:
-        checkcode = request.json['checkCode']
-        mobileNum = request.json['mobileNum']
+        checkcode = args['checkCode']
+        mobileNum = args['mobileNum']
     except KeyError as e:
         abort(400, {'msg': str(e)})
     open_id = get_jwt_identity()

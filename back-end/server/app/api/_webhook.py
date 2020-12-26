@@ -5,7 +5,7 @@ import threading
 
 # @api.route('/_webhook', methods=['GET', 'POST'])
 # def test_webhook():
-#     data = request.json
+#     data = request.json or {}
 #     # print(data)
 #     branch = data['ref'].split('/')[-1]
 #     # print(branch)

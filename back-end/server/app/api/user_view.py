@@ -32,8 +32,7 @@ def get_user_info(target_id:str):
 @api.route('/userInfo/', methods=['POST'])
 @login_required
 def update_user_info():
-    user_id = get_jwt_identity()
-    params = request.json
+    params = request.json or {}
     try:
         username = params['username']
         avatar = params['avatar']
@@ -41,7 +40,8 @@ def update_user_info():
         company = params['company']
     except KeyError as e:
         abort(400, {'msg': str(e)})
-    
+
+    user_id = get_jwt_identity()
     user = User.get_user_by_id(user_id=user_id)
     user.username = username
     user.avatar = avatar

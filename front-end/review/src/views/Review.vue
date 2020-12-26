@@ -73,6 +73,7 @@
         <textarea v-if="canComment==true" class="text" placeholder="在这写批注" v-on:keyup="isEmpty()"  v-model="commentContent" ></textarea>
         <textarea v-else class="text" placeholder="在这写批注" v-on:keyup="isEmpty()"  v-model="commentContent" disabled="disabled"></textarea>
         <div class="tools">
+          <a-switch  @change="changeRtcState" />
           <a-icon type="close-circle" theme="twoTone" style="margin-right: 27px;cursor:pointer;font-size:20px" @click="cancelDraw"/>
           <a-icon type="delete" theme="twoTone" style="margin-right: 20px;cursor:pointer;font-size:20px" @click="cleanDraw"/>
           <a-icon type="edit" theme="twoTone" style="margin-right: 10px;cursor:pointer;font-size:20px" @click="draw" />
@@ -109,7 +110,7 @@
                   @confirm="deleteComment(comment.commentId)"
                   v-if="comment.fromName==userName"
                 >
-                  <div  style="cursor:pointer;color:darkblue;fongt-size:12px;float:right;margin-bottom: 2px"  >删除</div>
+                  <div style="cursor:pointer;color:darkblue;fongt-size:12px;float:right;margin-bottom: 2px"  >删除</div>
                 </a-popconfirm>
 
               </div>
@@ -136,6 +137,9 @@
   import Header from "./Header";
   import Draw from "./Draw"
   import axios from "axios";
+  import 'aliyun-webrtc-sdk'
+
+
   export default {
     components: {Draw, Header},
     name: "Review",
@@ -145,6 +149,8 @@
         // videoName:'项目名称',
         current: ['commant'],
         textEmpty: true,
+        rtc: false,
+        aliWebrtc: null,
         playerOptions: {
           playbackRates: [0.5, 1.0, 1.5, 2.0], //播放速度
           autoplay: false, // 如果true,浏览器准备好时开始回放。
@@ -205,8 +211,39 @@
       };
     },
     methods: {
+      changeRtcState(){
+        this.rtc = !this.rtc;
+        console.log(this.rtc);
+        // console.log('语音模块', this.aliWebrtc);
+        var authInfo = this.GenerateAliRtcAuthInfo(this.meetingId);
+        this.aliWebrtc.configLocalAudioPublish = this.rtc;
+        this.aliWebrtc.configLocalCameraPublish = this.rtc;
+        this.aliWebrtc.publish().then(re => {
+                setTimeout(() => {
+                },2000);
+            }).catch(error => {
+                setTimeout(() => {
+                }, 2000);
+            });
+      },
+      GenerateAliRtcAuthInfo(channelId){
+        var appId = "60okegzi";// 修改为自己的appid 该方案仅为开发测试使用，正式上线需要使用服务端的AppServer
+        var appKey = "6c3c9206b0d3dcc11f44495391a53df8";// 修改为自己的appkey 该方案仅为开发测试使用，正式上线需要使用服务端的AppServer
+        var timestamp = parseInt(new Date().getTime() / 1000 + 48 * 60 * 60);
+        var nonce = 'AK-' + timestamp;
+        var token = sha256(appId + appKey + channelId + this.userId + nonce + timestamp);
+        return {
+            appid:appId,
+            userid: this.userId,
+            timestamp:timestamp,
+            nonce:nonce,
+            token:token,
+            gslb: ["https://rgslb.rtc.aliyuncs.com"],
+            channel:channelId
+        };
+      },
       handleOk(e) {
-        console.log(e);
+        // console.log(e);
         this.visible = false;
       },
       isEmpty() {
@@ -250,7 +287,7 @@
         });
       },
       changeSrc:function(value){
-        console.log(value)
+        // console.log(value)
         this.videoId=value
         this.changeVideo(5)
       },
@@ -263,20 +300,20 @@
         // this.changeVideo(2);
         this.isCheckComment = true;
         this.currentImageUrl = imageUrl;
-        console.log(this.isCheckComment);
-        console.log(this.currentImageUrl);
+        // console.log(this.isCheckComment);
+        // console.log(this.currentImageUrl);
       },
       submitComment(){
         if(this.isDraw){
           this.saveImg();
-          console.log(this.imgUrl)
+          // console.log(this.imgUrl)
           this.cleanDraw();
           this.isDraw=false;
         }
         let _this = this;
         // 提交批注
         setTimeout(function(){
-          console.log(_this.imgUrl)
+          // console.log(_this.imgUrl)
           _this.$socket.emit('addComment', {
             meetingId: _this.meetingId,
             content: _this.commentContent,
@@ -299,12 +336,12 @@
         //修改control权限
         if(type==1){
           this.memberList[index].control = (this.memberList[index].control===false)?true:false;
-          console.log(this.memberList[index].control);
+          // console.log(this.memberList[index].control);
         }
         //修改comment
         else{
           this.memberList[index].comment = (this.memberList[index].comment===false)?true:false;
-          console.log(this.memberList[index].comment);
+          // console.log(this.memberList[index].comment);
         }
         this.$socket.emit("memberPermission", {
           userId: this.memberList[index].userId,
@@ -336,11 +373,11 @@
         const {data: res} = await this.$http.get(
           `/user/${userId}`
         ).catch(function (error) {
-            console.log(error);
+            // console.log(error);
           }
         );
         if (res.result == 1) {
-          console.log(res.data)
+          // console.log(res.data)
           this.avatar = res.data.avatar;
           this.userName = res.data.username;
         }
@@ -350,7 +387,7 @@
         const {data: res} =await this.$http.get(
           `/user/${userId}`
         ).catch(function (error) {
-            console.log(error);
+            // console.log(error);
           }
         );
         if (res.result == 1) {
@@ -361,7 +398,7 @@
       draw:function () {
         this.changeVideo(1);
         this.isDraw = true;
-        console.log(this.isDraw);
+        // console.log(this.isDraw);
       },
       cancelDraw:function () {
         this.isDraw = false;
@@ -396,13 +433,13 @@
             headers:self.headerobj
           }
         ).catch(function (error) {
-            console.log(error);
+            // console.log(error);
           }
         );
         if (res.result == 1) {
           this.imgFile=new FormData();
           this.imgUrl = res.data.url;
-          console.log(this.imgUrl)
+          // console.log(this.imgUrl)
         }
       },
       getVideoSize(){
@@ -445,7 +482,7 @@
       },
     },
     mounted() {
-      this.isAdmin = this.$route.query.isAdmin 
+      this.isAdmin = this.$route.query.isAdmin
       // this.isAdmin = false
       this.meetingId = this.$route.query.meetingId
       this.projectId = window.sessionStorage.getItem('projectId')
@@ -463,12 +500,37 @@
       console.log("``````````````````````")
       this.avatar = this.getHead(this.userId);
       this.getVideo(this.projectId);
-
       this.getVideoSize();
       let that = this;
       window.onresize = () => {
         that.getVideoSize();
       }
+      // 初始化语音模块
+      console.log(AliRtcEngine)
+      this.aliWebrtc = new AliRtcEngine();
+      this.aliWebrtc.isSupport().then(re => {
+        console.log(re);
+        init();
+      }).catch(error => {
+          alert(error.message);
+      })
+      console.log('语音模块', this.aliWebrtc);
+      var authInfo = this.GenerateAliRtcAuthInfo(this.meetingId);
+      this.aliWebrtc.joinChannel(authInfo, this.userId).then(() => {
+            this.aliWebrtc.configLocalAudioPublish = this.rtc;
+            this.aliWebrtc.configLocalCameraPublish = this.rtc;
+            this.aliWebrtc.publish().then((res) => {
+                setTimeout(() => {
+                    console.log("发布流成功");
+                },2000)
+            }, (error) => {
+                $(".streamType").show();
+                showAlert("[推流失败]" + error.message, "danger");
+            });
+        }).catch((error) => {
+            showAlert("[加入房间失败]" + error.message, "danger");
+        })
+      // 结束语音模块初始化
     },
     beforeDestroy(){
       // console.log('before destory');
@@ -476,7 +538,7 @@
     },
     destroyed() {
       window.onresize = null;
-     console.log('destoryed')
+    //  console.log('destoryed')
       this.$socket.emit('destroy');
 
     },
@@ -497,9 +559,9 @@
         this.url = data.data.url;
         this.duration = data.data.duration;
         this.videoName = data.data.videoName;
-        console.log(data.data.videoInfo.videoId)
+        // console.log(data.data.videoInfo.videoId)
         this.videoId = data.data.videoInfo.videoId;
-        console.log(this.videoId)
+        // console.log(this.videoId)
         // 设置封面
         this.player.poster(data.data.cover);
         if (Math.abs(data.data.position - this.player.currentTime()) >= 1) {
@@ -507,9 +569,9 @@
           this.currentImageUrl = "";
         }
         //如果有人定位了批注锚点
-        console.log(data.data);
+        // console.log(data.data);
         if(data.data.commentId !== undefined){
-          console.log(this.comments[data.data.commentId].position)
+          // console.log(this.comments[data.data.commentId].position)
           let myPlayer = this.$refs.videoPlayer.player;
           myPlayer.currentTime(this.comments[data.data.commentId].position);
           // this.player.currentTime(this.comments[data.data.commentId].position)
@@ -523,7 +585,7 @@
           this.getUser(data.data.videoInfo.uploader);
           this.videoInfo.duration = this.formatSecond(data.data.videoInfo.duration);
           this.videoInfo.createDate = this.formatTimestamp(data.data.videoInfo.createDate);
-          console.log(data.data)
+          // console.log(data.data)
         }
         // 弹出通知气泡
         // this.$Notice.open({
@@ -541,21 +603,22 @@
           this.onPlayerTimeupdate);
       },
       sycnMember(data) {
-        console.log("refresh memberList here")
+        // console.log("refresh memberList here")
         this.memberNum = data.data.memberNum;
         this.memberList = data.data.memberList;
         for (var member of this.memberList){
           if(member.userId==this.userId){
             this.canControl = member.control;
             this.canComment = member.comment;
-            console.log(this.canComment);
+            // console.log(this.canComment);
           }
+          this.aliWebrtc.configRemoteAudio(member.userId, true);
         }
-        console.log(this.memberList)
+        // console.log(this.memberList)
       },
       updateComment(data) {
         this.comments = data.data;
-        console.log(this.comments)
+        // console.log(this.comments)
         for (var comment of data.data){
           comment.time = this.formatSecond(comment.position)
         }

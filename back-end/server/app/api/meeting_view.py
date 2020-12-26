@@ -12,7 +12,7 @@ from . import api
 @login_required
 def create_meeting():
     try:
-        parms = request.json
+        parms = request.json or {}
         title = parms['title']
         belong_to = parms['belongTo']
         start_time = int(parms['startTime'])
