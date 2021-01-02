@@ -326,7 +326,7 @@
       async request(){
         var self = this;
         const{data:res}=await axios.post(
-          "http://188.131.227.20:1314/api/uploadImg/",
+          "https://api.video-review.top:1314/api/uploadImg/",
           this.imgFile,
           {
             headers:self.headerobj

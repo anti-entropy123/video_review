@@ -1,5 +1,9 @@
 aliyun-python-sdk-core==2.13.26
+aliyun-python-sdk-core-v3==2.13.11
 aliyun-python-sdk-ecs==4.21.0
+aliyun-python-sdk-imm==1.22.0
+aliyun-python-sdk-kms==2.14.0
+aliyun-python-sdk-objectdet==1.0.8
 amqp==5.0.1
 billiard==3.6.3.0
 bson==0.5.10
@@ -34,6 +38,7 @@ mongoengine==0.20.0
 numpngw==0.0.8
 numpy==1.19.4
 opencv-python==4.4.0.46
+oss2==2.13.1
 Pillow==8.0.1
 prompt-toolkit==3.0.8
 pycryptodome==3.9.9

@@ -1,6 +1,6 @@
 
 
-// axios.defaults.baseURL = "http://188.131.227.20:1314/api/";
+// axios.defaults.baseURL = "https://api.video-review.top:1314/api/";
 // baseUrl 在main.js中配置完成
 const base = ''
 

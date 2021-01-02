@@ -20,7 +20,7 @@ Vue.use(VideoPlayer)
 Vue.use(Antd)
 Vue.use(new VueSocketIO({
   debug: true,
-  connection: '188.131.227.20:1314/meetingRoom',
+  connection: 'https://api.video-review.top:1314/meetingRoom',
 }
 ))
 
@@ -42,7 +42,7 @@ Vue.use(VueQuillEditor)
 import axios from "axios";
 Vue.prototype.$http = axios;
 axios.defaults.withCredentials = true;
-axios.defaults.baseURL = "http://188.131.227.20:1314/api/";
+axios.defaults.baseURL = "https://api.video-review.top:1314/api/";
 axios.defaults.headers.post["Content-Type"] = "application/json";
 
 // 请求头拦截

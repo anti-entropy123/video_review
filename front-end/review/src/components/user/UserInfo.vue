@@ -5,6 +5,7 @@
         <el-form-item label="头像" size="medium">
           <el-avatar class="user-avatar" :src="userInfo.avatar"></el-avatar>
           <el-upload
+            v-if="!disabled"
             class="upload-demo"
             action=""
             :http-request="request"
@@ -14,7 +15,7 @@
             :on-error="handleError"
             :on-exceed="handleExceed"
           >
-            <el-button size="small" type="primary" :disabled="disabled">点击上传</el-button>
+            <el-button size="small" type="primary" >点击上传</el-button>
           </el-upload>
         </el-form-item>
 
@@ -55,7 +56,7 @@ export default {
       console.log(file.file);
 
       const { data: res } = await axios.post(
-        "http://188.131.227.20:1314/api/uploadImg/",
+        "https://api.video-review.top:1314/api/uploadImg/",
         this.dataObj,
         {
           headers: this.headerobj

@@ -3,7 +3,7 @@
     <div class="upload-box">
       <el-upload
         class="video-upload"
-        action="http://188.131.227.20:1314/api/video/"
+        action="https://api.video-review.top:1314/api/video/"
         :http-request="request"
         :on-progress="uploadVideoProcess"
         :on-success="handleVideoSuccess"
@@ -67,7 +67,7 @@
 
         var self = this;
         const { data } = await axios.post(
-          "http://188.131.227.20:1314/api/video/",
+          "https://api.video-review.top:1314/api/video/",
           this.dataObj,
           {
             headers: self.headerobj

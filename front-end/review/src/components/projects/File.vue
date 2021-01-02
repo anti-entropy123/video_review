@@ -2,7 +2,10 @@
   <div class="file-container">
     <el-row class="search-header">
       <el-col :span="6">
-        <span class="project-name">{{ projectName }}</span>
+        <span v-if="projectName" class="project-name">{{ projectName }}</span>
+        <span v-else class="project-name">
+          名称未加载出来
+        </span> 
       </el-col>
       <el-col :span="2">
         <span> 共{{ this.videoList.length }}个视频</span>
@@ -53,28 +56,29 @@
       </el-col>
     </el-row>
     <div class="file-upload" v-if="showList">
-      <!--      <ele-upload-video-->
-      <!--        :projectId="projectId"-->
-      <!--        :fileSize="20"-->
-      <!--        @error="handleUploadError"-->
-      <!--        :responseFn="handleResponse"-->
-      <!--        :httpRequest="request"-->
-      <!--        style="margin: 50px"-->
-      <!--        action="http://188.131.227.20:1314/api/video/"-->
-      <!--        v-model="video"-->
-      <!--      />-->
-      <upload-video
-        @refreshVideo="getProjectInfo(projectId)"
-        class="video-upload-else"
-        :projectId="projectId"
-      ></upload-video>
+      
+      <div class="video-upload-else" @click="uploadVisible = true">
+        <i class="el-icon-plus upload-icon pointer"></i>
+        <p class="Upload_pictures">
+          <span style="color:rgb(134, 161, 236);font-size:24px;cursor:pointer"
+            >点击上传</span
+          >
+        </p>
+      </div>
+ 
     </div>
     <div v-else class="video-list">
-      <upload-video
-        @refreshVideo="getProjectInfo(projectId)"
-        class="video-upload"
-        :projectId="projectId"
-      ></upload-video>
+      <div class="video-upload">
+        <upload-video :projectId="projectId"></upload-video>
+      </div>
+      <div class="video-upload" @click="uploadVisible = true">
+        <i class="el-icon-plus upload-icon pointer"></i>
+        <p class="Upload_pictures">
+          <span style="color:rgb(134, 161, 236);font-size:24px;cursor:pointer"
+            >点击上传</span
+          >
+        </p>
+      </div>
       <div
         v-for="(video, index) in videoList"
         :key="video.videoId"
@@ -85,11 +89,12 @@
         <div
           class="video-cover-div"
           @mouseover="mousein(video.coverList, index)"
+          @click="goReviewOffline(video.videoId)"
         >
           <el-image
             class="video-cover"
             :src="video.cover"
-            fit="cover"
+            fit="contain"
           ></el-image>
         </div>
 
@@ -179,6 +184,7 @@
             placeholder="请输入用户信息"
             v-model="inviteInput"
             prefix-icon="el-icon-search"
+            @keyup.enter.native="searchUser"
           >
             <template slot="append">
               <el-button @click="searchUser">搜索</el-button>
@@ -220,31 +226,81 @@
         >
       </span>
     </el-dialog>
+    <el-dialog
+      title="添加视频"
+      :visible.sync="uploadVisible"
+      width="500px"
+      @close="handleUploadClose"
+    >
+      <el-form
+        :model="addForm"
+        v-loading="loading"
+        ref="addFormRef"
+        label-width="100px"
+         
+      >
+          <el-form-item label="项目Id">
+          <el-input v-model="addForm.uploadToProject" disabled> </el-input>
+        </el-form-item>
+       <el-form-item label="视频上传">
+          <div>
+            <div class="no-submit bg-block">
+              点击上传视频
+              <form action="/" enctype="multipart/form-data" method="post">
+                <input
+                  class="card-input"
+                  type="file"
+                  name="file"
+                  placeholder="file"
+                  @change="uploadFile($event)"
+                />
+              </form>
+            </div>
+          </div>
+        </el-form-item>
+        <el-form-item label="视频名称">
+          <el-input v-model="addForm.videoName"> </el-input>
+        </el-form-item>
+        <el-form-item label="视频描述">
+          <el-input v-model="addForm.description"> </el-input>
+        </el-form-item>
+    
+       
+      </el-form>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click.native="uploadVisible = false">取消上传</el-button>
+        <el-button type="primary" @click.native="uploadVideo()">点击上传</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
 <script>
 import UploadVideo from "./UploadVideo";
-import EleUploadVideo from "./EleUploadVideo";
+
 import axios from "axios";
 import { Message } from "element-ui";
 
 export default {
   name: "File",
   components: {
-    UploadVideo,
-    EleUploadVideo
+    UploadVideo
   },
   props: {
     projectName: String
   },
   data() {
     return {
-      dataObj: new FormData(),
-      headerobj: {
-        Authorization: "Bearer " + window.sessionStorage.getItem("token"),
-        "Content-Type": "multipart/form-data"
+      addForm: {
+        videoName: "",
+        description: "",
+        uploadToProject: "",
+        permission: 0
       },
+
+      loading: false,
+      uploadVisible: false,
+
       video: "",
       imageUrl: "",
       srcList: [],
@@ -263,17 +319,84 @@ export default {
       coverList: [],
       videoNum: 0,
       left: 0,
-      right: 0
+      right: 0,
+      //上传
+      param: new FormData(),
+      config: {
+        headers: {
+          Authorization: "Bearer " + window.sessionStorage.getItem("token"),
+          "Content-Type": "multipart/form-data"
+        }
+      }
     };
   },
   methods: {
+    handleUploadClose(){
+      this.addForm.videoName=''
+      this.addForm.description=''
+      this.params = new DataForm()
+    },
+    uploadFile(event) {
+      let file = event.target.files[0];
+      console.log('视频信息看这里')
+      console.log(file);
+      this.addForm.videoName = file.name.substring(0,file.name.length-4)
+      let fileType = file.name
+        .substring(file.name.lastIndexOf(".")   + 1)
+        .toLowerCase();
+      if (fileType !== "mp4" && fileType !== "mkv") {
+        this.$message({
+          type: "warning",
+          message: "视频格式不符合规定"
+        });
+        return;
+      }
+      if (file.size > 1024 * 1024 * 100) {
+        this.$message({
+          type: "warning",
+          message: "上传视频过大"
+        });
+        return;
+      }
+      console.log(file)
+      this.param.append("video", file);
+    },
+    uploadVideo() {
+      this.param.append("videoName", this.addForm.videoName);
+      this.param.append("description", this.addForm.description);
+      this.param.append("uploadToProject", this.addForm.uploadToProject);
+      this.param.append("permission", this.addForm.permission);
+      let _this = this;
+      _this.loading = true;
+      this.$http
+        .post("/video/", _this.param, _this.config)
+        .then(res => {
+          console.log(res);
+          _this.loading = false;
+          _this.uploadVisible = false;
+          _this.getProjectInfo(this.projectId)
+        })
+        .catch(() => {});
+    },
+    goReviewOffline(videoId) {
+      this.$router.push({
+        path: "/reviewOffline",
+        query: {
+          videoId: videoId,
+          projectId: this.projectId
+        }
+      });
+    },
     updateXY: function(event) {
       this.x = event.offsetX;
-      console.log(this.x);
-      let coverNum = Math.floor((this.x / (this.right - this.left)) * 10);
-      console.log(this.right - this.left);
-      console.log(coverNum);
-      console.log(this.coverList[coverNum]);
+      // console.log(this.x);
+      let coverLength = this.coverList.length;
+      let coverNum = Math.floor(
+        (this.x / (this.right - this.left)) * coverLength
+      );
+      // console.log(this.right - this.left);
+      // console.log(coverNum);
+      // console.log(this.coverList[coverNum]);
       // videolist [index] 这一项cover赋值
       let img = new Image();
       img.src = this.coverList[coverNum];
@@ -327,6 +450,7 @@ export default {
       this.showCreateMeetingVisible = false;
     },
     async request(file) {
+
       this.dataObj.append("videoName", file.name);
       this.dataObj.append("description", file.type);
       this.dataObj.append("permission", "0");
@@ -335,7 +459,7 @@ export default {
 
       var self = this;
       const { data } = await axios.post(
-        "http://188.131.227.20:1314/api/video/",
+        "https://api.video-review.top:1314/api/video/",
         this.dataObj,
         {
           headers: self.headerobj
@@ -370,7 +494,7 @@ export default {
       if (res.result == 1) {
         this.visitUser = res.data;
         let userlist = this.userList;
-        console.log(userlist)
+        console.log(userlist);
         userlist.forEach(user => {
           this.visitUser = this.visitUser.filter(v => {
             return v.userId != user.userId;
@@ -428,18 +552,6 @@ export default {
       Message.error(error);
     },
     handleResponse(response) {}
-    // mouseOver(cover) {
-    //   console.log("over:" + cover);
-    // },
-    // mouseLeave(cover) {
-    //   console.log("leave:" + cover);
-    // },
-    // goVideo(videoId){
-    //   this.$router.push({
-    //     path: "/video",
-    //     query: { projectId: this.projectId, videoId: videoId }
-    //   });
-    // },
   },
   computed: {
     showList() {
@@ -448,6 +560,7 @@ export default {
   },
   mounted() {
     this.projectId = this.$route.params.id;
+    this.addForm.uploadToProject = this.projectId;
     if (this.projectId != 0) {
       this.getProjectInfo(this.projectId);
     } else {
@@ -550,12 +663,19 @@ export default {
   text-align: center;
   background-color: #333;
   font-size: 10px;
-  opacity: 90%;
+  opacity: 0.9;
 }
 .video-item .video-cover-div {
   height: 126px;
-  width: 280px;
+  width: 100%;
   overflow: hidden;
+  background-color: #454545;
+}
+.video-cover {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
 }
 .video-item .video-description {
   height: 44px;
@@ -573,12 +693,7 @@ export default {
   bottom: 5px;
   left: 5px;
 }
-.video-cover {
-  height: 160px;
-  width: 280px;
-  cursor: pointer;
-  transition: all 0.5s ease-in-out;
-}
+
 /*.video-cover:hover {*/
 /*  transform: scale(1.1);*/
 /*}*/
@@ -588,6 +703,8 @@ export default {
   right: 10px;
   bottom: 10px;
   cursor: pointer;
+  
+
 }
 .video-upload {
   border-radius: 10px;
@@ -595,6 +712,10 @@ export default {
   background-image: url("../../../static/images/border.png");
   background-size: 100% 100%;
   overflow: hidden;
+   display: flex;
+    flex-direction: column;
+    align-items: center;
+   overflow: hidden;
 }
 .video-upload-else {
   padding: 35px 0 15px 0;
@@ -604,6 +725,17 @@ export default {
   background-image: url("../../../static/images/border.png");
   background-size: 100% 100%;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.upload-icon {
+  font-size: 100px;
+  color: rgb(134, 161, 236);
+}
+.Upload_pictures {
+  margin-top: 10px;
+  font-weight: bold;
 }
 .show-user-list {
   display: flex;
@@ -627,5 +759,36 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* 上传视频 */
+.no-submit {
+  position: relative;
+  width: 150px;
+  text-align: center;
+}
+.bg-card {
+  width: 150px;
+  display: flex;
+  align-items: flex-end;
+}
+.bg-block {
+  border-radius: 4px;
+  border: 1.5px dashed #00a0e9;
+  padding: 30px 0;
+  font-size: 13px;
+  color: #00a0e9;
+}
+.card-input {
+  cursor: pointer;
+  font-size: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  outline: none;
+  background-color: transparent;
+  opacity: 0;
 }
 </style>

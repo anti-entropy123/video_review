@@ -16,4 +16,6 @@ def make_shell_context():
 
 if __name__ == "__main__":
     # print(app.url_map)
-    ws.run(app, host='0.0.0.0', port=1314)
+    ws.run(app, host='0.0.0.0', port=1314, 
+        # keyfile='cert/2_api.video-review.top.key', certfile='cert/1_api.video-review.top_bundle.crt'
+    )

@@ -80,21 +80,24 @@
                       已处理
                     </div>
                     <div v-if="message.hasProcess === 0 && message.type === 3">
-                      <button
-                        class="agree-btn"
+                      <el-button
+                        size="mini"
+                        plain
                         @click.stop="pocessVisit(message.messageId, 1)"
+
                       >
                         同意
-                      </button>
-                      <button
-                        class="refuse-btn"
+                      </el-button>
+                      <el-button
+                        size="mini"
                         type="danger"
                         @click.stop="
                           pocessVisit(message.messageId, message.projectId, 0)
                         "
+                        plain
                       >
                         拒绝
-                      </button>
+                      </el-button>
                     </div>
                   </div>
                 </el-col>
@@ -113,13 +116,13 @@
               显示更多
             </div>
           </div>
-
           <i
             class="el-icon-message-solid message-icon"
             style="font-size:28px;color:#333"
             slot="reference"
+            @click="go()"
           >
-            <div class="not-read" v-show="userInfo.messageToRead > 0">
+            <div class="not-read" v-if="isRead">
               {{ userInfo.messageToRead }}
             </div>
           </i>
@@ -272,7 +275,8 @@ export default {
       userInfo: {},
       projectList: [],
       currentProjectId: "",
-      showMore: false
+      showMore: false,
+      isRead:false
     };
   },
   methods: {
@@ -332,10 +336,15 @@ export default {
       this.addProjectForm = {};
     },
     async getInfo() {
+      
       let userId = window.localStorage.getItem("userId");
       const { data: res } = await this.$http.get(`user/${userId}`);
       if (res.result === 1) {
         this.userInfo = res.data;
+        if(res.data.messageToRead>0){
+          this.isRead = true
+        }
+        
       } else {
   
         Message.error(res.message);
@@ -372,8 +381,7 @@ export default {
           console.log(error);
         });
       if (res.result == 1) {
-        console.log("test1");
-
+    
         this.projectList = res.data;
       } else {
 
@@ -429,6 +437,10 @@ export default {
       if (res.result === 1) {
         this.getMessageList();
       }
+    },
+    go(){
+      this.isRead=false
+      
     }
   },
   computed: {
@@ -449,11 +461,11 @@ export default {
         _this.$router.push(`/file/${_this.currentProjectId}`);
       }
     }, 100);
-
-    if (window.localStorage.getItem("userId")) {
       this.getInfo();
-    }
-  }
+    
+   
+  },
+ 
 };
 </script>
 <style scoped>

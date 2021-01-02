@@ -3,7 +3,7 @@
     <!-- 上传组件 -->
     <el-upload
       :accept="accept"
-      action="http://188.131.227.20:1314/api/video/"
+      action="https://api.video-review.top:1314/api/video/"
       :before-upload="handleBeforeUploadVideo"
       :httpRequest="httpRequest"
       :disabled="videoUploadPercent > 0 && videoUploadPercent < 100"
@@ -251,7 +251,7 @@
 
         var self = this;
         const { data } = await axios.post(
-          "http://188.131.227.20:1314/api/video/",
+          "https://api.video-review.top:1314/api/video/",
           this.dataObj,
           {
             headers: self.headerobj

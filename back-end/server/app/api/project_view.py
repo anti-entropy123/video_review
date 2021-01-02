@@ -6,7 +6,7 @@ from flask_jwt_extended import get_jwt_identity
 from flask_mongoengine import json
 
 from ..auth import login_required
-from ..model import Meeting, Message, Project, ProjectMember, User, Video
+from ..model import Meeting, Message, Project, User, Video
 from ..utils import build_response, safe_objectId
 from . import api
 
@@ -157,7 +157,8 @@ def get_project_data(project_id):
             'videoId': video_id,
             'hasReview': video.hasReview,
             'createDate': video.createDate,
-            'duration': video.duration
+            'duration': video.duration,
+            'commentNum': len(video.comment)
         })
     
     data = {'videoList': video_list, 'userList': user_list}
@@ -177,16 +178,18 @@ def get_project_list():
         if project:
             data.append({
                 "projectId": project_id,
-                "projectName": project.projectName
-            })         
+                "projectName": project.projectName,
+                "ownerId": project.owner
+            })
     
     return jsonify(build_response(data=data))
 
 @api.route('/project/<project_id>/removeUser', methods=['DELETE'])
 @login_required
 def remove_user_from_project(project_id:str):
+    args = dict(request.args)
     try:
-        userId = request.args['userId']
+        userId = args['userId']
     except KeyError as e:
         abort(400, {'msg': str(e)})
     
@@ -205,9 +208,12 @@ def remove_user_from_project(project_id:str):
     
     # print(str(target.id), project.member_id_list(), str(user.id) in project.member_id_list())
     if not target in project:
-        return jsonify(build_response(0, "对方不是此项目的成员"))
+        return jsonify(build_response(0, '对方不是此项目的成员'))
 
-    project.remove_member(target, False, False)
+    if str(target.id) == str(user.id):
+        return jsonify(build_response(0, '不能在项目中移除自己'))
+
+    project.remove_member(target)
 
     message = Message(
         fromId=str(user.id),
@@ -265,15 +271,32 @@ def leave_project(project_id):
         project.dissolution()
     # 用户是项目的成员, 该项目中删去此用户
     else:
-        project.remove_member(user, True, False)
+        project.remove_member(user)
     
     return jsonify(build_response())
 
 @api.route('/project/<project_id>/removeVideo', methods=['DELETE'])
 @login_required
 def remove_video(project_id):
+    args = dict(request.args)
     try:
-        video_id = request.args['videoId']
+        video_id = args['videoId']
+    except KeyError as e:
+        abort(400, {'msg': str(e)})
+    
+    project = Project.get_project_by_id(project_id=project_id)
+    if not project:
+        return jsonify(0, '没有此项目')
+
+    project.remove_video(video_id=video_id)
+    return jsonify(build_response())
+
+@api.route('/project/<project_id>/removeVideo', methods=['POST'])
+@login_required
+def remove_video_post(project_id):
+    args = request.json or {}
+    try:
+        video_id = args['videoId']
     except KeyError as e:
         abort(400, {'msg': str(e)})
     

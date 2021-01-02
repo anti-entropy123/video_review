@@ -98,7 +98,7 @@ def video_manage():
     }
     return jsonify(build_response(data=data))
 
-@admin.route('projectManage', methods=['GET'])
+@admin.route('/projectManage', methods=['GET'])
 @admin_required
 def project_manage():
     projectName = request.args.get('projectName', None)
@@ -167,3 +167,14 @@ def meeting_manage():
         'meetingList': meeting_list
     }
     return jsonify(build_response(data=data))
+
+@admin.route('/video/<video_id>', methods=['DELETE'])
+@admin_required
+def delete_video(video_id):
+    video = Video.get_video_by_id(video_id=video_id)
+    if not video:
+        return jsonify(build_response(0, '无此视频'))
+    
+    project = Project.get_project_by_id(video.belongTo)
+    project.remove_video(str(video.id))
+    return jsonify(build_response())

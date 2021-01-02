@@ -1,6 +1,6 @@
 from logging.config import dictConfig
 from logging import DEBUG, INFO, ERROR, WARNING, getLogger
-from config.secret_config import bucket_name
+from config.secret_config import oss_bucket_name
 import os
 
 
@@ -81,11 +81,9 @@ class Config:
         'db': 'video_review',
         'host': '127.0.0.1'
     }
-    # tx cos 存储桶
-    BUCKET_NAME = bucket_name
     # 文件临时保存路径
     UPLOAD_FOLDER = '/tmp/video_review/'
-
+    SYSTEM_KEY = 'yjn'
     @staticmethod
     # 如果需要的话, 在此函数中进行其它的配置
     def init_app(app):

@@ -5,8 +5,14 @@
 </template>
 
 <script>
+import Rtc from "./views/Rtc"
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    // 挂载子组件 (其它组件通过router加载, 所以不需要写在这里)
+    Rtc
+  }
 }
 </script>
 

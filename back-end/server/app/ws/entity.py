@@ -98,17 +98,7 @@ class VideoPlayer:
         self.change_point = time.time()
 
     def get_video_info(self)->dict:
-        project = Project.get_project_by_id(project_id=self.video.belongTo)
-        return {
-            'videoId': str(self.video.id),
-            'videoName': self.video.videoName,
-            'uploader': self.video.owner,
-            'duration': self.video.duration,
-            'covers': self.video.cover,
-            'project': project.projectName,
-            'description': self.video.description,
-            'createDate': self.video.createDate
-        }
+        return self.video.get_video_info()
 
     def get_video_status(self):
         return {

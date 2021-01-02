@@ -24,7 +24,7 @@ import MyMeeting from "../components/user/MyMeeting";
 import Meeting from "../components/projects/Meeting"
 import Review from "@/views/Review";
 import Account from "../components/user/Account";
-
+import ReviewOffline from '@/views/ReviewOffline'
 Vue.use(Router)
 const originalPush = Router.prototype.push
 Router.prototype.push = function push(location) {
@@ -142,6 +142,11 @@ const routes = [
     name:'Review',
     component:Review
   },{
+    path:'/reviewOffline',
+    name:'ReviewOffline',
+    component:ReviewOffline
+  },
+  {
   path:'/admin/login',
     name:'AdminLogin',
     component:AdminLogin

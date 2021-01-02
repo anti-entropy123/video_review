@@ -2,11 +2,9 @@ from flask import Blueprint, jsonify
 from functools import wraps
 from flask_jwt_extended import get_jwt_identity, verify_jwt_in_request
 from flask import abort
-from flask_jwt_extended.utils import get_jwt_claims, user_loader
 from ..model import User
 from ..utils import build_response, wx_util
-from bson import ObjectId
-import bson
+from flask import current_app as app
 
 # 角色权限管理装饰器, permission为所需权限
 def role_required(permission):
@@ -65,6 +63,18 @@ def openId_required(fn):
             return jsonify(build_response(0, "无效的临时Token"))
         else:
             return fn(*args, **kwargs)
+
+    return wrapper
+
+def system_required(fn):
+    @wraps(fn)
+    def wrapper(*args, **kwargs):
+        verify_jwt_in_request()
+        key = get_jwt_identity()
+        if key == app.config['SYSTEM_KEY']:
+            return fn(*args, **kwargs)
+        else:
+            return jsonify(build_response(0, '无效的system token'))
 
     return wrapper
 

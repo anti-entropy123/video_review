@@ -5,9 +5,8 @@ from flask_jwt_extended import get_jwt_identity
 
 from ..auth import login_required
 from ..model import Message, User
-from ..utils import build_response, txCosUtil
+from ..utils import build_response, aliOssUtil
 from . import api
-
 
 @api.route('/user/<target_id>', methods=['GET'])
 @login_required
@@ -54,8 +53,13 @@ def update_user_info():
 @api.route('/userlist/', methods=['GET'])
 @login_required
 def get_userlist():
-    key = request.args['data']
-    
+    args = dict(request.args)
+
+    try:
+        key = args['data']
+    except KeyError as e:
+        abort(400, {'msg': str(e)})
+
     user_id = get_jwt_identity()
     # print(user_id)
     user_list:List[User] = User.objects(alive=True)
@@ -79,14 +83,15 @@ def get_userlist():
 @api.route('/uploadImg/', methods=['POST'])
 @login_required
 def upload_avatar():
+    args = request.files or {}
     try:
-        image = request.files['image']
+        image = args['image']
     except KeyError as e:
         abort(400, {'msg': str(e)})
     
     user_id = get_jwt_identity()
 
-    url = txCosUtil.upload_image(user_id=user_id, f=image)
+    url = aliOssUtil.upload_image(user_id=user_id, f=image)
     # print(url)
     return jsonify(build_response(data={
         'url': url
@@ -94,20 +99,29 @@ def upload_avatar():
 
 @api.route('/userAvatar', methods=['GET'])
 def get_user_avatar():
+    args = dict(request.args)
     try:
-        mobileNum = request.args['mobileNum']
+        mobileNum = args['mobileNum']
     except KeyError as e:
         abort(400, {'msg': str(e)})
     
     user:User = User.objects(mobileNum=mobileNum).first()
-    
-    avatar = None
-    if user:
-        avatar = user.avatar
-    else:
-        avatar = 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png'
-    
+    avatar = user.avatar if user else 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png'
     data = {
         'avatarUrl': avatar
     }
     return jsonify(build_response(1, '', data))
+
+@api.route('/user/object-key')
+@login_required
+def get_object_key():
+    args = dict(request.args)
+    try:
+        filename = args['filename']
+    except KeyError as e:
+        abort(400, {'msg': str(e)})
+    
+    key = aliOssUtil.gen_object_key(user_id=get_jwt_identity(), filename=filename)
+    if not key:
+        return jsonify(build_response(0, '文件名不合法'))
+    return jsonify(build_response(data={'key': key}))

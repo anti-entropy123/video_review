@@ -11,7 +11,7 @@ db = MongoEngine()
 # 工厂函数
 def create_app(config=None):
     app = Flask(__name__)
-
+    
     # 如果有配置对象传入, 则应用到实例中
     if config:
         app.config.from_object(config)

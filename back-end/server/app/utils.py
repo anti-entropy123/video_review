@@ -1,23 +1,35 @@
 from __future__ import annotations
 
+import datetime
 import io
 import json
 import random
+import threading
 import time
+import uuid
+from io import BytesIO
+from threading import Thread
 from typing import IO, List, Tuple
 
 import cv2
+from flask_jwt_extended.utils import create_access_token
+import oss2
 import requests
+from aliyunsdkcore.acs_exception.exceptions import (ClientException,
+                                                    ServerException)
 from aliyunsdkcore.client import AcsClient
 from aliyunsdkcore.request import CommonRequest
+from aliyunsdkobjectdet.request.v20191230.DetectObjectRequest import \
+    DetectObjectRequest
+# from aliyunsdkobjectdet.request.v20191230.DetectObjectRequest import \
+#     DetectObjectRequest
 from bson.objectid import ObjectId
 from flask import current_app as app
 from PIL import Image
-from requests.api import head
 
 from config.secret_config import (AliAccessKeyID, AliAccessKeySecret,
-                                  TxSecretId, TxSecretKey, bucket_name,
-                                  wx_appid, wx_secret)
+                                  TxSecretId, TxSecretKey, oss_bucket_name,
+                                  oss_region, wx_appid, wx_secret)
 from qcloud_cos import CosConfig, CosS3Client
 
 
@@ -125,81 +137,83 @@ class CheckCodeManager:
         
         return result, message
 
-        
- 
 checkCodeManager = CheckCodeManager()
 
+class AliOssUtil:
+    access_key_id = AliAccessKeyID
+    access_key_secret = AliAccessKeySecret
+    region = oss_region
+    bucket_name = oss_bucket_name
+    endpoint = f'https://oss-cn-{region}-internal.aliyuncs.com'
+    base_url = f'https://{bucket_name}.oss-cn-{region}.aliyuncs.com/'
+    char_table = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890'
 
-class CaptureFrameUtil:
     def __init__(self) -> None:
-        pass
+        self.bucket = oss2.Bucket(oss2.Auth(self.access_key_id, self.access_key_secret), self.endpoint, self.bucket_name)
 
-    def capture_frame(self, video_path: str) -> Tuple[List, int]:
-        vc = cv2.VideoCapture(video_path)
-        # print('视频路径', video_path)
-        
-        if not vc.isOpened():
-            raise RuntimeError('无法解析视频')
+    def oss_capture_frame(self, key:str, time:float)->str:
+        time = int(time*1000)
+        style = f'video/snapshot,t_{time},f_jpg,w_0,h_0'
+        url:str = self.bucket.sign_url('GET', key, 10 * 60, params={'x-oss-process': style})
+        # print('临时帧Url: ', url)
+        i = url.find('-internal')
+        url = url[:i] + url[i+len('-internal'):]
+        return url
 
-        frames_num = vc.get(7)             # 总帧数
-        timeF = frames_num // 21           # 帧间隔, 用以平均截帧
-        frame_rate = vc.get(5)             # 帧速率
-        duration = frames_num//frame_rate  # 帧速率/视频总帧数=时间, 单位为秒
-        
-        results = []
-        c = 1
-        rval, frame = vc.read()
-        while rval and len(results) < 10: 
-            rval, frame = vc.read()
-            if(c%timeF == 0):
-                f = io.BytesIO()
-                img = Image.fromarray(frame, mode='RGB')
-                r,g,b = img.split()
-                img = Image.merge('RGB', [b,g,r])
-                img.save(f, format='PNG')
-                f.seek(0)
-                results.append(f)
-            c += 1
-        
-        vc.release()
-        return results, duration
-        
-captrueFrameUtil = CaptureFrameUtil()
-
-class TxCosUtil:
-    secret_id = TxSecretId        # 替换为用户的 secretId
-    secret_key = TxSecretKey      # 替换为用户的 secretKey
-    region = 'ap-beijing'         # 替换为用户的 Region
-    # token = None                # 使用临时密钥需要传入 Token，默认为空，可不填
-    # scheme = 'https'            # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
-    
-    def __init__(self):
-        config = CosConfig(Region=self.region, SecretId=self.secret_id, SecretKey=self.secret_key)
-        self.client = CosS3Client(config)
-    
-    def simple_file_upload(self, f:IO, key:str):
-        response = self.client.put_object(
-            Bucket=bucket_name,
-            Body=f,
-            Key= 'video_review/'+key,
-            StorageClass='STANDARD',
-            EnableMD5=False
-        )
-        # print(response['ETag'])
-        return f"https://{app.config['BUCKET_NAME']}.cos.ap-beijing.myqcloud.com/video_review/{key}"
+    def simple_file_upload(self, f:IO, key:str)->str:
+        self.bucket.put_object(key, f)
+        return self.base_url + key
 
     def upload_image(self, user_id:str, f:IO)->str:
         # 生成一个(大概率)不会碰撞的文件名
-        return self.simple_file_upload(f, f'img/{user_id}/{str(int(time.time()))[-5:]+str(random.randint(10000, 1000000))}.jpg')
+        return self.simple_file_upload(f, self.gen_object_key(user_id=user_id, filename='a.jpg'))
         
     def upload_video(self, user_id:str, f:IO)->str:
         # 生成一个(大概率)不会碰撞的文件名
-        return self.simple_file_upload(f, f'video/{user_id}/{str(int(time.time()))[-5:]+str(random.randint(10000, 1000000))}.mp4')
+        return self.simple_file_upload(f, self.gen_object_key(user_id=user_id, filename='b.mp4'))
 
-txCosUtil = TxCosUtil()
+    def gen_object_key(self, user_id:str, filename: str)->str:
+        filetype = filename[filename.rfind('.')+1:]
+        name = ''.join(random.choices(population=self.char_table, k=10)) + str(random.randint(1, 10000))
+        if 'mp4' == filetype:
+            return f'video/{user_id}/{name}.mp4'
+        elif 'jpg' == filetype or 'png' == filetype:
+            return f'img/{user_id}/{name}.{filetype}'
 
-if __name__ == "__main__":
-    txCosUtil.simple_file_upload()
+aliOssUtil = AliOssUtil()
+
+# class TxCosUtil:
+#     secret_id = TxSecretId        # 替换为用户的 secretId
+#     secret_key = TxSecretKey      # 替换为用户的 secretKey
+#     region = 'ap-beijing'         # 替换为用户的 Region
+#     # token = None                # 使用临时密钥需要传入 Token，默认为空，可不填
+#     # scheme = 'https'            # 指定使用 http/https 协议来访问 COS，默认为 https，可不填
+    
+#     def __init__(self):
+#         config = CosConfig(Region=self.region, SecretId=self.secret_id, SecretKey=self.secret_key)
+#         self.client = CosS3Client(config)
+    
+#     def simple_file_upload(self, f:IO, key:str):
+#         response = self.client.put_object(
+#             Bucket=bucket_name,
+#             Body=f,
+#             Key= 'video_review/'+key,
+#             StorageClass='STANDARD',
+#             EnableMD5=False
+#         )
+#         # print(response['ETag'])
+#         return f"https://{app.config['BUCKET_NAME']}.cos.ap-beijing.myqcloud.com/video_review/{key}"
+
+#     def upload_image(self, user_id:str, f:IO)->str:
+#         # 生成一个(大概率)不会碰撞的文件名
+#         return self.simple_file_upload(f, f'img/{user_id}/{str(int(time.time()))[-5:]+str(random.randint(10000, 1000000))}.jpg')
+        
+#     def upload_video(self, user_id:str, f:IO)->str:
+#         # 生成一个(大概率)不会碰撞的文件名
+#         return self.simple_file_upload(f, f'video/{user_id}/{str(int(time.time()))[-5:]+str(random.randint(10000, 1000000))}.mp4')
+
+
+# txCosUtil = TxCosUtil()
 
 class WxUtil:
     secret = wx_secret
@@ -284,3 +298,130 @@ class WxUtil:
         self._access_token = data['access_token']
 
 wx_util = WxUtil()
+
+class CaptureFrameUtil:
+    def __init__(self) -> None:
+        pass
+
+    def get_video_info(self, video_path: str) -> dict:
+        vc = cv2.VideoCapture(video_path)
+        if not vc.isOpened():
+            raise RuntimeError('无法解析视频')
+
+        frames_num = vc.get(7)             # 总帧数
+        timeF = frames_num // 21           # 帧间隔, 用以平均截帧
+        frame_rate = vc.get(5)             # 帧速率
+        duration = frames_num//frame_rate  # 帧速率/视频总帧数=时间, 单位为秒
+        vc.release()
+        result = {
+            'duration': duration,
+            'frameRate': frame_rate
+        }
+        return result
+        
+    def capture_frame(self, video_path: str) -> Tuple[List, int]:
+        vc = cv2.VideoCapture(video_path)
+        # print('视频路径', video_path)
+        
+        if not vc.isOpened():
+            raise RuntimeError('无法解析视频')
+
+        frames_num = vc.get(7)             # 总帧数
+        timeF = frames_num // 21           # 帧间隔, 用以平均截帧
+        frame_rate = vc.get(5)             # 帧速率
+        duration = frames_num//frame_rate  # 帧速率/视频总帧数=时间, 单位为秒
+        
+        results = []
+        c = 1
+        rval, frame = vc.read()
+        while rval and len(results) < 10: 
+            rval, frame = vc.read()
+            if(c%timeF == 0):
+                f = io.BytesIO()
+                img = Image.fromarray(frame, mode='RGB')
+                r,g,b = img.split()
+                img = Image.merge('RGB', [b,g,r])
+                img.save(f, format='PNG')
+                f.seek(0)
+                results.append(f)
+            c += 1
+        
+        vc.release()
+        return results, duration
+        
+    def oss_capture_frame(self, key:str, duration:float, user_id:str) -> List[str]:
+        cover_num = 20
+        covers = [None]*cover_num
+        step = duration / 20
+        i = 0
+        theadings:Thread = []
+        def get_image_content(seq):
+            temp_frame_url = aliOssUtil.oss_capture_frame(key=key, time=seq*step) 
+            response = requests.get(temp_frame_url)
+            frame = BytesIO(response.content)
+            covers[seq] = aliOssUtil.upload_image(user_id=user_id, f=frame)
+
+        while i < cover_num:
+            # 帧的临时地址, 每次访问阿里云需要一定时间处理, 比较慢, 需要保存到本地再次上传
+            t = threading.Thread(target=get_image_content, args=[i,])
+            theadings.append(t)
+            i += 1
+            
+        [t.start() for t in theadings]
+        [t.join() for t in theadings]
+        return covers
+
+captrueFrameUtil = CaptureFrameUtil()
+
+
+# 目标检测
+class OssDetectObject:
+    def __init__(self):
+        self.accessKeyId = 'LTAI4G1bh2PT22YMiLKz4Mw3'
+        self.accessSecret = 'AzDRhRvomlnH7rqlKByHaHN8KihVuA'
+        # self.url = 'https://api.video-review.top:1314/api/video/' + videoId + '/frame'
+        # self.token = create_access_token(app.config['SYSTEM_KEY'])
+
+    def detect_image(self, frame_url) -> List[str]:
+        print(frame_url)
+        client = AcsClient(self.accessKeyId, self.accessSecret, 'cn-shanghai')
+        request = DetectObjectRequest()
+        request.set_accept_format('json')
+        # framne_url = self.getFrame(self.url, t)
+        image_url = self.post_image(frame_url)
+        request.set_ImageURL(image_url)
+        response = client.do_action_with_exception(request)
+        result = json.loads(response)
+        elements = [element['Type'] for element in result['Data']['Elements']]
+        return elements
+
+    # 获取视频的某一帧并返回url
+    # def getFrame(self, url, t):
+    #     header = {
+    #         'Authorization':
+    #         'Bearer ' + self.token
+    #     }
+    #     param = {'t': t}
+    #     r = requests.get(url, headers=header, params=param)
+    #     return r.json()['data']['frame_url']
+
+    # 上传至阿里云并返回url
+    def post_image(self, url):
+        endpoint = 'http://oss-cn-shanghai.aliyuncs.com'  # 在哪个城市就选那个城市的oss-cn
+        access_key_id = 'LTAI4G1bh2PT22YMiLKz4Mw3'
+        access_key_secret = 'AzDRhRvomlnH7rqlKByHaHN8KihVuA'
+        bucket_name = 'knight-dxy'
+        dirpath = 'homework'
+        now = datetime.datetime.now()
+        nonce = str(uuid.uuid4())
+        random_name = now.strftime("%Y-%m-%d") + "/" + nonce
+        imageName = '{}.jpg'.format(random_name)
+        img = io.BytesIO(requests.get(url, timeout=300).content)
+        # 指定Bucket实例，所有文件相关的方法都需要通过Bucket实例来调用。
+        bucket = oss2.Bucket(oss2.Auth(access_key_id, access_key_secret), endpoint,
+                            bucket_name)
+        result = bucket.put_object(f'{dirpath}/{imageName}', img.getvalue())
+        if result.status == 200:
+            return bucket.sign_url('GET', f'{dirpath}/{imageName}', 60)
+
+ossDetectObject = OssDetectObject()
