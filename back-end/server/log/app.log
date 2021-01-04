@@ -15763,3 +15763,33 @@ ValueError: Too many packets in payload
 [2021-01-02 15:41:31,865] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
 [2021-01-02 15:41:32,564] WARNING in _internal:  * Debugger is active!
 [2021-01-02 15:41:32,576] INFO in _internal:  * Debugger PIN: 611-914-660
+[2021-01-03 15:41:03,814] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-03 15:41:04,500] INFO in _internal:  * Restarting with stat
+[2021-01-03 15:41:05,676] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-03 15:41:06,047] WARNING in _internal:  * Debugger is active!
+[2021-01-03 15:41:06,054] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-03 15:41:21,421] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\model\\__init__.py', reloading
+[2021-01-03 15:41:21,853] INFO in _internal:  * Restarting with stat
+[2021-01-03 15:41:23,172] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-03 15:41:23,477] WARNING in _internal:  * Debugger is active!
+[2021-01-03 15:41:23,484] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-03 15:41:27,905] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\model\\__init__.py', reloading
+[2021-01-03 15:41:28,297] INFO in _internal:  * Restarting with stat
+[2021-01-03 15:41:29,839] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-03 15:41:30,291] WARNING in _internal:  * Debugger is active!
+[2021-01-03 15:41:30,299] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-03 15:43:24,940] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-03 15:45:46,679] INFO in _internal:  * Restarting with stat
+[2021-01-03 15:45:50,579] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-03 15:52:57,751] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-03 15:53:58,139] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-03 15:56:37,665] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-03 15:56:38,252] INFO in _internal:  * Restarting with stat
+[2021-01-03 15:56:39,976] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-03 15:56:40,503] WARNING in _internal:  * Debugger is active!
+[2021-01-03 15:56:40,514] INFO in _internal:  * Debugger PIN: 611-914-660
+[2021-01-04 21:22:29,640] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-04 21:22:30,320] INFO in _internal:  * Restarting with stat
+[2021-01-04 21:22:31,590] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-04 21:22:31,929] WARNING in _internal:  * Debugger is active!
+[2021-01-04 21:22:31,937] INFO in _internal:  * Debugger PIN: 611-914-660

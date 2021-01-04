@@ -3,7 +3,9 @@ from __future__ import annotations
 from werkzeug.security import check_password_hash
 
 from ..utils import safe_objectId
-from . import db, Message
+from . import db
+
+from .Message import Message
 
 
 class User(db.Document):
@@ -82,6 +84,7 @@ class User(db.Document):
 
         Args:
             message: 一个Message实例, 即发送给此用户的消息的内容.
+                     可以缺省消息id
 
         Returns:
             无

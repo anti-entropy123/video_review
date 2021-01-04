@@ -31,24 +31,9 @@ def get_message_list():
             'hasRead': message['hasRead'],
             'hasProcess': message['hasProcess'],
             'type': message['type'],
-            'avatar': sender.avatar,
-            # **message.content
+            'avatar': sender.avatar
         }
-        sentence = ""
-        if message.type == 0:
-            sentence = f"{message.fromName}在项目《{message.projectName}》中上传了新的视频: 《{message.content['videoName']}》"
-        elif message.type == 1:
-            sentence = f"你上传的视频《{message.content['videoName']}》被{message.fromName}审阅了"
-        elif message.type == 2:
-            sentence = f"{message.fromName}为项目《{message.projectName}》预定了新的审阅会议"
-        elif message.type == 3:
-            sentence = f"{message.fromName}邀请你加入项目《{message.projectName}》"
-        elif message.type == 4:
-            sentence = f"{message.fromName}{'同意' if message.content['processResult'] else '拒绝'}加入项目《{message.projectName}》"
-        elif message.type == 5:
-            sentence = f"你已被移出项目《{message.projectName}》"
-        one['sentence'] = sentence
-
+        one['sentence'] = str(message)
         data.append(one)
 
     data = sorted(data, key=lambda x: x['date'], reverse=True)

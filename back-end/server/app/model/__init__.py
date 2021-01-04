@@ -22,4 +22,3 @@ Project = db_Project
 from .Video import Comment
 from .Video import Video as db_Video
 Video = db_Video
-

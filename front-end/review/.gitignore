@@ -3,6 +3,8 @@ node_modules/
 /dist/
 dist.zip
 dist.7z
+review.zip
+review.7z
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

@@ -76,6 +76,13 @@ def fast_create_video():
     data = {
         'videoId': video_id
     }
+    new_message = Message(
+        fromId = str(uploader.id),
+        fromName = uploader.username,
+        date = time.time()
+    )
+    new_message.upload_new_video_message(video_name=video_name)
+    project.receive_message(new_message)
     return jsonify(build_response(data=data))
     
 

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from . import db, User, Project
+from . import db
 from ..utils import safe_objectId, captrueFrameUtil, ossDetectObject
 from typing import List
 import time
@@ -171,3 +171,6 @@ class Video(db.Document):
         
         self.tags = list(set(tags))
         self.save()
+
+from .User import User
+from .Project import Project

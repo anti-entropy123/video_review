@@ -1,8 +1,9 @@
 from __future__ import annotations
 
-from . import db, User
-from ..utils import safe_objectId
 from typing import List
+
+from ..utils import safe_objectId
+from . import db
 
 
 class Meeting(db.Document):
@@ -48,7 +49,7 @@ class Meeting(db.Document):
         }
         if not deep:
             select['alive'] = True
-
+        
         return cls.objects(**select)
     
     def delete_meeting(self):
@@ -77,6 +78,5 @@ class Meeting(db.Document):
         # 删除自身
         self.alive = False
         self.save()
-    
-        
-        
+
+from .User import User

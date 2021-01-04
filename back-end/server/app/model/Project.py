@@ -1,8 +1,11 @@
 from __future__ import annotations
+from app.model.Message import Message
+
+from typing import List
 
 from ..utils import safe_objectId
-from . import Project, User, db, Video, Meeting
-from typing import List
+from . import db
+
 
 class ProjectMember(db.EmbeddedDocument):
     userId = db.StringField(primary_key=True, required=True, db_field='_id')
@@ -93,7 +96,7 @@ class Project(db.Document):
         if not video_id in self.hasVideo:
             return
         
-        video = Video.get_video_by_id(video_id=video_id, deep=True).delete_video()
+        Video.get_video_by_id(video_id=video_id, deep=True).delete_video()
         try:
             self.hasVideo.remove(video_id)
         except ValueError as e:
@@ -205,3 +208,30 @@ class Project(db.Document):
             return object_id in self.hasMeeting
         else:
             return False
+
+    def receive_message(self, message:Message)->None:
+        '''向项目中所有成员发送消息
+        
+        当一条消息是需要项目全体成员知晓, 且消息内容完全相同时, 可调用此方法群发消息给所有人
+
+        Args:
+            message: 需发送的消息实例.
+                     可以缺席项目Id, 项目名称, 消息Id, 创建日期等参数. 
+
+        Returns:
+            无
+        
+        Raises:
+            无
+        '''
+        message.projectId = str(self.id)
+        message.projectName = self.projectName
+        
+        for user_id in self.member_id_list() + [self.owner]:
+            target = User.get_user_by_id(user_id=user_id)
+            target.receive_message(message=message)
+        
+
+from .Meeting import Meeting
+from .User import User
+from .Video import Video

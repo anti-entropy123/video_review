@@ -61,7 +61,7 @@ def invite_user(project_id):
         type=3,    
         date=time.time()
     )
-    new_message.fill_content(word=word)
+    new_message.invite_join_project(word=word)
     target.receive_message(new_message)
     project.wait_to_user_join(user_id=user_id)
 
@@ -105,7 +105,7 @@ def join_project(project_id):
         type=4,
         date=time.time()
     )
-    new_message.fill_content(process_result=is_agree)
+    new_message.invite_has_processed(process_result=is_agree)
     inviter.receive_message(new_message)
 
     return jsonify(build_response())
@@ -284,6 +284,7 @@ def remove_video(project_id):
     except KeyError as e:
         abort(400, {'msg': str(e)})
     
+    print("要删除的视频id", video_id)
     project = Project.get_project_by_id(project_id=project_id)
     if not project:
         return jsonify(0, '没有此项目')

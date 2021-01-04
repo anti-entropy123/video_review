@@ -42,7 +42,13 @@ def create_meeting():
 
     project.hasMeeting.append(meeting_id)
     project.save()
-
+    new_message = Message(
+        fromId = str(user.id),
+        fromName = user.username,
+        date = time()
+    )
+    new_message.book_new_meeting(meeting_id=meeting_id)
+    project.receive_message(new_message)
     return jsonify(build_response(1, '', data={
         'meetingId': meeting_id
     }))
