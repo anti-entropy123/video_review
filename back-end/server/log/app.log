@@ -15793,3 +15793,226 @@ ValueError: Too many packets in payload
 [2021-01-04 21:22:31,590] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
 [2021-01-04 21:22:31,929] WARNING in _internal:  * Debugger is active!
 [2021-01-04 21:22:31,937] INFO in _internal:  * Debugger PIN: 611-914-660
+[2021-01-04 23:26:08,006] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-04 23:26:08,493] INFO in _internal:  * Restarting with stat
+[2021-01-04 23:26:09,507] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-04 23:26:09,746] WARNING in _internal:  * Debugger is active!
+[2021-01-04 23:26:09,755] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-04 23:26:49,304] DEBUG in connectionpool: Starting new HTTPS connection (1): api.weixin.qq.com:443
+[2021-01-04 23:26:49,653] DEBUG in connectionpool: https://api.weixin.qq.com:443 "GET /cgi-bin/token?grant_type=client_credential&appid=wxfe8a1124c4785c6f&secret=3877b5c0e575b3660650cf14cdf4b2fc HTTP/1.1" 200 194
+[2021-01-04 23:26:49,658] DEBUG in connectionpool: Starting new HTTPS connection (1): api.weixin.qq.com:443
+[2021-01-04 23:26:49,890] DEBUG in connectionpool: https://api.weixin.qq.com:443 "POST /cgi-bin/wxaapp/createwxaqrcode?access_token=40_56du4GkAGt5QoT5uFSMfJlEiJwijXsykisFGd-_12zYv_o3ohrI8kDihlLyvieBMy5ZeIjrcsQKBHQa1JD1_PfH6b-9RWvuocj_dCc0LjJ6coxwW300IWIcGieWa8DJJPgC64zkQ4gHMcPORHQChAFAVEQ&path=%2F&width=280 HTTP/1.1" 200 76
+[2021-01-04 23:27:58,749] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\utils.py', reloading
+[2021-01-04 23:27:59,241] INFO in _internal:  * Restarting with stat
+[2021-01-04 23:28:00,298] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-04 23:28:00,592] WARNING in _internal:  * Debugger is active!
+[2021-01-04 23:28:00,600] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-04 23:28:05,002] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\utils.py', reloading
+[2021-01-04 23:28:05,476] INFO in _internal:  * Restarting with stat
+[2021-01-04 23:28:06,483] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-04 23:28:06,716] WARNING in _internal:  * Debugger is active!
+[2021-01-04 23:28:06,722] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-04 23:28:08,926] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\utils.py', reloading
+[2021-01-04 23:28:09,186] INFO in _internal:  * Restarting with stat
+[2021-01-04 23:28:10,212] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-04 23:28:10,501] WARNING in _internal:  * Debugger is active!
+[2021-01-04 23:28:10,509] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-04 23:28:11,624] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\utils.py', reloading
+[2021-01-04 23:28:11,899] INFO in _internal:  * Restarting with stat
+[2021-01-04 23:28:13,089] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-04 23:28:13,329] WARNING in _internal:  * Debugger is active!
+[2021-01-04 23:28:13,336] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-04 23:28:18,800] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\utils.py', reloading
+[2021-01-04 23:28:19,145] INFO in _internal:  * Restarting with stat
+[2021-01-04 23:28:20,178] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-04 23:28:20,427] WARNING in _internal:  * Debugger is active!
+[2021-01-04 23:28:20,433] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-04 23:28:23,810] DEBUG in connectionpool: Starting new HTTPS connection (1): api.weixin.qq.com:443
+[2021-01-04 23:28:24,066] DEBUG in connectionpool: https://api.weixin.qq.com:443 "GET /cgi-bin/token?grant_type=client_credential&appid=wxfe8a1124c4785c6f&secret=3877b5c0e575b3660650cf14cdf4b2fc HTTP/1.1" 200 194
+[2021-01-04 23:28:24,098] DEBUG in connectionpool: Starting new HTTPS connection (1): api.weixin.qq.com:443
+[2021-01-04 23:28:24,265] DEBUG in connectionpool: https://api.weixin.qq.com:443 "POST /cgi-bin/wxaapp/createwxaqrcode?access_token=40_7aY24U5AaHiCBJE-UBG876GZ3vPgTNzDEc75E1-hDRjBPhWX3Zm4BEr6EtwBk4i8R4D7GLut_4bhFOH5ha6L43HDeo-0vkIPz3Ny_YWU_YML8LvkC2SfojUX37uTlCqzCBDPsm0MpafVM0GqTBUiADAYGZ HTTP/1.1" 200 116
+[2021-01-04 23:31:52,604] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\utils.py', reloading
+[2021-01-04 23:31:53,166] INFO in _internal:  * Restarting with stat
+[2021-01-04 23:31:54,194] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-04 23:31:54,437] WARNING in _internal:  * Debugger is active!
+[2021-01-04 23:31:54,443] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-04 23:32:02,257] DEBUG in connectionpool: Starting new HTTPS connection (1): api.weixin.qq.com:443
+[2021-01-04 23:32:02,629] DEBUG in connectionpool: https://api.weixin.qq.com:443 "GET /cgi-bin/token?grant_type=client_credential&appid=wxfe8a1124c4785c6f&secret=3877b5c0e575b3660650cf14cdf4b2fc HTTP/1.1" 200 194
+[2021-01-04 23:32:02,670] DEBUG in connectionpool: Starting new HTTPS connection (1): api.weixin.qq.com:443
+[2021-01-04 23:32:02,837] DEBUG in connectionpool: https://api.weixin.qq.com:443 "POST /cgi-bin/wxaapp/createwxaqrcode?access_token=40_bFCAj5Ir6ZxaUUJEXz6r2haipwHXKiTR8389IA5qlig8m2JJ_PPjACuDYXDwf3IrIRUcbyos9BJidGrXwzYlCG9jqFtv2gr-OrXzr3gxcH71ZrQ51XCKnz2UkPqjFSBzhrq4vv6HfuWwOkP6GMCeAAAMSI HTTP/1.1" 200 116
+[2021-01-04 23:32:30,251] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\utils.py', reloading
+[2021-01-04 23:32:30,440] INFO in _internal:  * Restarting with stat
+[2021-01-04 23:32:58,549] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-04 23:32:58,793] INFO in _internal:  * Restarting with stat
+[2021-01-04 23:32:59,923] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-04 23:33:00,176] WARNING in _internal:  * Debugger is active!
+[2021-01-04 23:33:00,183] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-04 23:33:03,200] DEBUG in connectionpool: Starting new HTTPS connection (1): api.weixin.qq.com:443
+[2021-01-04 23:33:03,429] DEBUG in connectionpool: https://api.weixin.qq.com:443 "GET /cgi-bin/token?grant_type=client_credential&appid=wxfe8a1124c4785c6f&secret=3877b5c0e575b3660650cf14cdf4b2fc HTTP/1.1" 200 194
+[2021-01-04 23:33:03,484] DEBUG in connectionpool: Starting new HTTPS connection (1): api.weixin.qq.com:443
+[2021-01-04 23:33:03,775] DEBUG in connectionpool: https://api.weixin.qq.com:443 "POST /cgi-bin/wxaapp/createwxaqrcode?access_token=40_k-dRbtJ7tsOgFynwArTrvqtOO33yk3345VFg7w3kDvyq56wVHlnS99dvu4k5L5g4aX0CcwdGCZfUXQWq8fbKrfVwfgaDKIQe7ZN1Ciccu8TfwTKqttjSC9DdySkGseg_ROz4peVOkdoYSe5ZAKJgAJAWGF HTTP/1.1" 200 38853
+[2021-01-04 23:34:44,244] DEBUG in connectionpool: Starting new HTTPS connection (1): api.weixin.qq.com:443
+[2021-01-04 23:34:44,515] DEBUG in connectionpool: https://api.weixin.qq.com:443 "POST /cgi-bin/wxaapp/createwxaqrcode?access_token=40_k-dRbtJ7tsOgFynwArTrvqtOO33yk3345VFg7w3kDvyq56wVHlnS99dvu4k5L5g4aX0CcwdGCZfUXQWq8fbKrfVwfgaDKIQe7ZN1Ciccu8TfwTKqttjSC9DdySkGseg_ROz4peVOkdoYSe5ZAKJgAJAWGF HTTP/1.1" 200 38832
+[2021-01-04 23:41:27,352] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\utils.py', reloading
+[2021-01-04 23:41:27,765] INFO in _internal:  * Restarting with stat
+[2021-01-04 23:41:28,965] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-04 23:41:29,256] WARNING in _internal:  * Debugger is active!
+[2021-01-04 23:41:29,264] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-04 23:41:32,998] DEBUG in connectionpool: Starting new HTTPS connection (1): api.weixin.qq.com:443
+[2021-01-04 23:41:33,266] DEBUG in connectionpool: https://api.weixin.qq.com:443 "GET /cgi-bin/token?grant_type=client_credential&appid=wxfe8a1124c4785c6f&secret=3877b5c0e575b3660650cf14cdf4b2fc HTTP/1.1" 200 194
+[2021-01-04 23:41:33,309] DEBUG in connectionpool: Starting new HTTPS connection (1): api.weixin.qq.com:443
+[2021-01-04 23:41:33,674] DEBUG in connectionpool: https://api.weixin.qq.com:443 "POST /cgi-bin/wxaapp/createwxaqrcode?access_token=40_onuoaA2OlsF-01ydbhQIPGHWBpb6dZIFfPGScTt4DGBhG05eq3quwjtpO9WJDTK7MScc26kbHQNiFLmugQi3vik6ND3AZaHG3E4azviAU4nX92ECqJ54EJ4VF4YGNcwPiVuF3oYBstaoDTt0QKEhAJADXR HTTP/1.1" 200 36992
+[2021-01-04 23:44:36,929] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\utils.py', reloading
+[2021-01-04 23:44:37,328] INFO in _internal:  * Restarting with stat
+[2021-01-04 23:44:38,483] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-04 23:44:38,755] WARNING in _internal:  * Debugger is active!
+[2021-01-04 23:44:38,764] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-04 23:44:52,445] DEBUG in connectionpool: Starting new HTTPS connection (1): api.weixin.qq.com:443
+[2021-01-04 23:44:52,714] DEBUG in connectionpool: https://api.weixin.qq.com:443 "GET /cgi-bin/token?grant_type=client_credential&appid=wxfe8a1124c4785c6f&secret=3877b5c0e575b3660650cf14cdf4b2fc HTTP/1.1" 200 194
+[2021-01-04 23:44:52,773] DEBUG in connectionpool: Starting new HTTPS connection (1): api.weixin.qq.com:443
+[2021-01-04 23:44:53,299] DEBUG in connectionpool: https://api.weixin.qq.com:443 "POST /wxa/getwxacode?access_token=40_jOzZDn5lwOU4pNP4Q6bUusgprXFzrglesjQJ8V1-tOEseLk8BZUZivS22X42nsn_OOs1REu1pOE_FeHO7oz2cKVi6Us223FKHN10-Px_TwhxQ-md5Y6ZV2INptOGaLD2gElUhzKiEYKKruC6RBRiAGAWGW HTTP/1.1" 200 57328
+[2021-01-05 11:30:52,609] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 11:30:52,905] INFO in _internal:  * Restarting with stat
+[2021-01-05 11:30:53,862] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 11:30:54,191] WARNING in _internal:  * Debugger is active!
+[2021-01-05 11:30:54,199] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-05 11:30:57,489] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\utils.py', reloading
+[2021-01-05 11:30:57,605] INFO in _internal:  * Restarting with stat
+[2021-01-05 11:30:58,602] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 11:30:58,844] WARNING in _internal:  * Debugger is active!
+[2021-01-05 11:30:58,850] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-05 11:31:03,224] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\utils.py', reloading
+[2021-01-05 11:31:03,317] INFO in _internal:  * Restarting with stat
+[2021-01-05 11:31:04,285] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 11:31:04,530] WARNING in _internal:  * Debugger is active!
+[2021-01-05 11:31:04,536] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-05 11:31:41,264] DEBUG in connectionpool: Starting new HTTPS connection (1): api.weixin.qq.com:443
+[2021-01-05 11:31:41,529] DEBUG in connectionpool: https://api.weixin.qq.com:443 "GET /cgi-bin/token?grant_type=client_credential&appid=wxfe8a1124c4785c6f&secret=3877b5c0e575b3660650cf14cdf4b2fc HTTP/1.1" 200 194
+[2021-01-05 11:31:41,532] DEBUG in connectionpool: Starting new HTTPS connection (1): api.weixin.qq.com:443
+[2021-01-05 11:31:41,968] DEBUG in connectionpool: https://api.weixin.qq.com:443 "POST /wxa/getwxacode?access_token=40_X8HYkIjrDmBmUGoAu-QbsLBmL0oFkHFczJhkpUrbl9Fry-vKGFQwjJgv5SkXB4LlDM3RTN6-lNJ3c1su0AM7f38b3yyyuN5_HiB8vfuNoPW5fSzJnHnePDy7YlCP5a0Krbr9OLRXpRpMx58PDYFjAAARMT HTTP/1.1" 200 95556
+[2021-01-05 17:15:00,125] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 17:15:00,381] INFO in _internal:  * Restarting with stat
+[2021-01-05 17:15:01,344] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 17:15:01,655] WARNING in _internal:  * Debugger is active!
+[2021-01-05 17:15:01,663] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-05 17:15:11,376] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\model\\__init__.py', reloading
+[2021-01-05 17:15:11,560] INFO in _internal:  * Restarting with stat
+[2021-01-05 17:15:12,511] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 17:15:12,739] WARNING in _internal:  * Debugger is active!
+[2021-01-05 17:15:12,746] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-05 17:15:19,282] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\model\\__init__.py', reloading
+[2021-01-05 17:15:19,764] INFO in _internal:  * Restarting with stat
+[2021-01-05 17:15:20,792] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 17:15:21,042] WARNING in _internal:  * Debugger is active!
+[2021-01-05 17:15:21,048] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-05 17:15:25,404] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\model\\__init__.py', reloading
+[2021-01-05 17:15:25,511] INFO in _internal:  * Restarting with stat
+[2021-01-05 17:15:26,490] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 17:15:26,749] WARNING in _internal:  * Debugger is active!
+[2021-01-05 17:15:26,756] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-05 17:15:28,969] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\model\\__init__.py', reloading
+[2021-01-05 17:15:29,207] INFO in _internal:  * Restarting with stat
+[2021-01-05 17:15:30,276] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 17:15:30,573] WARNING in _internal:  * Debugger is active!
+[2021-01-05 17:15:30,580] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-05 17:15:34,940] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\model\\__init__.py', reloading
+[2021-01-05 17:15:35,425] INFO in _internal:  * Restarting with stat
+[2021-01-05 17:15:36,518] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 17:15:36,762] WARNING in _internal:  * Debugger is active!
+[2021-01-05 17:15:36,769] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-05 17:15:37,891] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\model\\__init__.py', reloading
+[2021-01-05 17:15:38,230] INFO in _internal:  * Restarting with stat
+[2021-01-05 17:15:39,239] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 17:15:39,476] WARNING in _internal:  * Debugger is active!
+[2021-01-05 17:15:39,484] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-05 17:15:52,452] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\model\\__init__.py', reloading
+[2021-01-05 17:15:52,994] INFO in _internal:  * Restarting with stat
+[2021-01-05 17:15:54,022] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 17:15:54,264] WARNING in _internal:  * Debugger is active!
+[2021-01-05 17:15:54,270] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-05 17:16:05,096] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\model\\__init__.py', reloading
+[2021-01-05 17:16:05,280] INFO in _internal:  * Restarting with stat
+[2021-01-05 17:16:06,348] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 17:16:06,598] WARNING in _internal:  * Debugger is active!
+[2021-01-05 17:16:06,604] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-05 17:18:04,904] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\api\\video_view.py', reloading
+[2021-01-05 17:18:05,232] INFO in _internal:  * Restarting with stat
+[2021-01-05 17:18:06,282] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 17:18:06,536] WARNING in _internal:  * Debugger is active!
+[2021-01-05 17:18:06,542] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-05 17:37:44,159] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 17:37:44,414] INFO in _internal:  * Restarting with stat
+[2021-01-05 17:37:45,422] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 17:37:45,736] WARNING in _internal:  * Debugger is active!
+[2021-01-05 17:37:45,743] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-05 17:42:19,037] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\model\\Video.py', reloading
+[2021-01-05 17:42:19,509] INFO in _internal:  * Restarting with stat
+[2021-01-05 17:42:20,582] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 17:42:20,858] WARNING in _internal:  * Debugger is active!
+[2021-01-05 17:42:20,864] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-05 17:42:53,269] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\model\\Video.py', reloading
+[2021-01-05 17:42:53,902] INFO in _internal:  * Restarting with stat
+[2021-01-05 17:42:54,985] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 17:42:55,232] WARNING in _internal:  * Debugger is active!
+[2021-01-05 17:42:55,243] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-05 17:42:57,455] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\model\\Video.py', reloading
+[2021-01-05 17:42:57,696] INFO in _internal:  * Restarting with stat
+[2021-01-05 17:42:58,679] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 17:42:58,950] WARNING in _internal:  * Debugger is active!
+[2021-01-05 17:42:58,960] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-05 17:43:16,274] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\model\\Video.py', reloading
+[2021-01-05 17:43:16,409] INFO in _internal:  * Restarting with stat
+[2021-01-05 17:43:17,382] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 17:43:17,718] WARNING in _internal:  * Debugger is active!
+[2021-01-05 17:43:17,740] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-05 17:43:54,365] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\model\\Video.py', reloading
+[2021-01-05 17:43:54,643] INFO in _internal:  * Restarting with stat
+[2021-01-05 17:43:55,873] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 17:43:56,183] WARNING in _internal:  * Debugger is active!
+[2021-01-05 17:43:56,189] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-05 17:43:59,502] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\model\\Video.py', reloading
+[2021-01-05 17:44:00,020] INFO in _internal:  * Restarting with stat
+[2021-01-05 17:44:00,999] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 17:44:01,306] WARNING in _internal:  * Debugger is active!
+[2021-01-05 17:44:01,316] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-05 17:44:08,985] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\model\\Video.py', reloading
+[2021-01-05 17:44:09,243] INFO in _internal:  * Restarting with stat
+[2021-01-05 17:44:10,304] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 17:44:10,562] WARNING in _internal:  * Debugger is active!
+[2021-01-05 17:44:10,569] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-05 17:44:19,277] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\model\\Video.py', reloading
+[2021-01-05 17:44:19,515] INFO in _internal:  * Restarting with stat
+[2021-01-05 17:44:20,671] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 17:44:20,962] WARNING in _internal:  * Debugger is active!
+[2021-01-05 17:44:20,969] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-05 17:44:29,649] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\model\\Video.py', reloading
+[2021-01-05 17:44:29,841] INFO in _internal:  * Restarting with stat
+[2021-01-05 17:44:30,885] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 17:55:29,356] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 17:55:29,620] INFO in _internal:  * Restarting with stat
+[2021-01-05 17:55:30,739] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 17:55:31,039] WARNING in _internal:  * Debugger is active!
+[2021-01-05 17:55:31,047] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-05 17:55:46,274] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\model\\Video.py', reloading
+[2021-01-05 17:55:46,837] INFO in _internal:  * Restarting with stat
+[2021-01-05 17:55:47,853] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 17:55:48,200] WARNING in _internal:  * Debugger is active!
+[2021-01-05 17:55:48,209] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-05 17:55:50,463] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\model\\Video.py', reloading
+[2021-01-05 17:55:50,550] INFO in _internal:  * Restarting with stat
+[2021-01-05 17:55:51,504] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 17:55:51,750] WARNING in _internal:  * Debugger is active!
+[2021-01-05 17:55:51,756] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-05 17:55:57,230] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\model\\Video.py', reloading
+[2021-01-05 17:55:57,727] INFO in _internal:  * Restarting with stat
+[2021-01-05 17:55:58,690] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 17:55:58,947] WARNING in _internal:  * Debugger is active!
+[2021-01-05 17:55:58,953] INFO in _internal:  * Debugger PIN: 264-103-222
+[2021-01-05 17:56:02,261] INFO in _internal:  * Detected change in 'E:\\学习资料\\课程\\软工高级实践\\大作业\\back-end\\server\\app\\model\\Video.py', reloading
+[2021-01-05 17:56:02,413] INFO in _internal:  * Restarting with stat
+[2021-01-05 17:56:03,492] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 17:57:19,496] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 17:57:19,761] INFO in _internal:  * Restarting with stat
+[2021-01-05 17:57:20,781] DEBUG in api: Init Bucket: video-review-hb3, endpoint: https://oss-cn-zhangjiakou-internal.aliyuncs.com, isCname: False, connect_timeout: None, app_name: , enabled_crc: True
+[2021-01-05 17:57:21,119] WARNING in _internal:  * Debugger is active!
+[2021-01-05 17:57:21,126] INFO in _internal:  * Debugger PIN: 264-103-222

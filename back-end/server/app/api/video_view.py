@@ -8,7 +8,7 @@ from flask import jsonify, request
 from flask_jwt_extended import get_jwt_identity
 
 from ..auth import login_required
-from ..model import Comment, Message, Project, User, Video
+from ..model import Comment, Message, Project, User, Video, Reply
 from ..utils import (aliOssUtil, build_response, captrueFrameUtil)
 from . import api
 import threading
@@ -170,6 +170,13 @@ def create_video():
         'url': video.url,
         'videoId': video_id
     }
+    new_message = Message(
+        fromId = str(uploader.id),
+        fromName = uploader.username,
+        date = time.time()
+    )
+    new_message.upload_new_video_message(video_name=video_name)
+    project.receive_message(new_message)
     return jsonify(build_response(data=data))
     
 # 完成审阅
@@ -278,6 +285,36 @@ def insert_comment(video_id:str):
     comment_id = video.insert_comment(comment=comment, from_user=user)
     data = {'commentId': comment_id}
     return jsonify(build_response(data=data))
+
+@api.route('/video/<video_id>/reply/', methods=['POST'])
+@login_required
+def insert_reply(video_id):
+    args = request.json or {}
+    try:
+        content:str = args['content']
+        commment_id:int = int(args['commentId'])
+        reply_id:int = args.get('replyId')
+    except KeyError as e:
+        abort(400, {'msg': str(e)})
+
+    user = User.get_user_by_id(get_jwt_identity())
+    video = Video.get_video_by_id(video_id=video_id)
+    if not video:
+        return jsonify(build_response(message='没有此视频'))
+    
+    project = Project.get_project_by_id(video.belongTo)
+    if not user in project:
+        return jsonify(build_response(message='你不能对此视频做批注'))
+
+    reply = Reply(
+        fromId=str(user.id),
+        content=content
+    )
+    if reply_id != None:
+        reply.replyTo = int(reply_id)
+
+    reply_id = video.insert_reply(reply=reply, comment_id=commment_id)
+    return jsonify(build_response(data={'replyId': reply_id}))
 
 @api.route('/video/<video_id>/frame', methods=['GET'])
 @login_required

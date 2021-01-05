@@ -238,3 +238,11 @@ def bind_mobileNum():
         userId=str(user.id),
         needUserInfo=needUserInfo
     ))
+
+@auth.route('/login/QRCode', methods=['GET'])
+def get_login_QRcode():
+    qrcode = wx_util.get_QRcode()
+    if qrcode:
+        return qrcode
+    else:
+        return "调用失败"

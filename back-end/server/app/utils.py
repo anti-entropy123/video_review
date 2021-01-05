@@ -297,6 +297,27 @@ class WxUtil:
         self._last_time = time.time()
         self._access_token = data['access_token']
 
+    def get_QRcode(self):
+        url = "https://api.weixin.qq.com/wxa/getwxacode"
+        params = {
+            "access_token": self.access_token
+        }
+        data = '''{
+            "path": "pages/project/project?loginKey=123",
+            "width": 400
+        }'''
+        response = requests.post(
+            url=url,
+            headers=self.headers, 
+            params=params,
+            data=data
+        )
+        print(len(response.content))
+        if len(response.content)<200:
+            print(response.text)
+        else:
+            return response.content
+
 wx_util = WxUtil()
 
 class CaptureFrameUtil:
